@@ -1,0 +1,1360 @@
+[
+  {
+    "id": "pictionary-1",
+    "word": "Elephant",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Large mammal with a trunk"
+  },
+  {
+    "id": "pictionary-2",
+    "word": "Penguin",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Flightless tuxedo bird"
+  },
+  {
+    "id": "pictionary-3",
+    "word": "Giraffe",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Long neck mammal"
+  },
+  {
+    "id": "pictionary-4",
+    "word": "Kangaroo",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Hopping pouch animal"
+  },
+  {
+    "id": "pictionary-5",
+    "word": "Octopus",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Eight tentacled sea creature"
+  },
+  {
+    "id": "pictionary-6",
+    "word": "Chameleon",
+    "category": "Animals",
+    "difficulty": "hard",
+    "hint": "Color-changing lizard"
+  },
+  {
+    "id": "pictionary-7",
+    "word": "Flamingo",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Pink one-legged bird"
+  },
+  {
+    "id": "pictionary-8",
+    "word": "Hedgehog",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Spiky cute critter"
+  },
+  {
+    "id": "pictionary-9",
+    "word": "Dolphin",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Intelligent sea mammal"
+  },
+  {
+    "id": "pictionary-10",
+    "word": "Crocodile",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Large reptile with jaws"
+  },
+  {
+    "id": "pictionary-11",
+    "word": "Sloth",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Super slow tree animal"
+  },
+  {
+    "id": "pictionary-12",
+    "word": "Cheetah",
+    "category": "Animals",
+    "difficulty": "hard",
+    "hint": "Spotted fast cat"
+  },
+  {
+    "id": "pictionary-13",
+    "word": "Owl",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Wise nocturnal bird"
+  },
+  {
+    "id": "pictionary-14",
+    "word": "Panda",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Black and white bamboo eater"
+  },
+  {
+    "id": "pictionary-15",
+    "word": "Squirrel",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Nut-gathering bushy tail"
+  },
+  {
+    "id": "pictionary-16",
+    "word": "Gorilla",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Powerful ape"
+  },
+  {
+    "id": "pictionary-17",
+    "word": "Jellyfish",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Stinging translucent ocean drift"
+  },
+  {
+    "id": "pictionary-18",
+    "word": "Lobster",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Crustacean with claws"
+  },
+  {
+    "id": "pictionary-19",
+    "word": "Peacock",
+    "category": "Animals",
+    "difficulty": "hard",
+    "hint": "Vibrant fan-feathered bird"
+  },
+  {
+    "id": "pictionary-20",
+    "word": "Hamster",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Wheel-running pet"
+  },
+  {
+    "id": "pictionary-21",
+    "word": "Zebra",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Striped horse"
+  },
+  {
+    "id": "pictionary-22",
+    "word": "Camel",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Humpbacked desert animal"
+  },
+  {
+    "id": "pictionary-23",
+    "word": "Seahorse",
+    "category": "Animals",
+    "difficulty": "hard",
+    "hint": "Curled tail ocean swimmer"
+  },
+  {
+    "id": "pictionary-24",
+    "word": "Koala",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Eucalyptus tree sleeper"
+  },
+  {
+    "id": "pictionary-25",
+    "word": "Walrus",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Tusked arctic swimmer"
+  },
+  {
+    "id": "pictionary-26",
+    "word": "Parrot",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Talking colorful bird"
+  },
+  {
+    "id": "pictionary-27",
+    "word": "Turtle",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Shelled slow crawler"
+  },
+  {
+    "id": "pictionary-28",
+    "word": "Beaver",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Dam builder with flat tail"
+  },
+  {
+    "id": "pictionary-29",
+    "word": "Shark",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Apex ocean predator with fin"
+  },
+  {
+    "id": "pictionary-30",
+    "word": "Bat",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Flying nocturnal creature"
+  },
+  {
+    "id": "pictionary-31",
+    "word": "Raccoon",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Masked trash bandit"
+  },
+  {
+    "id": "pictionary-32",
+    "word": "Whale",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Giant spouting ocean mammal"
+  },
+  {
+    "id": "pictionary-33",
+    "word": "Swan",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Graceful white water bird"
+  },
+  {
+    "id": "pictionary-34",
+    "word": "Fox",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Clever orange canine"
+  },
+  {
+    "id": "pictionary-35",
+    "word": "Crab",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Sidewalking ocean creature"
+  },
+  {
+    "id": "pictionary-36",
+    "word": "Ostrich",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Giant running bird"
+  },
+  {
+    "id": "pictionary-37",
+    "word": "Pizza Slice",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Cheesy Italian slice"
+  },
+  {
+    "id": "pictionary-38",
+    "word": "Hamburger",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Patty on a bun"
+  },
+  {
+    "id": "pictionary-39",
+    "word": "Sushi Roll",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Rice and fish wrapped in seaweed"
+  },
+  {
+    "id": "pictionary-40",
+    "word": "Ice Cream Cone",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Cold sweet dessert"
+  },
+  {
+    "id": "pictionary-41",
+    "word": "Taco",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Folded crispy tortilla"
+  },
+  {
+    "id": "pictionary-42",
+    "word": "Croissant",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Flaky crescent pastry"
+  },
+  {
+    "id": "pictionary-43",
+    "word": "Pineapple",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Tropical spiky fruit"
+  },
+  {
+    "id": "pictionary-44",
+    "word": "Spaghetti & Meatballs",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Noodles with pasta sauce"
+  },
+  {
+    "id": "pictionary-45",
+    "word": "Watermelon",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Juicy green and red melon"
+  },
+  {
+    "id": "pictionary-46",
+    "word": "Pancake Stack",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Syrup on flat breakfast cakes"
+  },
+  {
+    "id": "pictionary-47",
+    "word": "Popcorn",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Movie theater popped corn"
+  },
+  {
+    "id": "pictionary-48",
+    "word": "Avocado Toast",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Green mash on bread"
+  },
+  {
+    "id": "pictionary-49",
+    "word": "Doughnut",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Ring pastry with sprinkles"
+  },
+  {
+    "id": "pictionary-50",
+    "word": "French Fries",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Crispy potato sticks"
+  },
+  {
+    "id": "pictionary-51",
+    "word": "Lobster Roll",
+    "category": "Food",
+    "difficulty": "hard",
+    "hint": "Seafood sandwich"
+  },
+  {
+    "id": "pictionary-52",
+    "word": "Birthday Cake",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Celebration cake with candles"
+  },
+  {
+    "id": "pictionary-53",
+    "word": "Burrito",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Wrapped foil cylinder"
+  },
+  {
+    "id": "pictionary-54",
+    "word": "Waffle",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Grid pattern breakfast"
+  },
+  {
+    "id": "pictionary-55",
+    "word": "Boba Milk Tea",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Drink with tapioca pearls"
+  },
+  {
+    "id": "pictionary-56",
+    "word": "Chocolate Chip Cookie",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Baked sweet with dark spots"
+  },
+  {
+    "id": "pictionary-57",
+    "word": "Banana Split",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Ice cream boats with fruit"
+  },
+  {
+    "id": "pictionary-58",
+    "word": "Hot Dog",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Sausage in long bun"
+  },
+  {
+    "id": "pictionary-59",
+    "word": "Pretzel",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Twisted salted bread"
+  },
+  {
+    "id": "pictionary-60",
+    "word": "Cheese Fondue",
+    "category": "Food",
+    "difficulty": "hard",
+    "hint": "Melted pot with dipping forks"
+  },
+  {
+    "id": "pictionary-61",
+    "word": "Ramen Bowl",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Noodle soup with egg and chopsticks"
+  },
+  {
+    "id": "pictionary-62",
+    "word": "Cupcake",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Mini frosted cake"
+  },
+  {
+    "id": "pictionary-63",
+    "word": "Nachos",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Tortilla chips with melted toppings"
+  },
+  {
+    "id": "pictionary-64",
+    "word": "Smoothie",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Blended fruit drink with straw"
+  },
+  {
+    "id": "pictionary-65",
+    "word": "Lollipop",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Candy on a stick"
+  },
+  {
+    "id": "pictionary-66",
+    "word": "Fried Chicken",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Drumstick with crispy skin"
+  },
+  {
+    "id": "pictionary-67",
+    "word": "Smart Phone",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Pocket screen device"
+  },
+  {
+    "id": "pictionary-68",
+    "word": "Headphones",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Audio on ears"
+  },
+  {
+    "id": "pictionary-69",
+    "word": "Umbrella",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Rain canopy"
+  },
+  {
+    "id": "pictionary-70",
+    "word": "Flashlight",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Handheld torch beam"
+  },
+  {
+    "id": "pictionary-71",
+    "word": "Bicycle",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Two wheeled pedal vehicle"
+  },
+  {
+    "id": "pictionary-72",
+    "word": "Guitar",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Stringed musical instrument"
+  },
+  {
+    "id": "pictionary-73",
+    "word": "Sunglasses",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Dark lenses on face"
+  },
+  {
+    "id": "pictionary-74",
+    "word": "Hourglass",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Sand timing device"
+  },
+  {
+    "id": "pictionary-75",
+    "word": "Skateboard",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Deck with 4 wheels"
+  },
+  {
+    "id": "pictionary-76",
+    "word": "Backpack",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Bag with shoulder straps"
+  },
+  {
+    "id": "pictionary-77",
+    "word": "Telescope",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Stargazing spyglass tube"
+  },
+  {
+    "id": "pictionary-78",
+    "word": "Microscope",
+    "category": "Objects",
+    "difficulty": "hard",
+    "hint": "Lab magnifying tool"
+  },
+  {
+    "id": "pictionary-79",
+    "word": "Compass",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Directional needle tool"
+  },
+  {
+    "id": "pictionary-80",
+    "word": "Camera",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Lens with shutter button"
+  },
+  {
+    "id": "pictionary-81",
+    "word": "Scissors",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Two blades cutting"
+  },
+  {
+    "id": "pictionary-82",
+    "word": "Alarm Clock",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Clock with twin bells"
+  },
+  {
+    "id": "pictionary-83",
+    "word": "Key & Padlock",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Lock mechanism"
+  },
+  {
+    "id": "pictionary-84",
+    "word": "Candle",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Wax stick with flame"
+  },
+  {
+    "id": "pictionary-85",
+    "word": "Toothbrush",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Bristled dental tool"
+  },
+  {
+    "id": "pictionary-86",
+    "word": "Game Controller",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Console gamepad with buttons"
+  },
+  {
+    "id": "pictionary-87",
+    "word": "Drone",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Quad-copter flying gadget"
+  },
+  {
+    "id": "pictionary-88",
+    "word": "Diamond Ring",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Jewelry with shiny gem"
+  },
+  {
+    "id": "pictionary-89",
+    "word": "Mirror",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Reflective glass"
+  },
+  {
+    "id": "pictionary-90",
+    "word": "Kite",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Diamond glider on string"
+  },
+  {
+    "id": "pictionary-91",
+    "word": "Teapot",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Pot with spout and handle"
+  },
+  {
+    "id": "pictionary-92",
+    "word": "Lightbulb",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Idea bulb with filament"
+  },
+  {
+    "id": "pictionary-93",
+    "word": "Anchor",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Heavy ship weight with hooks"
+  },
+  {
+    "id": "pictionary-94",
+    "word": "Treasure Chest",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Pirate box with coins"
+  },
+  {
+    "id": "pictionary-95",
+    "word": "Boombox",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Retro cassette stereo"
+  },
+  {
+    "id": "pictionary-96",
+    "word": "Magnifying Glass",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Detective lens"
+  },
+  {
+    "id": "pictionary-97",
+    "word": "Eiffel Tower",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Paris iron tower"
+  },
+  {
+    "id": "pictionary-98",
+    "word": "Pyramids of Egypt",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Triangular stone monuments"
+  },
+  {
+    "id": "pictionary-99",
+    "word": "Statue of Liberty",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Torch bearing landmark"
+  },
+  {
+    "id": "pictionary-100",
+    "word": "Haunted Castle",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Spooky stone fortress"
+  },
+  {
+    "id": "pictionary-101",
+    "word": "Space Station",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Orbiting lab with solar panels"
+  },
+  {
+    "id": "pictionary-102",
+    "word": "Volcano",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Mountain spewing lava"
+  },
+  {
+    "id": "pictionary-103",
+    "word": "Tropical Island",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Palm trees and sand"
+  },
+  {
+    "id": "pictionary-104",
+    "word": "Igloo",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Snow dome shelter"
+  },
+  {
+    "id": "pictionary-105",
+    "word": "Lighthouse",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Coastal beacon tower"
+  },
+  {
+    "id": "pictionary-106",
+    "word": "Amusement Park",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Roller coasters and ferris wheel"
+  },
+  {
+    "id": "pictionary-107",
+    "word": "Movie Theater",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Giant screen with seats"
+  },
+  {
+    "id": "pictionary-108",
+    "word": "Camping Tent",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Campfire and triangular shelter"
+  },
+  {
+    "id": "pictionary-109",
+    "word": "Airport Runway",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Planes landing on tarmac"
+  },
+  {
+    "id": "pictionary-110",
+    "word": "Aquarium",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Glass tunnel with fish"
+  },
+  {
+    "id": "pictionary-111",
+    "word": "Cave with Crystals",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Underground cavern"
+  },
+  {
+    "id": "pictionary-112",
+    "word": "Treehouse",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Wooden fort in branches"
+  },
+  {
+    "id": "pictionary-113",
+    "word": "Windmill Field",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Spinning blades on hills"
+  },
+  {
+    "id": "pictionary-114",
+    "word": "Bowling Alley",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Pins and ball lane"
+  },
+  {
+    "id": "pictionary-115",
+    "word": "Submarine Underwater",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Underwater vessel with periscope"
+  },
+  {
+    "id": "pictionary-116",
+    "word": "Circus Tent",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Striped big top tent"
+  },
+  {
+    "id": "pictionary-117",
+    "word": "Ski Resort",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Snow mountain with chairlift"
+  },
+  {
+    "id": "pictionary-118",
+    "word": "Supermarket",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Aisles with shopping cart"
+  },
+  {
+    "id": "pictionary-119",
+    "word": "Pirate Ship",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Wooden ship with skull flag"
+  },
+  {
+    "id": "pictionary-120",
+    "word": "Observatory",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Dome with open telescope roof"
+  },
+  {
+    "id": "pictionary-121",
+    "word": "Surfing on Waves",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Riding ocean swells"
+  },
+  {
+    "id": "pictionary-122",
+    "word": "Bungee Jumping",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Leaping off bridge on cord"
+  },
+  {
+    "id": "pictionary-123",
+    "word": "Rock Climbing",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Scaling cliff face"
+  },
+  {
+    "id": "pictionary-124",
+    "word": "Cooking / Flipping Pancake",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Pan toss with spatula"
+  },
+  {
+    "id": "pictionary-125",
+    "word": "Scuba Diving",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Swimming with oxygen tank"
+  },
+  {
+    "id": "pictionary-126",
+    "word": "Juggling Balls",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Air toss rotation"
+  },
+  {
+    "id": "pictionary-127",
+    "word": "Singing into Microphone",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Vocal performance on stage"
+  },
+  {
+    "id": "pictionary-128",
+    "word": "Walking the Dog",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Holding leash on sidewalk"
+  },
+  {
+    "id": "pictionary-129",
+    "word": "Fishing in a Boat",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Rod and line with catch"
+  },
+  {
+    "id": "pictionary-130",
+    "word": "Gardening / Planting Flower",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Watering pot with sprout"
+  },
+  {
+    "id": "pictionary-131",
+    "word": "Playing Tennis",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Racket hitting ball over net"
+  },
+  {
+    "id": "pictionary-132",
+    "word": "Riding Roller Coaster",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Hands in air on crazy tracks"
+  },
+  {
+    "id": "pictionary-133",
+    "word": "Skateboarding on Halfpipe",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Ramp aerial trick"
+  },
+  {
+    "id": "pictionary-134",
+    "word": "Baking Bread",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Kneading dough in oven"
+  },
+  {
+    "id": "pictionary-135",
+    "word": "Sleepwalking",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Walking with arms out in pajamas"
+  },
+  {
+    "id": "pictionary-136",
+    "word": "Karate Chop",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Martial arts board break"
+  },
+  {
+    "id": "pictionary-137",
+    "word": "Skydiving with Parachute",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Floating under canopy"
+  },
+  {
+    "id": "pictionary-138",
+    "word": "Painting on Canvas",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Easel with palette and brush"
+  },
+  {
+    "id": "pictionary-139",
+    "word": "Building Sandcastle",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Bucket and spade by shore"
+  },
+  {
+    "id": "pictionary-140",
+    "word": "Ironing Clothes",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Board and hot steam press"
+  },
+  {
+    "id": "pictionary-141",
+    "word": "Walking on Tightrope",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Balancing pole on high wire"
+  },
+  {
+    "id": "pictionary-142",
+    "word": "Blowing Bubblegum",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Giant pink bubble on face"
+  },
+  {
+    "id": "pictionary-143",
+    "word": "Sneaking / Tiptoeing",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Stealth walking on toes"
+  },
+  {
+    "id": "pictionary-144",
+    "word": "Playing Chess",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Board with king and queen pieces"
+  },
+  {
+    "id": "pictionary-145",
+    "word": "Spider-Man",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Web slinger on wall"
+  },
+  {
+    "id": "pictionary-146",
+    "word": "Harry Potter (Wand & Glasses)",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Scar, glasses, and wand"
+  },
+  {
+    "id": "pictionary-147",
+    "word": "Darth Vader (Star Wars)",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Black helmet and lightsaber"
+  },
+  {
+    "id": "pictionary-148",
+    "word": "Titanic (Sinking Ship)",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Iceberg and luxury liner"
+  },
+  {
+    "id": "pictionary-149",
+    "word": "Jurassic Park (T-Rex Gate)",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Dinosaur park entrance"
+  },
+  {
+    "id": "pictionary-150",
+    "word": "Batman (Bat Signal)",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Bat beacon in the sky"
+  },
+  {
+    "id": "pictionary-151",
+    "word": "Shrek (Green Ogre)",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Swamp ogre with trumpet ears"
+  },
+  {
+    "id": "pictionary-152",
+    "word": "The Lion King (Pride Rock)",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Lifting cub on high cliff"
+  },
+  {
+    "id": "pictionary-153",
+    "word": "Toy Story (Cowboy & Space Toy)",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Woody and Buzz"
+  },
+  {
+    "id": "pictionary-154",
+    "word": "Stranger Things (Waffles & Bikes)",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "80s kids riding bikes"
+  },
+  {
+    "id": "pictionary-155",
+    "word": "Minions (Yellow Goggles)",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Yellow capsules with overalls"
+  },
+  {
+    "id": "pictionary-156",
+    "word": "Frozen (Snowman Olaf)",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Carrot nose snowman"
+  },
+  {
+    "id": "pictionary-157",
+    "word": "Ghostbusters (Trap & Slimer)",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Proton pack and ghost logo"
+  },
+  {
+    "id": "pictionary-158",
+    "word": "Finding Nemo (Clownfish)",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Orange striped ocean fish"
+  },
+  {
+    "id": "pictionary-159",
+    "word": "Avatar (Blue Alien & Ikran)",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Pandora flying banshee"
+  },
+  {
+    "id": "pictionary-160",
+    "word": "The Matrix (Dodge Bullets)",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Leaning backwards in trenchcoat"
+  },
+  {
+    "id": "pictionary-161",
+    "word": "Back to the Future (DeLorean)",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Time traveling car with gullwing doors"
+  },
+  {
+    "id": "pictionary-162",
+    "word": "SpongeBob SquarePants",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Yellow sponge in pineapples"
+  },
+  {
+    "id": "pictionary-163",
+    "word": "Basketball Dunk",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Slamming ball into hoop"
+  },
+  {
+    "id": "pictionary-164",
+    "word": "Soccer Goal",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Ball kicking into net"
+  },
+  {
+    "id": "pictionary-165",
+    "word": "Baseball Home Run",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Bat striking ball over fence"
+  },
+  {
+    "id": "pictionary-166",
+    "word": "Golf Hole in One",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Club swinging toward green flag"
+  },
+  {
+    "id": "pictionary-167",
+    "word": "Bowling Strike",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "10 pins exploding"
+  },
+  {
+    "id": "pictionary-168",
+    "word": "Boxing Knockout",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Gloves in the ring"
+  },
+  {
+    "id": "pictionary-169",
+    "word": "Ice Hockey Puck",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Stick and goal on rink"
+  },
+  {
+    "id": "pictionary-170",
+    "word": "Archery Bullseye",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Bow, arrow, and circular target"
+  },
+  {
+    "id": "pictionary-171",
+    "word": "Swimming Relay",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Lanes with swim caps"
+  },
+  {
+    "id": "pictionary-172",
+    "word": "Volleyball Spike",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Hand hitting ball over high net"
+  },
+  {
+    "id": "pictionary-173",
+    "word": "Ski Jump",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Launching off ramp in air"
+  },
+  {
+    "id": "pictionary-174",
+    "word": "Formula 1 Racing Car",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Speed car with rear wing"
+  },
+  {
+    "id": "pictionary-175",
+    "word": "Gymnastics Ribbon",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Swirling ribbon spiral"
+  },
+  {
+    "id": "pictionary-176",
+    "word": "Weightlifting Barbell",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Heavy plates over head"
+  },
+  {
+    "id": "pictionary-177",
+    "word": "Surfing Pipeline",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Riding inside barrel wave"
+  },
+  {
+    "id": "pictionary-178",
+    "word": "Cricket Wicket",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Flat wooden bat and stumps"
+  },
+  {
+    "id": "pictionary-179",
+    "word": "Rainbow after Rain",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Colorful arc in clouds"
+  },
+  {
+    "id": "pictionary-180",
+    "word": "Lightning Storm",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Zigzag bolts from storm cloud"
+  },
+  {
+    "id": "pictionary-181",
+    "word": "Sunflower in Bloom",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Tall yellow floral head"
+  },
+  {
+    "id": "pictionary-182",
+    "word": "Waterfall over Cliff",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Cascading river drops"
+  },
+  {
+    "id": "pictionary-183",
+    "word": "Shooting Star",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Streak across night sky"
+  },
+  {
+    "id": "pictionary-184",
+    "word": "Coral Reef with Fish",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Ocean seafloor branches"
+  },
+  {
+    "id": "pictionary-185",
+    "word": "Desert Cactus & Sun",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Prickly arms in dunes"
+  },
+  {
+    "id": "pictionary-186",
+    "word": "Snowy Mountain Peak",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Pointy peaks with white top"
+  },
+  {
+    "id": "pictionary-187",
+    "word": "Full Moon with Clouds",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Bright night circle"
+  },
+  {
+    "id": "pictionary-188",
+    "word": "Tornado Vortex",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Funnel cloud spinning"
+  },
+  {
+    "id": "pictionary-189",
+    "word": "Mushroom Forest",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Fungi with spotted caps"
+  },
+  {
+    "id": "pictionary-190",
+    "word": "Bonsai Tree",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Miniature twisted tree in pot"
+  },
+  {
+    "id": "pictionary-191",
+    "word": "Glacier Iceberg",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Floating ice mountain"
+  },
+  {
+    "id": "pictionary-192",
+    "word": "Cave with Stalactites",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Hanging rocky icicles"
+  },
+  {
+    "id": "pictionary-193",
+    "word": "Autumn Falling Leaves",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Leaves blowing in the breeze"
+  },
+  {
+    "id": "pictionary-194",
+    "word": "Campfire with Embers",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Logs with crackling flame"
+  }
+]

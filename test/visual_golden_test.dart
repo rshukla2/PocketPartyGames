@@ -1,0 +1,193 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:pocket_party_games/app/theme.dart';
+import 'package:pocket_party_games/core/widgets/party_widgets.dart';
+
+void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
+  setUpAll(() async {
+    final loader = FontLoader('Fredoka')
+      ..addFont(rootBundle.load('assets/fonts/Fredoka-Medium.ttf'))
+      ..addFont(rootBundle.load('assets/fonts/Fredoka-SemiBold.ttf'))
+      ..addFont(rootBundle.load('assets/fonts/Fredoka-Bold.ttf'));
+    await loader.load();
+  });
+
+  testWidgets('mobile party surface golden', (WidgetTester tester) async {
+    await _setSize(tester, const Size(390, 844));
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: buildPartyTheme(),
+        home: RepaintBoundary(
+          key: const Key('golden-root'),
+          child: PartyPage(
+            title: 'Trivia Vault',
+            subtitle: 'Question 4 of 10',
+            style: PartyGameStyle.trivia,
+            tone: PartyScreenTone.action,
+            showBack: false,
+            child: ListView(
+              padding: const EdgeInsets.all(18),
+              children: <Widget>[
+                const PartyStatusPill(
+                  label: 'Science · Medium',
+                  color: PartyColors.yellow,
+                ),
+                const SizedBox(height: 18),
+                const PartyCard(
+                  padding: EdgeInsets.all(24),
+                  child: Column(
+                    children: <Widget>[
+                      DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: PartyColors.yellow,
+                          shape: BoxShape.circle,
+                        ),
+                        child: SizedBox(width: 58, height: 58),
+                      ),
+                      SizedBox(height: 16),
+                      ResponsivePartyText(
+                        'WHAT PLANET SPINS ON ITS SIDE?',
+                        minFontSize: 30,
+                        maxFontSize: 46,
+                        maxLines: 4,
+                        color: PartyColors.nearBlack,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 18),
+                FilledButton(
+                  onPressed: () {},
+                  child: const Text('REVEAL ANSWER'),
+                ),
+                const SizedBox(height: 12),
+                OutlinedButton(
+                  onPressed: () {},
+                  child: const Text('LEAVE ROUND'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await expectLater(
+      find.byKey(const Key('golden-root')),
+      matchesGoldenFile('goldens/party_surface_mobile.png'),
+    );
+  });
+
+  for (final size in <Size>[const Size(390, 844), const Size(1280, 900)]) {
+    testWidgets('all game palettes golden at ${size.width.toInt()}px', (
+      WidgetTester tester,
+    ) async {
+      await _setSize(tester, size);
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: buildPartyTheme(),
+          home: RepaintBoundary(
+            key: const Key('golden-root'),
+            child: _PaletteGallery(desktop: size.width > 700),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      await expectLater(
+        find.byKey(const Key('golden-root')),
+        matchesGoldenFile('goldens/palette_gallery_${size.width.toInt()}.png'),
+      );
+    });
+  }
+}
+
+Future<void> _setSize(WidgetTester tester, Size size) async {
+  tester.view.physicalSize = size;
+  tester.view.devicePixelRatio = 1;
+  addTearDown(tester.view.resetPhysicalSize);
+  addTearDown(tester.view.resetDevicePixelRatio);
+}
+
+class _PaletteGallery extends StatelessWidget {
+  const _PaletteGallery({required this.desktop});
+
+  final bool desktop;
+
+  static const labels = <PartyGameStyle, String>{
+    PartyGameStyle.hub: 'PARTY HUB',
+    PartyGameStyle.trivia: 'TRIVIA VAULT',
+    PartyGameStyle.imposter: 'IMPOSTER',
+    PartyGameStyle.stopTimer: 'STOP THE TIMER',
+    PartyGameStyle.truthDare: 'TRUTH OR DARE',
+    PartyGameStyle.pictionary: 'PICTIONARY',
+    PartyGameStyle.guessNumber: 'GUESS MY NUMBER',
+    PartyGameStyle.actItOut: 'ACT IT OUT',
+    PartyGameStyle.countdown: '5-4-3-2-1',
+  };
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    backgroundColor: PartyColors.nearBlack,
+    body: SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: GridView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: PartyGameStyle.values.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: desktop ? 3 : 1,
+            crossAxisSpacing: 14,
+            mainAxisSpacing: 14,
+            mainAxisExtent: desktop ? 260 : 76,
+          ),
+          itemBuilder: (BuildContext context, int index) {
+            final style = PartyGameStyle.values[index];
+            final palette = PartyPalettes.resolve(style);
+            return DecoratedBox(
+              decoration: BoxDecoration(
+                color: palette.background,
+                borderRadius: BorderRadius.circular(desktop ? 30 : 22),
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: desktop ? 24 : 18,
+                  vertical: 12,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      labels[style]!,
+                      style: TextStyle(
+                        color: palette.foreground,
+                        fontSize: desktop ? 30 : 19,
+                        height: 1,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    if (desktop) ...<Widget>[
+                      const SizedBox(height: 12),
+                      Text(
+                        'LOUD COLOR · CHUNKY TYPE · ONE CLEAR ACTION',
+                        style: TextStyle(
+                          color: palette.foreground,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      const SizedBox(height: 22),
+                      PartyStatusPill(label: style.name, color: palette.accent),
+                    ],
+                  ],
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    ),
+  );
+}

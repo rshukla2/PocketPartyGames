@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "truth-1",
+    "type": "truth",
+    "text": "What's the weirdest food combination you actually enjoy?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-2",
+    "type": "truth",
+    "text": "What is your ultimate comfort movie or TV show to rewatch?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-3",
+    "type": "truth",
+    "text": "If you could instantly become a master at any skill or hobby, what would it be?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-4",
+    "type": "truth",
+    "text": "What is the most useless piece of trivia you know by heart?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-5",
+    "type": "truth",
+    "text": "If you had to live in another decade or era, which one would you pick?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-6",
+    "type": "truth",
+    "text": "What is your biggest guilty pleasure song that you secretly blast in the car?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-7",
+    "type": "truth",
+    "text": "What is something popular that everyone loves, but you secretly dislike?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-8",
+    "type": "truth",
+    "text": "What was your favorite childhood cartoon or video game?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-9",
+    "type": "truth",
+    "text": "If you could only eat one meal for the rest of your life, what would it be?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-10",
+    "type": "truth",
+    "text": "What is your favorite late-night snack when nobody is watching?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-11",
+    "type": "truth",
+    "text": "What's the best vacation or road trip you've ever taken?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-12",
+    "type": "truth",
+    "text": "What animal would you choose to have as a tame, loyal companion?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-13",
+    "type": "truth",
+    "text": "What's a fashion trend from the past you actually thought looked cool?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-14",
+    "type": "truth",
+    "text": "If you won $10,000 today with the condition to spend it in 24 hours, what would you buy?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-15",
+    "type": "truth",
+    "text": "What is the most relaxing sound or vibe in the world to you?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-16",
+    "type": "truth",
+    "text": "If you could meet any fictional character in real life for coffee, who would it be?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-17",
+    "type": "truth",
+    "text": "What's your go-to pizza topping combination?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-18",
+    "type": "truth",
+    "text": "What board game or card game do you get most competitive about?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-19",
+    "type": "truth",
+    "text": "What is your favorite scent in the whole world (coffee, rain, vanilla, etc.)?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-20",
+    "type": "truth",
+    "text": "If you could have any superpower for only 1 hour, what would you choose?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-21",
+    "type": "truth",
+    "text": "What is the most beautiful place you have ever seen with your own eyes?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-22",
+    "type": "truth",
+    "text": "What is your dream bucket-list travel destination?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-23",
+    "type": "truth",
+    "text": "What hobby did you try once and immediately quit?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-24",
+    "type": "truth",
+    "text": "What's the best compliment anyone has ever given you?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-25",
+    "type": "truth",
+    "text": "If you were a superhero, what would your superhero name be?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-26",
+    "type": "truth",
+    "text": "What is the most embarrassing fashion choice you made in middle school?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-27",
+    "type": "truth",
+    "text": "Have you ever waved enthusiastically back at someone who wasn't waving at you?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-28",
+    "type": "truth",
+    "text": "What's the silliest reason you've ever gotten into an argument with someone?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-29",
+    "type": "truth",
+    "text": "What is your most irrational, ridiculous fear (e.g. moths, escalators, shower drains)?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-30",
+    "type": "truth",
+    "text": "What's the worst haircut or hairstyle you've ever rocked?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-31",
+    "type": "truth",
+    "text": "Have you ever pretended to know what someone was talking about when you had zero clue?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-32",
+    "type": "truth",
+    "text": "What is the most bizarre thing you have ever searched on Google?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-33",
+    "type": "truth",
+    "text": "Have you ever laughed so hard that a drink came out of your nose?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-34",
+    "type": "truth",
+    "text": "What is your signature weird dance move?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-35",
+    "type": "truth",
+    "text": "What's the most awkward autocorrect fail you've ever sent to someone?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-36",
+    "type": "truth",
+    "text": "Have you ever walked into a glass door, screen door, or pole while looking at your phone?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-37",
+    "type": "truth",
+    "text": "What's a lie you told as a kid that you were convinced everyone believed?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-38",
+    "type": "truth",
+    "text": "What's the weirdest dream you've ever woken up from and still remember?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-39",
+    "type": "truth",
+    "text": "What song can you do a surprisingly terrible (or dramatic) impression of?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-40",
+    "type": "truth",
+    "text": "Have you ever stalked someone on social media and accidentally liked a photo from 4 years ago?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-41",
+    "type": "truth",
+    "text": "What's the funniest way you've ever injured yourself doing something completely mundane?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-42",
+    "type": "truth",
+    "text": "What is something you believed was real way longer than you should have?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-43",
+    "type": "truth",
+    "text": "If you were arrested with no explanation, what would your friends automatically assume you did?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-44",
+    "type": "truth",
+    "text": "Have you ever practiced an argument or speech in the shower or mirror?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-45",
+    "type": "truth",
+    "text": "What's the worst excuse you've ever made up on the spot to cancel plans?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-46",
+    "type": "truth",
+    "text": "What's a food you refused to eat as a child because of what it looked like?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-47",
+    "type": "truth",
+    "text": "Have you ever tripped in public and pretended you were suddenly jogging?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-48",
+    "type": "truth",
+    "text": "What weird habit do you do only when you are completely alone at home?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-49",
+    "type": "truth",
+    "text": "What's the longest you've ever stayed in your pajamas on a weekend?",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "truth-50",
+    "type": "truth",
+    "text": "If your pet could speak fluent English, what is the most embarrassing thing it would tell about you?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-51",
+    "type": "truth",
+    "text": "Who in this room would survive the longest in a zombie apocalypse?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-52",
+    "type": "truth",
+    "text": "Who in this room is most likely to become a viral meme or internet celebrity?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-53",
+    "type": "truth",
+    "text": "What was your very first impression of the person sitting to your right?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-54",
+    "type": "truth",
+    "text": "Who in this room gives the absolute best advice when you need it?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-55",
+    "type": "truth",
+    "text": "If everyone in this room had to compete in a game show, who would win the grand prize?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-56",
+    "type": "truth",
+    "text": "What is your favorite memory involving someone currently in this room?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-57",
+    "type": "truth",
+    "text": "Who in this room is most likely to accidentally lock their keys in their car or house?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-58",
+    "type": "truth",
+    "text": "Who in this room is the most chaotic driver or navigator?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-59",
+    "type": "truth",
+    "text": "If you were stranded on a deserted island, which person in this room would you choose to be with?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-60",
+    "type": "truth",
+    "text": "Who in this room would make the most entertaining reality TV star?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-61",
+    "type": "truth",
+    "text": "What personality trait do you admire most in the person to your left?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-62",
+    "type": "truth",
+    "text": "Who in this room is most likely to spend an entire paycheck on snacks and gadgets?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-63",
+    "type": "truth",
+    "text": "Who is the secret DJ of this group who always picks the best music?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-64",
+    "type": "truth",
+    "text": "If you had to switch lives with anyone in this room for 24 hours, who would it be?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-65",
+    "type": "truth",
+    "text": "Who in this room is the best at keeping secrets no matter what?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-66",
+    "type": "truth",
+    "text": "Who in this room would be the first person to cry during a sad movie?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-67",
+    "type": "truth",
+    "text": "What is a funny nickname someone in this group has (or should have)?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-68",
+    "type": "truth",
+    "text": "Who in this room is the most likely to show up 15 minutes late with an iced coffee?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-69",
+    "type": "truth",
+    "text": "If this friend group started a rock band, what instrument would each person play?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-70",
+    "type": "truth",
+    "text": "Who in this room has the most infectious laugh?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-71",
+    "type": "truth",
+    "text": "What's the funniest inside joke this group has ever had?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-72",
+    "type": "truth",
+    "text": "Who in this room would be the best detective in solving a mystery?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-73",
+    "type": "truth",
+    "text": "If you had to go on a 10-day camping trip without phones, who in this room would you bring?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-74",
+    "type": "truth",
+    "text": "Who in this room is the most persuasive when convincing everyone to do something?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-75",
+    "type": "truth",
+    "text": "What is something you genuinely appreciate about this group of people?",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "truth-76",
+    "type": "truth",
+    "text": "What is the biggest risk you've ever taken that actually paid off?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-77",
+    "type": "truth",
+    "text": "What was the most rebellious thing you did as a teenager?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-78",
+    "type": "truth",
+    "text": "Have you ever had a crush on a friend's sibling or a teacher?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-79",
+    "type": "truth",
+    "text": "What is the most expensive mistake you have ever made?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-80",
+    "type": "truth",
+    "text": "What is a controversial opinion you hold that you usually keep to yourself?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-81",
+    "type": "truth",
+    "text": "Have you ever ghosted someone, and what was your real reason?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-82",
+    "type": "truth",
+    "text": "What was your most cringe-worthy first date story?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-83",
+    "type": "truth",
+    "text": "What is a secret talent you have that almost nobody knows about?",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "truth-84",
+    "type": "truth",
+    "text": "Have you ever lied on your resume or in a job interview?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-85",
+    "type": "truth",
+    "text": "What is something you did that you swore you would never do again?",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "truth-86",
+    "type": "truth",
+    "text": "What is the pettiest reason you ever stopped talking to someone?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-87",
+    "type": "truth",
+    "text": "What is the most awkward text you have ever received by mistake?",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "truth-88",
+    "type": "truth",
+    "text": "If you could read the mind of one person in this room right now, who would it be?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-89",
+    "type": "truth",
+    "text": "Have you ever broken something valuable and blamed it on a pet or someone else?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-90",
+    "type": "truth",
+    "text": "What is the boldest thing you've ever said to someone's face?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-91",
+    "type": "truth",
+    "text": "What is your biggest fear regarding your future?",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "truth-92",
+    "type": "truth",
+    "text": "What was the biggest rumor ever spread about you, and was any part of it true?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-93",
+    "type": "truth",
+    "text": "What is something you regret not saying to someone when you had the chance?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-94",
+    "type": "truth",
+    "text": "Have you ever regifted a present to someone in your family or circle?",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "truth-95",
+    "type": "truth",
+    "text": "If you had to delete all social media apps forever except one, which one survives?",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "truth-96",
+    "type": "truth",
+    "text": "What's the longest you've ever gone without taking a shower?",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "truth-97",
+    "type": "truth",
+    "text": "Have you ever stayed up until sunrise doing something completely ridiculous?",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "truth-98",
+    "type": "truth",
+    "text": "What is the most surprising thing your parents don't know about you?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-99",
+    "type": "truth",
+    "text": "If you could erase one embarrassing memory from your brain forever, which one?",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "truth-100",
+    "type": "truth",
+    "text": "What is the most daring or adrenaline-filled thing on your bucket list?",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "dare-1",
+    "type": "dare",
+    "text": "Give a 30-second dramatic Oscars acceptance speech thanking inanimate objects in this room.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-2",
+    "type": "dare",
+    "text": "Speak in a posh British accent for your next two turns.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-3",
+    "type": "dare",
+    "text": "Do your best slow-motion sprint across the room with dramatic movie sound effects.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-4",
+    "type": "dare",
+    "text": "Recite the alphabet backwards starting from Z to P as fast as humanly possible.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-5",
+    "type": "dare",
+    "text": "Balance a clean spoon or small coaster on your nose for 15 seconds without dropping it.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-6",
+    "type": "dare",
+    "text": "Sing the chorus of 'Happy Birthday' in an intense operatic soprano or deep bass voice.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-7",
+    "type": "dare",
+    "text": "Invent a new 5-step secret handshake with the person sitting across from you.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-8",
+    "type": "dare",
+    "text": "Do a 20-second catwalk strut showing off your current outfit with maximum confidence.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-9",
+    "type": "dare",
+    "text": "Tell a terrible dad joke with a completely straight, serious face.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-10",
+    "type": "dare",
+    "text": "Try not to blink or smile for 30 seconds while everyone stares at you.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-11",
+    "type": "dare",
+    "text": "Do 10 rapid jumping jacks while enthusiastically cheering 'Party Time!' on each jump.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-12",
+    "type": "dare",
+    "text": "Hold a yoga tree pose on one leg for 20 seconds with eyes closed.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-13",
+    "type": "dare",
+    "text": "Narrate the next person's turn like a dramatic National Geographic wildlife documentary.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-14",
+    "type": "dare",
+    "text": "Hum a famous pop song of your choice until someone in the room guesses the song.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-15",
+    "type": "dare",
+    "text": "Pretend you are a robot whose battery is draining down to 1% over 20 seconds.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-16",
+    "type": "dare",
+    "text": "Give a genuine, creative high-five and customized compliment to 3 people in the room.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-17",
+    "type": "dare",
+    "text": "Do your absolute best impression of an enthusiastic infomercial salesman pitching a shoe.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-18",
+    "type": "dare",
+    "text": "Make up a 4-line rhyming rap about what everyone is drinking or snacking on.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-19",
+    "type": "dare",
+    "text": "Do 5 wall pushups or high knees while making racecar revving noises.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-20",
+    "type": "dare",
+    "text": "Say 'Ribbit' or 'Meow' after every sentence you speak for the next 2 minutes.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-21",
+    "type": "dare",
+    "text": "Act like a mime trapped in an invisible glass box for 20 seconds.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-22",
+    "type": "dare",
+    "text": "Hold an imaginary teacup with pinky up and speak only in royalty phrases for 2 minutes.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-23",
+    "type": "dare",
+    "text": "Pretend you just won Olympic Gold in extreme sitting and celebrate accordingly.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-24",
+    "type": "dare",
+    "text": "Snap your fingers and pretend you are in a 1950s Broadway musical jazz dance battle.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-25",
+    "type": "dare",
+    "text": "Whisper your next 3 sentences like a top-secret FBI agent on a walkie-talkie.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-26",
+    "type": "dare",
+    "text": "Do your best impression of a chicken laying an egg with full sound effects.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-27",
+    "type": "dare",
+    "text": "Let the person to your left style your hair into a funny, wild new hairstyle.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-28",
+    "type": "dare",
+    "text": "Act like a T-Rex trying to make a bed and brush its teeth with tiny arms for 30 seconds.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-29",
+    "type": "dare",
+    "text": "Try to lick your elbow (or give 100% effort attempting it) for 15 seconds.",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "dare-30",
+    "type": "dare",
+    "text": "Talk without moving your lips at all until your next turn.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-31",
+    "type": "dare",
+    "text": "Pretend the floor is lava for the next 60 seconds (stay off the carpet/ground!).",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-32",
+    "type": "dare",
+    "text": "Do your best impression of a baby crying for its favorite bottle.",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "dare-33",
+    "type": "dare",
+    "text": "Wear your socks or shoes on the wrong feet (or backwards sweater) for the next 2 rounds.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-34",
+    "type": "dare",
+    "text": "Act out a dramatic slow-motion action movie scene getting hit by an imaginary marshmallow.",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "dare-35",
+    "type": "dare",
+    "text": "Imitate the signature laugh or catchphrase of someone in this room until they guess it's them.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-36",
+    "type": "dare",
+    "text": "Do a 20-second interpretive dance expressing the emotion 'Stubbed Toe on a Coffee Table'.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-37",
+    "type": "dare",
+    "text": "Speak like a pirate (Ahoy matey!) for your next 3 turns.",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "dare-38",
+    "type": "dare",
+    "text": "Pretend your hands are sticky suction cups and get stuck to random surfaces for 30 seconds.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-39",
+    "type": "dare",
+    "text": "Try to speak only in questions for the next 2 minutes without making statements.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-40",
+    "type": "dare",
+    "text": "Perform a dramatic 1-person soap opera monologue confessing love to a couch pillow.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-41",
+    "type": "dare",
+    "text": "Do the Macarena or YMCA with intense, unblinking eye contact with the person across from you.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-42",
+    "type": "dare",
+    "text": "Pretend you are a grumpy flight attendant giving safety instructions to the room.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-43",
+    "type": "dare",
+    "text": "Make the funniest, most exaggerated cartoon face you can and hold it for 15 seconds.",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "dare-44",
+    "type": "dare",
+    "text": "Sing the chorus of any song in a robot voice with stiff robotic movements.",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "dare-45",
+    "type": "dare",
+    "text": "Pretend you are walking into an imaginary hurricane wind for 20 seconds.",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "dare-46",
+    "type": "dare",
+    "text": "Do a 15-second beatbox session using only kitchen item sounds.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-47",
+    "type": "dare",
+    "text": "Speak like an epic movie trailer voiceover guy ('In a world where...') for 1 minute.",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "dare-48",
+    "type": "dare",
+    "text": "Try to juggle 3 small objects (or fail hilariously trying) for 20 seconds.",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "dare-49",
+    "type": "dare",
+    "text": "Walk backwards everywhere you move in the room until your next turn.",
+    "category": "Funny",
+    "intensity": 1
+  },
+  {
+    "id": "dare-50",
+    "type": "dare",
+    "text": "Pretend to be an auctioneer selling the shoes on your feet at 200 miles per hour.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-51",
+    "type": "dare",
+    "text": "Give a 30-second sincere toast praising the person sitting to your right as if at a wedding.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-52",
+    "type": "dare",
+    "text": "Let the group collectively choose a harmless, funny nickname for you for the rest of the game.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-53",
+    "type": "dare",
+    "text": "Stare into the eyes of the person to your left for 20 seconds without either person breaking into laughter.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-54",
+    "type": "dare",
+    "text": "Do an accurate impression of how one person in this room walks across a room.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-55",
+    "type": "dare",
+    "text": "Show the last photo in your phone camera roll to the group (or the 3rd most recent).",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-56",
+    "type": "dare",
+    "text": "Sing a dramatic duet with the person sitting across from you for 30 seconds.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-57",
+    "type": "dare",
+    "text": "Let the person to your right draw a tiny star or mustache on your hand or forearm with a pen/marker.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-58",
+    "type": "dare",
+    "text": "Give a gentle 15-second shoulder massage or high energy pep-talk to the person on your left.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-59",
+    "type": "dare",
+    "text": "Describe every person in the room using only ONE adjective each.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-60",
+    "type": "dare",
+    "text": "Re-enact a memorable inside joke or story from this group in full dramatic theater form.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-61",
+    "type": "dare",
+    "text": "Switch one item of clothing or accessory (hat, jacket, watch, glasses) with the person to your right.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-62",
+    "type": "dare",
+    "text": "Let the group choose one clean emoji to text to a mutual friend with no context.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-63",
+    "type": "dare",
+    "text": "Serenade the person with the next birthday in the room with a romantic love ballad.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-64",
+    "type": "dare",
+    "text": "Give everyone in the room a customized high-five sound effect when slapping hands.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-65",
+    "type": "dare",
+    "text": "Act like the loyal bodyguard of the person on your right for the next 2 rounds.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-66",
+    "type": "dare",
+    "text": "Do a 2-person synchronized victory dance with someone in the room.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-67",
+    "type": "dare",
+    "text": "Let someone in the room pose you like a museum mannequin for 30 seconds.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-68",
+    "type": "dare",
+    "text": "Whisper an encouraging secret prophecy about their future into the ear of the person to your left.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-69",
+    "type": "dare",
+    "text": "Form a human train or conga line around the room for 15 seconds.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-70",
+    "type": "dare",
+    "text": "Share the most recent song or podcast you listened to on Spotify/Apple Music.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-71",
+    "type": "dare",
+    "text": "Give a 30-second motivational speech to the group as if you are a football coach at halftime.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-72",
+    "type": "dare",
+    "text": "Pretend you are a waiter taking a gourmet 5-star order from 2 people in the room.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-73",
+    "type": "dare",
+    "text": "Create a 3-second signature team celebration move with everyone in the room.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-74",
+    "type": "dare",
+    "text": "High-five everyone in the room with your non-dominant hand while shouting 'BOOM!'.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-75",
+    "type": "dare",
+    "text": "Let the group vote on your most iconic facial expression and demonstrate it.",
+    "category": "Friends",
+    "intensity": 1
+  },
+  {
+    "id": "dare-76",
+    "type": "dare",
+    "text": "Let the group scroll through your saved emojis and read the first 5 out loud.",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "dare-77",
+    "type": "dare",
+    "text": "Speak entirely in rhymes for your next 3 turns or take a penalty dare.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-78",
+    "type": "dare",
+    "text": "Do a 45-second plank right now on the floor while counting down out loud.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-79",
+    "type": "dare",
+    "text": "Post a random harmless word (like 'Pineapple 🍍' or 'Waffles') to your private social story or status.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-80",
+    "type": "dare",
+    "text": "Let the person to your left send a harmless 1-sentence message of their choice to your best friend.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-81",
+    "type": "dare",
+    "text": "Eat a slice of raw lemon, a dash of hot sauce, or a pinch of salt with a straight face.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-82",
+    "type": "dare",
+    "text": "Do your absolute best freestyle rap about everyone in this room for 30 seconds without stopping.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-83",
+    "type": "dare",
+    "text": "Do 15 quick squats while holding eye contact with a different person on each squat.",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "dare-84",
+    "type": "dare",
+    "text": "Call a friend or family member and sing them the chorus of 'You Are My Sunshine' then hang up politely.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-85",
+    "type": "dare",
+    "text": "Let someone in the room blindfold you (or close your eyes) and guess what 2 objects they place in your hands.",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "dare-86",
+    "type": "dare",
+    "text": "Hold an ice cube in your closed fist until it melts completely or for 45 seconds.",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "dare-87",
+    "type": "dare",
+    "text": "Do your best Michael Jackson moonwalk across the room with 'Hee-hee!' vocalizations.",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "dare-88",
+    "type": "dare",
+    "text": "Show the group your screen time summary for today on your phone.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-89",
+    "type": "dare",
+    "text": "Let the group inspect your YouTube search history or Spotify recent searches for 15 seconds.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-90",
+    "type": "dare",
+    "text": "Do your most convincing theatrical villain laugh for 20 seconds non-stop.",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "dare-91",
+    "type": "dare",
+    "text": "Speak in slow motion and move in slow motion for the entire next 2 minutes.",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "dare-92",
+    "type": "dare",
+    "text": "Do a dramatic reading of the ingredients list on any snack packet in the room like Shakespeare.",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "dare-93",
+    "type": "dare",
+    "text": "Attempt to do a handstand against a sturdy wall or 10 clean push-ups.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-94",
+    "type": "dare",
+    "text": "Let the person on your left choose a photo from your camera roll to be your phone lockscreen for 1 hour.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-95",
+    "type": "dare",
+    "text": "Sing a song chosen by the group with a mouthful of water without spilling or choking.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-96",
+    "type": "dare",
+    "text": "Give a 30-second standup comedy routine poking fun at yourself.",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "dare-97",
+    "type": "dare",
+    "text": "Pretend you are a contestant on American Idol auditioning with an 80s rock anthem.",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "dare-98",
+    "type": "dare",
+    "text": "Do an intense 20-second shadowboxing routine against an imaginary champion.",
+    "category": "Bold",
+    "intensity": 2
+  },
+  {
+    "id": "dare-99",
+    "type": "dare",
+    "text": "Let someone in the room send a funny selfie of you making a duck face to your family group chat.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-100",
+    "type": "dare",
+    "text": "Declare your ultimate secret dream job to the room with 100% genuine passion and energy.",
+    "category": "Bold",
+    "intensity": 2
+  }
+]

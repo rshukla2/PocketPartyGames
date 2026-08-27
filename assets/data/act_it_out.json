@@ -1,0 +1,2102 @@
+[
+  {
+    "id": "animals-1",
+    "category": "Animals",
+    "text": "A penguin walking on slippery ice"
+  },
+  {
+    "id": "animals-2",
+    "category": "Animals",
+    "text": "A dog chasing its own tail"
+  },
+  {
+    "id": "animals-3",
+    "category": "Animals",
+    "text": "A cat coughing up a hairball"
+  },
+  {
+    "id": "animals-4",
+    "category": "Animals",
+    "text": "A gorilla beating its chest"
+  },
+  {
+    "id": "animals-5",
+    "category": "Animals",
+    "text": "A flamingo standing on one leg"
+  },
+  {
+    "id": "animals-6",
+    "category": "Animals",
+    "text": "A kangaroo boxing in the ring"
+  },
+  {
+    "id": "animals-7",
+    "category": "Animals",
+    "text": "A sloth moving in extreme slow motion"
+  },
+  {
+    "id": "animals-8",
+    "category": "Animals",
+    "text": "A rooster crowing at sunrise"
+  },
+  {
+    "id": "animals-9",
+    "category": "Animals",
+    "text": "A frog catching a fly with its tongue"
+  },
+  {
+    "id": "animals-10",
+    "category": "Animals",
+    "text": "A shark circling its prey"
+  },
+  {
+    "id": "animals-11",
+    "category": "Animals",
+    "text": "A monkey peeling and eating a banana"
+  },
+  {
+    "id": "animals-12",
+    "category": "Animals",
+    "text": "A crab scuttling sideways across the sand"
+  },
+  {
+    "id": "animals-13",
+    "category": "Animals",
+    "text": "A bear catching salmon in a river"
+  },
+  {
+    "id": "animals-14",
+    "category": "Animals",
+    "text": "A giraffe trying to drink water from the ground"
+  },
+  {
+    "id": "animals-15",
+    "category": "Animals",
+    "text": "An elephant spraying water with its trunk"
+  },
+  {
+    "id": "animals-16",
+    "category": "Animals",
+    "text": "A butterfly emerging from a cocoon"
+  },
+  {
+    "id": "animals-17",
+    "category": "Animals",
+    "text": "A snake slithering through tall grass"
+  },
+  {
+    "id": "animals-18",
+    "category": "Animals",
+    "text": "A hummingbird hovering near a flower"
+  },
+  {
+    "id": "animals-19",
+    "category": "Animals",
+    "text": "An owl turning its head 360 degrees"
+  },
+  {
+    "id": "animals-20",
+    "category": "Animals",
+    "text": "A squirrel burying an acorn for winter"
+  },
+  {
+    "id": "animals-21",
+    "category": "Animals",
+    "text": "A duck waddling into a pond"
+  },
+  {
+    "id": "animals-22",
+    "category": "Animals",
+    "text": "A horse galloping and jumping over a fence"
+  },
+  {
+    "id": "animals-23",
+    "category": "Animals",
+    "text": "A wolf howling at the full moon"
+  },
+  {
+    "id": "animals-24",
+    "category": "Animals",
+    "text": "A pig rolling happily in mud"
+  },
+  {
+    "id": "animals-25",
+    "category": "Animals",
+    "text": "A dolphin performing acrobatic flips"
+  },
+  {
+    "id": "animals-26",
+    "category": "Animals",
+    "text": "A cheetah sprinting at top speed"
+  },
+  {
+    "id": "animals-27",
+    "category": "Animals",
+    "text": "A seal clapping its flippers"
+  },
+  {
+    "id": "animals-28",
+    "category": "Animals",
+    "text": "A woodpecker hammering a tree trunk"
+  },
+  {
+    "id": "animals-29",
+    "category": "Animals",
+    "text": "A peacock proudly fanning its feathers"
+  },
+  {
+    "id": "animals-30",
+    "category": "Animals",
+    "text": "A hamster running relentlessly on a wheel"
+  },
+  {
+    "id": "animals-31",
+    "category": "Animals",
+    "text": "A lion hunting silently in the savanna"
+  },
+  {
+    "id": "animals-32",
+    "category": "Animals",
+    "text": "A bat hanging upside down sleeping"
+  },
+  {
+    "id": "animals-33",
+    "category": "Animals",
+    "text": "A crocodile snapping its jaws shut"
+  },
+  {
+    "id": "animals-34",
+    "category": "Animals",
+    "text": "A bee doing a waggle dance to communicate"
+  },
+  {
+    "id": "animals-35",
+    "category": "Animals",
+    "text": "A turtle slowly crossing a busy road"
+  },
+  {
+    "id": "animals-36",
+    "category": "Animals",
+    "text": "A turkey strutting on Thanksgiving morning"
+  },
+  {
+    "id": "animals-37",
+    "category": "Animals",
+    "text": "A polar bear sliding across an iceberg"
+  },
+  {
+    "id": "animals-38",
+    "category": "Animals",
+    "text": "A skunk raising its tail to spray"
+  },
+  {
+    "id": "animals-39",
+    "category": "Animals",
+    "text": "A walrus sunbathing on a rock"
+  },
+  {
+    "id": "animals-40",
+    "category": "Animals",
+    "text": "A puppy begging for a piece of bacon"
+  },
+  {
+    "id": "animals-41",
+    "category": "Animals",
+    "text": "A chameleon changing color and looking two ways"
+  },
+  {
+    "id": "animals-42",
+    "category": "Animals",
+    "text": "A seagull swooping down to steal french fries"
+  },
+  {
+    "id": "actions-1",
+    "category": "Actions",
+    "text": "Riding a roller coaster with big drops"
+  },
+  {
+    "id": "actions-2",
+    "category": "Actions",
+    "text": "Walking on scorching hot beach sand"
+  },
+  {
+    "id": "actions-3",
+    "category": "Actions",
+    "text": "Trying desperately not to sneeze"
+  },
+  {
+    "id": "actions-4",
+    "category": "Actions",
+    "text": "Walking against hurricane-force winds"
+  },
+  {
+    "id": "actions-5",
+    "category": "Actions",
+    "text": "Lifting an impossibly heavy barbell"
+  },
+  {
+    "id": "actions-6",
+    "category": "Actions",
+    "text": "Trying to open a tightly stuck pickle jar"
+  },
+  {
+    "id": "actions-7",
+    "category": "Actions",
+    "text": "Walking a tightrope across a canyon"
+  },
+  {
+    "id": "actions-8",
+    "category": "Actions",
+    "text": "Searching everywhere for lost car keys"
+  },
+  {
+    "id": "actions-9",
+    "category": "Actions",
+    "text": "Taking the perfect selfie with multiple poses"
+  },
+  {
+    "id": "actions-10",
+    "category": "Actions",
+    "text": "Walking like a malfunctioning robot"
+  },
+  {
+    "id": "actions-11",
+    "category": "Actions",
+    "text": "Building an elaborate sandcastle"
+  },
+  {
+    "id": "actions-12",
+    "category": "Actions",
+    "text": "Stepping on a sharp Lego brick barefoot"
+  },
+  {
+    "id": "actions-13",
+    "category": "Actions",
+    "text": "Sneaking downstairs late at night for a snack"
+  },
+  {
+    "id": "actions-14",
+    "category": "Actions",
+    "text": "Trying to swat a persistent buzzing mosquito"
+  },
+  {
+    "id": "actions-15",
+    "category": "Actions",
+    "text": "Stuck in an invisible glass box"
+  },
+  {
+    "id": "actions-16",
+    "category": "Actions",
+    "text": "Untangling completely knotted headphone wires"
+  },
+  {
+    "id": "actions-17",
+    "category": "Actions",
+    "text": "Threading a microscopic needle"
+  },
+  {
+    "id": "actions-18",
+    "category": "Actions",
+    "text": "Blowing up a huge balloon until it pops"
+  },
+  {
+    "id": "actions-19",
+    "category": "Actions",
+    "text": "Flipping pancakes and catching them in a pan"
+  },
+  {
+    "id": "actions-20",
+    "category": "Actions",
+    "text": "Milking a stubborn cow"
+  },
+  {
+    "id": "actions-21",
+    "category": "Actions",
+    "text": "Dodging laser beams like a secret agent"
+  },
+  {
+    "id": "actions-22",
+    "category": "Actions",
+    "text": "Putting in contact lenses with shaky hands"
+  },
+  {
+    "id": "actions-23",
+    "category": "Actions",
+    "text": "Ice skating for the very first time"
+  },
+  {
+    "id": "actions-24",
+    "category": "Actions",
+    "text": "Jumping out of an airplane with a parachute"
+  },
+  {
+    "id": "actions-25",
+    "category": "Actions",
+    "text": "Digging up buried treasure on a pirate island"
+  },
+  {
+    "id": "actions-26",
+    "category": "Actions",
+    "text": "Walking on the surface of the moon with low gravity"
+  },
+  {
+    "id": "actions-27",
+    "category": "Actions",
+    "text": "Surfing a gigantic 30-foot ocean wave"
+  },
+  {
+    "id": "actions-28",
+    "category": "Actions",
+    "text": "Trying on a pair of jeans that are way too tight"
+  },
+  {
+    "id": "actions-29",
+    "category": "Actions",
+    "text": "Testing a hot cup of soup and burning your tongue"
+  },
+  {
+    "id": "actions-30",
+    "category": "Actions",
+    "text": "Getting swept away by a runaway shopping cart"
+  },
+  {
+    "id": "actions-31",
+    "category": "Actions",
+    "text": "Shoveling deep heavy snow off a driveway"
+  },
+  {
+    "id": "actions-32",
+    "category": "Actions",
+    "text": "Ironing a shirt while distracted by TV"
+  },
+  {
+    "id": "actions-33",
+    "category": "Actions",
+    "text": "Chopping onions and crying uncontrollably"
+  },
+  {
+    "id": "actions-34",
+    "category": "Actions",
+    "text": "Wrapping a large birthday gift with messy tape"
+  },
+  {
+    "id": "actions-35",
+    "category": "Actions",
+    "text": "Peeling a stubborn sticker off a new plate"
+  },
+  {
+    "id": "actions-36",
+    "category": "Actions",
+    "text": "Trying to start a sputtering lawn mower"
+  },
+  {
+    "id": "actions-37",
+    "category": "Actions",
+    "text": "Crawling through a tiny air duct ventilation shaft"
+  },
+  {
+    "id": "actions-38",
+    "category": "Actions",
+    "text": "Skipping stones across a calm lake"
+  },
+  {
+    "id": "actions-39",
+    "category": "Actions",
+    "text": "Carrying five overflowing grocery bags at once"
+  },
+  {
+    "id": "actions-40",
+    "category": "Actions",
+    "text": "Getting your tongue stuck to a frozen metal pole"
+  },
+  {
+    "id": "actions-41",
+    "category": "Actions",
+    "text": "Washing a messy, hyperactive Golden Retriever dog"
+  },
+  {
+    "id": "actions-42",
+    "category": "Actions",
+    "text": "Dancing frantically when a bee flies inside your shirt"
+  },
+  {
+    "id": "jobs-1",
+    "category": "Jobs",
+    "text": "A fancy French chef tasting soup"
+  },
+  {
+    "id": "jobs-2",
+    "category": "Jobs",
+    "text": "An orchestra conductor passionately leading musicians"
+  },
+  {
+    "id": "jobs-3",
+    "category": "Jobs",
+    "text": "A traffic police officer directing busy intersection"
+  },
+  {
+    "id": "jobs-4",
+    "category": "Jobs",
+    "text": "An air traffic controller guiding planes with wands"
+  },
+  {
+    "id": "jobs-5",
+    "category": "Jobs",
+    "text": "A firefighter climbing a ladder with a heavy hose"
+  },
+  {
+    "id": "jobs-6",
+    "category": "Jobs",
+    "text": "A dentist pulling out a stubborn wisdom tooth"
+  },
+  {
+    "id": "jobs-7",
+    "category": "Jobs",
+    "text": "A barber giving an energetic haircut and shave"
+  },
+  {
+    "id": "jobs-8",
+    "category": "Jobs",
+    "text": "A fashion runway model striking fierce poses"
+  },
+  {
+    "id": "jobs-9",
+    "category": "Jobs",
+    "text": "An archaeologist brushing dust off a dinosaur fossil"
+  },
+  {
+    "id": "jobs-10",
+    "category": "Jobs",
+    "text": "A surgeon doing intense open-heart surgery"
+  },
+  {
+    "id": "jobs-11",
+    "category": "Jobs",
+    "text": "A lumberjack chopping down a giant redwood tree"
+  },
+  {
+    "id": "jobs-12",
+    "category": "Jobs",
+    "text": "A window washer on a high-rise scaffold"
+  },
+  {
+    "id": "jobs-13",
+    "category": "Jobs",
+    "text": "A librarian shushing loud visitors aggressively"
+  },
+  {
+    "id": "jobs-14",
+    "category": "Jobs",
+    "text": "A magician pulling a live rabbit out of a top hat"
+  },
+  {
+    "id": "jobs-15",
+    "category": "Jobs",
+    "text": "A sushi chef slicing sashimi with lightning speed"
+  },
+  {
+    "id": "jobs-16",
+    "category": "Jobs",
+    "text": "A flight attendant doing the pre-flight safety demo"
+  },
+  {
+    "id": "jobs-17",
+    "category": "Jobs",
+    "text": "A construction worker operating a loud jackhammer"
+  },
+  {
+    "id": "jobs-18",
+    "category": "Jobs",
+    "text": "A lifeguard scanning the water and blowing their whistle"
+  },
+  {
+    "id": "jobs-19",
+    "category": "Jobs",
+    "text": "A mime trapped in a storm inside a box"
+  },
+  {
+    "id": "jobs-20",
+    "category": "Jobs",
+    "text": "A news anchor shuffling papers and reading a teleprompter"
+  },
+  {
+    "id": "jobs-21",
+    "category": "Jobs",
+    "text": "A photographer trying to make a grumpy toddler smile"
+  },
+  {
+    "id": "jobs-22",
+    "category": "Jobs",
+    "text": "A sumo wrestler getting ready for a bout"
+  },
+  {
+    "id": "jobs-23",
+    "category": "Jobs",
+    "text": "A scuba diver swimming through a coral reef"
+  },
+  {
+    "id": "jobs-24",
+    "category": "Jobs",
+    "text": "An auctioneer talking at supersonic speed with a gavel"
+  },
+  {
+    "id": "jobs-25",
+    "category": "Jobs",
+    "text": "A plumber fixing a violently spraying pipe under a sink"
+  },
+  {
+    "id": "jobs-26",
+    "category": "Jobs",
+    "text": "A pizza chef tossing dough high in the air"
+  },
+  {
+    "id": "jobs-27",
+    "category": "Jobs",
+    "text": "A rockstar performing an electrifying guitar solo"
+  },
+  {
+    "id": "jobs-28",
+    "category": "Jobs",
+    "text": "A tennis umpire tracking a fast ball back and forth"
+  },
+  {
+    "id": "jobs-29",
+    "category": "Jobs",
+    "text": "A butcher trimming meat on a wooden block"
+  },
+  {
+    "id": "jobs-30",
+    "category": "Jobs",
+    "text": "A detective examining clues with a magnifying glass"
+  },
+  {
+    "id": "jobs-31",
+    "category": "Jobs",
+    "text": "A bellhop carrying an enormous wobbly stack of luggage"
+  },
+  {
+    "id": "jobs-32",
+    "category": "Jobs",
+    "text": "A painter trying to capture a flying bird on canvas"
+  },
+  {
+    "id": "jobs-33",
+    "category": "Jobs",
+    "text": "A street vendor making cotton candy for kids"
+  },
+  {
+    "id": "jobs-34",
+    "category": "Jobs",
+    "text": "A stunt performer jumping through a ring of fire"
+  },
+  {
+    "id": "jobs-35",
+    "category": "Jobs",
+    "text": "A weather reporter getting blown away live on air"
+  },
+  {
+    "id": "jobs-36",
+    "category": "Jobs",
+    "text": "An astronaut fixing a satellite during a spacewalk"
+  },
+  {
+    "id": "jobs-37",
+    "category": "Jobs",
+    "text": "A DJ scratching vinyl records and pumping up the crowd"
+  },
+  {
+    "id": "jobs-38",
+    "category": "Jobs",
+    "text": "A blacksmith pounding hot glowing iron on an anvil"
+  },
+  {
+    "id": "jobs-39",
+    "category": "Jobs",
+    "text": "A flight pilot navigating through severe turbulence"
+  },
+  {
+    "id": "jobs-40",
+    "category": "Jobs",
+    "text": "A museum security guard chasing an art thief"
+  },
+  {
+    "id": "jobs-41",
+    "category": "Jobs",
+    "text": "A dog groomer clipping nails of a squirming poodle"
+  },
+  {
+    "id": "jobs-42",
+    "category": "Jobs",
+    "text": "A gold miner panning for gold nuggets in a river"
+  },
+  {
+    "id": "sports-1",
+    "category": "Sports",
+    "text": "Playing basketball and executing a slam dunk"
+  },
+  {
+    "id": "sports-2",
+    "category": "Sports",
+    "text": "Bowling a strike and doing a victory dance"
+  },
+  {
+    "id": "sports-3",
+    "category": "Sports",
+    "text": "Archery aiming carefully at the bullseye"
+  },
+  {
+    "id": "sports-4",
+    "category": "Sports",
+    "text": "Weightlifting attempting a world record snatch"
+  },
+  {
+    "id": "sports-5",
+    "category": "Sports",
+    "text": "Playing baseball: hitting a home run and rounding bases"
+  },
+  {
+    "id": "sports-6",
+    "category": "Sports",
+    "text": "Playing tennis: serving an ace and celebrating"
+  },
+  {
+    "id": "sports-7",
+    "category": "Sports",
+    "text": "Golfing: driving off the tee and watching the ball fly"
+  },
+  {
+    "id": "sports-8",
+    "category": "Sports",
+    "text": "Figure skating: performing a triple axel spin"
+  },
+  {
+    "id": "sports-9",
+    "category": "Sports",
+    "text": "Soccer: scoring a header goal and sliding on grass"
+  },
+  {
+    "id": "sports-10",
+    "category": "Sports",
+    "text": "Boxing: throwing a series of jabs and ducking punches"
+  },
+  {
+    "id": "sports-11",
+    "category": "Sports",
+    "text": "Swimming the 100m butterfly stroke furiously"
+  },
+  {
+    "id": "sports-12",
+    "category": "Sports",
+    "text": "Fencing: parrying a strike and thrusting forward"
+  },
+  {
+    "id": "sports-13",
+    "category": "Sports",
+    "text": "Pole vaulting over an impossible bar height"
+  },
+  {
+    "id": "sports-14",
+    "category": "Sports",
+    "text": "Playing table tennis with lightning-fast reflexes"
+  },
+  {
+    "id": "sports-15",
+    "category": "Sports",
+    "text": "Surfing a huge wave and getting wiped out"
+  },
+  {
+    "id": "sports-16",
+    "category": "Sports",
+    "text": "Snowboarding down a halfpipe doing a grab"
+  },
+  {
+    "id": "sports-17",
+    "category": "Sports",
+    "text": "Rowing on a crew team in synchronized strokes"
+  },
+  {
+    "id": "sports-18",
+    "category": "Sports",
+    "text": "Playing American football: throwing a hail mary pass"
+  },
+  {
+    "id": "sports-19",
+    "category": "Sports",
+    "text": "Curling: vigorously sweeping ice with brooms"
+  },
+  {
+    "id": "sports-20",
+    "category": "Sports",
+    "text": "Cricket: bowling a fast ball that knocks down wickets"
+  },
+  {
+    "id": "sports-21",
+    "category": "Sports",
+    "text": "Rock climbing up a sheer cliff overhang"
+  },
+  {
+    "id": "sports-22",
+    "category": "Sports",
+    "text": "Skateboarding: trying to kickflip down a staircase"
+  },
+  {
+    "id": "sports-23",
+    "category": "Sports",
+    "text": "Volleyball: setting the ball and spiking it hard"
+  },
+  {
+    "id": "sports-24",
+    "category": "Sports",
+    "text": "Skiing slalom around tightly spaced poles"
+  },
+  {
+    "id": "sports-25",
+    "category": "Sports",
+    "text": "Javelin throw: sprinting and launching into the air"
+  },
+  {
+    "id": "sports-26",
+    "category": "Sports",
+    "text": "Karate: breaking a stack of wooden boards with a chop"
+  },
+  {
+    "id": "sports-27",
+    "category": "Sports",
+    "text": "Billiards: aiming a tricky bank shot into a corner pocket"
+  },
+  {
+    "id": "sports-28",
+    "category": "Sports",
+    "text": "High jump: doing the Fosbury flop over the bar"
+  },
+  {
+    "id": "sports-29",
+    "category": "Sports",
+    "text": "Water polo: treading water while shooting a goal"
+  },
+  {
+    "id": "sports-30",
+    "category": "Sports",
+    "text": "Gymnastics: performing a flawless balance beam routine"
+  },
+  {
+    "id": "sports-31",
+    "category": "Sports",
+    "text": "Sumo wrestling: charging forward and throwing opponent"
+  },
+  {
+    "id": "sports-32",
+    "category": "Sports",
+    "text": "Dodgeball: ducking, dipping, and throwing a fast ball"
+  },
+  {
+    "id": "sports-33",
+    "category": "Sports",
+    "text": "Horse racing jockey in the final sprint of the derby"
+  },
+  {
+    "id": "sports-34",
+    "category": "Sports",
+    "text": "Kayaking down roaring whitewater rapids"
+  },
+  {
+    "id": "sports-35",
+    "category": "Sports",
+    "text": "Arm wrestling against a giant bodybuilder"
+  },
+  {
+    "id": "sports-36",
+    "category": "Sports",
+    "text": "Playing badminton: diving for a drop shot at the net"
+  },
+  {
+    "id": "sports-37",
+    "category": "Sports",
+    "text": "Cross-country skiing in deep snowy mountains"
+  },
+  {
+    "id": "sports-38",
+    "category": "Sports",
+    "text": "Playing hockey: slap shot hitting the top shelf goalie"
+  },
+  {
+    "id": "sports-39",
+    "category": "Sports",
+    "text": "Skydiving formation holding hands in freefall"
+  },
+  {
+    "id": "sports-40",
+    "category": "Sports",
+    "text": "BMX bike rider doing a 360 spin over a dirt jump"
+  },
+  {
+    "id": "sports-41",
+    "category": "Sports",
+    "text": "Wrestling a bear in an old-school carnival ring"
+  },
+  {
+    "id": "sports-42",
+    "category": "Sports",
+    "text": "Playing frisbee golf and celebrating an ace into chains"
+  },
+  {
+    "id": "everyday-life-1",
+    "category": "Everyday Life",
+    "text": "Brushing teeth while checking phone in morning"
+  },
+  {
+    "id": "everyday-life-2",
+    "category": "Everyday Life",
+    "text": "Applying makeup while in a bumpy moving bus"
+  },
+  {
+    "id": "everyday-life-3",
+    "category": "Everyday Life",
+    "text": "Waking up late for work and panicking"
+  },
+  {
+    "id": "everyday-life-4",
+    "category": "Everyday Life",
+    "text": "Putting on socks with wet feet"
+  },
+  {
+    "id": "everyday-life-5",
+    "category": "Everyday Life",
+    "text": "Waiting impatiently for an elevator that never comes"
+  },
+  {
+    "id": "everyday-life-6",
+    "category": "Everyday Life",
+    "text": "Eating spaghetti with chopsticks clumsily"
+  },
+  {
+    "id": "everyday-life-7",
+    "category": "Everyday Life",
+    "text": "Pumping gasoline into a car on a freezing winter day"
+  },
+  {
+    "id": "everyday-life-8",
+    "category": "Everyday Life",
+    "text": "Tasting milk that has secretly gone sour"
+  },
+  {
+    "id": "everyday-life-9",
+    "category": "Everyday Life",
+    "text": "Checking pockets frantically for your missing wallet"
+  },
+  {
+    "id": "everyday-life-10",
+    "category": "Everyday Life",
+    "text": "Trying to assemble flat-pack furniture with missing screws"
+  },
+  {
+    "id": "everyday-life-11",
+    "category": "Everyday Life",
+    "text": "Taking a hot shower that suddenly turns freezing cold"
+  },
+  {
+    "id": "everyday-life-12",
+    "category": "Everyday Life",
+    "text": "Struggling to find the end of a roll of clear tape"
+  },
+  {
+    "id": "everyday-life-13",
+    "category": "Everyday Life",
+    "text": "Waiting in a grocery line where the register breaks"
+  },
+  {
+    "id": "everyday-life-14",
+    "category": "Everyday Life",
+    "text": "Trying to parallel park in a ridiculously tiny space"
+  },
+  {
+    "id": "everyday-life-15",
+    "category": "Everyday Life",
+    "text": "Walking into a room and forgetting why you went there"
+  },
+  {
+    "id": "everyday-life-16",
+    "category": "Everyday Life",
+    "text": "Carrying hot pizza slices without dropping them"
+  },
+  {
+    "id": "everyday-life-17",
+    "category": "Everyday Life",
+    "text": "Cleaning crumbs out of a computer keyboard"
+  },
+  {
+    "id": "everyday-life-18",
+    "category": "Everyday Life",
+    "text": "Trying to fold a fitted bed sheet neatly"
+  },
+  {
+    "id": "everyday-life-19",
+    "category": "Everyday Life",
+    "text": "Pouring cereal only to find there is no milk left"
+  },
+  {
+    "id": "everyday-life-20",
+    "category": "Everyday Life",
+    "text": "Opening an umbrella in the wind and having it flip inside out"
+  },
+  {
+    "id": "everyday-life-21",
+    "category": "Everyday Life",
+    "text": "Walking on bubble wrap and popping every single bubble"
+  },
+  {
+    "id": "everyday-life-22",
+    "category": "Everyday Life",
+    "text": "Checking your bank account balance and gasping"
+  },
+  {
+    "id": "everyday-life-23",
+    "category": "Everyday Life",
+    "text": "Rushing to plug in a phone at 1% battery before it dies"
+  },
+  {
+    "id": "everyday-life-24",
+    "category": "Everyday Life",
+    "text": "Cleaning dirty glasses with your shirt and making them blurrier"
+  },
+  {
+    "id": "everyday-life-25",
+    "category": "Everyday Life",
+    "text": "Sitting on a couch and getting swallowed by cushions"
+  },
+  {
+    "id": "everyday-life-26",
+    "category": "Everyday Life",
+    "text": "Looking at yourself in a mirror practicing a speech"
+  },
+  {
+    "id": "everyday-life-27",
+    "category": "Everyday Life",
+    "text": "Sneaking popcorn into a cinema under your jacket"
+  },
+  {
+    "id": "everyday-life-28",
+    "category": "Everyday Life",
+    "text": "Eating spicy food and needing water immediately"
+  },
+  {
+    "id": "everyday-life-29",
+    "category": "Everyday Life",
+    "text": "Trying to quiet a squeaky shoe in a dead silent room"
+  },
+  {
+    "id": "everyday-life-30",
+    "category": "Everyday Life",
+    "text": "Unpacking Amazon boxes full of packing peanuts"
+  },
+  {
+    "id": "everyday-life-31",
+    "category": "Everyday Life",
+    "text": "Trying to take off a wet swimsuit that sticks everywhere"
+  },
+  {
+    "id": "everyday-life-32",
+    "category": "Everyday Life",
+    "text": "Losing your balance while standing on a moving subway"
+  },
+  {
+    "id": "everyday-life-33",
+    "category": "Everyday Life",
+    "text": "Opening a carbonated soda can that explodes everywhere"
+  },
+  {
+    "id": "everyday-life-34",
+    "category": "Everyday Life",
+    "text": "Applying sunscreen to your own back without reaching"
+  },
+  {
+    "id": "everyday-life-35",
+    "category": "Everyday Life",
+    "text": "Struggling to open a plastic produce bag at the supermarket"
+  },
+  {
+    "id": "everyday-life-36",
+    "category": "Everyday Life",
+    "text": "Dropping your phone face down on concrete and dreading picking it up"
+  },
+  {
+    "id": "everyday-life-37",
+    "category": "Everyday Life",
+    "text": "Biting into a jelly donut and having jelly squirt out the back"
+  },
+  {
+    "id": "everyday-life-38",
+    "category": "Everyday Life",
+    "text": "Trying to hold in a cough during a quiet movie scene"
+  },
+  {
+    "id": "everyday-life-39",
+    "category": "Everyday Life",
+    "text": "Testing whether your breath smells into your cupped hand"
+  },
+  {
+    "id": "everyday-life-40",
+    "category": "Everyday Life",
+    "text": "Walking into spiderweb face-first in the dark"
+  },
+  {
+    "id": "everyday-life-41",
+    "category": "Everyday Life",
+    "text": "Trying to sleep when a mosquito is buzzing right next to your ear"
+  },
+  {
+    "id": "everyday-life-42",
+    "category": "Everyday Life",
+    "text": "Spilling hot coffee on your clean white work shirt"
+  },
+  {
+    "id": "emotions-1",
+    "category": "Emotions",
+    "text": "Winning the 100-million-dollar lottery jackpot"
+  },
+  {
+    "id": "emotions-2",
+    "category": "Emotions",
+    "text": "Terrified watching a scary horror movie alone"
+  },
+  {
+    "id": "emotions-3",
+    "category": "Emotions",
+    "text": "Falling head over heels in love at first sight"
+  },
+  {
+    "id": "emotions-4",
+    "category": "Emotions",
+    "text": "Furious after someone cuts you in a long line"
+  },
+  {
+    "id": "emotions-5",
+    "category": "Emotions",
+    "text": "Extremely embarrassed after tripping in front of a crowd"
+  },
+  {
+    "id": "emotions-6",
+    "category": "Emotions",
+    "text": "Bursting with uncontrollable laughter at a serious funeral"
+  },
+  {
+    "id": "emotions-7",
+    "category": "Emotions",
+    "text": "Heartbroken crying over a sappy romantic film"
+  },
+  {
+    "id": "emotions-8",
+    "category": "Emotions",
+    "text": "Disgusted by a plate of rotten smelly trash"
+  },
+  {
+    "id": "emotions-9",
+    "category": "Emotions",
+    "text": "Relieved after finding your passport right before a flight"
+  },
+  {
+    "id": "emotions-10",
+    "category": "Emotions",
+    "text": "Suspicious and paranoid looking over both shoulders"
+  },
+  {
+    "id": "emotions-11",
+    "category": "Emotions",
+    "text": "Exhausted and falling asleep while standing up"
+  },
+  {
+    "id": "emotions-12",
+    "category": "Emotions",
+    "text": "Ecstatic child opening presents on Christmas morning"
+  },
+  {
+    "id": "emotions-13",
+    "category": "Emotions",
+    "text": "Bored out of your mind during a 4-hour lecture"
+  },
+  {
+    "id": "emotions-14",
+    "category": "Emotions",
+    "text": "Envious staring at someone else eating a delicious steak"
+  },
+  {
+    "id": "emotions-15",
+    "category": "Emotions",
+    "text": "Shocked seeing a ghost floating in your living room"
+  },
+  {
+    "id": "emotions-16",
+    "category": "Emotions",
+    "text": "Nervous waiting outside the principal or boss office"
+  },
+  {
+    "id": "emotions-17",
+    "category": "Emotions",
+    "text": "Proud parent watching their kid graduate college"
+  },
+  {
+    "id": "emotions-18",
+    "category": "Emotions",
+    "text": "Confused trying to solve a quantum physics equation"
+  },
+  {
+    "id": "emotions-19",
+    "category": "Emotions",
+    "text": "Impatient waiting for your slow microwave burrito to heat"
+  },
+  {
+    "id": "emotions-20",
+    "category": "Emotions",
+    "text": "Guilty dog that just chewed up the expensive couch"
+  },
+  {
+    "id": "emotions-21",
+    "category": "Emotions",
+    "text": "Determined athlete about to run the final marathon mile"
+  },
+  {
+    "id": "emotions-22",
+    "category": "Emotions",
+    "text": "Homesick traveler looking at old family photos"
+  },
+  {
+    "id": "emotions-23",
+    "category": "Emotions",
+    "text": "Overwhelmed with 10 things to do at the same time"
+  },
+  {
+    "id": "emotions-24",
+    "category": "Emotions",
+    "text": "Smug and victorious after winning an argument"
+  },
+  {
+    "id": "emotions-25",
+    "category": "Emotions",
+    "text": "Startled when someone taps your shoulder from behind"
+  },
+  {
+    "id": "emotions-26",
+    "category": "Emotions",
+    "text": "Delighted taking a bite of your favorite chocolate cake"
+  },
+  {
+    "id": "emotions-27",
+    "category": "Emotions",
+    "text": "Panicked after accidentally texting your boss a private meme"
+  },
+  {
+    "id": "emotions-28",
+    "category": "Emotions",
+    "text": "Sleepy newborn baby yawning and rubbing eyes"
+  },
+  {
+    "id": "emotions-29",
+    "category": "Emotions",
+    "text": "Regretful after eating an entire large pizza by yourself"
+  },
+  {
+    "id": "emotions-30",
+    "category": "Emotions",
+    "text": "Hyped up before walking out onto a concert stage"
+  },
+  {
+    "id": "emotions-31",
+    "category": "Emotions",
+    "text": "Jealous watching your crush talk to someone else"
+  },
+  {
+    "id": "emotions-32",
+    "category": "Emotions",
+    "text": "Awed staring at the Northern Lights in the arctic sky"
+  },
+  {
+    "id": "emotions-33",
+    "category": "Emotions",
+    "text": "Creeped out by an eight-legged spider crawling near your bed"
+  },
+  {
+    "id": "emotions-34",
+    "category": "Emotions",
+    "text": "Peaceful meditating on a quiet mountaintop at dawn"
+  },
+  {
+    "id": "emotions-35",
+    "category": "Emotions",
+    "text": "Hangry person waiting 45 minutes for breadsticks"
+  },
+  {
+    "id": "emotions-36",
+    "category": "Emotions",
+    "text": "Triumphant chess grandmaster checkmating an opponent"
+  },
+  {
+    "id": "emotions-37",
+    "category": "Emotions",
+    "text": "Frustrated with tangled yarn that won’t unravel"
+  },
+  {
+    "id": "emotions-38",
+    "category": "Emotions",
+    "text": "Giddy after receiving a compliment from your secret crush"
+  },
+  {
+    "id": "emotions-39",
+    "category": "Emotions",
+    "text": "Spooked by an unexpected creak in an old empty house"
+  },
+  {
+    "id": "emotions-40",
+    "category": "Emotions",
+    "text": "Skeptical inspector examining a suspicious diamond ring"
+  },
+  {
+    "id": "emotions-41",
+    "category": "Emotions",
+    "text": "Overjoyed when your favorite sports team wins the championship"
+  },
+  {
+    "id": "emotions-42",
+    "category": "Emotions",
+    "text": "Stressed trying to defuse a bomb with 5 seconds remaining"
+  },
+  {
+    "id": "characters-1",
+    "category": "Characters",
+    "text": "Sherlock Holmes deducing clues with a pipe"
+  },
+  {
+    "id": "characters-2",
+    "category": "Characters",
+    "text": "Frankenstein monster coming to life and lumbering"
+  },
+  {
+    "id": "characters-3",
+    "category": "Characters",
+    "text": "Harry Potter casting a spell with a wooden wand"
+  },
+  {
+    "id": "characters-4",
+    "category": "Characters",
+    "text": "Darth Vader doing a force choke on an officer"
+  },
+  {
+    "id": "characters-5",
+    "category": "Characters",
+    "text": "Tarzan swinging from vines and beating his chest"
+  },
+  {
+    "id": "characters-6",
+    "category": "Characters",
+    "text": "Robin Hood shooting an arrow into another arrow"
+  },
+  {
+    "id": "characters-7",
+    "category": "Characters",
+    "text": "Dracula waking up from a coffin thirsty for blood"
+  },
+  {
+    "id": "characters-8",
+    "category": "Characters",
+    "text": "Captain Jack Sparrow walking drunkenly on a ship"
+  },
+  {
+    "id": "characters-9",
+    "category": "Characters",
+    "text": "Santa Claus delivering presents down a narrow chimney"
+  },
+  {
+    "id": "characters-10",
+    "category": "Characters",
+    "text": "The Hulk transforming from Bruce Banner and roaring"
+  },
+  {
+    "id": "characters-11",
+    "category": "Characters",
+    "text": "Spider-Man slinging webs and climbing high walls"
+  },
+  {
+    "id": "characters-12",
+    "category": "Characters",
+    "text": "James Bond ordering a shaken not stirred martini"
+  },
+  {
+    "id": "characters-13",
+    "category": "Characters",
+    "text": "Yoda teaching Jedi wisdom using the Force"
+  },
+  {
+    "id": "characters-14",
+    "category": "Characters",
+    "text": "A medieval knight in heavy clunky metal armor"
+  },
+  {
+    "id": "characters-15",
+    "category": "Characters",
+    "text": "A wicked witch cackling and stirring a bubbling cauldron"
+  },
+  {
+    "id": "characters-16",
+    "category": "Characters",
+    "text": "A fairytale princess kissing an ugly frog"
+  },
+  {
+    "id": "characters-17",
+    "category": "Characters",
+    "text": "A zombie searching for brains to eat"
+  },
+  {
+    "id": "characters-18",
+    "category": "Characters",
+    "text": "King Kong swatting biplanes on top of Empire State"
+  },
+  {
+    "id": "characters-19",
+    "category": "Characters",
+    "text": "Gollum obsessing over his shiny precious ring"
+  },
+  {
+    "id": "characters-20",
+    "category": "Characters",
+    "text": "A fairy scattering magical glowing pixie dust"
+  },
+  {
+    "id": "characters-21",
+    "category": "Characters",
+    "text": "An alien beaming down from a flying saucer"
+  },
+  {
+    "id": "characters-22",
+    "category": "Characters",
+    "text": "A mummy slowly unraveling its bandages"
+  },
+  {
+    "id": "characters-23",
+    "category": "Characters",
+    "text": "Cupid aiming his love arrow at two unsuspecting people"
+  },
+  {
+    "id": "characters-24",
+    "category": "Characters",
+    "text": "Peter Pan crowing like a rooster and flying"
+  },
+  {
+    "id": "characters-25",
+    "category": "Characters",
+    "text": "Superman ripping open his dress shirt to reveal the S"
+  },
+  {
+    "id": "characters-26",
+    "category": "Characters",
+    "text": "A genie popping out of a magic oil lamp"
+  },
+  {
+    "id": "characters-27",
+    "category": "Characters",
+    "text": "A pirate with a peg leg and parrot on shoulder"
+  },
+  {
+    "id": "characters-28",
+    "category": "Characters",
+    "text": "A ninja jumping from roof to roof throwing shurikens"
+  },
+  {
+    "id": "characters-29",
+    "category": "Characters",
+    "text": "A robot learning how to feel human love for the first time"
+  },
+  {
+    "id": "characters-30",
+    "category": "Characters",
+    "text": "Wolverine extending sharp adamantium claws from fists"
+  },
+  {
+    "id": "characters-31",
+    "category": "Characters",
+    "text": "Mary Poppins floating down with an open magic umbrella"
+  },
+  {
+    "id": "characters-32",
+    "category": "Characters",
+    "text": "Cinderella losing her glass slipper at midnight"
+  },
+  {
+    "id": "characters-33",
+    "category": "Characters",
+    "text": "Pikachu charging up a massive 100,000 volt thunderbolt"
+  },
+  {
+    "id": "characters-34",
+    "category": "Characters",
+    "text": "Goku powering up to Super Saiyan with glowing aura"
+  },
+  {
+    "id": "characters-35",
+    "category": "Characters",
+    "text": "Shrek bathing in his gross muddy swamp"
+  },
+  {
+    "id": "characters-36",
+    "category": "Characters",
+    "text": "Mario jumping on a turtle shell and grabbing a mushroom"
+  },
+  {
+    "id": "characters-37",
+    "category": "Characters",
+    "text": "Sonic the Hedgehog spinning into a supersonic ball"
+  },
+  {
+    "id": "characters-38",
+    "category": "Characters",
+    "text": "A cowboy having a high noon quick-draw duel"
+  },
+  {
+    "id": "characters-39",
+    "category": "Characters",
+    "text": "The Tooth Fairy sneaking under a kid’s pillow"
+  },
+  {
+    "id": "characters-40",
+    "category": "Characters",
+    "text": "Medusa turning people into stone with her gaze"
+  },
+  {
+    "id": "characters-41",
+    "category": "Characters",
+    "text": "A mermaid swimming and combing her hair on a rock"
+  },
+  {
+    "id": "characters-42",
+    "category": "Characters",
+    "text": "Willy Wonka inspecting an everlasting gobstopper"
+  },
+  {
+    "id": "movies-entertainment-1",
+    "category": "Movies & Entertainment",
+    "text": "The iconic Titanic \"I'm the king of the world!\" bow pose"
+  },
+  {
+    "id": "movies-entertainment-2",
+    "category": "Movies & Entertainment",
+    "text": "The Lion King: Rafiki holding baby Simba above Pride Rock"
+  },
+  {
+    "id": "movies-entertainment-3",
+    "category": "Movies & Entertainment",
+    "text": "The Matrix: Neo dodging flying bullets in slow motion"
+  },
+  {
+    "id": "movies-entertainment-4",
+    "category": "Movies & Entertainment",
+    "text": "Jurassic Park: T-Rex roaring while ripples appear in water"
+  },
+  {
+    "id": "movies-entertainment-5",
+    "category": "Movies & Entertainment",
+    "text": "Star Wars: Lightsaber duel between Jedi and Sith"
+  },
+  {
+    "id": "movies-entertainment-6",
+    "category": "Movies & Entertainment",
+    "text": "Home Alone: Hands on cheeks screaming after aftershave"
+  },
+  {
+    "id": "movies-entertainment-7",
+    "category": "Movies & Entertainment",
+    "text": "E.T.: Flying a bicycle across the glowing full moon"
+  },
+  {
+    "id": "movies-entertainment-8",
+    "category": "Movies & Entertainment",
+    "text": "The Shining: Jack chopping through the bathroom door with an axe"
+  },
+  {
+    "id": "movies-entertainment-9",
+    "category": "Movies & Entertainment",
+    "text": "Rocky: Running up museum steps and pumping fists in air"
+  },
+  {
+    "id": "movies-entertainment-10",
+    "category": "Movies & Entertainment",
+    "text": "Mission Impossible: Lowering down from ceiling suspended by wires"
+  },
+  {
+    "id": "movies-entertainment-11",
+    "category": "Movies & Entertainment",
+    "text": "Jaws: Swimmer kicking water before giant shark attacks"
+  },
+  {
+    "id": "movies-entertainment-12",
+    "category": "Movies & Entertainment",
+    "text": "Indiana Jones: Running away from a giant rolling boulder"
+  },
+  {
+    "id": "movies-entertainment-13",
+    "category": "Movies & Entertainment",
+    "text": "Psycho: Shower scene with dramatic music stabs"
+  },
+  {
+    "id": "movies-entertainment-14",
+    "category": "Movies & Entertainment",
+    "text": "Forrest Gump: Sitting on a park bench offering box of chocolates"
+  },
+  {
+    "id": "movies-entertainment-15",
+    "category": "Movies & Entertainment",
+    "text": "Ghostbusters: Blasting proton packs at a slimy ghost"
+  },
+  {
+    "id": "movies-entertainment-16",
+    "category": "Movies & Entertainment",
+    "text": "The Terminator: Lowering into molten steel with thumbs up"
+  },
+  {
+    "id": "movies-entertainment-17",
+    "category": "Movies & Entertainment",
+    "text": "Dirty Dancing: The famous overhead partner lift at the end"
+  },
+  {
+    "id": "movies-entertainment-18",
+    "category": "Movies & Entertainment",
+    "text": "Singin' in the Rain: Twirling an umbrella around a lamppost"
+  },
+  {
+    "id": "movies-entertainment-19",
+    "category": "Movies & Entertainment",
+    "text": "Back to the Future: Marty McFly playing electric guitar at dance"
+  },
+  {
+    "id": "movies-entertainment-20",
+    "category": "Movies & Entertainment",
+    "text": "Cast Away: Crying and screaming goodbye to Wilson the volleyball"
+  },
+  {
+    "id": "movies-entertainment-21",
+    "category": "Movies & Entertainment",
+    "text": "The Wizard of Oz: Following the yellow brick road with ruby slippers"
+  },
+  {
+    "id": "movies-entertainment-22",
+    "category": "Movies & Entertainment",
+    "text": "Saturday Night Fever: Disco dancing with one arm pointing up"
+  },
+  {
+    "id": "movies-entertainment-23",
+    "category": "Movies & Entertainment",
+    "text": "King Kong swatting airplanes from the top of the skyscraper"
+  },
+  {
+    "id": "movies-entertainment-24",
+    "category": "Movies & Entertainment",
+    "text": "The Karate Kid: Performing the iconic crane kick pose on one leg"
+  },
+  {
+    "id": "movies-entertainment-25",
+    "category": "Movies & Entertainment",
+    "text": "Braveheart: Screaming \"Freedom!\" on the battlefield"
+  },
+  {
+    "id": "movies-entertainment-26",
+    "category": "Movies & Entertainment",
+    "text": "Frozen: Elsa stomping on the snow to build an ice palace"
+  },
+  {
+    "id": "movies-entertainment-27",
+    "category": "Movies & Entertainment",
+    "text": "Gladiator: Maximus asking the roaring crowd \"Are you not entertained?!\""
+  },
+  {
+    "id": "movies-entertainment-28",
+    "category": "Movies & Entertainment",
+    "text": "Lord of the Rings: Gandalf slamming staff screaming \"You shall not pass!\""
+  },
+  {
+    "id": "movies-entertainment-29",
+    "category": "Movies & Entertainment",
+    "text": "Avengers Assemble: Captain America catching Thor’s hammer Mjolnir"
+  },
+  {
+    "id": "movies-entertainment-30",
+    "category": "Movies & Entertainment",
+    "text": "The Godfather: Stroking a cat while listening to a request"
+  },
+  {
+    "id": "movies-entertainment-31",
+    "category": "Movies & Entertainment",
+    "text": "Harry Potter catching the golden snitch during Quidditch"
+  },
+  {
+    "id": "movies-entertainment-32",
+    "category": "Movies & Entertainment",
+    "text": "Squid Game: Red Light Green Light doll turning head around"
+  },
+  {
+    "id": "movies-entertainment-33",
+    "category": "Movies & Entertainment",
+    "text": "Top Gun: Maverick and Goose giving high fives wearing sunglasses"
+  },
+  {
+    "id": "movies-entertainment-34",
+    "category": "Movies & Entertainment",
+    "text": "Night at the Museum: Statues coming to life after midnight"
+  },
+  {
+    "id": "movies-entertainment-35",
+    "category": "Movies & Entertainment",
+    "text": "Ratatouille: Mouse pulling hair under chef hat to cook soup"
+  },
+  {
+    "id": "movies-entertainment-36",
+    "category": "Movies & Entertainment",
+    "text": "Toy Story: Woody pretending to be an inanimate toy when human enters"
+  },
+  {
+    "id": "movies-entertainment-37",
+    "category": "Movies & Entertainment",
+    "text": "Men in Black: Flashing the neuralyzer memory wipe pen in eyes"
+  },
+  {
+    "id": "movies-entertainment-38",
+    "category": "Movies & Entertainment",
+    "text": "Hunger Games: Katniss Everdeen volunteering as tribute with 3-finger salute"
+  },
+  {
+    "id": "movies-entertainment-39",
+    "category": "Movies & Entertainment",
+    "text": "Spider-Man upside-down rain kiss with Mary Jane"
+  },
+  {
+    "id": "movies-entertainment-40",
+    "category": "Movies & Entertainment",
+    "text": "Alien chestburster scene popping out during dinner"
+  },
+  {
+    "id": "movies-entertainment-41",
+    "category": "Movies & Entertainment",
+    "text": "The Exorcist spinning head around 360 degrees in bed"
+  },
+  {
+    "id": "movies-entertainment-42",
+    "category": "Movies & Entertainment",
+    "text": "Pulp Fiction: The John Travolta and Uma Thurman twist dance"
+  },
+  {
+    "id": "things-1",
+    "category": "Things",
+    "text": "A popcorn machine popping kernels furiously"
+  },
+  {
+    "id": "things-2",
+    "category": "Things",
+    "text": "A lawnmower hitting a hidden rock in the grass"
+  },
+  {
+    "id": "things-3",
+    "category": "Things",
+    "text": "A washing machine during an unbalanced high-speed spin cycle"
+  },
+  {
+    "id": "things-4",
+    "category": "Things",
+    "text": "A toaster popping up two slices of toast with a ding"
+  },
+  {
+    "id": "things-5",
+    "category": "Things",
+    "text": "A blender making a thick frozen fruit smoothie"
+  },
+  {
+    "id": "things-6",
+    "category": "Things",
+    "text": "A grandfather clock swinging its heavy pendulum back and forth"
+  },
+  {
+    "id": "things-7",
+    "category": "Things",
+    "text": "A bubbling volcano right before a massive eruption"
+  },
+  {
+    "id": "things-8",
+    "category": "Things",
+    "text": "A vending machine dropping a snack that gets stuck on the glass"
+  },
+  {
+    "id": "things-9",
+    "category": "Things",
+    "text": "A cuckoo clock bird popping out and making sounds"
+  },
+  {
+    "id": "things-10",
+    "category": "Things",
+    "text": "A wind-up toy soldier walking stiffly until running out of power"
+  },
+  {
+    "id": "things-11",
+    "category": "Things",
+    "text": "A fireworks rocket shooting into the night sky and exploding"
+  },
+  {
+    "id": "things-12",
+    "category": "Things",
+    "text": "A vacuum cleaner sucking up a rogue sock on the rug"
+  },
+  {
+    "id": "things-13",
+    "category": "Things",
+    "text": "A revolving door spinning out of control in a lobby"
+  },
+  {
+    "id": "things-14",
+    "category": "Things",
+    "text": "A bouncy basketball being dribbled around defenders"
+  },
+  {
+    "id": "things-15",
+    "category": "Things",
+    "text": "A car windshield wiper struggling in a thunderstorm"
+  },
+  {
+    "id": "things-16",
+    "category": "Things",
+    "text": "A pinball bouncing furiously off bumpers and flippers"
+  },
+  {
+    "id": "things-17",
+    "category": "Things",
+    "text": "A jack-in-the-box cranking music until jumping out"
+  },
+  {
+    "id": "things-18",
+    "category": "Things",
+    "text": "A drone flying erratically and crashing into a tree"
+  },
+  {
+    "id": "things-19",
+    "category": "Things",
+    "text": "A boiling tea kettle whistling with rising steam"
+  },
+  {
+    "id": "things-20",
+    "category": "Things",
+    "text": "A chainsaw revving up to cut through a thick tree trunk"
+  },
+  {
+    "id": "things-21",
+    "category": "Things",
+    "text": "A sparkler sizzling and drawing glowing circles in the dark"
+  },
+  {
+    "id": "things-22",
+    "category": "Things",
+    "text": "A roomba robot bumping into furniture repeatedly"
+  },
+  {
+    "id": "things-23",
+    "category": "Things",
+    "text": "A bowling ball rolling down the lane and knocking pins"
+  },
+  {
+    "id": "things-24",
+    "category": "Things",
+    "text": "An accordion being squeezed and pulled to play polka"
+  },
+  {
+    "id": "things-25",
+    "category": "Things",
+    "text": "A grandfather clock striking midnight with 12 loud chimes"
+  },
+  {
+    "id": "things-26",
+    "category": "Things",
+    "text": "A helicopter rotor spinning faster and faster to take off"
+  },
+  {
+    "id": "things-27",
+    "category": "Things",
+    "text": "A camera taking a burst of 10 flashing photos at a red carpet"
+  },
+  {
+    "id": "things-28",
+    "category": "Things",
+    "text": "A yo-yo performing around the world and walking the dog tricks"
+  },
+  {
+    "id": "things-29",
+    "category": "Things",
+    "text": "A paper airplane soaring smoothly across a classroom"
+  },
+  {
+    "id": "things-30",
+    "category": "Things",
+    "text": "A slot machine wheels spinning and hitting three 777s jackpot"
+  },
+  {
+    "id": "things-31",
+    "category": "Things",
+    "text": "A water sprinkler clicking rhythmically across a green lawn"
+  },
+  {
+    "id": "things-32",
+    "category": "Things",
+    "text": "A ticking time bomb counting down to zero with flashing lights"
+  },
+  {
+    "id": "things-33",
+    "category": "Things",
+    "text": "A compass needle spinning wildly near a magnet"
+  },
+  {
+    "id": "things-34",
+    "category": "Things",
+    "text": "A jackhammer breaking through tough concrete sidewalk"
+  },
+  {
+    "id": "things-35",
+    "category": "Things",
+    "text": "A snow globe being shaken up and watched as snow falls"
+  },
+  {
+    "id": "things-36",
+    "category": "Things",
+    "text": "A metal detector beeping faster as it finds buried gold"
+  },
+  {
+    "id": "things-37",
+    "category": "Things",
+    "text": "A telescope tracking a shooting star across the galaxy"
+  },
+  {
+    "id": "things-38",
+    "category": "Things",
+    "text": "A ceiling fan spinning on maximum speed rattling slightly"
+  },
+  {
+    "id": "things-39",
+    "category": "Things",
+    "text": "A stapler running out of staples mid-paper stack"
+  },
+  {
+    "id": "things-40",
+    "category": "Things",
+    "text": "A microphone giving loud screeching feedback on stage"
+  },
+  {
+    "id": "things-41",
+    "category": "Things",
+    "text": "A music box dancing ballerina spinning on a mirror"
+  },
+  {
+    "id": "things-42",
+    "category": "Things",
+    "text": "An electric toothbrush vibrating against teeth"
+  },
+  {
+    "id": "silly-1",
+    "category": "Silly",
+    "text": "Being possessed by an uncontainable urge to chicken dance"
+  },
+  {
+    "id": "silly-2",
+    "category": "Silly",
+    "text": "Trying to eat spaghetti in zero gravity on space station"
+  },
+  {
+    "id": "silly-3",
+    "category": "Silly",
+    "text": "Pretending your arms are sticky cooked spaghetti noodles"
+  },
+  {
+    "id": "silly-4",
+    "category": "Silly",
+    "text": "A clumsy ninja who constantly drops weapons and trips"
+  },
+  {
+    "id": "silly-5",
+    "category": "Silly",
+    "text": "Trying to lick your own elbow with maximum effort"
+  },
+  {
+    "id": "silly-6",
+    "category": "Silly",
+    "text": "A dog trying to understand quantum physics on a blackboard"
+  },
+  {
+    "id": "silly-7",
+    "category": "Silly",
+    "text": "Trying to run in a dream where your legs feel like lead jelly"
+  },
+  {
+    "id": "silly-8",
+    "category": "Silly",
+    "text": "A robot experiencing human brain freeze from ice cream"
+  },
+  {
+    "id": "silly-9",
+    "category": "Silly",
+    "text": "Dancing gracefully while balancing a bowl of hot soup on your head"
+  },
+  {
+    "id": "silly-10",
+    "category": "Silly",
+    "text": "An angry goose chasing a mailman across a front lawn"
+  },
+  {
+    "id": "silly-11",
+    "category": "Silly",
+    "text": "A baby discovering their own feet for the very first time"
+  },
+  {
+    "id": "silly-12",
+    "category": "Silly",
+    "text": "Trying to look cool while slipping on a banana peel"
+  },
+  {
+    "id": "silly-13",
+    "category": "Silly",
+    "text": "A fancy butler who secretly loves heavy metal headbanging"
+  },
+  {
+    "id": "silly-14",
+    "category": "Silly",
+    "text": "Getting into a fistfight with an aggressive swarm of invisible gnats"
+  },
+  {
+    "id": "silly-15",
+    "category": "Silly",
+    "text": "A ghost who is terrified of the dark and turns on lamps"
+  },
+  {
+    "id": "silly-16",
+    "category": "Silly",
+    "text": "A superhero whose only power is making plants grow 1 inch"
+  },
+  {
+    "id": "silly-17",
+    "category": "Silly",
+    "text": "A disco king who cannot stop dancing even while sleeping"
+  },
+  {
+    "id": "silly-18",
+    "category": "Silly",
+    "text": "Trying to walk normally after your foot has completely fallen asleep"
+  },
+  {
+    "id": "silly-19",
+    "category": "Silly",
+    "text": "A squirrel drinking an espresso shot and moving at 10x speed"
+  },
+  {
+    "id": "silly-20",
+    "category": "Silly",
+    "text": "A secret agent whose shoe phone won’t stop ringing loudly"
+  },
+  {
+    "id": "silly-21",
+    "category": "Silly",
+    "text": "An orchestra conductor when an itch starts in the middle of their back"
+  },
+  {
+    "id": "silly-22",
+    "category": "Silly",
+    "text": "An alien pretending to know how human high fives work"
+  },
+  {
+    "id": "silly-23",
+    "category": "Silly",
+    "text": "A chef whose food is so spicy it starts glowing neon green"
+  },
+  {
+    "id": "silly-24",
+    "category": "Silly",
+    "text": "A dog getting caught wearing their owner’s sunglasses and hat"
+  },
+  {
+    "id": "silly-25",
+    "category": "Silly",
+    "text": "A pirate who is hopelessly seasick hanging over the railing"
+  },
+  {
+    "id": "silly-26",
+    "category": "Silly",
+    "text": "Trying to fit into a tiny child-size tricycle and pedaling away"
+  },
+  {
+    "id": "silly-27",
+    "category": "Silly",
+    "text": "A mime who accidentally broke out of their invisible box"
+  },
+  {
+    "id": "silly-28",
+    "category": "Silly",
+    "text": "A vampire who accidentally takes a bite of garlic bread"
+  },
+  {
+    "id": "silly-29",
+    "category": "Silly",
+    "text": "Walking like you have fresh wet paint on every part of your body"
+  },
+  {
+    "id": "silly-30",
+    "category": "Silly",
+    "text": "A cat wearing tiny booties trying to walk on hardwood floor"
+  },
+  {
+    "id": "silly-31",
+    "category": "Silly",
+    "text": "Trying to sneak past a sleeping dragon without stepping on noisy chips"
+  },
+  {
+    "id": "silly-32",
+    "category": "Silly",
+    "text": "A statue that quickly moves when no one is looking at it"
+  },
+  {
+    "id": "silly-33",
+    "category": "Silly",
+    "text": "A bodybuilder who gets scared by a tiny fluffy kitten"
+  },
+  {
+    "id": "silly-34",
+    "category": "Silly",
+    "text": "A news anchor trying not to laugh while reporting on duck fashion"
+  },
+  {
+    "id": "silly-35",
+    "category": "Silly",
+    "text": "Getting your head stuck inside a hollow pumpkin at Halloween"
+  },
+  {
+    "id": "silly-36",
+    "category": "Silly",
+    "text": "A synchronized swimmer doing their routine on dry land"
+  },
+  {
+    "id": "silly-37",
+    "category": "Silly",
+    "text": "A dinosaur trying to make its bed with tiny T-Rex arms"
+  },
+  {
+    "id": "silly-38",
+    "category": "Silly",
+    "text": "A penguin attempting to fly off a cliff using tiny wings"
+  },
+  {
+    "id": "silly-39",
+    "category": "Silly",
+    "text": "A competitive eater struggling on hot dog number 75"
+  },
+  {
+    "id": "silly-40",
+    "category": "Silly",
+    "text": "A supervillain whose dramatic evil laugh turns into a hiccup fit"
+  },
+  {
+    "id": "silly-41",
+    "category": "Silly",
+    "text": "Trying to put pants on while jumping with both feet at once"
+  },
+  {
+    "id": "silly-42",
+    "category": "Silly",
+    "text": "A frog trying to do ballet at the royal opera house"
+  }
+]
