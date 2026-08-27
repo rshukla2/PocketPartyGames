@@ -8,6 +8,10 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   setUpAll(() async {
+    goldenFileComparator = _TolerantGoldenFileComparator(
+      Uri.parse('test/visual_golden_test.dart'),
+      precisionTolerance: 0.03,
+    );
     final loader = FontLoader('Fredoka')
       ..addFont(rootBundle.load('assets/fonts/Fredoka-Medium.ttf'))
       ..addFont(rootBundle.load('assets/fonts/Fredoka-SemiBold.ttf'))
@@ -101,6 +105,36 @@ void main() {
         matchesGoldenFile('goldens/palette_gallery_${size.width.toInt()}.png'),
       );
     });
+  }
+}
+
+/// Keeps the visual regression suite meaningful across Skia's macOS and Linux
+/// font rasterizers. At least 97% of the rendered pixels must still match the
+/// reviewed baseline exactly, so layout, color, and component regressions fail.
+class _TolerantGoldenFileComparator extends LocalFileComparator {
+  _TolerantGoldenFileComparator(
+    super.testFile, {
+    required double precisionTolerance,
+  }) : assert(precisionTolerance >= 0 && precisionTolerance <= 1),
+       _precisionTolerance = precisionTolerance;
+
+  final double _precisionTolerance;
+
+  @override
+  Future<bool> compare(Uint8List imageBytes, Uri golden) async {
+    final result = await GoldenFileComparator.compareLists(
+      imageBytes,
+      await getGoldenBytes(golden),
+    );
+    final passed = result.passed || result.diffPercent <= _precisionTolerance;
+    if (passed) {
+      result.dispose();
+      return true;
+    }
+
+    final error = await generateFailureOutput(result, golden, basedir);
+    result.dispose();
+    throw FlutterError(error);
   }
 }
 
