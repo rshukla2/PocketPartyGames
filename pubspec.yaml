@@ -18,7 +18,7 @@ dependencies:
   crypto: ^3.0.6
   cupertino_icons: ^1.0.8
   flutter_riverpod: ^3.0.3
-  go_router: ^17.0.1
+  go_router: ^18.0.0
   mobile_scanner: ^7.4.0
   path_provider: ^2.1.5
   pointycastle: ^4.0.0
