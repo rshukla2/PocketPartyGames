@@ -7,14 +7,15 @@ import '../../app/app_controller.dart';
 import '../../app/theme.dart';
 import '../../core/data/game_data_repository.dart';
 import '../../core/models/app_models.dart';
-import '../../core/models/game_models.dart';
 import '../../core/services/runtime_services.dart';
 import '../../core/widgets/party_widgets.dart';
+import 'trivia_engine.dart';
 
-enum _TriviaPhase { menu, setup, playing, results }
+enum _TriviaPhase { menu, setup, handoff, playing, playerSummary, results }
 
 class TriviaScreen extends ConsumerStatefulWidget {
   const TriviaScreen({super.key});
+
   @override
   ConsumerState<TriviaScreen> createState() => _TriviaScreenState();
 }
@@ -23,20 +24,27 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
   _TriviaPhase phase = _TriviaPhase.menu;
   bool versus = false;
   String category = 'all';
-  String difficulty = 'all';
+  TriviaDifficultyFilter difficulty = TriviaDifficultyFilter.mixed;
+  TriviaTurnOrder turnOrder = TriviaTurnOrder.fullSetEach;
   int questionCount = 10;
   int timerSeconds = 30;
   List<Player> selected = <Player>[];
-  List<TriviaQuestion> questions = <TriviaQuestion>[];
+  List<TriviaTurn> turns = <TriviaTurn>[];
   final scores = <String, int>{};
+  final correctByPlayer = <String, int>{};
   final answers = <bool>[];
   int index = 0;
   bool revealed = false;
+  String? completedPlayerId;
+  bool _selectionInitialized = false;
 
   @override
   Widget build(BuildContext context) {
     final app = ref.watch(appControllerProvider);
-    if (selected.isEmpty) selected = List<Player>.from(app.players.take(4));
+    if (!_selectionInitialized) {
+      selected = List<Player>.from(app.players);
+      _selectionInitialized = true;
+    }
     return PopScope(
       canPop: phase == _TriviaPhase.menu || phase == _TriviaPhase.setup,
       onPopInvokedWithResult: (bool didPop, Object? result) async {
@@ -44,10 +52,13 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
         if (await confirmLeaveGame(context) && context.mounted) context.pop();
       },
       child: PartyPage(
-        title: 'Trivia Vault',
+        title: 'Trivia',
+        centerTitle: true,
         style: PartyGameStyle.trivia,
         tone: switch (phase) {
+          _TriviaPhase.handoff => PartyScreenTone.secret,
           _TriviaPhase.playing => PartyScreenTone.action,
+          _TriviaPhase.playerSummary ||
           _TriviaPhase.results => PartyScreenTone.success,
           _ => PartyScreenTone.standard,
         },
@@ -57,21 +68,28 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
     );
   }
 
-  String get _subtitle => switch (phase) {
-    _TriviaPhase.menu => '1,300 questions · 13 categories',
+  String? get _subtitle => switch (phase) {
+    _TriviaPhase.menu => null,
     _TriviaPhase.setup => versus ? 'Pass & Play setup' : 'Solo Sprint setup',
-    _TriviaPhase.playing => 'Question ${index + 1} of ${questions.length}',
+    _TriviaPhase.handoff => 'Pass the phone',
+    _TriviaPhase.playing =>
+      versus
+          ? '${_playerForTurn(turns[index]).name} · Question ${turns[index].questionNumber} of $questionCount'
+          : 'Question ${index + 1} of ${turns.length}',
+    _TriviaPhase.playerSummary => 'Set complete',
     _TriviaPhase.results => 'Challenge complete',
   };
 
   Widget _content(AppState app) => switch (phase) {
-    _TriviaPhase.menu => _menu(),
+    _TriviaPhase.menu => _menu(app),
     _TriviaPhase.setup => _setup(app),
+    _TriviaPhase.handoff => _handoff(),
     _TriviaPhase.playing => _play(),
+    _TriviaPhase.playerSummary => _playerSummary(),
     _TriviaPhase.results => _results(),
   };
 
-  Widget _menu() => ListView(
+  Widget _menu(AppState app) => ListView(
     key: const ValueKey<String>('trivia-menu'),
     padding: const EdgeInsets.all(16),
     children: <Widget>[
@@ -79,6 +97,7 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
         colors: const <Color>[PartyColors.blue, PartyColors.purple],
         onTap: () => setState(() {
           versus = false;
+          questionCount = questionCount.clamp(5, 25);
           phase = _TriviaPhase.setup;
         }),
         child: const ListTile(
@@ -97,6 +116,8 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
         colors: const <Color>[PartyColors.purple, PartyColors.pink],
         onTap: () => setState(() {
           versus = true;
+          selected = List<Player>.from(app.players);
+          _clampQuestionCount(ref.read(gameDataProvider));
           phase = _TriviaPhase.setup;
         }),
         child: const ListTile(
@@ -144,51 +165,128 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
       'art-literature',
       'culture-mythology',
     ];
+    final data = ref.watch(gameDataProvider);
+    final availability = versus && selected.isNotEmpty
+        ? TriviaDeckPlanner(questions: data.trivia).availability(
+            category: category,
+            difficulty: difficulty,
+            playerCount: selected.length,
+          )
+        : null;
+    final maximum = versus ? availability?.maxQuestionsPerPlayer ?? 0 : 25;
+    final canStart =
+        !versus ||
+        (selected.length >= 2 && availability != null && availability.canPlay);
+    final sliderMinimum = maximum <= 5 ? 4 : 5;
+    final sliderMaximum = maximum <= 5 ? 5 : maximum;
+
     return ListView(
       key: const ValueKey<String>('trivia-setup'),
       padding: const EdgeInsets.all(16),
       children: <Widget>[
+        Text(
+          'CATEGORY',
+          style: Theme.of(context).textTheme.labelLarge
+              ?.copyWith(fontWeight: FontWeight.w800, letterSpacing: 1.1),
+        ),
+        const SizedBox(height: 7),
         DropdownButtonFormField<String>(
           isExpanded: true,
           initialValue: category,
-          decoration: const InputDecoration(labelText: 'Category'),
+          decoration: const InputDecoration(),
           items: categories
               .map(
-                (String value) =>
-                    DropdownMenuItem(value: value, child: Text(_title(value))),
+                (String value) => DropdownMenuItem(
+                  value: value,
+                  child: Text(_categoryTitle(value)),
+                ),
               )
               .toList(),
-          onChanged: (String? value) =>
-              setState(() => category = value ?? 'all'),
+          onChanged: (String? value) => setState(() {
+            category = value ?? 'all';
+            _clampQuestionCount(data);
+          }),
         ),
-        const SizedBox(height: 12),
-        SegmentedButton<String>(
-          segments: const <ButtonSegment<String>>[
-            ButtonSegment(value: 'all', label: Text('Mixed')),
-            ButtonSegment(value: 'easy', label: Text('Easy')),
-            ButtonSegment(value: 'medium', label: Text('Medium')),
-            ButtonSegment(value: 'hard', label: Text('Hard')),
-          ],
-          selected: <String>{difficulty},
-          onSelectionChanged: (Set<String> values) =>
-              setState(() => difficulty = values.first),
-        ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 18),
         Text(
-          'Questions: $questionCount',
+          'DIFFICULTY',
+          style: Theme.of(context).textTheme.labelLarge
+              ?.copyWith(fontWeight: FontWeight.w800, letterSpacing: 1.1),
+        ),
+        const SizedBox(height: 7),
+        SegmentedButton<TriviaDifficultyFilter>(
+          showSelectedIcon: false,
+          style: const ButtonStyle(
+            padding: WidgetStatePropertyAll(
+              EdgeInsets.symmetric(horizontal: 6),
+            ),
+          ),
+          segments: const <ButtonSegment<TriviaDifficultyFilter>>[
+            ButtonSegment(
+              value: TriviaDifficultyFilter.mixed,
+              label: _SegmentLabel('Mixed'),
+            ),
+            ButtonSegment(
+              value: TriviaDifficultyFilter.easy,
+              label: _SegmentLabel('Easy'),
+            ),
+            ButtonSegment(
+              value: TriviaDifficultyFilter.medium,
+              label: _SegmentLabel('Medium'),
+            ),
+            ButtonSegment(
+              value: TriviaDifficultyFilter.hard,
+              label: _SegmentLabel('Hard'),
+            ),
+          ],
+          selected: <TriviaDifficultyFilter>{difficulty},
+          onSelectionChanged: (values) => setState(() {
+            difficulty = values.first;
+            _clampQuestionCount(data);
+          }),
+        ),
+        const SizedBox(height: 20),
+        Text(
+          '${versus ? 'QUESTIONS PER PLAYER' : 'QUESTIONS'}: $questionCount',
           style: Theme.of(context).textTheme.titleMedium,
         ),
-        Slider(
-          value: questionCount.toDouble(),
-          min: 5,
-          max: versus ? 30 : 20,
-          divisions: versus ? 5 : 3,
-          label: '$questionCount',
-          onChanged: (double value) =>
-              setState(() => questionCount = (value / 5).round() * 5),
+        SliderTheme(
+          data: SliderTheme.of(context).copyWith(
+            activeTrackColor: PartyColors.yellow,
+            inactiveTrackColor: PartyColors.white,
+            thumbColor: PartyColors.nearBlack,
+            valueIndicatorColor: PartyColors.nearBlack,
+            valueIndicatorTextStyle: const TextStyle(
+              color: PartyColors.white,
+              fontWeight: FontWeight.w800,
+            ),
+            disabledActiveTrackColor: PartyColors.yellow.withValues(alpha: .5),
+            disabledInactiveTrackColor: PartyColors.white.withValues(
+              alpha: .55,
+            ),
+            disabledThumbColor: PartyColors.nearBlack.withValues(alpha: .55),
+          ),
+          child: Slider(
+            value: questionCount.clamp(sliderMinimum, sliderMaximum).toDouble(),
+            min: sliderMinimum.toDouble(),
+            max: sliderMaximum.toDouble(),
+            divisions: sliderMaximum - sliderMinimum,
+            label: '$questionCount',
+            onChanged: maximum <= 5
+                ? null
+                : (double value) =>
+                      setState(() => questionCount = value.round()),
+          ),
         ),
-        Text('Timer: ${timerSeconds == 0 ? 'Off' : '${timerSeconds}s'}'),
+        if (versus) ..._capacityMessage(availability),
+        const SizedBox(height: 12),
+        Text(
+          'TIMER: ${timerSeconds == 0 ? 'OFF' : '${timerSeconds}s'}',
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
+        const SizedBox(height: 7),
         SegmentedButton<int>(
+          showSelectedIcon: false,
           segments: const <ButtonSegment<int>>[
             ButtonSegment(value: 0, label: Text('Off')),
             ButtonSegment(value: 15, label: Text('15s')),
@@ -199,17 +297,62 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
               setState(() => timerSeconds = values.first),
         ),
         if (versus) ...<Widget>[
-          const SizedBox(height: 18),
-          Text('Players', style: Theme.of(context).textTheme.titleMedium),
+          const SizedBox(height: 20),
+          Text(
+            'TURN STYLE',
+            style: Theme.of(context).textTheme.labelLarge
+                ?.copyWith(fontWeight: FontWeight.w800, letterSpacing: 1.1),
+          ),
+          const SizedBox(height: 7),
+          SegmentedButton<TriviaTurnOrder>(
+            showSelectedIcon: false,
+            style: const ButtonStyle(
+              padding: WidgetStatePropertyAll(
+                EdgeInsets.symmetric(horizontal: 8),
+              ),
+            ),
+            segments: const <ButtonSegment<TriviaTurnOrder>>[
+              ButtonSegment(
+                value: TriviaTurnOrder.fullSetEach,
+                label: _SegmentLabel('Full set each'),
+              ),
+              ButtonSegment(
+                value: TriviaTurnOrder.oneQuestionEach,
+                label: _SegmentLabel('One each'),
+              ),
+            ],
+            selected: <TriviaTurnOrder>{turnOrder},
+            onSelectionChanged: (values) =>
+                setState(() => turnOrder = values.first),
+          ),
+          const SizedBox(height: 7),
+          Text(
+            turnOrder == TriviaTurnOrder.fullSetEach
+                ? 'Finish your whole set, then pass the phone.'
+                : 'Pass the phone after every question.',
+          ),
+          const SizedBox(height: 20),
+          Text('PLAYERS', style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: 8),
           PlayerChips(
+            key: ValueKey<int>(app.players.length),
             players: app.players,
-            onChanged: (List<Player> value) => selected = value,
+            onChanged: (List<Player> value) => setState(() {
+              selected = value;
+              _clampQuestionCount(data);
+            }),
           ),
+          if (selected.length < 2) ...<Widget>[
+            const SizedBox(height: 10),
+            const _CapacityCallout(
+              message: 'Select at least 2 players to start Pass & Play.',
+              danger: true,
+            ),
+          ],
         ],
         const SizedBox(height: 28),
         FilledButton.icon(
-          onPressed: _start,
+          onPressed: canStart ? _start : null,
           icon: const Icon(Icons.play_arrow_rounded),
           label: const Text('START TRIVIA'),
         ),
@@ -217,9 +360,68 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
     );
   }
 
+  List<Widget> _capacityMessage(TriviaAvailability? availability) {
+    if (selected.length < 2 || availability == null) return const <Widget>[];
+    final maximum = availability.maxQuestionsPerPlayer;
+    if (!availability.canPlay) {
+      return <Widget>[
+        const SizedBox(height: 8),
+        _CapacityCallout(
+          message:
+              'Not enough unique ${difficulty == TriviaDifficultyFilter.mixed ? 'Mixed' : _title(difficulty.name)} questions for ${selected.length} players in ${_categoryTitle(category)}. Choose Mixed, All Categories, or fewer players.',
+          danger: true,
+        ),
+      ];
+    }
+    if (maximum < 25) {
+      return <Widget>[
+        const SizedBox(height: 8),
+        _CapacityCallout(
+          message:
+              'Up to $maximum unique questions per player with this setup. Every player gets the same difficulty opportunities.',
+        ),
+      ];
+    }
+    return const <Widget>[];
+  }
+
+  Widget _handoff() {
+    final player = _playerForTurn(turns[index]);
+    return Center(
+      key: ValueKey<String>('trivia-handoff-${player.id}'),
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            PlayerAvatar(player: player, radius: 42),
+            const SizedBox(height: 24),
+            Text(
+              'PASS TO ${player.name.toUpperCase()}',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.displaySmall,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              '$questionCount questions are ready. Keep the screen private until ${player.name} has the phone.',
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 28),
+            FilledButton.icon(
+              onPressed: () => setState(() => phase = _TriviaPhase.playing),
+              icon: const Icon(Icons.visibility_rounded),
+              label: Text('${player.name.toUpperCase()} IS READY'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _play() {
-    final question = questions[index];
-    final active = versus ? selected[index % selected.length] : null;
+    final turn = turns[index];
+    final question = turn.question;
+    final active = versus ? _playerForTurn(turn) : null;
     return ListView(
       key: ValueKey<String>('trivia-${question.id}-$revealed'),
       padding: const EdgeInsets.all(16),
@@ -231,6 +433,9 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
               title: Text(
                 '${active.name}’s turn',
                 style: const TextStyle(fontWeight: FontWeight.w800),
+              ),
+              subtitle: Text(
+                'Question ${turn.questionNumber} of $questionCount',
               ),
               trailing: Text('${scores[active.id] ?? 0} pts'),
             ),
@@ -312,6 +517,48 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
     );
   }
 
+  Widget _playerSummary() {
+    final player = selected.firstWhere(
+      (candidate) => candidate.id == completedPlayerId,
+    );
+    final isLast = index == turns.length - 1;
+    return Center(
+      key: ValueKey<String>('trivia-summary-${player.id}'),
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            const StickerBadge(emoji: '⭐', size: 96),
+            const SizedBox(height: 22),
+            Text(
+              '${player.name.toUpperCase()}’S SET IS COMPLETE',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.displaySmall,
+            ),
+            const SizedBox(height: 14),
+            Text(
+              '${correctByPlayer[player.id] ?? 0} / $questionCount correct',
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+            Text(
+              '${scores[player.id] ?? 0} POINTS',
+              style: Theme.of(context).textTheme.displaySmall,
+            ),
+            const SizedBox(height: 28),
+            FilledButton(
+              onPressed: () => setState(() {
+                completedPlayerId = null;
+                phase = isLast ? _TriviaPhase.results : _TriviaPhase.handoff;
+              }),
+              child: Text(isLast ? 'SEE FINAL RESULTS' : 'PASS THE PHONE'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _results() {
     final correct = answers.where((bool value) => value).length;
     return ListView(
@@ -344,56 +591,149 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
 
   void _start() {
     final data = ref.read(gameDataProvider);
-    var pool = data.trivia.where((TriviaQuestion item) {
-      return (category == 'all' || item.category == category) &&
-          (difficulty == 'all' || item.difficulty == difficulty);
-    }).toList();
-    if (pool.length < questionCount) {
-      pool = data.trivia
-          .where(
-            (TriviaQuestion item) =>
-                category == 'all' || item.category == category,
-          )
-          .toList();
+    final random = ref.read(randomProvider);
+    final nextTurns = <TriviaTurn>[];
+    if (versus) {
+      final plan = TriviaDeckPlanner(questions: data.trivia).plan(
+        category: category,
+        difficulty: difficulty,
+        playerIds: selected.map((player) => player.id).toList(),
+        questionsPerPlayer: questionCount,
+        turnOrder: turnOrder,
+        random: random,
+      );
+      nextTurns.addAll(plan.turns);
+    } else {
+      final pool = data.trivia.where((question) {
+        return (category == 'all' || question.category == category) &&
+            (difficulty == TriviaDifficultyFilter.mixed ||
+                question.difficulty == difficulty.dataValue);
+      }).toList()..shuffle(random);
+      nextTurns.addAll(<TriviaTurn>[
+        for (final (questionIndex, question)
+            in pool.take(questionCount).indexed)
+          TriviaTurn(
+            playerId: '',
+            question: question,
+            questionNumber: questionIndex + 1,
+            pointValue: TriviaDeckPlanner.pointsForDifficulty(
+              question.difficulty,
+            ),
+          ),
+      ]);
     }
-    pool.shuffle(ref.read(randomProvider));
     setState(() {
-      questions = pool.take(questionCount).toList();
+      turns = nextTurns;
       index = 0;
       revealed = false;
+      completedPlayerId = null;
       answers.clear();
       scores
         ..clear()
         ..addEntries(
           selected.map((Player player) => MapEntry<String, int>(player.id, 0)),
         );
-      phase = _TriviaPhase.playing;
+      correctByPlayer
+        ..clear()
+        ..addEntries(
+          selected.map((Player player) => MapEntry<String, int>(player.id, 0)),
+        );
+      phase = versus && turnOrder == TriviaTurnOrder.fullSetEach
+          ? _TriviaPhase.handoff
+          : _TriviaPhase.playing;
     });
   }
 
   void _score(bool correct) {
-    if (correct && versus) {
-      final player = selected[index % selected.length];
-      final difficultyPoints = questions[index].difficulty == 'hard'
-          ? 3
-          : questions[index].difficulty == 'medium'
-          ? 2
-          : 1;
-      scores[player.id] = (scores[player.id] ?? 0) + difficultyPoints;
+    final turn = turns[index];
+    if (versus && correct) {
+      scores[turn.playerId] = (scores[turn.playerId] ?? 0) + turn.pointValue;
+      correctByPlayer[turn.playerId] =
+          (correctByPlayer[turn.playerId] ?? 0) + 1;
     }
     answers.add(correct);
     setState(() {
-      if (index + 1 >= questions.length) {
+      revealed = false;
+      final isLastTurn = index + 1 >= turns.length;
+      final playerSetComplete =
+          versus &&
+          turnOrder == TriviaTurnOrder.fullSetEach &&
+          (isLastTurn || turns[index + 1].playerId != turn.playerId);
+      if (playerSetComplete) {
+        completedPlayerId = turn.playerId;
+        if (!isLastTurn) index++;
+        phase = _TriviaPhase.playerSummary;
+      } else if (isLastTurn) {
         phase = _TriviaPhase.results;
       } else {
         index++;
-        revealed = false;
       }
     });
   }
+
+  void _clampQuestionCount(GameDataRepository data) {
+    if (!versus || selected.isEmpty) {
+      questionCount = questionCount.clamp(5, 25);
+      return;
+    }
+    final maximum = TriviaDeckPlanner(questions: data.trivia)
+        .availability(
+          category: category,
+          difficulty: difficulty,
+          playerCount: selected.length,
+        )
+        .maxQuestionsPerPlayer;
+    questionCount = maximum < 5 ? 5 : questionCount.clamp(5, maximum);
+  }
+
+  Player _playerForTurn(TriviaTurn turn) =>
+      selected.firstWhere((player) => player.id == turn.playerId);
 
   String _title(String value) => value
       .split('-')
       .map((String word) => '${word[0].toUpperCase()}${word.substring(1)}')
       .join(' ');
+
+  String _categoryTitle(String value) =>
+      value == 'all' ? 'All Categories' : _title(value);
+}
+
+class _SegmentLabel extends StatelessWidget {
+  const _SegmentLabel(this.text);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) => FittedBox(
+    fit: BoxFit.scaleDown,
+    child: Text(text, maxLines: 1, softWrap: false),
+  );
+}
+
+class _CapacityCallout extends StatelessWidget {
+  const _CapacityCallout({required this.message, this.danger = false});
+
+  final String message;
+  final bool danger;
+
+  @override
+  Widget build(BuildContext context) => Semantics(
+    liveRegion: true,
+    child: Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: danger ? PartyColors.coral : PartyColors.yellow,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: PartyColors.nearBlack, width: 3),
+      ),
+      child: Text(
+        message,
+        style: const TextStyle(
+          color: PartyColors.nearBlack,
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+    ),
+  );
 }

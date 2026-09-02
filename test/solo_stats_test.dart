@@ -42,7 +42,7 @@ void main() {
         nearPerfectCount: 1,
       ),
     );
-    expect(snapshot.encode(), contains('"schemaVersion":1'));
+    expect(snapshot.encode(), contains('"schemaVersion":2'));
     expect(snapshot.encode(), contains('"bestErrorMs":42'));
     expect(snapshot.encode(), contains('"Ada"'));
   });

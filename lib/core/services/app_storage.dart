@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -12,12 +13,7 @@ final appStorageProvider = Provider<AppStorage>(
 class AppStorage {
   AppStorage._(this._preferences);
   static const _snapshotKey = 'pocket_party_v1_snapshot';
-  static final defaultPlayers = <Player>[
-    const Player(id: 'player-1', name: 'Rishi', colorIndex: 0),
-    const Player(id: 'player-2', name: 'Alex', colorIndex: 1),
-    const Player(id: 'player-3', name: 'Sam', colorIndex: 2),
-    const Player(id: 'player-4', name: 'Priya', colorIndex: 3),
-  ];
+  static const _schemaVersion = 2;
   final SharedPreferences _preferences;
 
   static Future<AppStorage> create() async =>
@@ -28,17 +24,24 @@ class AppStorage {
       final value = _preferences.getString(_snapshotKey);
       if (value == null) return defaults();
       final json = jsonDecode(value) as Map<String, dynamic>;
-      if (json['schemaVersion'] != 1) return defaults();
-      final players = (json['players'] as List<dynamic>)
+      final schemaVersion = (json['schemaVersion'] as num?)?.toInt();
+      if (schemaVersion != 1 && schemaVersion != _schemaVersion) {
+        return defaults();
+      }
+      final storedPlayers = (json['players'] as List<dynamic>? ?? const [])
           .whereType<Map<String, dynamic>>()
           .map(Player.fromJson)
-          .where((Player player) => player.name.trim().isNotEmpty)
+          .where(
+            (Player player) =>
+                player.name.trim().isNotEmpty &&
+                player.name.trim().length <= 16,
+          )
           .take(20)
           .toList();
-      return AppSnapshot(
-        players: players.length >= 2
-            ? players
-            : List<Player>.from(defaultPlayers),
+      final snapshot = AppSnapshot(
+        // Version 1 shipped with a sample roster. Clear every legacy roster
+        // once while retaining the user's other local settings and stats.
+        players: schemaVersion == 1 ? const <Player>[] : storedPlayers,
         settings: AppSettings.fromJson(
           json['settings'] as Map<String, dynamic>? ?? <String, dynamic>{},
         ),
@@ -46,13 +49,15 @@ class AppStorage {
           json['soloStats'] as Map<String, dynamic>? ?? <String, dynamic>{},
         ),
       );
+      if (schemaVersion == 1) unawaited(save(snapshot));
+      return snapshot;
     } catch (_) {
       return defaults();
     }
   }
 
   AppSnapshot defaults() => AppSnapshot(
-    players: List<Player>.from(defaultPlayers),
+    players: const <Player>[],
     settings: const AppSettings(),
     soloStats: const SoloStats(),
   );

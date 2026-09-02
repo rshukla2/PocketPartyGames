@@ -25,9 +25,7 @@ class PocketPartyApp extends ConsumerStatefulWidget {
 
 class _PocketPartyAppState extends ConsumerState<PocketPartyApp> {
   late final GoRouter router = GoRouter(
-    initialLocation: ref.read(appControllerProvider).settings.tutorialCompleted
-        ? '/'
-        : '/onboarding',
+    initialLocation: _initialLocation(ref.read(appControllerProvider)),
     routes: <RouteBase>[
       GoRoute(
         path: '/',
@@ -100,6 +98,11 @@ class _PocketPartyAppState extends ConsumerState<PocketPartyApp> {
       ),
     ),
   );
+
+  static String _initialLocation(AppState state) {
+    if (!state.settings.tutorialCompleted) return '/onboarding';
+    return state.players.isEmpty ? '/players' : '/';
+  }
 
   @override
   void dispose() {

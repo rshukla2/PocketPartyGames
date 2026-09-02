@@ -22,86 +22,66 @@ void main() {
 
   tearDown(() => container.dispose());
 
-  test('player validation rejects bad and duplicate names', () async {
+  test('player names support generated defaults and one character', () async {
     final controller = container.read(appControllerProvider.notifier);
-    expect(await controller.addPlayer('x'), contains('at least 2'));
+    expect(container.read(appControllerProvider).players, isEmpty);
+    expect(controller.suggestedPlayerName(), 'Player 1');
+    expect(await controller.addPlayer('x'), isNull);
+    expect(controller.suggestedPlayerName(), 'Player 2');
     expect(
       await controller.addPlayer('a name that is much too long'),
       contains('at most 16'),
     );
-    expect(await controller.addPlayer('RISHI'), contains('already'));
-    expect(await controller.addPlayer('Taylor'), isNull);
-    expect(container.read(appControllerProvider).players.last.name, 'Taylor');
+    expect(await controller.addPlayer('X'), contains('already'));
+    expect(await controller.addPlayer(''), isNull);
+    expect(container.read(appControllerProvider).players.last.name, 'Player 2');
+    expect(controller.suggestedPlayerName(), 'Player 3');
   });
 
-  test('roster enforces 20 maximum and 2 minimum', () async {
+  test('roster enforces 20 maximum and permits zero players', () async {
     final controller = container.read(appControllerProvider.notifier);
-    for (var index = 0; index < 16; index++) {
+    for (var index = 0; index < 20; index++) {
       expect(await controller.addPlayer('Guest $index'), isNull);
     }
     expect(await controller.addPlayer('Overflow'), contains('20'));
     for (final player in List.of(
       container.read(appControllerProvider).players,
-    ).take(18)) {
-      await controller.removePlayer(player.id);
+    )) {
+      expect(await controller.removePlayer(player.id), isNull);
     }
-    expect(container.read(appControllerProvider).players, hasLength(2));
-    expect(
-      await controller.removePlayer(
-        container.read(appControllerProvider).players.first.id,
-      ),
-      contains('at least two'),
-    );
+    expect(container.read(appControllerProvider).players, isEmpty);
   });
 
-  test(
-    'settings, onboarding, stats, player reset, and full reset persist',
-    () async {
-      final controller = container.read(appControllerProvider.notifier);
-      await controller.completeTutorial();
-      await controller.setSound(false);
-      await controller.setHaptics(false);
-      await controller.recordSoloAttempt(5, 5.04);
-      expect(
-        container.read(appControllerProvider).settings.tutorialCompleted,
-        isTrue,
-      );
-      expect(
-        container.read(appControllerProvider).settings.soundEnabled,
-        isFalse,
-      );
-      expect(
-        container.read(appControllerProvider).settings.hapticsEnabled,
-        isFalse,
-      );
-      expect(
-        container.read(appControllerProvider).soloStats.nearPerfectCount,
-        1,
-      );
-      expect(
-        container
-            .read(appControllerProvider)
-            .soloStats
-            .history
-            .single
-            .timestamp,
-        DateTime.utc(2026, 8, 26).millisecondsSinceEpoch,
-      );
-      await controller.addPlayer('Taylor');
-      await controller.resetPlayers();
-      expect(
-        container
-            .read(appControllerProvider)
-            .players
-            .map((player) => player.name),
-        AppStorage.defaultPlayers.map((player) => player.name),
-      );
-      await controller.resetAll();
-      expect(
-        container.read(appControllerProvider).settings.tutorialCompleted,
-        isFalse,
-      );
-      expect(container.read(appControllerProvider).soloStats.attempts, 0);
-    },
-  );
+  test('settings, onboarding, stats, and full reset persist', () async {
+    final controller = container.read(appControllerProvider.notifier);
+    await controller.completeTutorial();
+    await controller.setSound(false);
+    await controller.setHaptics(false);
+    await controller.recordSoloAttempt(5, 5.04);
+    expect(
+      container.read(appControllerProvider).settings.tutorialCompleted,
+      isTrue,
+    );
+    expect(
+      container.read(appControllerProvider).settings.soundEnabled,
+      isFalse,
+    );
+    expect(
+      container.read(appControllerProvider).settings.hapticsEnabled,
+      isFalse,
+    );
+    expect(container.read(appControllerProvider).soloStats.nearPerfectCount, 1);
+    expect(
+      container.read(appControllerProvider).soloStats.history.single.timestamp,
+      DateTime.utc(2026, 8, 26).millisecondsSinceEpoch,
+    );
+    await controller.addPlayer('Taylor');
+    await controller.resetAll();
+    expect(
+      container.read(appControllerProvider).settings.tutorialCompleted,
+      isFalse,
+    );
+    expect(container.read(appControllerProvider).soloStats.attempts, 0);
+    expect(container.read(appControllerProvider).players, isEmpty);
+  });
 }

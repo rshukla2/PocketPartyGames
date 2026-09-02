@@ -48,8 +48,8 @@ class AppController extends Notifier<AppState> {
       );
 
   Future<String?> addPlayer(String rawName) async {
-    final name = rawName.trim();
-    if (name.length < 2) return 'Use at least 2 characters.';
+    final trimmedName = rawName.trim();
+    final name = trimmedName.isEmpty ? suggestedPlayerName() : trimmedName;
     if (name.length > 16) return 'Names can be at most 16 characters.';
     if (state.players.length >= 20) return 'The roster already has 20 players.';
     if (state.players.any(
@@ -71,22 +71,23 @@ class AppController extends Notifier<AppState> {
     return null;
   }
 
-  Future<String?> removePlayer(String id) async {
-    if (state.players.length <= 2) {
-      return 'Keep at least two players in the roster.';
+  String suggestedPlayerName() {
+    final existingNames = state.players
+        .map((Player player) => player.name.toLowerCase())
+        .toSet();
+    var number = state.players.length + 1;
+    while (existingNames.contains('player $number')) {
+      number++;
     }
+    return 'Player $number';
+  }
+
+  Future<String?> removePlayer(String id) async {
     state = state.copyWith(
       players: state.players.where((Player player) => player.id != id).toList(),
     );
     await _persist();
     return null;
-  }
-
-  Future<void> resetPlayers() async {
-    state = state.copyWith(
-      players: List<Player>.from(AppStorage.defaultPlayers),
-    );
-    await _persist();
   }
 
   Future<void> completeTutorial() async {

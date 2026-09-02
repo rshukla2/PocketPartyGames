@@ -8,7 +8,7 @@ The interface uses a saturated, full-bleed color identity for each game, bundled
 
 | Game | Local modes | Nearby mobile modes |
 | --- | --- | --- |
-| Trivia Vault | Solo, pass-and-play versus, browser, tiebreaker | Synchronized versus and correctness voting |
+| Trivia | Solo, pass-and-play versus, browser, tiebreaker | Synchronized versus and correctness voting |
 | Imposter | Private roles, discussion timer, reveal | Private roles, readiness, suspect vote/runoff |
 | Stop the Timer | Solo, Buzzer Battle, Timer Imposter | Calibrated starts and authoritative buzz scoring |
 | Truth or Dare | Categories, rotation, swaps, skips, summary | — |

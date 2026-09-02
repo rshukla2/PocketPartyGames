@@ -157,7 +157,7 @@ class AppSnapshot {
   final SoloStats soloStats;
 
   String encode() => jsonEncode(<String, dynamic>{
-    'schemaVersion': 1,
+    'schemaVersion': 2,
     'players': players.map((Player player) => player.toJson()).toList(),
     'settings': settings.toJson(),
     'soloStats': soloStats.toJson(),

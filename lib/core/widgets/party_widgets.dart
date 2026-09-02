@@ -107,6 +107,7 @@ class PartyPage extends StatelessWidget {
     this.subtitle,
     this.actions,
     this.showBack = true,
+    this.centerTitle = false,
     this.maxWidth = 560,
     super.key,
   });
@@ -116,6 +117,7 @@ class PartyPage extends StatelessWidget {
   final Widget child;
   final List<Widget>? actions;
   final bool showBack;
+  final bool centerTitle;
   final double maxWidth;
   final PartyGameStyle style;
   final PartyScreenTone tone;
@@ -133,6 +135,7 @@ class PartyPage extends StatelessWidget {
         child: Column(
           children: <Widget>[
             AppBar(
+              centerTitle: centerTitle,
               toolbarHeight: subtitle == null
                   ? 64
                   : 64 + ((textScale - 1).clamp(0, 1) * 30),
@@ -147,7 +150,9 @@ class PartyPage extends StatelessWidget {
                     )
                   : null,
               title: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: centerTitle
+                    ? CrossAxisAlignment.center
+                    : CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
                     title.toUpperCase(),
@@ -306,6 +311,7 @@ class GamePosterCard extends StatelessWidget {
     required this.tagline,
     required this.onTap,
     this.nearbyLabel,
+    this.stickerBackground,
     super.key,
   });
 
@@ -314,6 +320,7 @@ class GamePosterCard extends StatelessWidget {
   final String title;
   final String tagline;
   final String? nearbyLabel;
+  final Color? stickerBackground;
   final VoidCallback onTap;
 
   @override
@@ -350,7 +357,7 @@ class GamePosterCard extends StatelessWidget {
               children: <Widget>[
                 StickerBadge(
                   emoji: emoji,
-                  background: palette.accent,
+                  background: stickerBackground ?? palette.accent,
                   size: 78,
                   rotation: -.045,
                 ),

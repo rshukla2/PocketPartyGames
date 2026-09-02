@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pocket_party_games/app/theme.dart';
+import 'package:pocket_party_games/core/data/game_data_repository.dart';
+import 'package:pocket_party_games/core/models/app_models.dart';
+import 'package:pocket_party_games/core/services/app_storage.dart';
 import 'package:pocket_party_games/core/widgets/party_widgets.dart';
+import 'package:pocket_party_games/features/games/trivia_screen.dart';
+import 'package:pocket_party_games/features/home/home_screens.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+late GameDataRepository goldenData;
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +26,7 @@ void main() {
       ..addFont(rootBundle.load('assets/fonts/Fredoka-SemiBold.ttf'))
       ..addFont(rootBundle.load('assets/fonts/Fredoka-Bold.ttf'));
     await loader.load();
+    goldenData = await GameDataRepository.load();
   });
 
   testWidgets('mobile party surface golden', (WidgetTester tester) async {
@@ -27,7 +37,7 @@ void main() {
         home: RepaintBoundary(
           key: const Key('golden-root'),
           child: PartyPage(
-            title: 'Trivia Vault',
+            title: 'Trivia',
             subtitle: 'Question 4 of 10',
             style: PartyGameStyle.trivia,
             tone: PartyScreenTone.action,
@@ -105,7 +115,116 @@ void main() {
         matchesGoldenFile('goldens/palette_gallery_${size.width.toInt()}.png'),
       );
     });
+
+    for (final screen in <String>[
+      'onboarding',
+      'players-empty',
+      'players-filled',
+      'library',
+    ]) {
+      testWidgets('$screen Phase 1 golden at ${size.width.toInt()}px', (
+        WidgetTester tester,
+      ) async {
+        await _setSize(tester, size);
+        await _pumpPhaseOneGolden(tester, screen);
+        await expectLater(
+          find.byKey(const Key('phase-one-golden-root')),
+          matchesGoldenFile(
+            'goldens/phase1_${screen}_${size.width.toInt()}.png',
+          ),
+        );
+      });
+    }
+
+    testWidgets('Trivia constrained setup golden at ${size.width.toInt()}px', (
+      WidgetTester tester,
+    ) async {
+      await _setSize(tester, size);
+      await _pumpTriviaSetupGolden(tester);
+      await expectLater(
+        find.byKey(const Key('trivia-golden-root')),
+        matchesGoldenFile('goldens/trivia_setup_${size.width.toInt()}.png'),
+      );
+    });
   }
+}
+
+Future<void> _pumpTriviaSetupGolden(WidgetTester tester) async {
+  SharedPreferences.setMockInitialValues(<String, Object>{});
+  final storage = await AppStorage.create();
+  await storage.save(
+    AppSnapshot(
+      players: List<Player>.generate(
+        6,
+        (index) => Player(
+          id: 'player-$index',
+          name: 'Player ${index + 1}',
+          colorIndex: index,
+        ),
+      ),
+      settings: const AppSettings(tutorialCompleted: true),
+      soloStats: const SoloStats(),
+    ),
+  );
+  await tester.pumpWidget(
+    ProviderScope(
+      overrides: [
+        appStorageProvider.overrideWithValue(storage),
+        gameDataProvider.overrideWithValue(goldenData),
+      ],
+      child: MaterialApp(
+        theme: buildPartyTheme(),
+        home: const RepaintBoundary(
+          key: Key('trivia-golden-root'),
+          child: TriviaScreen(),
+        ),
+      ),
+    ),
+  );
+  await tester.pumpAndSettle();
+  await tester.tap(find.text('PASS & PLAY'));
+  await tester.pumpAndSettle();
+  await tester.tap(find.byType(DropdownButtonFormField<String>));
+  await tester.pumpAndSettle();
+  await tester.tap(find.text('General').last);
+  await tester.pumpAndSettle();
+  await tester.tap(find.text('Medium'));
+  await tester.pumpAndSettle();
+}
+
+Future<void> _pumpPhaseOneGolden(WidgetTester tester, String screen) async {
+  SharedPreferences.setMockInitialValues(<String, Object>{});
+  final storage = await AppStorage.create();
+  if (screen == 'players-filled') {
+    await storage.save(
+      const AppSnapshot(
+        players: <Player>[
+          Player(id: 'player-1', name: 'Player 1', colorIndex: 0),
+        ],
+        settings: AppSettings(tutorialCompleted: true),
+        soloStats: SoloStats(),
+      ),
+    );
+  }
+  final child = switch (screen) {
+    'onboarding' => const OnboardingScreen(),
+    'players-empty' || 'players-filled' => const PlayersScreen(),
+    'library' => const LibraryScreen(),
+    _ => throw ArgumentError.value(screen),
+  };
+  await tester.pumpWidget(
+    ProviderScope(
+      overrides: [appStorageProvider.overrideWithValue(storage)],
+      child: MaterialApp(
+        theme: buildPartyTheme(),
+        home: RepaintBoundary(
+          key: const Key('phase-one-golden-root'),
+          child: child,
+        ),
+      ),
+    ),
+  );
+  await tester.pumpAndSettle();
 }
 
 /// Keeps the visual regression suite meaningful across Skia's macOS and Linux
@@ -152,7 +271,7 @@ class _PaletteGallery extends StatelessWidget {
 
   static const labels = <PartyGameStyle, String>{
     PartyGameStyle.hub: 'PARTY HUB',
-    PartyGameStyle.trivia: 'TRIVIA VAULT',
+    PartyGameStyle.trivia: 'TRIVIA',
     PartyGameStyle.imposter: 'IMPOSTER',
     PartyGameStyle.stopTimer: 'STOP THE TIMER',
     PartyGameStyle.truthDare: 'TRUTH OR DARE',

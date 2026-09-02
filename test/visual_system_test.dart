@@ -118,7 +118,7 @@ void main() {
             textScaler: TextScaler.linear(2),
           ),
           child: PartyPage(
-            title: 'Trivia Vault',
+            title: 'Trivia',
             subtitle: 'Question 10 of 10',
             style: PartyGameStyle.trivia,
             child: ListView(
