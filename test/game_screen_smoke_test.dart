@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:pocket_party_games/app/theme.dart';
 import 'package:pocket_party_games/core/data/game_data_repository.dart';
 import 'package:pocket_party_games/core/services/app_storage.dart';
+import 'package:pocket_party_games/core/widgets/party_widgets.dart';
 import 'package:pocket_party_games/features/games/act_it_out_screen.dart';
 import 'package:pocket_party_games/features/games/countdown_screen.dart';
 import 'package:pocket_party_games/features/games/guess_number_screen.dart';
@@ -69,6 +70,52 @@ void main() {
     );
     await tester.pumpAndSettle();
     expect(find.text('START GAME'), findsOneWidget);
+  });
+
+  testWidgets('every game setup uses shared visible fields and sliders', (
+    WidgetTester tester,
+  ) async {
+    final setupScreens = <(Widget, int, int)>[
+      (const ImposterScreen(), 1, 1),
+      (const TruthDareScreen(), 1, 0),
+      (const PictionaryScreen(), 3, 0),
+      (const GuessNumberScreen(), 1, 1),
+      (const ActItOutScreen(), 3, 0),
+    ];
+    for (final (screen, fieldCount, sliderCount) in setupScreens) {
+      await _pumpScreen(tester, screen, storage: storage, data: data);
+      expect(
+        _partyDropdownFields(),
+        findsNWidgets(fieldCount),
+        reason: '${screen.runtimeType} fields',
+      );
+      expect(
+        find.byType(PartySlider),
+        findsNWidgets(sliderCount),
+        reason: '${screen.runtimeType} sliders',
+      );
+    }
+
+    await _pumpScreen(
+      tester,
+      const TriviaScreen(),
+      storage: storage,
+      data: data,
+    );
+    await tester.tap(find.text('SOLO SPRINT'));
+    await tester.pumpAndSettle();
+    expect(_partyDropdownFields(), findsOneWidget);
+    expect(find.byType(PartySlider), findsOneWidget);
+
+    await _pumpScreen(
+      tester,
+      const StopTimerScreen(),
+      storage: storage,
+      data: data,
+    );
+    await tester.tap(find.text('BUZZER BATTLE'));
+    await tester.pumpAndSettle();
+    expect(find.byType(PartySlider), findsOneWidget);
   });
 
   for (final size in <Size>[const Size(390, 844), const Size(1280, 900)]) {
@@ -161,4 +208,26 @@ void main() {
       );
     }
   });
+}
+
+Finder _partyDropdownFields() =>
+    find.byWidgetPredicate((widget) => widget is PartyDropdownField);
+
+Future<void> _pumpScreen(
+  WidgetTester tester,
+  Widget screen, {
+  required AppStorage storage,
+  required GameDataRepository data,
+}) async {
+  await tester.pumpWidget(const SizedBox.shrink());
+  await tester.pumpWidget(
+    ProviderScope(
+      overrides: [
+        appStorageProvider.overrideWithValue(storage),
+        gameDataProvider.overrideWithValue(data),
+      ],
+      child: MaterialApp(theme: buildPartyTheme(), home: screen),
+    ),
+  );
+  await tester.pumpAndSettle();
 }

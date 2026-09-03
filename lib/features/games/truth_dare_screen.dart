@@ -75,10 +75,9 @@ class _TruthDareScreenState extends ConsumerState<TruthDareScreen> {
         onChanged: (List<Player> value) => selected = value,
       ),
       const SizedBox(height: 18),
-      DropdownButtonFormField<String>(
-        isExpanded: true,
+      PartyDropdownField<String>(
+        label: 'Card category',
         initialValue: category,
-        decoration: const InputDecoration(labelText: 'Card category'),
         items: const <String>['Mixed', 'Chill', 'Funny', 'Friends', 'Bold']
             .map(
               (String value) =>

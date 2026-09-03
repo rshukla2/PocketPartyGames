@@ -321,11 +321,12 @@ class LibraryScreen extends ConsumerWidget {
     return Scaffold(
       body: PartyBackground(
         style: PartyGameStyle.hub,
+        palette: PartyPalettes.library,
         child: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
               pinned: true,
-              backgroundColor: PartyColors.purple,
+              backgroundColor: PartyColors.deepIndigo,
               title: const Text('POCKET PARTY GAMES'),
               actions: <Widget>[
                 TextButton.icon(

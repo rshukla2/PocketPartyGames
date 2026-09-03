@@ -93,10 +93,9 @@ class _GuessNumberScreenState extends ConsumerState<GuessNumberScreen> {
         onChanged: (List<Player> value) => selected = value,
       ),
       const SizedBox(height: 18),
-      DropdownButtonFormField<String>(
-        isExpanded: true,
+      PartyDropdownField<String>(
+        label: 'Number range',
         initialValue: '$minValue-$maxValue',
-        decoration: const InputDecoration(labelText: 'Number range'),
         items: const <DropdownMenuItem<String>>[
           DropdownMenuItem(value: '1-10', child: Text('1 to 10 · Easy')),
           DropdownMenuItem(value: '1-50', child: Text('1 to 50 · Quick')),
@@ -128,7 +127,7 @@ class _GuessNumberScreenState extends ConsumerState<GuessNumberScreen> {
       ),
       const SizedBox(height: 16),
       Text('Turns per player: $roundsPerPlayer'),
-      Slider(
+      PartySlider(
         value: roundsPerPlayer.toDouble(),
         min: 1,
         max: 5,

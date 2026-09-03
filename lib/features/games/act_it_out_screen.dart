@@ -119,10 +119,9 @@ class _ActItOutScreenState extends ConsumerState<ActItOutScreen> {
           onChanged: (List<Player> value) => players = value,
         ),
         const SizedBox(height: 16),
-        DropdownButtonFormField<String>(
-          isExpanded: true,
+        PartyDropdownField<String>(
+          label: 'Category',
           initialValue: category,
-          decoration: const InputDecoration(labelText: 'Category'),
           items: categories
               .map(
                 (String value) =>
@@ -133,10 +132,9 @@ class _ActItOutScreenState extends ConsumerState<ActItOutScreen> {
               setState(() => category = value ?? 'All'),
         ),
         const SizedBox(height: 12),
-        DropdownButtonFormField<int>(
-          isExpanded: true,
+        PartyDropdownField<int>(
+          label: 'Acting time',
           initialValue: secondsPerTurn,
-          decoration: const InputDecoration(labelText: 'Acting time'),
           items: const <int>[30, 45, 60, 90]
               .map(
                 (int value) => DropdownMenuItem<int>(
@@ -149,10 +147,9 @@ class _ActItOutScreenState extends ConsumerState<ActItOutScreen> {
         ),
         if (mode == _ActMode.classic) ...<Widget>[
           const SizedBox(height: 12),
-          DropdownButtonFormField<int>(
-            isExpanded: true,
+          PartyDropdownField<int>(
+            label: 'Rounds per player',
             initialValue: rounds,
-            decoration: const InputDecoration(labelText: 'Rounds per player'),
             items: const <int>[1, 2, 3]
                 .map(
                   (int value) => DropdownMenuItem<int>(

@@ -38,6 +38,7 @@ class PartyPalette {
 abstract final class PartyColors {
   static const nearBlack = Color(0xFF111111);
   static const purple = Color(0xFF7C3AED);
+  static const deepIndigo = Color(0xFF312E81);
   static const violet = Color(0xFFA855F7);
   static const cyan = Color(0xFF00CFF3);
   static const blue = Color(0xFF168BFF);
@@ -69,6 +70,15 @@ abstract final class PartyColors {
 
 abstract final class PartyPalettes {
   static const _whiteSurface = PartyColors.white;
+
+  static const library = PartyPalette(
+    background: PartyColors.deepIndigo,
+    foreground: PartyColors.white,
+    accent: PartyColors.yellow,
+    secondary: PartyColors.cyan,
+    surface: _whiteSurface,
+    onSurface: PartyColors.nearBlack,
+  );
 
   static PartyPalette resolve(
     PartyGameStyle style, [
@@ -394,8 +404,8 @@ ThemeData buildPartyTheme({PartyPalette? palette}) {
         color: PartyColors.nearBlack,
         fontWeight: FontWeight.w600,
       ),
-      floatingLabelStyle: TextStyle(
-        color: colors.background,
+      floatingLabelStyle: const TextStyle(
+        color: PartyColors.nearBlack,
         fontWeight: FontWeight.w800,
       ),
       prefixIconColor: PartyColors.nearBlack,

@@ -159,7 +159,7 @@ class _StopTimerScreenState extends ConsumerState<StopTimerScreen> {
       if (mode == _Mode.buzzer) ...<Widget>[
         const SizedBox(height: 18),
         Text('Rounds: $totalRounds'),
-        Slider(
+        PartySlider(
           value: totalRounds.toDouble(),
           min: 3,
           max: 10,

@@ -31,7 +31,9 @@ class PartyVisualScope extends InheritedWidget {
 
   @override
   bool updateShouldNotify(PartyVisualScope oldWidget) =>
-      style != oldWidget.style || tone != oldWidget.tone;
+      style != oldWidget.style ||
+      tone != oldWidget.tone ||
+      palette != oldWidget.palette;
 }
 
 extension PartyBuildContext on BuildContext {
@@ -45,6 +47,7 @@ class PartyBackground extends StatelessWidget {
     required this.child,
     this.style = PartyGameStyle.hub,
     this.tone = PartyScreenTone.standard,
+    this.palette,
     this.safeArea = true,
     super.key,
   });
@@ -52,11 +55,12 @@ class PartyBackground extends StatelessWidget {
   final Widget child;
   final PartyGameStyle style;
   final PartyScreenTone tone;
+  final PartyPalette? palette;
   final bool safeArea;
 
   @override
   Widget build(BuildContext context) {
-    final palette = PartyPalettes.resolve(style, tone);
+    final palette = this.palette ?? PartyPalettes.resolve(style, tone);
     final foreground = TextStyle(
       color: palette.foreground,
       fontFamily: 'Fredoka',
@@ -185,6 +189,122 @@ class PartyPage extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class PartyFieldLabel extends StatelessWidget {
+  const PartyFieldLabel(this.label, {super.key});
+
+  final String label;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.only(bottom: 7),
+    child: Text(
+      label.toUpperCase(),
+      style: Theme.of(context).textTheme.labelLarge?.copyWith(
+        color: context.partyPalette.foreground,
+        fontWeight: FontWeight.w800,
+        letterSpacing: 1.1,
+      ),
+    ),
+  );
+}
+
+class PartyDropdownField<T> extends StatelessWidget {
+  const PartyDropdownField({
+    required this.label,
+    required this.initialValue,
+    required this.items,
+    required this.onChanged,
+    this.isExpanded = true,
+    super.key,
+  });
+
+  final String label;
+  final T? initialValue;
+  final List<DropdownMenuItem<T>> items;
+  final ValueChanged<T?>? onChanged;
+  final bool isExpanded;
+
+  @override
+  Widget build(BuildContext context) => Column(
+    crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: <Widget>[
+      PartyFieldLabel(label),
+      DropdownButtonFormField<T>(
+        isExpanded: isExpanded,
+        initialValue: initialValue,
+        decoration: const InputDecoration(),
+        items: items,
+        onChanged: onChanged,
+      ),
+    ],
+  );
+}
+
+class PartySlider extends StatelessWidget {
+  const PartySlider({
+    required this.value,
+    required this.min,
+    required this.max,
+    required this.onChanged,
+    this.divisions,
+    this.label,
+    this.activeColor,
+    super.key,
+  });
+
+  final double value;
+  final double min;
+  final double max;
+  final int? divisions;
+  final String? label;
+  final ValueChanged<double>? onChanged;
+  final Color? activeColor;
+
+  @override
+  Widget build(BuildContext context) {
+    final palette = context.partyPalette;
+    final preferred = activeColor ?? palette.accent;
+    final active = _contrastRatio(preferred, palette.background) >= 2
+        ? preferred
+        : palette.foreground;
+    final thumb = active == PartyColors.nearBlack
+        ? PartyColors.yellow
+        : PartyColors.nearBlack;
+    return SliderTheme(
+      data: SliderTheme.of(context).copyWith(
+        activeTrackColor: active,
+        inactiveTrackColor: PartyColors.white,
+        thumbColor: thumb,
+        overlayColor: thumb.withValues(alpha: .16),
+        valueIndicatorColor: PartyColors.nearBlack,
+        valueIndicatorTextStyle: const TextStyle(
+          color: PartyColors.white,
+          fontWeight: FontWeight.w800,
+        ),
+        disabledActiveTrackColor: active.withValues(alpha: .5),
+        disabledInactiveTrackColor: PartyColors.white.withValues(alpha: .55),
+        disabledThumbColor: thumb.withValues(alpha: .62),
+      ),
+      child: Slider(
+        value: value,
+        min: min,
+        max: max,
+        divisions: divisions,
+        label: label,
+        onChanged: onChanged,
+      ),
+    );
+  }
+
+  static double _contrastRatio(Color first, Color second) {
+    final firstLuminance = first.computeLuminance();
+    final secondLuminance = second.computeLuminance();
+    final lighter = math.max(firstLuminance, secondLuminance);
+    final darker = math.min(firstLuminance, secondLuminance);
+    return (lighter + .05) / (darker + .05);
   }
 }
 

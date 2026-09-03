@@ -184,16 +184,9 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
       key: const ValueKey<String>('trivia-setup'),
       padding: const EdgeInsets.all(16),
       children: <Widget>[
-        Text(
-          'CATEGORY',
-          style: Theme.of(context).textTheme.labelLarge
-              ?.copyWith(fontWeight: FontWeight.w800, letterSpacing: 1.1),
-        ),
-        const SizedBox(height: 7),
-        DropdownButtonFormField<String>(
-          isExpanded: true,
+        PartyDropdownField<String>(
+          label: 'Category',
           initialValue: category,
-          decoration: const InputDecoration(),
           items: categories
               .map(
                 (String value) => DropdownMenuItem(
@@ -250,33 +243,15 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
           '${versus ? 'QUESTIONS PER PLAYER' : 'QUESTIONS'}: $questionCount',
           style: Theme.of(context).textTheme.titleMedium,
         ),
-        SliderTheme(
-          data: SliderTheme.of(context).copyWith(
-            activeTrackColor: PartyColors.yellow,
-            inactiveTrackColor: PartyColors.white,
-            thumbColor: PartyColors.nearBlack,
-            valueIndicatorColor: PartyColors.nearBlack,
-            valueIndicatorTextStyle: const TextStyle(
-              color: PartyColors.white,
-              fontWeight: FontWeight.w800,
-            ),
-            disabledActiveTrackColor: PartyColors.yellow.withValues(alpha: .5),
-            disabledInactiveTrackColor: PartyColors.white.withValues(
-              alpha: .55,
-            ),
-            disabledThumbColor: PartyColors.nearBlack.withValues(alpha: .55),
-          ),
-          child: Slider(
-            value: questionCount.clamp(sliderMinimum, sliderMaximum).toDouble(),
-            min: sliderMinimum.toDouble(),
-            max: sliderMaximum.toDouble(),
-            divisions: sliderMaximum - sliderMinimum,
-            label: '$questionCount',
-            onChanged: maximum <= 5
-                ? null
-                : (double value) =>
-                      setState(() => questionCount = value.round()),
-          ),
+        PartySlider(
+          value: questionCount.clamp(sliderMinimum, sliderMaximum).toDouble(),
+          min: sliderMinimum.toDouble(),
+          max: sliderMaximum.toDouble(),
+          divisions: sliderMaximum - sliderMinimum,
+          label: '$questionCount',
+          onChanged: maximum <= 5
+              ? null
+              : (double value) => setState(() => questionCount = value.round()),
         ),
         if (versus) ..._capacityMessage(availability),
         const SizedBox(height: 12),

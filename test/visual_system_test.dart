@@ -80,6 +80,38 @@ void main() {
     semantics.dispose();
   });
 
+  testWidgets('party sliders stay visible on every game background', (
+    WidgetTester tester,
+  ) async {
+    for (final style in PartyGameStyle.values) {
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: buildPartyTheme(),
+          home: PartyBackground(
+            style: style,
+            child: PartySlider(
+              value: 2,
+              min: 1,
+              max: 3,
+              divisions: 2,
+              label: '2',
+              onChanged: (_) {},
+            ),
+          ),
+        ),
+      );
+      final sliderTheme = tester.widget<SliderTheme>(find.byType(SliderTheme));
+      final background = PartyPalettes.resolve(style).background;
+      expect(
+        _contrast(sliderTheme.data.activeTrackColor!, background),
+        greaterThanOrEqualTo(2),
+        reason: '${style.name} active slider track',
+      );
+      expect(sliderTheme.data.inactiveTrackColor, PartyColors.white);
+      expect(sliderTheme.data.thumbColor, isNot(background));
+    }
+  });
+
   testWidgets('phase transitions honor reduced motion', (
     WidgetTester tester,
   ) async {

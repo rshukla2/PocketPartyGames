@@ -101,10 +101,9 @@ class _ImposterScreenState extends ConsumerState<ImposterScreen> {
           onChanged: (List<Player> value) => setState(() => selected = value),
         ),
         const SizedBox(height: 18),
-        DropdownButtonFormField<String>(
-          isExpanded: true,
+        PartyDropdownField<String>(
+          label: 'Secret word category',
           initialValue: category,
-          decoration: const InputDecoration(labelText: 'Secret word category'),
           items: categories
               .map(
                 (String value) =>
@@ -116,17 +115,19 @@ class _ImposterScreenState extends ConsumerState<ImposterScreen> {
         ),
         const SizedBox(height: 16),
         Text('Imposters: $imposterCount'),
-        Slider(
+        PartySlider(
           value: imposterCount.toDouble(),
-          min: 1,
+          min: maxImposters == 1 ? 0 : 1,
           max: maxImposters.toDouble(),
           divisions: maxImposters - 1 == 0 ? null : maxImposters - 1,
           label: '$imposterCount',
-          onChanged: (double value) =>
-              setState(() => imposterCount = value.round()),
+          onChanged: maxImposters == 1
+              ? null
+              : (double value) => setState(() => imposterCount = value.round()),
         ),
         Text('Discussion: ${minutes == 0 ? 'No timer' : '$minutes minutes'}'),
         SegmentedButton<int>(
+          showSelectedIcon: false,
           segments: const <ButtonSegment<int>>[
             ButtonSegment(value: 0, label: Text('Off')),
             ButtonSegment(value: 1, label: Text('1m')),

@@ -125,10 +125,9 @@ class _PictionaryScreenState extends ConsumerState<PictionaryScreen> {
           onChanged: (List<Player> value) => players = value,
         ),
         const SizedBox(height: 16),
-        DropdownButtonFormField<String>(
-          isExpanded: true,
+        PartyDropdownField<String>(
+          label: 'Prompt category',
           initialValue: category,
-          decoration: const InputDecoration(labelText: 'Prompt category'),
           items: categories
               .map(
                 (String value) =>
@@ -139,10 +138,9 @@ class _PictionaryScreenState extends ConsumerState<PictionaryScreen> {
               setState(() => category = value ?? 'All'),
         ),
         const SizedBox(height: 12),
-        DropdownButtonFormField<int>(
-          isExpanded: true,
+        PartyDropdownField<int>(
+          label: 'Drawing time',
           initialValue: secondsPerTurn,
-          decoration: const InputDecoration(labelText: 'Drawing time'),
           items: const <int>[30, 45, 60, 90]
               .map(
                 (int value) => DropdownMenuItem<int>(
@@ -154,10 +152,9 @@ class _PictionaryScreenState extends ConsumerState<PictionaryScreen> {
           onChanged: (int? value) => secondsPerTurn = value ?? 60,
         ),
         const SizedBox(height: 12),
-        DropdownButtonFormField<int>(
-          isExpanded: true,
+        PartyDropdownField<int>(
+          label: 'Rounds per player',
           initialValue: rounds,
-          decoration: const InputDecoration(labelText: 'Rounds per player'),
           items: const <int>[1, 2, 3]
               .map(
                 (int value) =>

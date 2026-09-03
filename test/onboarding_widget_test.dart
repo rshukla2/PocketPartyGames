@@ -111,6 +111,14 @@ void main() {
         findsOneWidget,
       );
       expect(find.text('PICK A GAME.\nSTART SOME CHAOS.'), findsOneWidget);
+      final libraryBackground = tester.widget<PartyBackground>(
+        find.byType(PartyBackground),
+      );
+      expect(libraryBackground.palette, PartyPalettes.library);
+      expect(
+        libraryBackground.palette?.background,
+        isNot(PartyPalettes.resolve(PartyGameStyle.imposter).background),
+      );
       expect(find.textContaining('1,300'), findsNothing);
       expect(find.textContaining('200 cards'), findsNothing);
       expect(find.textContaining('420 prompts'), findsNothing);
