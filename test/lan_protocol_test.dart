@@ -212,11 +212,16 @@ void main() {
     room.requestJoin('a', 'A');
     room.disconnected('a');
     now = now.add(const Duration(seconds: 59));
-    room.removeExpiredMembers();
+    expect(room.removeExpiredMembers(), isEmpty);
     expect(room.members, contains('a'));
-    now = now.add(const Duration(seconds: 2));
-    room.removeExpiredMembers();
+    now = now.add(const Duration(seconds: 1));
+    final revisionBeforeExpiry = room.revision;
+    expect(
+      room.removeExpiredMembers().map((member) => member.deviceId),
+      contains('a'),
+    );
     expect(room.members, isNot(contains('a')));
+    expect(room.revision, revisionBeforeExpiry + 1);
   });
 
   test('hybrid player claims are unique and room caps at 20 devices', () {

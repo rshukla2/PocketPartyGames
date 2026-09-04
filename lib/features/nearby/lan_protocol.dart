@@ -204,14 +204,22 @@ class LanRoomEngine {
     revision++;
   }
 
-  void removeExpiredMembers() {
+  List<RoomMember> removeExpiredMembers() {
     final cutoff = now().subtract(lanReconnectGrace);
-    members.removeWhere(
-      (String _, RoomMember member) =>
-          !member.connected &&
-          member.disconnectedAt != null &&
-          member.disconnectedAt!.isBefore(cutoff),
-    );
+    final expired = members.values
+        .where(
+          (RoomMember member) =>
+              !member.connected &&
+              member.disconnectedAt != null &&
+              !member.disconnectedAt!.isAfter(cutoff),
+        )
+        .toList(growable: false);
+    for (final member in expired) {
+      members.remove(member.deviceId);
+      privateByDevice.remove(member.deviceId);
+    }
+    if (expired.isNotEmpty) revision++;
+    return expired;
   }
 
   LanCommandResult apply(

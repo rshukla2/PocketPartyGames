@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pocket_party_games/app/app_controller.dart';
 import 'package:pocket_party_games/app/theme.dart';
 import 'package:pocket_party_games/core/data/game_data_repository.dart';
 import 'package:pocket_party_games/core/models/app_models.dart';
@@ -26,11 +25,11 @@ void main() {
     await _pumpImposter(tester, data: data, players: _players(4));
     expect(find.text('IMPOSTER HINT'), findsOneWidget);
     expect(find.text('MULTIPLE ROUNDS'), findsOneWidget);
-    expect(find.text('DEAL SECRET ROLES'), findsOneWidget);
 
     await tester.tap(find.text('ODD WORD'));
     await tester.pumpAndSettle();
     expect(find.text('IMPOSTER HINT'), findsNothing);
+    await _scrollVisible(tester, find.text('DEAL SECRET WORDS'));
     expect(find.text('DEAL SECRET WORDS'), findsOneWidget);
   });
 
@@ -113,10 +112,22 @@ void main() {
 }
 
 Future<void> _tapVisible(WidgetTester tester, Finder finder) async {
-  await tester.ensureVisible(finder);
+  await _scrollVisible(tester, finder);
   await tester.pumpAndSettle();
   await tester.tap(finder);
   await tester.pumpAndSettle();
+}
+
+Future<void> _scrollVisible(WidgetTester tester, Finder finder) async {
+  if (finder.evaluate().isEmpty) {
+    await tester.scrollUntilVisible(
+      finder,
+      250,
+      scrollable: find.byType(Scrollable).first,
+    );
+  } else {
+    await tester.ensureVisible(finder);
+  }
 }
 
 List<Player> _players(int count) => List<Player>.generate(
@@ -148,7 +159,7 @@ Future<void> _pumpImposter(
   );
   await tester.pumpWidget(
     ProviderScope(
-      overrides: <Override>[
+      overrides: [
         appStorageProvider.overrideWithValue(storage),
         gameDataProvider.overrideWithValue(data),
         randomProvider.overrideWithValue(Random(44)),

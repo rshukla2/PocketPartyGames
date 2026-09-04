@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pocket_party_games/app/theme.dart';
+import 'package:pocket_party_games/core/models/app_models.dart';
 import 'package:pocket_party_games/core/widgets/party_widgets.dart';
 
 void main() {

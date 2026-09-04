@@ -381,4 +381,43 @@ class ImposterGameEngine {
       phase: ImposterPhase.discussion,
     );
   }
+
+  /// Removes a player whose reconnect window expired without treating the
+  /// network loss as a vote. Team win conditions still apply immediately.
+  ImposterMatch removeDisconnectedPlayer(ImposterMatch match, String playerId) {
+    if (!match.activePlayerIds.contains(playerId)) {
+      throw StateError('Only an active player can leave the match.');
+    }
+    final remaining = match.activePlayerIds
+        .where((String id) => id != playerId)
+        .toList(growable: false);
+    final imposters = remaining
+        .where((String id) => match.assignments[id]!.isImposter)
+        .length;
+    final crew = remaining.length - imposters;
+    final outcome = imposters == 0
+        ? ImposterOutcome.crew
+        : imposters >= crew
+        ? ImposterOutcome.imposters
+        : null;
+    final player = match.setup.players.firstWhere(
+      (Player value) => value.id == playerId,
+    );
+    final currentRound = match.rounds.last;
+    final rounds = <ImposterRound>[
+      ...match.rounds.sublist(0, match.rounds.length - 1),
+      ImposterRound(
+        number: currentRound.number,
+        activePlayerIds: remaining,
+        eliminatedPlayerId: currentRound.eliminatedPlayerId,
+        banner: '${player.name.toUpperCase()} LEFT THE GAME',
+      ),
+    ];
+    return match.copyWith(
+      activePlayerIds: remaining,
+      rounds: rounds,
+      phase: outcome == null ? match.phase : ImposterPhase.result,
+      outcome: outcome,
+    );
+  }
 }

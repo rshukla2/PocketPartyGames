@@ -1327,6 +1327,29 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
 
   void _startGameTicker() {
     gameTicker ??= Timer.periodic(const Duration(seconds: 1), (_) {
+      final room = roomEngine;
+      final session = imposterSession;
+      if (mounted && room != null && session != null) {
+        final expired = room.removeExpiredMembers();
+        if (expired.isNotEmpty) {
+          for (final member in expired) {
+            session.expireDevice(member.deviceId);
+            final playerId = approvedPlayerAssignments.remove(member.deviceId);
+            final player = widget.imposterSetup?.players
+                .where((value) => value.id == playerId)
+                .firstOrNull;
+            if (player != null) participants.remove(player.name);
+          }
+          if (session.match.phase == ImposterPhase.privateReveal) {
+            _maybeBeginNearbyDiscussion(session);
+          }
+          status = expired.length == 1
+              ? 'A disconnected player left after the 60-second reconnect window.'
+              : '${expired.length} disconnected players left after the reconnect window.';
+          setState(() {});
+          unawaited(_sendAllImposterSnapshots());
+        }
+      }
       if (mounted &&
           (imposterSession?.match.phase == ImposterPhase.discussion ||
               clientSnapshot?['phase'] == ImposterPhase.discussion.name)) {

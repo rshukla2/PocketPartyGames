@@ -152,6 +152,72 @@ void main() {
     expect(session.ballotBox!.runoff, 1);
     expect(session.ballotBox!.candidates, hasLength(20));
   });
+
+  test('expired devices leave the active ballot before tallying', () {
+    final players = _players(5);
+    final session = NearbyImposterSession(
+      setup: ImposterSetup(
+        players: players,
+        category: 'Test',
+        multipleRounds: true,
+      ),
+      words: words,
+      random: Random(13),
+    );
+    for (final player in players) {
+      session.assignDevice('d-${player.id}', player.id);
+      session.markReady(player.id);
+    }
+    session.beginDiscussion(DateTime(2026));
+    session.beginVoting();
+
+    final imposterId = session.match.assignments.values
+        .firstWhere((assignment) => assignment.isImposter)
+        .playerId;
+    final disconnectedCrew = session.match.assignments.values
+        .firstWhere((assignment) => !assignment.isImposter)
+        .playerId;
+    final remainingCrew = players
+        .map((player) => player.id)
+        .where((id) => id != imposterId && id != disconnectedCrew)
+        .toList();
+    for (final voterId in remainingCrew) {
+      session.castVote(voterId, imposterId);
+    }
+
+    session.expireDevice('d-$disconnectedCrew');
+    expect(session.match.activePlayerIds, isNot(contains(disconnectedCrew)));
+    expect(session.ballotBox!.isComplete, isFalse);
+    session.castVote(imposterId, remainingCrew.first);
+
+    expect(session.match.phase, ImposterPhase.result);
+    expect(session.match.outcome, ImposterOutcome.crew);
+  });
+
+  test('an expired imposter immediately produces a Crew result', () {
+    final players = _players(4);
+    final session = NearbyImposterSession(
+      setup: ImposterSetup(
+        players: players,
+        category: 'Test',
+        multipleRounds: true,
+      ),
+      words: words,
+      random: Random(17),
+    );
+    for (final player in players) {
+      session.assignDevice('d-${player.id}', player.id);
+    }
+    final imposterId = session.match.assignments.values
+        .firstWhere((assignment) => assignment.isImposter)
+        .playerId;
+
+    session.expireDevice('d-$imposterId');
+
+    expect(session.match.phase, ImposterPhase.result);
+    expect(session.match.outcome, ImposterOutcome.crew);
+    expect(session.devicePlayers, isNot(containsValue(imposterId)));
+  });
 }
 
 List<Player> _players(int count) => List<Player>.generate(

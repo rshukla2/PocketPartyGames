@@ -45,6 +45,43 @@ class NearbyImposterSession {
     devicePlayers[deviceId] = playerId;
   }
 
+  void expireDevice(String deviceId) {
+    final playerId = devicePlayers.remove(deviceId);
+    if (playerId == null) return;
+    readyPlayerIds.remove(playerId);
+    if (!match.activePlayerIds.contains(playerId)) return;
+
+    final oldBox = ballotBox;
+    match = _engine.removeDisconnectedPlayer(match, playerId);
+    creatorDecisionCandidates = creatorDecisionCandidates
+        .where(match.activePlayerIds.contains)
+        .toList(growable: false);
+    if (match.phase == ImposterPhase.result || oldBox == null) {
+      ballotBox = null;
+      return;
+    }
+
+    final candidates = oldBox.candidates
+        ?.where(match.activePlayerIds.contains)
+        .toList(growable: false);
+    final replacement = ImposterBallotBox(
+      activePlayerIds: match.activePlayerIds,
+      candidates: candidates?.isEmpty == true ? null : candidates,
+      round: oldBox.round,
+      runoff: oldBox.runoff,
+    );
+    for (final vote in oldBox.votes.values) {
+      if (match.activePlayerIds.contains(vote.voterId) &&
+          (replacement.candidates ?? match.activePlayerIds).contains(
+            vote.targetPlayerId,
+          )) {
+        replacement.cast(vote.voterId, vote.targetPlayerId);
+      }
+    }
+    ballotBox = replacement;
+    _applyResolution(replacement.resolve());
+  }
+
   void markReady(String playerId) {
     if (!match.activePlayerIds.contains(playerId)) {
       throw StateError('player_inactive');
@@ -87,6 +124,11 @@ class NearbyImposterSession {
       throw StateError('invalid_vote');
     }
     final resolution = box.resolve();
+    _applyResolution(resolution);
+    return resolution;
+  }
+
+  void _applyResolution(ImposterVoteResolution resolution) {
     if (resolution.eliminatedPlayerId != null) {
       _eliminate(resolution.eliminatedPlayerId!);
     } else if (resolution.runoffCandidates.isNotEmpty) {
@@ -101,7 +143,6 @@ class NearbyImposterSession {
         );
       }
     }
-    return resolution;
   }
 
   void resolveCreator(String targetPlayerId) {
