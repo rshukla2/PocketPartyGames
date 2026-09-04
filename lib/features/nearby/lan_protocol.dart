@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-const int lanProtocolVersion = 1;
+const int lanProtocolVersion = 2;
 const Duration lanReconnectGrace = Duration(seconds: 60);
 
 class LanEnvelope {
@@ -214,12 +214,18 @@ class LanRoomEngine {
     );
   }
 
-  LanCommandResult apply(LanEnvelope envelope) {
+  LanCommandResult apply(
+    LanEnvelope envelope, {
+    String? authenticatedSenderId,
+  }) {
     String? error;
     if (envelope.protocolVersion != lanProtocolVersion) {
       error = 'protocol_incompatible';
     } else if (envelope.roomId != roomId) {
       error = 'wrong_room';
+    } else if (authenticatedSenderId != null &&
+        authenticatedSenderId != envelope.senderId) {
+      error = 'sender_mismatch';
     } else if (_messageIds.contains(envelope.messageId)) {
       error = 'duplicate';
     } else if (envelope.clientSequence <=
@@ -281,6 +287,9 @@ class LanRoomEngine {
         );
         ready[envelope.senderId] = envelope.payload['ready'] == true;
         shared['ready'] = ready;
+      case 'gameCommand':
+      // Game-specific validation and mutation are performed by the host's
+      // authoritative feature session after this envelope is accepted.
       default:
         return LanCommandResult(
           accepted: false,
@@ -300,6 +309,8 @@ class LanRoomEngine {
 
   void setPrivateState(String deviceId, Map<String, dynamic> value) =>
       privateByDevice[deviceId] = Map<String, dynamic>.from(value);
+
+  void recordHostMutation() => revision++;
 
   Map<String, dynamic> projectionFor(String deviceId) => <String, dynamic>{
     'protocolVersion': lanProtocolVersion,

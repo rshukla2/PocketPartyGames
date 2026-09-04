@@ -369,7 +369,7 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            PlayerAvatar(player: player, radius: 42),
+            PlayerNameBadge(player: player),
             const SizedBox(height: 24),
             Text(
               'PASS TO ${player.name.toUpperCase()}',
@@ -404,7 +404,6 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
         if (active != null)
           PartyCard(
             child: ListTile(
-              leading: PlayerAvatar(player: active),
               title: Text(
                 '${active.name}’s turn',
                 style: const TextStyle(fontWeight: FontWeight.w800),

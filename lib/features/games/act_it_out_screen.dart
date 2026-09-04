@@ -185,7 +185,7 @@ class _ActItOutScreenState extends ConsumerState<ActItOutScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          PlayerAvatar(player: player, radius: 46),
+          PlayerNameBadge(player: player),
           const SizedBox(height: 14),
           Text(
             'Pass to ${player.name}',

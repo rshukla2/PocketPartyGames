@@ -126,6 +126,39 @@ class GameDataRepository {
       'imposter words',
       imposterWords.map((ImposterWord item) => item.word),
     );
+    final imposterGroups = <String, List<ImposterWord>>{};
+    for (final word in imposterWords) {
+      if (word.groupId.trim().isEmpty || word.hint.trim().isEmpty) {
+        errors.add('Imposter word ${word.id} has blank group metadata');
+        continue;
+      }
+      imposterGroups
+          .putIfAbsent(word.groupId, () => <ImposterWord>[])
+          .add(word);
+    }
+    for (final entry in imposterGroups.entries) {
+      final group = entry.value;
+      if (group.length < 2) {
+        errors.add('Imposter group ${entry.key} needs at least two words');
+      }
+      if (group.map((ImposterWord word) => word.category).toSet().length != 1) {
+        errors.add('Imposter group ${entry.key} crosses categories');
+      }
+      if (group
+              .map((ImposterWord word) => word.hint.toLowerCase())
+              .toSet()
+              .length !=
+          1) {
+        errors.add('Imposter group ${entry.key} has inconsistent hints');
+      }
+      final hint = group.first.hint.trim().toLowerCase();
+      if (group.any((ImposterWord word) {
+        final answer = word.word.trim().toLowerCase();
+        return hint == answer || hint.contains(answer) || answer.contains(hint);
+      })) {
+        errors.add('Imposter group ${entry.key} has a revealing hint');
+      }
+    }
     if (outside(trivia.map((TriviaQuestion item) => item.difficulty), <String>{
       'easy',
       'medium',

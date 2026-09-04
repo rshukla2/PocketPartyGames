@@ -2,1156 +2,1618 @@
   {
     "id": "food-1",
     "category": "Food",
-    "word": "Pizza"
+    "word": "Pizza",
+    "groupId": "food-italian",
+    "hint": "Mediterranean"
   },
   {
     "id": "food-2",
     "category": "Food",
-    "word": "Sushi"
+    "word": "Sushi",
+    "groupId": "food-east-asian",
+    "hint": "Chopsticks"
   },
   {
     "id": "food-3",
     "category": "Food",
-    "word": "Tacos"
+    "word": "Tacos",
+    "groupId": "food-mexican",
+    "hint": "Fiesta"
   },
   {
     "id": "food-4",
     "category": "Food",
-    "word": "Croissant"
+    "word": "Croissant",
+    "groupId": "food-european",
+    "hint": "Continental"
   },
   {
     "id": "food-5",
     "category": "Food",
-    "word": "Chocolate"
+    "word": "Chocolate",
+    "groupId": "food-sweets",
+    "hint": "Dessert"
   },
   {
     "id": "food-6",
     "category": "Food",
-    "word": "Hamburger"
+    "word": "Hamburger",
+    "groupId": "food-party",
+    "hint": "Takeout"
   },
   {
     "id": "food-7",
     "category": "Food",
-    "word": "Ramen"
+    "word": "Ramen",
+    "groupId": "food-east-asian",
+    "hint": "Chopsticks"
   },
   {
     "id": "food-8",
     "category": "Food",
-    "word": "Fondue"
+    "word": "Fondue",
+    "groupId": "food-european",
+    "hint": "Continental"
   },
   {
     "id": "food-9",
     "category": "Food",
-    "word": "Burrito"
+    "word": "Burrito",
+    "groupId": "food-mexican",
+    "hint": "Fiesta"
   },
   {
     "id": "food-10",
     "category": "Food",
-    "word": "Gelato"
+    "word": "Gelato",
+    "groupId": "food-italian",
+    "hint": "Mediterranean"
   },
   {
     "id": "food-11",
     "category": "Food",
-    "word": "Waffles"
+    "word": "Waffles",
+    "groupId": "food-sweets",
+    "hint": "Dessert"
   },
   {
     "id": "food-12",
     "category": "Food",
-    "word": "Dim Sum"
+    "word": "Dim Sum",
+    "groupId": "food-east-asian",
+    "hint": "Chopsticks"
   },
   {
     "id": "food-13",
     "category": "Food",
-    "word": "Cheesecake"
+    "word": "Cheesecake",
+    "groupId": "food-sweets",
+    "hint": "Dessert"
   },
   {
     "id": "food-14",
     "category": "Food",
-    "word": "Spaghetti"
+    "word": "Spaghetti",
+    "groupId": "food-italian",
+    "hint": "Mediterranean"
   },
   {
     "id": "food-15",
     "category": "Food",
-    "word": "Guacamole"
+    "word": "Guacamole",
+    "groupId": "food-mexican",
+    "hint": "Fiesta"
   },
   {
     "id": "food-16",
     "category": "Food",
-    "word": "Nachos"
+    "word": "Nachos",
+    "groupId": "food-mexican",
+    "hint": "Fiesta"
   },
   {
     "id": "food-17",
     "category": "Food",
-    "word": "Paella"
+    "word": "Paella",
+    "groupId": "food-european",
+    "hint": "Continental"
   },
   {
     "id": "food-18",
     "category": "Food",
-    "word": "BBQ Ribs"
+    "word": "BBQ Ribs",
+    "groupId": "food-party",
+    "hint": "Takeout"
   },
   {
     "id": "food-19",
     "category": "Food",
-    "word": "Hot Dog"
+    "word": "Hot Dog",
+    "groupId": "food-party",
+    "hint": "Takeout"
   },
   {
     "id": "food-20",
     "category": "Food",
-    "word": "Apple Pie"
+    "word": "Apple Pie",
+    "groupId": "food-sweets",
+    "hint": "Dessert"
   },
   {
     "id": "food-21",
     "category": "Food",
-    "word": "Pad Thai"
+    "word": "Pad Thai",
+    "groupId": "food-east-asian",
+    "hint": "Chopsticks"
   },
   {
     "id": "food-22",
     "category": "Food",
-    "word": "Lasagna"
+    "word": "Lasagna",
+    "groupId": "food-italian",
+    "hint": "Mediterranean"
   },
   {
     "id": "food-23",
     "category": "Food",
-    "word": "Dumplings"
+    "word": "Dumplings",
+    "groupId": "food-east-asian",
+    "hint": "Chopsticks"
   },
   {
     "id": "food-24",
     "category": "Food",
-    "word": "Falafel"
+    "word": "Falafel",
+    "groupId": "food-levant",
+    "hint": "Levant"
   },
   {
     "id": "food-25",
     "category": "Food",
-    "word": "Churros"
+    "word": "Churros",
+    "groupId": "food-sweets",
+    "hint": "Dessert"
   },
   {
     "id": "food-26",
     "category": "Food",
-    "word": "Souffle"
+    "word": "Souffle",
+    "groupId": "food-european",
+    "hint": "Continental"
   },
   {
     "id": "food-27",
     "category": "Food",
-    "word": "Risotto"
+    "word": "Risotto",
+    "groupId": "food-italian",
+    "hint": "Mediterranean"
   },
   {
     "id": "food-28",
     "category": "Food",
-    "word": "Tiramisu"
+    "word": "Tiramisu",
+    "groupId": "food-italian",
+    "hint": "Mediterranean"
   },
   {
     "id": "food-29",
     "category": "Food",
-    "word": "Popcorn"
+    "word": "Popcorn",
+    "groupId": "food-party",
+    "hint": "Takeout"
   },
   {
     "id": "food-30",
     "category": "Food",
-    "word": "Shawarma"
+    "word": "Shawarma",
+    "groupId": "food-levant",
+    "hint": "Levant"
   },
   {
     "id": "food-31",
     "category": "Food",
-    "word": "Pancake"
+    "word": "Pancake",
+    "groupId": "food-sweets",
+    "hint": "Dessert"
   },
   {
     "id": "food-32",
     "category": "Food",
-    "word": "Cupcake"
+    "word": "Cupcake",
+    "groupId": "food-sweets",
+    "hint": "Dessert"
   },
   {
     "id": "food-33",
     "category": "Food",
-    "word": "Lobster"
+    "word": "Lobster",
+    "groupId": "food-european",
+    "hint": "Continental"
   },
   {
     "id": "food-34",
     "category": "Food",
-    "word": "Brownie"
+    "word": "Brownie",
+    "groupId": "food-sweets",
+    "hint": "Dessert"
   },
   {
     "id": "food-35",
     "category": "Food",
-    "word": "Pretzel"
+    "word": "Pretzel",
+    "groupId": "food-party",
+    "hint": "Takeout"
   },
   {
     "id": "food-36",
     "category": "Food",
-    "word": "Milkshake"
+    "word": "Milkshake",
+    "groupId": "food-party",
+    "hint": "Takeout"
   },
   {
     "id": "animals-1",
     "category": "Animals",
-    "word": "Penguin"
+    "word": "Penguin",
+    "groupId": "animals-birds",
+    "hint": "Feathers"
   },
   {
     "id": "animals-2",
     "category": "Animals",
-    "word": "Kangaroo"
+    "word": "Kangaroo",
+    "groupId": "animals-australia",
+    "hint": "Down Under"
   },
   {
     "id": "animals-3",
     "category": "Animals",
-    "word": "Octopus"
+    "word": "Octopus",
+    "groupId": "animals-marine",
+    "hint": "Marine"
   },
   {
     "id": "animals-4",
     "category": "Animals",
-    "word": "Chameleon"
+    "word": "Chameleon",
+    "groupId": "animals-distinctive",
+    "hint": "Wildlife"
   },
   {
     "id": "animals-5",
     "category": "Animals",
-    "word": "Elephant"
+    "word": "Elephant",
+    "groupId": "animals-savanna",
+    "hint": "Savanna"
   },
   {
     "id": "animals-6",
     "category": "Animals",
-    "word": "Dolphin"
+    "word": "Dolphin",
+    "groupId": "animals-marine",
+    "hint": "Marine"
   },
   {
     "id": "animals-7",
     "category": "Animals",
-    "word": "Giraffe"
+    "word": "Giraffe",
+    "groupId": "animals-savanna",
+    "hint": "Savanna"
   },
   {
     "id": "animals-8",
     "category": "Animals",
-    "word": "Sloth"
+    "word": "Sloth",
+    "groupId": "animals-distinctive",
+    "hint": "Wildlife"
   },
   {
     "id": "animals-9",
     "category": "Animals",
-    "word": "Cheetah"
+    "word": "Cheetah",
+    "groupId": "animals-savanna",
+    "hint": "Savanna"
   },
   {
     "id": "animals-10",
     "category": "Animals",
-    "word": "Platypus"
+    "word": "Platypus",
+    "groupId": "animals-australia",
+    "hint": "Down Under"
   },
   {
     "id": "animals-11",
     "category": "Animals",
-    "word": "Flamingo"
+    "word": "Flamingo",
+    "groupId": "animals-birds",
+    "hint": "Feathers"
   },
   {
     "id": "animals-12",
     "category": "Animals",
-    "word": "Peacock"
+    "word": "Peacock",
+    "groupId": "animals-birds",
+    "hint": "Feathers"
   },
   {
     "id": "animals-13",
     "category": "Animals",
-    "word": "Hedgehog"
+    "word": "Hedgehog",
+    "groupId": "animals-woodland",
+    "hint": "Burrow"
   },
   {
     "id": "animals-14",
     "category": "Animals",
-    "word": "Owl"
+    "word": "Owl",
+    "groupId": "animals-birds",
+    "hint": "Feathers"
   },
   {
     "id": "animals-15",
     "category": "Animals",
-    "word": "Otter"
+    "word": "Otter",
+    "groupId": "animals-woodland",
+    "hint": "Burrow"
   },
   {
     "id": "animals-16",
     "category": "Animals",
-    "word": "Koala"
+    "word": "Koala",
+    "groupId": "animals-australia",
+    "hint": "Down Under"
   },
   {
     "id": "animals-17",
     "category": "Animals",
-    "word": "Panda"
+    "word": "Panda",
+    "groupId": "animals-distinctive",
+    "hint": "Wildlife"
   },
   {
     "id": "animals-18",
     "category": "Animals",
-    "word": "Zebra"
+    "word": "Zebra",
+    "groupId": "animals-savanna",
+    "hint": "Savanna"
   },
   {
     "id": "animals-19",
     "category": "Animals",
-    "word": "Toucan"
+    "word": "Toucan",
+    "groupId": "animals-birds",
+    "hint": "Feathers"
   },
   {
     "id": "animals-20",
     "category": "Animals",
-    "word": "Lemur"
+    "word": "Lemur",
+    "groupId": "animals-distinctive",
+    "hint": "Wildlife"
   },
   {
     "id": "animals-21",
     "category": "Animals",
-    "word": "Walrus"
+    "word": "Walrus",
+    "groupId": "animals-marine",
+    "hint": "Marine"
   },
   {
     "id": "animals-22",
     "category": "Animals",
-    "word": "Hummingbird"
+    "word": "Hummingbird",
+    "groupId": "animals-birds",
+    "hint": "Feathers"
   },
   {
     "id": "animals-23",
     "category": "Animals",
-    "word": "Meerkat"
+    "word": "Meerkat",
+    "groupId": "animals-woodland",
+    "hint": "Burrow"
   },
   {
     "id": "animals-24",
     "category": "Animals",
-    "word": "Raccoon"
+    "word": "Raccoon",
+    "groupId": "animals-woodland",
+    "hint": "Burrow"
   },
   {
     "id": "animals-25",
     "category": "Animals",
-    "word": "Squirrel"
+    "word": "Squirrel",
+    "groupId": "animals-woodland",
+    "hint": "Burrow"
   },
   {
     "id": "animals-26",
     "category": "Animals",
-    "word": "Beaver"
+    "word": "Beaver",
+    "groupId": "animals-woodland",
+    "hint": "Burrow"
   },
   {
     "id": "animals-27",
     "category": "Animals",
-    "word": "Crocodile"
+    "word": "Crocodile",
+    "groupId": "animals-predators",
+    "hint": "Hunter"
   },
   {
     "id": "animals-28",
     "category": "Animals",
-    "word": "Stingray"
+    "word": "Stingray",
+    "groupId": "animals-marine",
+    "hint": "Marine"
   },
   {
     "id": "animals-29",
     "category": "Animals",
-    "word": "Gorilla"
+    "word": "Gorilla",
+    "groupId": "animals-savanna",
+    "hint": "Savanna"
   },
   {
     "id": "animals-30",
     "category": "Animals",
-    "word": "Seahorse"
+    "word": "Seahorse",
+    "groupId": "animals-marine",
+    "hint": "Marine"
   },
   {
     "id": "animals-31",
     "category": "Animals",
-    "word": "Wolf"
+    "word": "Wolf",
+    "groupId": "animals-predators",
+    "hint": "Hunter"
   },
   {
     "id": "animals-32",
     "category": "Animals",
-    "word": "Polar Bear"
+    "word": "Polar Bear",
+    "groupId": "animals-predators",
+    "hint": "Hunter"
   },
   {
     "id": "animals-33",
     "category": "Animals",
-    "word": "Tiger"
+    "word": "Tiger",
+    "groupId": "animals-predators",
+    "hint": "Hunter"
   },
   {
     "id": "animals-34",
     "category": "Animals",
-    "word": "Fox"
+    "word": "Fox",
+    "groupId": "animals-predators",
+    "hint": "Hunter"
   },
   {
     "id": "animals-35",
     "category": "Animals",
-    "word": "Bald Eagle"
+    "word": "Bald Eagle",
+    "groupId": "animals-birds",
+    "hint": "Feathers"
   },
   {
     "id": "movies-tv-1",
     "category": "Movies & TV",
-    "word": "Titanic"
+    "word": "Titanic",
+    "groupId": "movies-drama",
+    "hint": "Award season"
   },
   {
     "id": "movies-tv-2",
     "category": "Movies & TV",
-    "word": "Inception"
+    "word": "Inception",
+    "groupId": "movies-scifi",
+    "hint": "Other worlds"
   },
   {
     "id": "movies-tv-3",
     "category": "Movies & TV",
-    "word": "Avatar"
+    "word": "Avatar",
+    "groupId": "movies-scifi",
+    "hint": "Other worlds"
   },
   {
     "id": "movies-tv-4",
     "category": "Movies & TV",
-    "word": "Jurassic Park"
+    "word": "Jurassic Park",
+    "groupId": "movies-adventure",
+    "hint": "Blockbuster"
   },
   {
     "id": "movies-tv-5",
     "category": "Movies & TV",
-    "word": "Harry Potter"
+    "word": "Harry Potter",
+    "groupId": "movies-fantasy",
+    "hint": "Magic"
   },
   {
     "id": "movies-tv-6",
     "category": "Movies & TV",
-    "word": "Star Wars"
+    "word": "Star Wars",
+    "groupId": "movies-scifi",
+    "hint": "Other worlds"
   },
   {
     "id": "movies-tv-7",
     "category": "Movies & TV",
-    "word": "The Matrix"
+    "word": "The Matrix",
+    "groupId": "movies-scifi",
+    "hint": "Other worlds"
   },
   {
     "id": "movies-tv-8",
     "category": "Movies & TV",
-    "word": "The Avengers"
+    "word": "The Avengers",
+    "groupId": "movies-action",
+    "hint": "Franchise"
   },
   {
     "id": "movies-tv-9",
     "category": "Movies & TV",
-    "word": "Shrek"
+    "word": "Shrek",
+    "groupId": "movies-family",
+    "hint": "Family night"
   },
   {
     "id": "movies-tv-10",
     "category": "Movies & TV",
-    "word": "Finding Nemo"
+    "word": "Finding Nemo",
+    "groupId": "movies-family",
+    "hint": "Family night"
   },
   {
     "id": "movies-tv-11",
     "category": "Movies & TV",
-    "word": "Stranger Things"
+    "word": "Stranger Things",
+    "groupId": "movies-tv",
+    "hint": "Binge watch"
   },
   {
     "id": "movies-tv-12",
     "category": "Movies & TV",
-    "word": "Game of Thrones"
+    "word": "Game of Thrones",
+    "groupId": "movies-fantasy",
+    "hint": "Magic"
   },
   {
     "id": "movies-tv-13",
     "category": "Movies & TV",
-    "word": "Spider-Man"
+    "word": "Spider-Man",
+    "groupId": "movies-action",
+    "hint": "Franchise"
   },
   {
     "id": "movies-tv-14",
     "category": "Movies & TV",
-    "word": "The Godfather"
+    "word": "The Godfather",
+    "groupId": "movies-drama",
+    "hint": "Award season"
   },
   {
     "id": "movies-tv-15",
     "category": "Movies & TV",
-    "word": "Breaking Bad"
+    "word": "Breaking Bad",
+    "groupId": "movies-tv",
+    "hint": "Binge watch"
   },
   {
     "id": "movies-tv-16",
     "category": "Movies & TV",
-    "word": "The Lion King"
+    "word": "The Lion King",
+    "groupId": "movies-family",
+    "hint": "Family night"
   },
   {
     "id": "movies-tv-17",
     "category": "Movies & TV",
-    "word": "Gladiator"
+    "word": "Gladiator",
+    "groupId": "movies-drama",
+    "hint": "Award season"
   },
   {
     "id": "movies-tv-18",
     "category": "Movies & TV",
-    "word": "Back to the Future"
+    "word": "Back to the Future",
+    "groupId": "movies-adventure",
+    "hint": "Blockbuster"
   },
   {
     "id": "movies-tv-19",
     "category": "Movies & TV",
-    "word": "Toy Story"
+    "word": "Toy Story",
+    "groupId": "movies-family",
+    "hint": "Family night"
   },
   {
     "id": "movies-tv-20",
     "category": "Movies & TV",
-    "word": "Interstellar"
+    "word": "Interstellar",
+    "groupId": "movies-scifi",
+    "hint": "Other worlds"
   },
   {
     "id": "movies-tv-21",
     "category": "Movies & TV",
-    "word": "Lord of the Rings"
+    "word": "Lord of the Rings",
+    "groupId": "movies-fantasy",
+    "hint": "Magic"
   },
   {
     "id": "movies-tv-22",
     "category": "Movies & TV",
-    "word": "Ghostbusters"
+    "word": "Ghostbusters",
+    "groupId": "movies-adventure",
+    "hint": "Blockbuster"
   },
   {
     "id": "movies-tv-23",
     "category": "Movies & TV",
-    "word": "Jaws"
+    "word": "Jaws",
+    "groupId": "movies-adventure",
+    "hint": "Blockbuster"
   },
   {
     "id": "movies-tv-24",
     "category": "Movies & TV",
-    "word": "Squid Game"
+    "word": "Squid Game",
+    "groupId": "movies-tv",
+    "hint": "Binge watch"
   },
   {
     "id": "movies-tv-25",
     "category": "Movies & TV",
-    "word": "The Office"
+    "word": "The Office",
+    "groupId": "movies-tv",
+    "hint": "Binge watch"
   },
   {
     "id": "movies-tv-26",
     "category": "Movies & TV",
-    "word": "Friends"
+    "word": "Friends",
+    "groupId": "movies-tv",
+    "hint": "Binge watch"
   },
   {
     "id": "movies-tv-27",
     "category": "Movies & TV",
-    "word": "Batman"
+    "word": "Batman",
+    "groupId": "movies-action",
+    "hint": "Franchise"
   },
   {
     "id": "movies-tv-28",
     "category": "Movies & TV",
-    "word": "Indiana Jones"
+    "word": "Indiana Jones",
+    "groupId": "movies-action",
+    "hint": "Franchise"
   },
   {
     "id": "movies-tv-29",
     "category": "Movies & TV",
-    "word": "Forrest Gump"
+    "word": "Forrest Gump",
+    "groupId": "movies-drama",
+    "hint": "Award season"
   },
   {
     "id": "movies-tv-30",
     "category": "Movies & TV",
-    "word": "Pirates of the Caribbean"
+    "word": "Pirates of the Caribbean",
+    "groupId": "movies-adventure",
+    "hint": "Blockbuster"
   },
   {
     "id": "movies-tv-31",
     "category": "Movies & TV",
-    "word": "Home Alone"
+    "word": "Home Alone",
+    "groupId": "movies-family",
+    "hint": "Family night"
   },
   {
     "id": "movies-tv-32",
     "category": "Movies & TV",
-    "word": "Mission Impossible"
+    "word": "Mission Impossible",
+    "groupId": "movies-action",
+    "hint": "Franchise"
   },
   {
     "id": "places-1",
     "category": "Places",
-    "word": "Eiffel Tower"
+    "word": "Eiffel Tower",
+    "groupId": "places-city-icons",
+    "hint": "Postcard"
   },
   {
     "id": "places-2",
     "category": "Places",
-    "word": "Great Wall of China"
+    "word": "Great Wall of China",
+    "groupId": "places-ancient",
+    "hint": "Bucket list"
   },
   {
     "id": "places-3",
     "category": "Places",
-    "word": "Grand Canyon"
+    "word": "Grand Canyon",
+    "groupId": "places-nature",
+    "hint": "Scenic"
   },
   {
     "id": "places-4",
     "category": "Places",
-    "word": "Colosseum"
+    "word": "Colosseum",
+    "groupId": "places-ancient",
+    "hint": "Bucket list"
   },
   {
     "id": "places-5",
     "category": "Places",
-    "word": "Pyramids of Giza"
+    "word": "Pyramids of Giza",
+    "groupId": "places-ancient",
+    "hint": "Bucket list"
   },
   {
     "id": "places-6",
     "category": "Places",
-    "word": "Statue of Liberty"
+    "word": "Statue of Liberty",
+    "groupId": "places-city-icons",
+    "hint": "Postcard"
   },
   {
     "id": "places-7",
     "category": "Places",
-    "word": "Niagara Falls"
+    "word": "Niagara Falls",
+    "groupId": "places-nature",
+    "hint": "Scenic"
   },
   {
     "id": "places-8",
     "category": "Places",
-    "word": "Taj Mahal"
+    "word": "Taj Mahal",
+    "groupId": "places-ancient",
+    "hint": "Bucket list"
   },
   {
     "id": "places-9",
     "category": "Places",
-    "word": "Times Square"
+    "word": "Times Square",
+    "groupId": "places-city-icons",
+    "hint": "Postcard"
   },
   {
     "id": "places-10",
     "category": "Places",
-    "word": "Stonehenge"
+    "word": "Stonehenge",
+    "groupId": "places-ancient",
+    "hint": "Bucket list"
   },
   {
     "id": "places-11",
     "category": "Places",
-    "word": "Mount Everest"
+    "word": "Mount Everest",
+    "groupId": "places-nature",
+    "hint": "Scenic"
   },
   {
     "id": "places-12",
     "category": "Places",
-    "word": "Venice Canals"
+    "word": "Venice Canals",
+    "groupId": "places-islands",
+    "hint": "Getaway"
   },
   {
     "id": "places-13",
     "category": "Places",
-    "word": "Sydney Opera House"
+    "word": "Sydney Opera House",
+    "groupId": "places-city-icons",
+    "hint": "Postcard"
   },
   {
     "id": "places-14",
     "category": "Places",
-    "word": "Amazon Rainforest"
+    "word": "Amazon Rainforest",
+    "groupId": "places-nature",
+    "hint": "Scenic"
   },
   {
     "id": "places-15",
     "category": "Places",
-    "word": "Hollywood"
+    "word": "Hollywood",
+    "groupId": "places-urban",
+    "hint": "Tourist stop"
   },
   {
     "id": "places-16",
     "category": "Places",
-    "word": "Sahara Desert"
+    "word": "Sahara Desert",
+    "groupId": "places-remote",
+    "hint": "Atlas"
   },
   {
     "id": "places-17",
     "category": "Places",
-    "word": "Golden Gate Bridge"
+    "word": "Golden Gate Bridge",
+    "groupId": "places-city-icons",
+    "hint": "Postcard"
   },
   {
     "id": "places-18",
     "category": "Places",
-    "word": "Mount Fuji"
+    "word": "Mount Fuji",
+    "groupId": "places-nature",
+    "hint": "Scenic"
   },
   {
     "id": "places-19",
     "category": "Places",
-    "word": "Hawaii"
+    "word": "Hawaii",
+    "groupId": "places-islands",
+    "hint": "Getaway"
   },
   {
     "id": "places-20",
     "category": "Places",
-    "word": "Machu Picchu"
+    "word": "Machu Picchu",
+    "groupId": "places-ancient",
+    "hint": "Bucket list"
   },
   {
     "id": "places-21",
     "category": "Places",
-    "word": "Las Vegas"
+    "word": "Las Vegas",
+    "groupId": "places-urban",
+    "hint": "Tourist stop"
   },
   {
     "id": "places-22",
     "category": "Places",
-    "word": "Santorini"
+    "word": "Santorini",
+    "groupId": "places-islands",
+    "hint": "Getaway"
   },
   {
     "id": "places-23",
     "category": "Places",
-    "word": "Big Ben"
+    "word": "Big Ben",
+    "groupId": "places-city-icons",
+    "hint": "Postcard"
   },
   {
     "id": "places-24",
     "category": "Places",
-    "word": "Louvre Museum"
+    "word": "Louvre Museum",
+    "groupId": "places-urban",
+    "hint": "Tourist stop"
   },
   {
     "id": "places-25",
     "category": "Places",
-    "word": "Disney World"
+    "word": "Disney World",
+    "groupId": "places-urban",
+    "hint": "Tourist stop"
   },
   {
     "id": "places-26",
     "category": "Places",
-    "word": "North Pole"
+    "word": "North Pole",
+    "groupId": "places-remote",
+    "hint": "Atlas"
   },
   {
     "id": "places-27",
     "category": "Places",
-    "word": "Bermuda Triangle"
+    "word": "Bermuda Triangle",
+    "groupId": "places-remote",
+    "hint": "Atlas"
   },
   {
     "id": "places-28",
     "category": "Places",
-    "word": "Central Park"
+    "word": "Central Park",
+    "groupId": "places-urban",
+    "hint": "Tourist stop"
   },
   {
     "id": "places-29",
     "category": "Places",
-    "word": "Dead Sea"
+    "word": "Dead Sea",
+    "groupId": "places-remote",
+    "hint": "Atlas"
   },
   {
     "id": "places-30",
     "category": "Places",
-    "word": "Galapagos Islands"
+    "word": "Galapagos Islands",
+    "groupId": "places-remote",
+    "hint": "Atlas"
   },
   {
     "id": "places-31",
     "category": "Places",
-    "word": "Grand Bazaar"
+    "word": "Grand Bazaar",
+    "groupId": "places-urban",
+    "hint": "Tourist stop"
   },
   {
     "id": "places-32",
     "category": "Places",
-    "word": "Alps"
+    "word": "Alps",
+    "groupId": "places-nature",
+    "hint": "Scenic"
   },
   {
     "id": "objects-1",
     "category": "Objects",
-    "word": "Sunglasses"
+    "word": "Sunglasses",
+    "groupId": "objects-outdoor",
+    "hint": "Adventure gear"
   },
   {
     "id": "objects-2",
     "category": "Objects",
-    "word": "Umbrella"
+    "word": "Umbrella",
+    "groupId": "objects-outdoor",
+    "hint": "Adventure gear"
   },
   {
     "id": "objects-3",
     "category": "Objects",
-    "word": "Telescope"
+    "word": "Telescope",
+    "groupId": "objects-optics",
+    "hint": "Look closer"
   },
   {
     "id": "objects-4",
     "category": "Objects",
-    "word": "Backpack"
+    "word": "Backpack",
+    "groupId": "objects-travel",
+    "hint": "Packed"
   },
   {
     "id": "objects-5",
     "category": "Objects",
-    "word": "Headphones"
+    "word": "Headphones",
+    "groupId": "objects-audio",
+    "hint": "Sound"
   },
   {
     "id": "objects-6",
     "category": "Objects",
-    "word": "Flashlight"
+    "word": "Flashlight",
+    "groupId": "objects-tools",
+    "hint": "Handy"
   },
   {
     "id": "objects-7",
     "category": "Objects",
-    "word": "Acoustic Guitar"
+    "word": "Acoustic Guitar",
+    "groupId": "objects-audio",
+    "hint": "Sound"
   },
   {
     "id": "objects-8",
     "category": "Objects",
-    "word": "Compass"
+    "word": "Compass",
+    "groupId": "objects-outdoor",
+    "hint": "Adventure gear"
   },
   {
     "id": "objects-9",
     "category": "Objects",
-    "word": "Hourglass"
+    "word": "Hourglass",
+    "groupId": "objects-time",
+    "hint": "Tick tock"
   },
   {
     "id": "objects-10",
     "category": "Objects",
-    "word": "Skateboard"
+    "word": "Skateboard",
+    "groupId": "objects-play",
+    "hint": "Game room"
   },
   {
     "id": "objects-11",
     "category": "Objects",
-    "word": "Digital Camera"
+    "word": "Digital Camera",
+    "groupId": "objects-optics",
+    "hint": "Look closer"
   },
   {
     "id": "objects-12",
     "category": "Objects",
-    "word": "Thermos"
+    "word": "Thermos",
+    "groupId": "objects-outdoor",
+    "hint": "Adventure gear"
   },
   {
     "id": "objects-13",
     "category": "Objects",
-    "word": "Keychain"
+    "word": "Keychain",
+    "groupId": "objects-travel",
+    "hint": "Packed"
   },
   {
     "id": "objects-14",
     "category": "Objects",
-    "word": "Scissors"
+    "word": "Scissors",
+    "groupId": "objects-tools",
+    "hint": "Handy"
   },
   {
     "id": "objects-15",
     "category": "Objects",
-    "word": "Passport"
+    "word": "Passport",
+    "groupId": "objects-travel",
+    "hint": "Packed"
   },
   {
     "id": "objects-16",
     "category": "Objects",
-    "word": "Candle"
+    "word": "Candle",
+    "groupId": "objects-tools",
+    "hint": "Handy"
   },
   {
     "id": "objects-17",
     "category": "Objects",
-    "word": "Pocket Knife"
+    "word": "Pocket Knife",
+    "groupId": "objects-outdoor",
+    "hint": "Adventure gear"
   },
   {
     "id": "objects-18",
     "category": "Objects",
-    "word": "Binoculars"
+    "word": "Binoculars",
+    "groupId": "objects-optics",
+    "hint": "Look closer"
   },
   {
     "id": "objects-19",
     "category": "Objects",
-    "word": "Drone"
+    "word": "Drone",
+    "groupId": "objects-optics",
+    "hint": "Look closer"
   },
   {
     "id": "objects-20",
     "category": "Objects",
-    "word": "Rubik's Cube"
+    "word": "Rubik's Cube",
+    "groupId": "objects-play",
+    "hint": "Game room"
   },
   {
     "id": "objects-21",
     "category": "Objects",
-    "word": "Yo-yo"
+    "word": "Yo-yo",
+    "groupId": "objects-play",
+    "hint": "Game room"
   },
   {
     "id": "objects-22",
     "category": "Objects",
-    "word": "Megaphone"
+    "word": "Megaphone",
+    "groupId": "objects-audio",
+    "hint": "Sound"
   },
   {
     "id": "objects-23",
     "category": "Objects",
-    "word": "Stopwatch"
+    "word": "Stopwatch",
+    "groupId": "objects-time",
+    "hint": "Tick tock"
   },
   {
     "id": "objects-24",
     "category": "Objects",
-    "word": "Magnifying Glass"
+    "word": "Magnifying Glass",
+    "groupId": "objects-optics",
+    "hint": "Look closer"
   },
   {
     "id": "objects-25",
     "category": "Objects",
-    "word": "Wristwatch"
+    "word": "Wristwatch",
+    "groupId": "objects-time",
+    "hint": "Tick tock"
   },
   {
     "id": "objects-26",
     "category": "Objects",
-    "word": "Bowling Ball"
+    "word": "Bowling Ball",
+    "groupId": "objects-play",
+    "hint": "Game room"
   },
   {
     "id": "objects-27",
     "category": "Objects",
-    "word": "Paintbrush"
+    "word": "Paintbrush",
+    "groupId": "objects-tools",
+    "hint": "Handy"
   },
   {
     "id": "objects-28",
     "category": "Objects",
-    "word": "Motorcycle Helmet"
+    "word": "Motorcycle Helmet",
+    "groupId": "objects-outdoor",
+    "hint": "Adventure gear"
   },
   {
     "id": "objects-29",
     "category": "Objects",
-    "word": "Suitcase"
+    "word": "Suitcase",
+    "groupId": "objects-travel",
+    "hint": "Packed"
   },
   {
     "id": "objects-30",
     "category": "Objects",
-    "word": "Lantern"
+    "word": "Lantern",
+    "groupId": "objects-tools",
+    "hint": "Handy"
   },
   {
     "id": "objects-31",
     "category": "Objects",
-    "word": "Microphone"
+    "word": "Microphone",
+    "groupId": "objects-audio",
+    "hint": "Sound"
   },
   {
     "id": "objects-32",
     "category": "Objects",
-    "word": "Water Bottle"
+    "word": "Water Bottle",
+    "groupId": "objects-travel",
+    "hint": "Packed"
   },
   {
     "id": "objects-33",
     "category": "Objects",
-    "word": "Alarm Clock"
+    "word": "Alarm Clock",
+    "groupId": "objects-time",
+    "hint": "Tick tock"
   },
   {
     "id": "sports-1",
     "category": "Sports",
-    "word": "Basketball"
+    "word": "Basketball",
+    "groupId": "sports-team",
+    "hint": "Scoreboard"
   },
   {
     "id": "sports-2",
     "category": "Sports",
-    "word": "Soccer"
+    "word": "Soccer",
+    "groupId": "sports-team",
+    "hint": "Scoreboard"
   },
   {
     "id": "sports-3",
     "category": "Sports",
-    "word": "Tennis"
+    "word": "Tennis",
+    "groupId": "sports-racket",
+    "hint": "Net"
   },
   {
     "id": "sports-4",
     "category": "Sports",
-    "word": "Surfing"
+    "word": "Surfing",
+    "groupId": "sports-water",
+    "hint": "Aquatic"
   },
   {
     "id": "sports-5",
     "category": "Sports",
-    "word": "Snowboarding"
+    "word": "Snowboarding",
+    "groupId": "sports-winter",
+    "hint": "Cold weather"
   },
   {
     "id": "sports-6",
     "category": "Sports",
-    "word": "Volleyball"
+    "word": "Volleyball",
+    "groupId": "sports-team",
+    "hint": "Scoreboard"
   },
   {
     "id": "sports-7",
     "category": "Sports",
-    "word": "Archery"
+    "word": "Archery",
+    "groupId": "sports-precision",
+    "hint": "Aim"
   },
   {
     "id": "sports-8",
     "category": "Sports",
-    "word": "Bowling"
+    "word": "Bowling",
+    "groupId": "sports-precision",
+    "hint": "Aim"
   },
   {
     "id": "sports-9",
     "category": "Sports",
-    "word": "Skateboarding"
+    "word": "Skateboarding",
+    "groupId": "sports-movement",
+    "hint": "Athletic"
   },
   {
     "id": "sports-10",
     "category": "Sports",
-    "word": "Golf"
+    "word": "Golf",
+    "groupId": "sports-precision",
+    "hint": "Aim"
   },
   {
     "id": "sports-11",
     "category": "Sports",
-    "word": "Boxing"
+    "word": "Boxing",
+    "groupId": "sports-combat",
+    "hint": "Opponent"
   },
   {
     "id": "sports-12",
     "category": "Sports",
-    "word": "Swimming"
+    "word": "Swimming",
+    "groupId": "sports-water",
+    "hint": "Aquatic"
   },
   {
     "id": "sports-13",
     "category": "Sports",
-    "word": "Gymnastics"
+    "word": "Gymnastics",
+    "groupId": "sports-movement",
+    "hint": "Athletic"
   },
   {
     "id": "sports-14",
     "category": "Sports",
-    "word": "Rock Climbing"
+    "word": "Rock Climbing",
+    "groupId": "sports-movement",
+    "hint": "Athletic"
   },
   {
     "id": "sports-15",
     "category": "Sports",
-    "word": "Badminton"
+    "word": "Badminton",
+    "groupId": "sports-racket",
+    "hint": "Net"
   },
   {
     "id": "sports-16",
     "category": "Sports",
-    "word": "Table Tennis"
+    "word": "Table Tennis",
+    "groupId": "sports-racket",
+    "hint": "Net"
   },
   {
     "id": "sports-17",
     "category": "Sports",
-    "word": "Baseball"
+    "word": "Baseball",
+    "groupId": "sports-team",
+    "hint": "Scoreboard"
   },
   {
     "id": "sports-18",
     "category": "Sports",
-    "word": "Ice Hockey"
+    "word": "Ice Hockey",
+    "groupId": "sports-winter",
+    "hint": "Cold weather"
   },
   {
     "id": "sports-19",
     "category": "Sports",
-    "word": "Rugby"
+    "word": "Rugby",
+    "groupId": "sports-team",
+    "hint": "Scoreboard"
   },
   {
     "id": "sports-20",
     "category": "Sports",
-    "word": "Cricket"
+    "word": "Cricket",
+    "groupId": "sports-team",
+    "hint": "Scoreboard"
   },
   {
     "id": "sports-21",
     "category": "Sports",
-    "word": "Martial Arts"
+    "word": "Martial Arts",
+    "groupId": "sports-combat",
+    "hint": "Opponent"
   },
   {
     "id": "sports-22",
     "category": "Sports",
-    "word": "Alpine Skiing"
+    "word": "Alpine Skiing",
+    "groupId": "sports-winter",
+    "hint": "Cold weather"
   },
   {
     "id": "sports-23",
     "category": "Sports",
-    "word": "Scuba Diving"
+    "word": "Scuba Diving",
+    "groupId": "sports-water",
+    "hint": "Aquatic"
   },
   {
     "id": "sports-24",
     "category": "Sports",
-    "word": "Fencing"
+    "word": "Fencing",
+    "groupId": "sports-combat",
+    "hint": "Opponent"
   },
   {
     "id": "sports-25",
     "category": "Sports",
-    "word": "Rowing"
+    "word": "Rowing",
+    "groupId": "sports-water",
+    "hint": "Aquatic"
   },
   {
     "id": "sports-26",
     "category": "Sports",
-    "word": "BMX Racing"
+    "word": "BMX Racing",
+    "groupId": "sports-movement",
+    "hint": "Athletic"
   },
   {
     "id": "sports-27",
     "category": "Sports",
-    "word": "Figure Skating"
+    "word": "Figure Skating",
+    "groupId": "sports-winter",
+    "hint": "Cold weather"
   },
   {
     "id": "sports-28",
     "category": "Sports",
-    "word": "Track and Field"
+    "word": "Track and Field",
+    "groupId": "sports-movement",
+    "hint": "Athletic"
   },
   {
     "id": "sports-29",
     "category": "Sports",
-    "word": "Dodgeball"
+    "word": "Dodgeball",
+    "groupId": "sports-team",
+    "hint": "Scoreboard"
   },
   {
     "id": "sports-30",
     "category": "Sports",
-    "word": "Water Polo"
+    "word": "Water Polo",
+    "groupId": "sports-team",
+    "hint": "Scoreboard"
   },
   {
     "id": "sports-31",
     "category": "Sports",
-    "word": "Curling"
+    "word": "Curling",
+    "groupId": "sports-winter",
+    "hint": "Cold weather"
   },
   {
     "id": "sports-32",
     "category": "Sports",
-    "word": "Triathlon"
+    "word": "Triathlon",
+    "groupId": "sports-movement",
+    "hint": "Athletic"
   },
   {
     "id": "sports-33",
     "category": "Sports",
-    "word": "Weightlifting"
+    "word": "Weightlifting",
+    "groupId": "sports-movement",
+    "hint": "Athletic"
   },
   {
     "id": "technology-1",
     "category": "Technology",
-    "word": "Smartphone"
+    "word": "Smartphone",
+    "groupId": "technology-personal",
+    "hint": "Everyday device"
   },
   {
     "id": "technology-2",
     "category": "Technology",
-    "word": "Artificial Intelligence"
+    "word": "Artificial Intelligence",
+    "groupId": "technology-computing",
+    "hint": "Processing"
   },
   {
     "id": "technology-3",
     "category": "Technology",
-    "word": "Smartwatch"
+    "word": "Smartwatch",
+    "groupId": "technology-personal",
+    "hint": "Everyday device"
   },
   {
     "id": "technology-4",
     "category": "Technology",
-    "word": "Virtual Reality"
+    "word": "Virtual Reality",
+    "groupId": "technology-future",
+    "hint": "Innovation"
   },
   {
     "id": "technology-5",
     "category": "Technology",
-    "word": "Satellite"
+    "word": "Satellite",
+    "groupId": "technology-exploration",
+    "hint": "Exploration"
   },
   {
     "id": "technology-6",
     "category": "Technology",
-    "word": "Humanoid Robot"
+    "word": "Humanoid Robot",
+    "groupId": "technology-computing",
+    "hint": "Processing"
   },
   {
     "id": "technology-7",
     "category": "Technology",
-    "word": "Quad-copter Drone"
+    "word": "Quad-copter Drone",
+    "groupId": "technology-systems",
+    "hint": "Remote control"
   },
   {
     "id": "technology-8",
     "category": "Technology",
-    "word": "Electric Car"
+    "word": "Electric Car",
+    "groupId": "technology-energy",
+    "hint": "Clean energy"
   },
   {
     "id": "technology-9",
     "category": "Technology",
-    "word": "3D Printer"
+    "word": "3D Printer",
+    "groupId": "technology-computing",
+    "hint": "Processing"
   },
   {
     "id": "technology-10",
     "category": "Technology",
-    "word": "Microchip"
+    "word": "Microchip",
+    "groupId": "technology-computing",
+    "hint": "Processing"
   },
   {
     "id": "technology-11",
     "category": "Technology",
-    "word": "Supercomputer"
+    "word": "Supercomputer",
+    "groupId": "technology-computing",
+    "hint": "Processing"
   },
   {
     "id": "technology-12",
     "category": "Technology",
-    "word": "Bluetooth Earbuds"
+    "word": "Bluetooth Earbuds",
+    "groupId": "technology-personal",
+    "hint": "Everyday device"
   },
   {
     "id": "technology-13",
     "category": "Technology",
-    "word": "Wi-Fi Router"
+    "word": "Wi-Fi Router",
+    "groupId": "technology-connectivity",
+    "hint": "Signal"
   },
   {
     "id": "technology-14",
     "category": "Technology",
-    "word": "Hologram"
+    "word": "Hologram",
+    "groupId": "technology-future",
+    "hint": "Innovation"
   },
   {
     "id": "technology-15",
     "category": "Technology",
-    "word": "Solar Panel"
+    "word": "Solar Panel",
+    "groupId": "technology-energy",
+    "hint": "Clean energy"
   },
   {
     "id": "technology-16",
     "category": "Technology",
-    "word": "Space Rocket"
+    "word": "Space Rocket",
+    "groupId": "technology-exploration",
+    "hint": "Exploration"
   },
   {
     "id": "technology-17",
     "category": "Technology",
-    "word": "Fiber Optic Cable"
+    "word": "Fiber Optic Cable",
+    "groupId": "technology-connectivity",
+    "hint": "Signal"
   },
   {
     "id": "technology-18",
     "category": "Technology",
-    "word": "Smart Speaker"
+    "word": "Smart Speaker",
+    "groupId": "technology-personal",
+    "hint": "Everyday device"
   },
   {
     "id": "technology-19",
     "category": "Technology",
-    "word": "GPS Navigator"
+    "word": "GPS Navigator",
+    "groupId": "technology-connectivity",
+    "hint": "Signal"
   },
   {
     "id": "technology-20",
     "category": "Technology",
-    "word": "Laser Pointer"
+    "word": "Laser Pointer",
+    "groupId": "technology-connectivity",
+    "hint": "Signal"
   },
   {
     "id": "technology-21",
     "category": "Technology",
-    "word": "Laptop"
+    "word": "Laptop",
+    "groupId": "technology-personal",
+    "hint": "Everyday device"
   },
   {
     "id": "technology-22",
     "category": "Technology",
-    "word": "Cybersecurity Shield"
+    "word": "Cybersecurity Shield",
+    "groupId": "technology-systems",
+    "hint": "Remote control"
   },
   {
     "id": "technology-23",
     "category": "Technology",
-    "word": "Cloud Server"
+    "word": "Cloud Server",
+    "groupId": "technology-connectivity",
+    "hint": "Signal"
   },
   {
     "id": "technology-24",
     "category": "Technology",
-    "word": "Touchscreen Tablet"
+    "word": "Touchscreen Tablet",
+    "groupId": "technology-personal",
+    "hint": "Everyday device"
   },
   {
     "id": "technology-25",
     "category": "Technology",
-    "word": "Jetpack"
+    "word": "Jetpack",
+    "groupId": "technology-future",
+    "hint": "Innovation"
   },
   {
     "id": "technology-26",
     "category": "Technology",
-    "word": "Quantum Computer"
+    "word": "Quantum Computer",
+    "groupId": "technology-computing",
+    "hint": "Processing"
   },
   {
     "id": "technology-27",
     "category": "Technology",
-    "word": "Nuclear Submarine"
+    "word": "Nuclear Submarine",
+    "groupId": "technology-exploration",
+    "hint": "Exploration"
   },
   {
     "id": "technology-28",
     "category": "Technology",
-    "word": "Self-Driving Car"
+    "word": "Self-Driving Car",
+    "groupId": "technology-energy",
+    "hint": "Clean energy"
   },
   {
     "id": "technology-29",
     "category": "Technology",
-    "word": "Biometric Scanner"
+    "word": "Biometric Scanner",
+    "groupId": "technology-future",
+    "hint": "Innovation"
   },
   {
     "id": "technology-30",
     "category": "Technology",
-    "word": "Game Console"
+    "word": "Game Console",
+    "groupId": "technology-personal",
+    "hint": "Everyday device"
   }
 ]

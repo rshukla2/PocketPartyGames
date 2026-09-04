@@ -187,7 +187,7 @@ class _PictionaryScreenState extends ConsumerState<PictionaryScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          PlayerAvatar(player: player, radius: 46),
+          PlayerNameBadge(player: player),
           const SizedBox(height: 16),
           Text(
             'Pass to ${player.name}',

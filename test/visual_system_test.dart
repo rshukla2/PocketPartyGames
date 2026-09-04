@@ -190,6 +190,31 @@ void main() {
     expect(theme.textTheme.displayLarge?.fontWeight, FontWeight.w800);
     expect(theme.textTheme.bodyLarge?.fontWeight, FontWeight.w600);
   });
+
+  testWidgets('full player names remain readable at supported text scales', (
+    WidgetTester tester,
+  ) async {
+    const player = Player(
+      id: 'long-name',
+      name: 'Alexandria Rose',
+      colorIndex: 2,
+    );
+    for (final scale in <double>[1, 1.3, 2]) {
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: buildPartyTheme(),
+          home: MediaQuery(
+            data: MediaQueryData(textScaler: TextScaler.linear(scale)),
+            child: const Scaffold(
+              body: Center(child: PlayerNameBadge(player: player)),
+            ),
+          ),
+        ),
+      );
+      expect(find.text('Alexandria Rose'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    }
+  });
 }
 
 double _contrast(Color first, Color second) {

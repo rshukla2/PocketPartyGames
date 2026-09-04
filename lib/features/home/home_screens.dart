@@ -488,7 +488,6 @@ class _PlayersScreenState extends ConsumerState<PlayersScreen> {
                 ...players.map(
                   (Player player) => PartyCard(
                     child: ListTile(
-                      leading: PlayerAvatar(player: player),
                       title: Text(
                         player.name,
                         style: const TextStyle(fontWeight: FontWeight.w800),

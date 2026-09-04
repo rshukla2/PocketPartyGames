@@ -28,10 +28,21 @@ class LanDiscoveredRoom {
   final String fingerprint;
 }
 
+class LanReceivedMessage {
+  const LanReceivedMessage({
+    required this.senderDeviceId,
+    required this.payload,
+  });
+
+  final String senderDeviceId;
+  final String payload;
+}
+
 abstract class LanTransport {
   bool get isSupported;
+  bool get isHosting;
   Stream<LanDiscoveredRoom> get discoveredRooms;
-  Stream<String> get messages;
+  Stream<LanReceivedMessage> get messages;
   Future<LanHostDetails> startHost({
     required String roomName,
     required String roomId,
@@ -46,6 +57,7 @@ abstract class LanTransport {
     required String displayName,
   });
   Future<void> send(String message);
+  Future<void> sendTo(String deviceId, String message);
   Future<void> dispose();
 }
 

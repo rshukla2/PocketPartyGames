@@ -782,32 +782,40 @@ class _TactileSurfaceState extends State<TactileSurface> {
   }
 }
 
-class PlayerAvatar extends StatelessWidget {
-  const PlayerAvatar({required this.player, this.radius = 22, super.key});
+class PlayerNameBadge extends StatelessWidget {
+  const PlayerNameBadge({
+    required this.player,
+    this.compact = false,
+    super.key,
+  });
 
   final Player player;
-  final double radius;
+  final bool compact;
 
   @override
   Widget build(BuildContext context) => Container(
-    width: radius * 2,
-    height: radius * 2,
+    constraints: BoxConstraints(minHeight: compact ? 40 : 48),
+    padding: EdgeInsets.symmetric(
+      horizontal: compact ? 12 : 18,
+      vertical: compact ? 7 : 10,
+    ),
     alignment: Alignment.center,
     decoration: BoxDecoration(
       color: PartyColors
           .playerColors[player.colorIndex % PartyColors.playerColors.length],
-      shape: BoxShape.circle,
+      borderRadius: BorderRadius.circular(999),
       border: Border.all(color: PartyColors.nearBlack, width: 2.5),
       boxShadow: const <BoxShadow>[
         BoxShadow(color: PartyColors.nearBlack, offset: Offset(2, 3)),
       ],
     ),
     child: Text(
-      player.name.characters.first.toUpperCase(),
+      player.name,
+      textAlign: TextAlign.center,
       style: TextStyle(
         color: PartyColors.white,
         fontWeight: FontWeight.w800,
-        fontSize: radius * .8,
+        fontSize: compact ? 14 : 18,
       ),
     ),
   );
@@ -842,7 +850,6 @@ class _PlayerChipsState extends State<PlayerChips> {
       final active = selected.contains(player.id);
       return FilterChip(
         selected: active,
-        avatar: PlayerAvatar(player: player, radius: 14),
         label: Text(player.name),
         onSelected: (bool value) {
           if (!value && selected.length <= widget.minimum) return;

@@ -137,7 +137,7 @@ class _CountdownScreenState extends ConsumerState<CountdownScreen> {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        PlayerAvatar(player: selected[playerIndex], radius: 40),
+        PlayerNameBadge(player: selected[playerIndex]),
         const SizedBox(height: 10),
         Text(
           '${selected[playerIndex].name}, get ready!',

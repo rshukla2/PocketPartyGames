@@ -153,7 +153,7 @@ class _GuessNumberScreenState extends ConsumerState<GuessNumberScreen> {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        PlayerAvatar(player: active, radius: 46),
+        PlayerNameBadge(player: active),
         const SizedBox(height: 16),
         Text(
           'PASS TO ${active.name.toUpperCase()}',

@@ -22,7 +22,7 @@ void main() {
   test('codec preserves the versioned envelope', () {
     final original = command(revision: 4);
     final decoded = LanEnvelope.decode(original.encode());
-    expect(decoded.protocolVersion, 1);
+    expect(decoded.protocolVersion, 2);
     expect(decoded.expectedRevision, 4);
     expect(decoded.type, 'transition');
   });
@@ -125,6 +125,15 @@ void main() {
       'roomId': 'other',
     });
     expect(room.apply(wrongRoom).code, 'wrong_room');
+    final forgedSender = command(
+      revision: room.revision,
+      sender: 'host',
+      id: 'forged',
+    );
+    expect(
+      room.apply(forgedSender, authenticatedSenderId: 'guest').code,
+      'sender_mismatch',
+    );
     room.approve('guest');
     final configure = LanEnvelope.fromJson(<String, dynamic>{
       ...command(
@@ -150,7 +159,7 @@ void main() {
       var sequence = 1;
       LanEnvelope make(String type, Map<String, dynamic> payload) =>
           LanEnvelope(
-            protocolVersion: 1,
+            protocolVersion: lanProtocolVersion,
             roomId: 'room',
             messageId: 'id-${sequence++}',
             senderId: 'host',

@@ -6,10 +6,13 @@ class _WebLanTransport implements LanTransport {
   @override
   bool get isSupported => false;
   @override
+  bool get isHosting => false;
+  @override
   Stream<LanDiscoveredRoom> get discoveredRooms =>
       const Stream<LanDiscoveredRoom>.empty();
   @override
-  Stream<String> get messages => const Stream<String>.empty();
+  Stream<LanReceivedMessage> get messages =>
+      const Stream<LanReceivedMessage>.empty();
   @override
   Future<LanHostDetails> startHost({
     required String roomName,
@@ -33,6 +36,11 @@ class _WebLanTransport implements LanTransport {
   Future<void> send(String message) => throw UnsupportedError(
     'Nearby is available in the installed mobile app.',
   );
+  @override
+  Future<void> sendTo(String deviceId, String message) =>
+      throw UnsupportedError(
+        'Nearby is available in the installed mobile app.',
+      );
   @override
   Future<void> dispose() async {}
 }

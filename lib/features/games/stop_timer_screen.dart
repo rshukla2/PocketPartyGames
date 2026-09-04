@@ -198,7 +198,7 @@ class _StopTimerScreenState extends ConsumerState<StopTimerScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          PlayerAvatar(player: player, radius: 42),
+          PlayerNameBadge(player: player),
           const SizedBox(height: 14),
           Text(
             showingRole
@@ -334,7 +334,7 @@ class _StopTimerScreenState extends ConsumerState<StopTimerScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              PlayerAvatar(player: player),
+              PlayerNameBadge(player: player, compact: true),
               const SizedBox(height: 8),
               Text(
                 stopped ? 'STOPPED' : player.name,

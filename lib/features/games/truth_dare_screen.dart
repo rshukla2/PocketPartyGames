@@ -118,7 +118,7 @@ class _TruthDareScreenState extends ConsumerState<TruthDareScreen> {
       key: ValueKey<String>('truth-play-${card?.id}-$playerIndex'),
       padding: const EdgeInsets.all(18),
       children: <Widget>[
-        Center(child: PlayerAvatar(player: player, radius: 38)),
+        Center(child: PlayerNameBadge(player: player)),
         const SizedBox(height: 10),
         Text(
           player.name,

@@ -17,9 +17,11 @@ const String _serviceType = '_pocketparty._tcp';
 class _NativeLanTransport implements LanTransport {
   final StreamController<LanDiscoveredRoom> _rooms =
       StreamController<LanDiscoveredRoom>.broadcast();
-  final StreamController<String> _messages =
-      StreamController<String>.broadcast();
+  final StreamController<LanReceivedMessage> _messages =
+      StreamController<LanReceivedMessage>.broadcast();
   final Set<WebSocket> _clients = <WebSocket>{};
+  final Map<String, WebSocket> _clientsByDevice = <String, WebSocket>{};
+  final Map<WebSocket, String> _devicesByClient = <WebSocket, String>{};
   final Map<String, List<DateTime>> _joinFailures = <String, List<DateTime>>{};
   HttpServer? _server;
   WebSocket? _socket;
@@ -35,9 +37,11 @@ class _NativeLanTransport implements LanTransport {
   @override
   bool get isSupported => Platform.isAndroid || Platform.isIOS;
   @override
+  bool get isHosting => _server != null;
+  @override
   Stream<LanDiscoveredRoom> get discoveredRooms => _rooms.stream;
   @override
-  Stream<String> get messages => _messages.stream;
+  Stream<LanReceivedMessage> get messages => _messages.stream;
 
   Future<void> _startDiscovery() async {
     if (!isSupported) return;
@@ -183,8 +187,24 @@ class _NativeLanTransport implements LanTransport {
               throw const FormatException('Invalid room token');
             }
             authorized = true;
+            final deviceId = auth['deviceId'] as String? ?? '';
+            if (deviceId.isEmpty) {
+              throw const FormatException('Missing device identity');
+            }
+            _clientsByDevice[deviceId]?.close(
+              WebSocketStatus.normalClosure,
+              'Reconnected from another socket',
+            );
+            _clientsByDevice[deviceId] = socket;
+            _devicesByClient[socket] = deviceId;
             _messages.add(
-              jsonEncode(<String, dynamic>{'type': 'joinRequest', ...auth}),
+              LanReceivedMessage(
+                senderDeviceId: deviceId,
+                payload: jsonEncode(<String, dynamic>{
+                  'type': 'joinRequest',
+                  ...auth,
+                }),
+              ),
             );
             socket.add(jsonEncode(<String, dynamic>{'type': 'authenticated'}));
           } catch (_) {
@@ -198,13 +218,15 @@ class _NativeLanTransport implements LanTransport {
           }
           return;
         }
-        _messages.add(raw);
-        for (final peer in _clients.where((WebSocket peer) => peer != socket)) {
-          peer.add(raw);
+        final senderDeviceId = _devicesByClient[socket];
+        if (senderDeviceId != null) {
+          _messages.add(
+            LanReceivedMessage(senderDeviceId: senderDeviceId, payload: raw),
+          );
         }
       },
-      onDone: () => _clients.remove(socket),
-      onError: (_) => _clients.remove(socket),
+      onDone: () => _removeClient(socket),
+      onError: (_) => _removeClient(socket),
       cancelOnError: true,
     );
   }
@@ -239,10 +261,17 @@ class _NativeLanTransport implements LanTransport {
     );
     socket.listen(
       (dynamic message) {
-        if (message is String) _messages.add(message);
+        if (message is String) {
+          _messages.add(
+            LanReceivedMessage(senderDeviceId: 'host', payload: message),
+          );
+        }
       },
       onDone: () => _messages.add(
-        jsonEncode(<String, dynamic>{'type': 'hostDisconnected'}),
+        LanReceivedMessage(
+          senderDeviceId: 'host',
+          payload: jsonEncode(<String, dynamic>{'type': 'hostDisconnected'}),
+        ),
       ),
       cancelOnError: true,
     );
@@ -254,10 +283,39 @@ class _NativeLanTransport implements LanTransport {
     if (socket != null) {
       socket.add(message);
     } else {
-      _messages.add(message);
+      _messages.add(
+        LanReceivedMessage(senderDeviceId: 'host', payload: message),
+      );
       for (final client in _clients) {
         client.add(message);
       }
+    }
+  }
+
+  @override
+  Future<void> sendTo(String deviceId, String message) async {
+    if (!isHosting) {
+      throw StateError('Only a host can send an addressed message.');
+    }
+    final client = _clientsByDevice[deviceId];
+    if (client == null) throw StateError('Device is not connected.');
+    client.add(message);
+  }
+
+  void _removeClient(WebSocket socket) {
+    _clients.remove(socket);
+    final deviceId = _devicesByClient.remove(socket);
+    if (deviceId != null && identical(_clientsByDevice[deviceId], socket)) {
+      _clientsByDevice.remove(deviceId);
+      _messages.add(
+        LanReceivedMessage(
+          senderDeviceId: deviceId,
+          payload: jsonEncode(<String, dynamic>{
+            'type': 'deviceDisconnected',
+            'deviceId': deviceId,
+          }),
+        ),
+      );
     }
   }
 

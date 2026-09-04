@@ -15,6 +15,16 @@ void main() {
       expect(data.countdown, hasLength(316));
       expect(data.imposterWords, hasLength(231));
       expect(
+        data.imposterWords.every(
+          (word) => word.groupId.isNotEmpty && word.hint.isNotEmpty,
+        ),
+        isTrue,
+      );
+      expect(
+        data.imposterWords.map((word) => word.groupId).toSet().length,
+        greaterThanOrEqualTo(40),
+      );
+      expect(
         data.trivia.map((question) => question.id).toSet(),
         hasLength(1300),
       );

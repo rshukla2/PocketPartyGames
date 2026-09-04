@@ -7,6 +7,7 @@ import '../features/games/act_it_out_screen.dart';
 import '../features/games/countdown_screen.dart';
 import '../features/games/guess_number_screen.dart';
 import '../features/games/imposter_screen.dart';
+import '../features/games/imposter_engine.dart';
 import '../features/games/pictionary_screen.dart';
 import '../features/games/stop_timer_screen.dart';
 import '../features/games/trivia_screen.dart';
@@ -54,8 +55,12 @@ class _PocketPartyAppState extends ConsumerState<PocketPartyApp> {
       ),
       GoRoute(
         path: '/nearby',
-        builder: (BuildContext context, GoRouterState state) =>
-            NearbyScreen(gameId: state.uri.queryParameters['game']),
+        builder: (BuildContext context, GoRouterState state) => NearbyScreen(
+          gameId: state.uri.queryParameters['game'],
+          imposterSetup: state.extra is ImposterSetup
+              ? state.extra! as ImposterSetup
+              : null,
+        ),
       ),
       GoRoute(
         path: '/game/:id',

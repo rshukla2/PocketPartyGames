@@ -113,14 +113,20 @@ class ImposterWord {
     required this.id,
     required this.category,
     required this.word,
+    required this.groupId,
+    required this.hint,
   });
   final String id;
   final String category;
   final String word;
+  final String groupId;
+  final String hint;
   factory ImposterWord.fromJson(Map<String, dynamic> json) => ImposterWord(
     id: json['id'] as String,
     category: json['category'] as String,
     word: json['word'] as String,
+    groupId: json['groupId'] as String,
+    hint: json['hint'] as String,
   );
 }
 
