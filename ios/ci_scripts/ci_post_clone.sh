@@ -27,7 +27,12 @@ export TARGET_BUILD_DIR="$BUILT_PRODUCTS_DIR"
 export FRAMEWORKS_FOLDER_PATH=Frameworks
 mkdir -p "$BUILT_PRODUCTS_DIR"
 
-flutter precache --ios
+flutter precache --ios --force
+if [ ! -d "$FLUTTER_ROOT/bin/cache/artifacts/engine/ios-release/Flutter.xcframework" ]; then
+  echo "Flutter iOS release framework was not downloaded by precache."
+  find "$FLUTTER_ROOT/bin/cache/artifacts/engine" -maxdepth 2 -type d -name 'Flutter.xcframework' -print || true
+  exit 1
+fi
 flutter pub get
 # This creates ios/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage.
 # This project uses Flutter Swift Package Manager and intentionally has no
