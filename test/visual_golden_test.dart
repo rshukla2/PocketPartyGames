@@ -10,6 +10,8 @@ import 'package:pocket_party_games/core/models/app_models.dart';
 import 'package:pocket_party_games/core/services/app_storage.dart';
 import 'package:pocket_party_games/core/services/runtime_services.dart';
 import 'package:pocket_party_games/core/widgets/party_widgets.dart';
+import 'package:pocket_party_games/features/games/countdown_screen.dart';
+import 'package:pocket_party_games/features/games/imposter_screen.dart';
 import 'package:pocket_party_games/features/games/stop_timer_screen.dart';
 import 'package:pocket_party_games/features/games/trivia_screen.dart';
 import 'package:pocket_party_games/features/games/truth_dare_screen.dart';
@@ -183,7 +185,110 @@ void main() {
         ),
       );
     });
+
+    testWidgets('Countdown score entry golden at ${size.width.toInt()}px', (
+      WidgetTester tester,
+    ) async {
+      await _setSize(tester, size);
+      await _pumpCountdownGolden(tester);
+      await expectLater(
+        find.byKey(const Key('countdown-golden-root')),
+        matchesGoldenFile('goldens/countdown_score_${size.width.toInt()}.png'),
+      );
+    });
+
+    testWidgets('Imposter setup golden at ${size.width.toInt()}px', (
+      WidgetTester tester,
+    ) async {
+      await _setSize(tester, size);
+      await _pumpImposterGolden(tester);
+      await expectLater(
+        find.byKey(const Key('imposter-golden-root')),
+        matchesGoldenFile('goldens/imposter_setup_${size.width.toInt()}.png'),
+      );
+    });
   }
+}
+
+Future<void> _pumpImposterGolden(WidgetTester tester) async {
+  SharedPreferences.setMockInitialValues(<String, Object>{});
+  final storage = await AppStorage.create();
+  await storage.save(
+    AppSnapshot(
+      players: List<Player>.generate(
+        5,
+        (int index) => Player(
+          id: 'player-$index',
+          name: 'Player ${index + 1}',
+          colorIndex: index,
+        ),
+      ),
+      settings: const AppSettings(tutorialCompleted: true),
+      soloStats: const SoloStats(),
+    ),
+  );
+  await tester.pumpWidget(
+    ProviderScope(
+      overrides: [
+        appStorageProvider.overrideWithValue(storage),
+        gameDataProvider.overrideWithValue(goldenData),
+        randomProvider.overrideWithValue(Random(27)),
+      ],
+      child: MaterialApp(
+        theme: buildPartyTheme(),
+        home: const RepaintBoundary(
+          key: Key('imposter-golden-root'),
+          child: ImposterScreen(),
+        ),
+      ),
+    ),
+  );
+  await tester.pumpAndSettle();
+}
+
+Future<void> _pumpCountdownGolden(WidgetTester tester) async {
+  SharedPreferences.setMockInitialValues(<String, Object>{});
+  final storage = await AppStorage.create();
+  await storage.save(
+    const AppSnapshot(
+      players: <Player>[
+        Player(id: 'player-1', name: 'Alexandria Rose', colorIndex: 0),
+        Player(id: 'player-2', name: 'Jordan', colorIndex: 1),
+      ],
+      settings: AppSettings(
+        tutorialCompleted: true,
+        soundEnabled: false,
+        hapticsEnabled: false,
+      ),
+      soloStats: SoloStats(),
+    ),
+  );
+  await tester.pumpWidget(
+    ProviderScope(
+      overrides: [
+        appStorageProvider.overrideWithValue(storage),
+        gameDataProvider.overrideWithValue(goldenData),
+        randomProvider.overrideWithValue(Random(27)),
+      ],
+      child: MaterialApp(
+        theme: buildPartyTheme(),
+        home: const RepaintBoundary(
+          key: Key('countdown-golden-root'),
+          child: CountdownScreen(),
+        ),
+      ),
+    ),
+  );
+  await tester.pumpAndSettle();
+  await tester.tap(find.text('START COUNTDOWN'));
+  await tester.pumpAndSettle();
+  await tester.tap(find.text('BEGIN LEVEL'));
+  await tester.pumpAndSettle();
+  await tester.tap(find.text('START TIMER'));
+  await tester.pump(const Duration(seconds: 5));
+  await tester.pumpAndSettle();
+  await tester.tap(find.byKey(const ValueKey<String>('answer-4')));
+  await tester.pumpAndSettle();
 }
 
 Future<void> _pumpPhaseTwoCGolden(

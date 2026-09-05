@@ -70,7 +70,7 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
 
   String? get _subtitle => switch (phase) {
     _TriviaPhase.menu => null,
-    _TriviaPhase.setup => versus ? 'Pass & Play setup' : 'Solo Sprint setup',
+    _TriviaPhase.setup => null,
     _TriviaPhase.handoff => 'Pass the phone',
     _TriviaPhase.playing =>
       versus
@@ -93,43 +93,29 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
     key: const ValueKey<String>('trivia-menu'),
     padding: const EdgeInsets.all(16),
     children: <Widget>[
-      GradientCard(
+      PartyModeCard(
         colors: const <Color>[PartyColors.blue, PartyColors.purple],
+        emoji: '⚡',
+        title: 'SOLO SPRINT',
+        body: 'Test your knowledge and chase a high score.',
         onTap: () => setState(() {
           versus = false;
           questionCount = questionCount.clamp(5, 25);
           phase = _TriviaPhase.setup;
         }),
-        child: const ListTile(
-          contentPadding: EdgeInsets.zero,
-          leading: Text('⚡', style: TextStyle(fontSize: 44)),
-          title: Text(
-            'SOLO SPRINT',
-            style: TextStyle(fontWeight: FontWeight.w800, fontSize: 21),
-          ),
-          subtitle: Text('Test your knowledge and chase a high score.'),
-          trailing: Icon(Icons.arrow_forward_rounded),
-        ),
       ),
       const SizedBox(height: 14),
-      GradientCard(
+      PartyModeCard(
         colors: const <Color>[PartyColors.purple, PartyColors.pink],
+        emoji: '🏆',
+        title: 'PASS & PLAY',
+        body: 'Take turns, reveal answers, and score the group.',
         onTap: () => setState(() {
           versus = true;
           selected = List<Player>.from(app.players);
           _clampQuestionCount(ref.read(gameDataProvider));
           phase = _TriviaPhase.setup;
         }),
-        child: const ListTile(
-          contentPadding: EdgeInsets.zero,
-          leading: Text('🏆', style: TextStyle(fontSize: 44)),
-          title: Text(
-            'PASS & PLAY',
-            style: TextStyle(fontWeight: FontWeight.w800, fontSize: 21),
-          ),
-          subtitle: Text('Take turns, reveal answers, and score the group.'),
-          trailing: Icon(Icons.arrow_forward_rounded),
-        ),
       ),
       const SizedBox(height: 14),
       OutlinedButton.icon(

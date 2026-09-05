@@ -61,6 +61,7 @@ class _StopTimerScreenState extends ConsumerState<StopTimerScreen> {
       },
       child: PartyPage(
         title: 'Stop the Timer',
+        centerTitle: true,
         style: PartyGameStyle.stopTimer,
         tone: switch (phase) {
           StopTimerPhase.privateReveal => PartyScreenTone.secret,
@@ -75,9 +76,10 @@ class _StopTimerScreenState extends ConsumerState<StopTimerScreen> {
     );
   }
 
-  String get _subtitle {
-    if (shellPhase == _ShellPhase.menu) return 'Precision timing showdown';
-    if (shellPhase == _ShellPhase.setup) return '${_modeName(mode)} setup';
+  String? get _subtitle {
+    if (shellPhase == _ShellPhase.menu || shellPhase == _ShellPhase.setup) {
+      return null;
+    }
     final current = game!;
     return switch (current.phase) {
       StopTimerPhase.targetReveal =>
@@ -149,23 +151,16 @@ class _StopTimerScreenState extends ConsumerState<StopTimerScreen> {
     String body,
   ) => Padding(
     padding: const EdgeInsets.only(bottom: 14),
-    child: GradientCard(
+    child: PartyModeCard(
       colors: value == StopTimerMode.solo
           ? const <Color>[PartyColors.yellow, PartyColors.orange]
           : value == StopTimerMode.buzzer
           ? const <Color>[PartyColors.coral, PartyColors.pink]
           : const <Color>[PartyColors.purple, PartyColors.blue],
+      emoji: emoji,
+      title: title,
+      body: body,
       onTap: () => _selectMode(value),
-      child: ListTile(
-        contentPadding: EdgeInsets.zero,
-        leading: Text(emoji, style: const TextStyle(fontSize: 42)),
-        title: Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
-        ),
-        subtitle: Text(body),
-        trailing: const Icon(Icons.arrow_forward),
-      ),
     ),
   );
 
@@ -799,12 +794,6 @@ class _StopTimerScreenState extends ConsumerState<StopTimerScreen> {
 
   Player _playerById(String id) =>
       selected.firstWhere((Player player) => player.id == id);
-
-  String _modeName(StopTimerMode value) => switch (value) {
-    StopTimerMode.solo => 'Solo Training',
-    StopTimerMode.buzzer => 'Buzzer Battle',
-    StopTimerMode.imposter => 'Timer Imposter',
-  };
 
   String _rating(double error) => switch (ratingForError(error)) {
     SoloRating.unbelievable => 'UNBELIEVABLE! 🎯',

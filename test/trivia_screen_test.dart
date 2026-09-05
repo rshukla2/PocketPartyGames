@@ -36,7 +36,7 @@ void main() {
     await tester.tap(find.text('SOLO SPRINT'));
     await tester.pumpAndSettle();
 
-    expect(find.text('Solo Sprint setup'), findsOneWidget);
+    expect(find.text('Solo Sprint setup'), findsNothing);
     expect(find.text('CATEGORY'), findsOneWidget);
     expect(find.text('All Categories'), findsOneWidget);
     final medium = tester.widget<Text>(find.text('Medium'));
@@ -56,6 +56,8 @@ void main() {
     tester,
   ) async {
     await _pumpTrivia(tester, data: data, players: _players(6));
+    await tester.ensureVisible(find.text('PASS & PLAY'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('PASS & PLAY'));
     await tester.pumpAndSettle();
 
@@ -85,6 +87,8 @@ void main() {
     tester,
   ) async {
     await _pumpTrivia(tester, data: data, players: _players(2));
+    await tester.ensureVisible(find.text('PASS & PLAY'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('PASS & PLAY'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Easy'));
@@ -128,6 +132,8 @@ void main() {
         players: _players(3),
         textScale: scale,
       );
+      await tester.ensureVisible(find.text('PASS & PLAY'));
+      await tester.pumpAndSettle();
       await tester.tap(find.text('PASS & PLAY'));
       await tester.pumpAndSettle();
       expect(tester.takeException(), isNull, reason: 'Failed at ${scale}x');

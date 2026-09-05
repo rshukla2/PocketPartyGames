@@ -23,8 +23,23 @@ void main() {
     WidgetTester tester,
   ) async {
     await _pumpImposter(tester, data: data, players: _players(4));
+    expect(
+      tester.widget<Text>(find.text('PLAYERS')).style?.color,
+      PartyColors.white,
+    );
+    expect(
+      tester.widget<Text>(find.text('ROLE MODE')).style?.color,
+      PartyColors.white,
+    );
     expect(find.text('IMPOSTER HINT'), findsOneWidget);
     expect(find.text('MULTIPLE ROUNDS'), findsOneWidget);
+    final switchContext = tester.element(find.byType(Switch).first);
+    final switchTheme = SwitchTheme.of(switchContext);
+    expect(
+      switchTheme.trackColor?.resolve(const <WidgetState>{}),
+      isNot(Colors.transparent),
+    );
+    expect(switchTheme.trackOutlineWidth?.resolve(const <WidgetState>{}), 2);
 
     await tester.tap(find.text('ODD WORD'));
     await tester.pumpAndSettle();

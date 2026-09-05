@@ -176,51 +176,60 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                                 ),
                               ),
                               const Spacer(),
-                              Row(
-                                children: <Widget>[
-                                  if (index > 0)
+                              if (index == 0)
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: FilledButton.icon(
+                                    key: const Key('onboarding-next'),
+                                    onPressed: () => setState(() => index++),
+                                    icon: const Icon(Icons.arrow_forward),
+                                    label: const Text('NEXT'),
+                                  ),
+                                )
+                              else
+                                Row(
+                                  children: <Widget>[
                                     Expanded(
                                       child: OutlinedButton(
                                         onPressed: () =>
                                             setState(() => index--),
-                                        child: const Text('Back'),
-                                      ),
-                                    )
-                                  else
-                                    const Spacer(),
-                                  const SizedBox(width: 12),
-                                  Expanded(
-                                    flex: 2,
-                                    child: FilledButton.icon(
-                                      key: const Key('onboarding-next'),
-                                      onPressed: () async {
-                                        if (index < slides.length - 1) {
-                                          setState(() => index++);
-                                        } else {
-                                          await ref
-                                              .read(
-                                                appControllerProvider.notifier,
-                                              )
-                                              .completeTutorial();
-                                          if (context.mounted) {
-                                            context.go('/players');
-                                          }
-                                        }
-                                      },
-                                      icon: Icon(
-                                        index == slides.length - 1
-                                            ? Icons.celebration
-                                            : Icons.arrow_forward,
-                                      ),
-                                      label: Text(
-                                        index == slides.length - 1
-                                            ? 'LET’S PLAY'
-                                            : 'NEXT',
+                                        child: const Text('BACK'),
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
+                                    const SizedBox(width: 12),
+                                    Expanded(
+                                      flex: 2,
+                                      child: FilledButton.icon(
+                                        key: const Key('onboarding-next'),
+                                        onPressed: () async {
+                                          if (index < slides.length - 1) {
+                                            setState(() => index++);
+                                          } else {
+                                            await ref
+                                                .read(
+                                                  appControllerProvider
+                                                      .notifier,
+                                                )
+                                                .completeTutorial();
+                                            if (context.mounted) {
+                                              context.go('/players');
+                                            }
+                                          }
+                                        },
+                                        icon: Icon(
+                                          index == slides.length - 1
+                                              ? Icons.celebration
+                                              : Icons.arrow_forward,
+                                        ),
+                                        label: Text(
+                                          index == slides.length - 1
+                                              ? 'LET’S PLAY'
+                                              : 'NEXT',
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                             ],
                           ),
                         ),

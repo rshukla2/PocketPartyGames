@@ -147,6 +147,17 @@ void main() {
             ),
           );
           await tester.pumpAndSettle();
+          final page = tester.widget<PartyPage>(find.byType(PartyPage));
+          expect(
+            page.centerTitle,
+            isTrue,
+            reason: '${screen.runtimeType} should center its game title',
+          );
+          expect(
+            page.subtitle,
+            isNull,
+            reason: '${screen.runtimeType} setup should not market itself',
+          );
           final exception = tester.takeException();
           if (exception is FlutterError) {
             // Keep the full render diagnostics visible when a responsive
@@ -163,7 +174,7 @@ void main() {
     );
   }
 
-  testWidgets('all eight setup screens support 130 percent text', (
+  testWidgets('all eight setup screens support 130 and 200 percent text', (
     WidgetTester tester,
   ) async {
     tester.view.physicalSize = const Size(390, 844);
@@ -180,32 +191,35 @@ void main() {
       const ActItOutScreen(),
       const CountdownScreen(),
     ];
-    for (final screen in screens) {
-      await tester.pumpWidget(
-        ProviderScope(
-          overrides: [
-            appStorageProvider.overrideWithValue(storage),
-            gameDataProvider.overrideWithValue(data),
-          ],
-          child: MaterialApp(
-            theme: buildPartyTheme(),
-            home: MediaQuery(
-              data: const MediaQueryData(
-                size: Size(390, 844),
-                textScaler: TextScaler.linear(1.3),
+    for (final scale in <double>[1.3, 2]) {
+      for (final screen in screens) {
+        await tester.pumpWidget(const SizedBox.shrink());
+        await tester.pumpWidget(
+          ProviderScope(
+            overrides: [
+              appStorageProvider.overrideWithValue(storage),
+              gameDataProvider.overrideWithValue(data),
+            ],
+            child: MaterialApp(
+              theme: buildPartyTheme(),
+              home: MediaQuery(
+                data: MediaQueryData(
+                  size: const Size(390, 844),
+                  textScaler: TextScaler.linear(scale),
+                ),
+                child: screen,
               ),
-              child: screen,
             ),
           ),
-        ),
-      );
-      await tester.pumpAndSettle();
-      final exception = tester.takeException();
-      expect(
-        exception,
-        isNull,
-        reason: '${screen.runtimeType} should support 130% text',
-      );
+        );
+        await tester.pumpAndSettle();
+        final exception = tester.takeException();
+        expect(
+          exception,
+          isNull,
+          reason: '${screen.runtimeType} should support ${scale * 100}% text',
+        );
+      }
     }
   });
 }

@@ -18,6 +18,7 @@ void main(List<String> arguments) {
     'lib/features/nearby/nearby_imposter_session.dart',
     'lib/features/nearby/nearby_stop_timer_session.dart',
     'lib/features/games/imposter_engine.dart',
+    'lib/features/games/countdown_engine.dart',
     'lib/features/games/stop_timer_engine.dart',
     'lib/features/games/trivia_engine.dart',
     'lib/features/games/truth_dare_engine.dart',

@@ -64,6 +64,7 @@ class _ImposterScreenState extends ConsumerState<ImposterScreen> {
       },
       child: PartyPage(
         title: 'Imposter',
+        centerTitle: true,
         style: PartyGameStyle.imposter,
         tone: switch (phase) {
           ImposterPhase.privateReveal => PartyScreenTone.secret,
@@ -73,7 +74,7 @@ class _ImposterScreenState extends ConsumerState<ImposterScreen> {
           _ => PartyScreenTone.standard,
         },
         subtitle: switch (phase) {
-          null => 'Pass & Play word bluffing',
+          null => null,
           ImposterPhase.privateReveal =>
             'Private word ${revealIndex + 1}/${selected.length}',
           ImposterPhase.discussion => 'Give clues and find the bluff',
@@ -94,6 +95,8 @@ class _ImposterScreenState extends ConsumerState<ImposterScreen> {
   };
 
   Widget _setup(AppState app) {
+    final foreground = context.partyPalette.foreground;
+    final mutedForeground = foreground.withValues(alpha: .86);
     final categories = <String>[
       'Random',
       ...ref
@@ -108,7 +111,11 @@ class _ImposterScreenState extends ConsumerState<ImposterScreen> {
       key: const ValueKey<String>('imposter-setup'),
       padding: const EdgeInsets.all(16),
       children: <Widget>[
-        Text('PLAYERS', style: Theme.of(context).textTheme.titleLarge),
+        Text(
+          'PLAYERS',
+          style: Theme.of(context).textTheme.titleLarge
+              ?.copyWith(color: foreground),
+        ),
         const SizedBox(height: 8),
         PlayerChips(
           players: app.players,
@@ -123,7 +130,11 @@ class _ImposterScreenState extends ConsumerState<ImposterScreen> {
           }),
         ),
         const SizedBox(height: 18),
-        Text('ROLE MODE', style: Theme.of(context).textTheme.titleMedium),
+        Text(
+          'ROLE MODE',
+          style: Theme.of(context).textTheme.titleMedium
+              ?.copyWith(color: foreground),
+        ),
         const SizedBox(height: 8),
         SegmentedButton<ImposterMode>(
           showSelectedIcon: false,
@@ -142,6 +153,7 @@ class _ImposterScreenState extends ConsumerState<ImposterScreen> {
           mode == ImposterMode.classic
               ? 'The Crew shares a word. Imposters know their role and bluff.'
               : 'Everyone sees a word. Imposters get related odd words and do not know their role.',
+          style: TextStyle(color: mutedForeground),
         ),
         const SizedBox(height: 18),
         PartyDropdownField<String>(
@@ -157,7 +169,10 @@ class _ImposterScreenState extends ConsumerState<ImposterScreen> {
               setState(() => category = value ?? 'Random'),
         ),
         const SizedBox(height: 16),
-        Text('IMPOSTERS: $imposterCount'),
+        Text(
+          'IMPOSTERS: $imposterCount',
+          style: TextStyle(color: foreground, fontWeight: FontWeight.w700),
+        ),
         PartySlider(
           value: imposterCount.toDouble(),
           min: maxImposters == 1 ? 0 : 1,
@@ -169,27 +184,30 @@ class _ImposterScreenState extends ConsumerState<ImposterScreen> {
               : (double value) => setState(() => imposterCount = value.round()),
         ),
         if (mode == ImposterMode.classic)
-          SwitchListTile.adaptive(
+          SwitchListTile(
             contentPadding: EdgeInsets.zero,
             value: hintsEnabled,
             onChanged: (bool value) => setState(() => hintsEnabled = value),
-            title: const Text('IMPOSTER HINT'),
-            subtitle: const Text(
+            title: Text('IMPOSTER HINT', style: TextStyle(color: foreground)),
+            subtitle: Text(
               'Give imposters a broad clue without revealing the Crew word.',
+              style: TextStyle(color: mutedForeground),
             ),
           ),
         if (selected.length >= 4)
-          SwitchListTile.adaptive(
+          SwitchListTile(
             contentPadding: EdgeInsets.zero,
             value: multipleRounds,
             onChanged: (bool value) => setState(() => multipleRounds = value),
-            title: const Text('MULTIPLE ROUNDS'),
-            subtitle: const Text(
+            title: Text('MULTIPLE ROUNDS', style: TextStyle(color: foreground)),
+            subtitle: Text(
               'Keep eliminating players until the Crew catches every imposter or the imposters reach parity.',
+              style: TextStyle(color: mutedForeground),
             ),
           ),
         Text(
           'DISCUSSION: ${discussionSeconds == 0 ? 'NO TIMER' : '${discussionSeconds ~/ 60} MIN'}',
+          style: TextStyle(color: foreground, fontWeight: FontWeight.w700),
         ),
         SegmentedButton<int>(
           showSelectedIcon: false,

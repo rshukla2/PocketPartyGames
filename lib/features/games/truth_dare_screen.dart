@@ -43,6 +43,7 @@ class _TruthDareScreenState extends ConsumerState<TruthDareScreen> {
       },
       child: PartyPage(
         title: 'Truth or Dare',
+        centerTitle: true,
         style: PartyGameStyle.truthDare,
         tone: switch (phase) {
           _Phase.play when category == 'Bold' => PartyScreenTone.secret,
@@ -51,7 +52,7 @@ class _TruthDareScreenState extends ConsumerState<TruthDareScreen> {
           _ => PartyScreenTone.standard,
         },
         subtitle: switch (phase) {
-          _Phase.setup => '200 original in-person cards',
+          _Phase.setup => null,
           _Phase.play => '${selected[playerIndex].name}’s turn',
           _Phase.summary => '${session?.history.length ?? 0} turns played',
         },

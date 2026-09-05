@@ -423,6 +423,56 @@ class GradientCard extends StatelessWidget {
   );
 }
 
+class PartyModeCard extends StatelessWidget {
+  const PartyModeCard({
+    required this.colors,
+    required this.emoji,
+    required this.title,
+    required this.body,
+    required this.onTap,
+    this.foregroundColor = PartyColors.white,
+    super.key,
+  });
+
+  final List<Color> colors;
+  final String emoji;
+  final String title;
+  final String body;
+  final VoidCallback onTap;
+  final Color foregroundColor;
+
+  @override
+  Widget build(BuildContext context) => GradientCard(
+    colors: colors,
+    foregroundColor: foregroundColor,
+    onTap: onTap,
+    child: Semantics(
+      button: true,
+      label: '$title. $body',
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Text(emoji, style: const TextStyle(fontSize: 48)),
+          const SizedBox(height: 12),
+          Text(
+            title.toUpperCase(),
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            body,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontWeight: FontWeight.w600),
+          ),
+          const SizedBox(height: 12),
+          const Icon(Icons.arrow_forward_rounded, size: 30),
+        ],
+      ),
+    ),
+  );
+}
+
 class GamePosterCard extends StatelessWidget {
   const GamePosterCard({
     required this.style,

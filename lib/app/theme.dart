@@ -522,13 +522,30 @@ ThemeData buildPartyTheme({PartyPalette? palette}) {
     ),
     switchTheme: SwitchThemeData(
       thumbColor: WidgetStateProperty.resolveWith<Color?>((states) {
-        return states.contains(WidgetState.selected)
+        final color = states.contains(WidgetState.selected)
             ? PartyColors.nearBlack
-            : null;
+            : colors.foreground;
+        return states.contains(WidgetState.disabled)
+            ? color.withValues(alpha: .58)
+            : color;
       }),
       trackColor: WidgetStateProperty.resolveWith<Color?>((states) {
-        return states.contains(WidgetState.selected) ? colors.accent : null;
+        final color = states.contains(WidgetState.selected)
+            ? colors.accent
+            : colors.foreground.withValues(alpha: .28);
+        return states.contains(WidgetState.disabled)
+            ? color.withValues(alpha: .5)
+            : color;
       }),
+      trackOutlineColor: WidgetStateProperty.resolveWith<Color?>((states) {
+        final color = states.contains(WidgetState.selected)
+            ? PartyColors.nearBlack
+            : colors.foreground.withValues(alpha: .82);
+        return states.contains(WidgetState.disabled)
+            ? color.withValues(alpha: .5)
+            : color;
+      }),
+      trackOutlineWidth: const WidgetStatePropertyAll<double>(2),
     ),
     snackBarTheme: SnackBarThemeData(
       backgroundColor: PartyColors.nearBlack,

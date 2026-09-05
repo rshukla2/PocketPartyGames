@@ -33,6 +33,10 @@ void main() {
       find.text('No accounts, subscriptions, or cloud required.'),
       findsOneWidget,
     );
+    expect(
+      tester.getSize(find.byKey(const Key('onboarding-next'))).width,
+      greaterThan(300),
+    );
     final expectedSlides = <(String, String)>[
       (
         'IMPOSTER',

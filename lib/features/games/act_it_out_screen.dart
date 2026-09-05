@@ -56,6 +56,7 @@ class _ActItOutScreenState extends ConsumerState<ActItOutScreen> {
       },
       child: PartyPage(
         title: 'Act It Out',
+        centerTitle: true,
         style: PartyGameStyle.actItOut,
         tone: switch (phase) {
           _ActPhase.handoff when mode == _ActMode.imposter =>
@@ -65,7 +66,7 @@ class _ActItOutScreenState extends ConsumerState<ActItOutScreen> {
           _ => PartyScreenTone.standard,
         },
         subtitle: phase == _ActPhase.setup
-            ? '420 prompts · No props needed'
+            ? null
             : players[turn % players.length].name,
         child: PartyPhaseSwitcher(child: _body(app)),
       ),

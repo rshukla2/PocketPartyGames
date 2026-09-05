@@ -8,36 +8,24 @@ import '../../app/app_controller.dart';
 import '../../app/theme.dart';
 import '../../core/data/game_data_repository.dart';
 import '../../core/models/app_models.dart';
-import '../../core/models/game_models.dart';
 import '../../core/services/runtime_services.dart';
 import '../../core/widgets/party_widgets.dart';
-
-enum _Phase {
-  setup,
-  transition,
-  prompt,
-  timing,
-  result,
-  finalResult,
-  tiebreaker,
-}
+import 'countdown_engine.dart';
 
 class CountdownScreen extends ConsumerStatefulWidget {
   const CountdownScreen({super.key});
+
   @override
   ConsumerState<CountdownScreen> createState() => _CountdownScreenState();
 }
 
 class _CountdownScreenState extends ConsumerState<CountdownScreen> {
-  _Phase phase = _Phase.setup;
+  static const _engine = CountdownGameEngine();
+
   List<Player> selected = <Player>[];
-  int level = 5;
-  int playerIndex = 0;
-  int seconds = 5;
-  bool success = false;
-  late CountdownPrompt prompt;
-  final scores = <String, int>{};
-  final used = <String>{};
+  bool selectionInitialized = false;
+  CountdownMatch? match;
+  int seconds = 0;
   Timer? timer;
 
   @override
@@ -49,18 +37,26 @@ class _CountdownScreenState extends ConsumerState<CountdownScreen> {
   @override
   Widget build(BuildContext context) {
     final app = ref.watch(appControllerProvider);
-    if (selected.isEmpty) selected = List<Player>.from(app.players);
+    if (!selectionInitialized) {
+      selected = List<Player>.from(app.players);
+      selectionInitialized = true;
+    }
+    final current = match;
+    final phase = current?.phase;
+    final level = current?.currentTurn.level ?? 5;
     return PopScope(
-      canPop: phase == _Phase.setup,
+      canPop: current == null,
       onPopInvokedWithResult: (bool didPop, Object? result) async {
         if (!didPop && await confirmLeaveGame(context) && context.mounted) {
+          timer?.cancel();
           context.pop();
         }
       },
       child: PartyPage(
         title: '5-4-3-2-1',
+        centerTitle: true,
         style: PartyGameStyle.countdown,
-        tone: phase == _Phase.finalResult || phase == _Phase.tiebreaker
+        tone: phase == CountdownPhase.finalResult
             ? PartyScreenTone.success
             : switch (level) {
                 4 => PartyScreenTone.action,
@@ -69,106 +65,128 @@ class _CountdownScreenState extends ConsumerState<CountdownScreen> {
                 1 => PartyScreenTone.success,
                 _ => PartyScreenTone.standard,
               },
-        subtitle: phase == _Phase.setup
-            ? 'Think fast · Really fast'
-            : 'Level $level · ${selected[playerIndex.clamp(0, selected.length - 1)].name}',
+        subtitle: current == null
+            ? null
+            : phase == CountdownPhase.finalResult
+            ? 'Final leaderboard'
+            : 'Level $level · ${_playerFor(current.currentTurn.playerId).name}',
         child: PartyPhaseSwitcher(child: _content(app)),
       ),
     );
   }
 
-  Widget _content(AppState app) => switch (phase) {
-    _Phase.setup => _setup(app),
-    _Phase.transition => _transition(),
-    _Phase.prompt => _prompt(),
-    _Phase.timing => _timing(),
-    _Phase.result => _result(),
-    _Phase.finalResult || _Phase.tiebreaker => _final(),
-  };
+  Widget _content(AppState app) {
+    final current = match;
+    if (current == null) return _setup(app);
+    return switch (current.phase) {
+      CountdownPhase.transition => _transition(current),
+      CountdownPhase.prompt => _prompt(current),
+      CountdownPhase.timing => _timing(current),
+      CountdownPhase.scoreEntry => _scoreEntry(current),
+      CountdownPhase.finalResult => _final(current),
+    };
+  }
 
   Widget _setup(AppState app) => ListView(
     key: const ValueKey<String>('countdown-setup'),
     padding: const EdgeInsets.all(16),
     children: <Widget>[
       const Text(
-        'Each player names 5 things in 5 seconds, then 4 in 4, all the way to 1.',
+        'Each player completes all five levels before the phone moves to the next player.',
       ),
       const SizedBox(height: 18),
       Text('Players', style: Theme.of(context).textTheme.titleLarge),
       PlayerChips(
         players: app.players,
-        onChanged: (List<Player> value) => selected = value,
+        minimum: 1,
+        onChanged: (List<Player> value) => setState(() => selected = value),
       ),
       const SizedBox(height: 24),
       FilledButton.icon(
-        onPressed: _start,
+        onPressed: selected.isEmpty ? null : _start,
         icon: const Icon(Icons.bolt),
         label: const Text('START COUNTDOWN'),
       ),
     ],
   );
 
-  Widget _transition() => Padding(
-    key: ValueKey<String>('transition-$level'),
-    padding: const EdgeInsets.all(20),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        ResponsivePartyText(
-          '$level',
-          minFontSize: 88,
-          maxFontSize: 132,
-          maxLines: 1,
-        ),
-        Text(
-          'NAME $level · IN $level SECONDS',
-          style: Theme.of(context).textTheme.headlineMedium,
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(height: 24),
-        FilledButton(onPressed: _newTurn, child: const Text('BEGIN LEVEL')),
-      ],
-    ),
-  );
-
-  Widget _prompt() => Padding(
-    key: ValueKey<String>('prompt-${prompt.id}'),
-    padding: const EdgeInsets.all(18),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        PlayerNameBadge(player: selected[playerIndex]),
-        const SizedBox(height: 10),
-        Text(
-          '${selected[playerIndex].name}, get ready!',
-          style: Theme.of(context).textTheme.headlineMedium,
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(height: 18),
-        GradientCard(
-          colors: const <Color>[PartyColors.coral, PartyColors.orange],
-          child: ResponsivePartyText(
-            'Name $level…\n${prompt.text.toUpperCase()}',
-            minFontSize: 28,
-            maxFontSize: 46,
-            maxLines: 5,
+  Widget _transition(CountdownMatch current) {
+    final turn = current.currentTurn;
+    final player = _playerFor(turn.playerId);
+    return Padding(
+      key: ValueKey<String>('transition-${current.turnIndex}-${turn.level}'),
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          PlayerNameBadge(player: player),
+          const SizedBox(height: 20),
+          ResponsivePartyText(
+            '${turn.level}',
+            minFontSize: 88,
+            maxFontSize: 132,
+            maxLines: 1,
           ),
-        ),
-        const SizedBox(height: 22),
-        FilledButton.icon(
-          onPressed: _beginTimer,
-          icon: const Icon(Icons.timer),
-          label: const Text('START TIMER'),
-        ),
-      ],
-    ),
-  );
+          Text(
+            'NAME ${turn.level} · IN ${turn.level} SECONDS',
+            style: Theme.of(context).textTheme.headlineMedium,
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 24),
+          FilledButton(
+            onPressed: _showPrompt,
+            child: const Text('BEGIN LEVEL'),
+          ),
+        ],
+      ),
+    );
+  }
 
-  Widget _timing() => Padding(
-    key: ValueKey<String>('timing-$seconds'),
+  Widget _prompt(CountdownMatch current) {
+    final turn = current.currentTurn;
+    final player = _playerFor(turn.playerId);
+    return SingleChildScrollView(
+      key: ValueKey<String>('prompt-${current.turnIndex}-${turn.prompt.id}'),
+      padding: const EdgeInsets.all(18),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          PlayerNameBadge(player: player),
+          const SizedBox(height: 10),
+          Text(
+            '${player.name}, get ready!',
+            style: Theme.of(context).textTheme.headlineMedium,
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 18),
+          GradientCard(
+            colors: const <Color>[PartyColors.coral, PartyColors.orange],
+            child: ResponsivePartyText(
+              'Name ${turn.level}…\n${turn.prompt.text.toUpperCase()}',
+              minFontSize: 28,
+              maxFontSize: 46,
+              maxLines: 5,
+            ),
+          ),
+          const SizedBox(height: 22),
+          FilledButton.icon(
+            onPressed: _beginTimer,
+            icon: const Icon(Icons.timer),
+            label: const Text('START TIMER'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _timing(CountdownMatch current) => Padding(
+    key: ValueKey<String>('timing-${current.turnIndex}-$seconds'),
     padding: const EdgeInsets.all(18),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         ResponsivePartyText(
           '$seconds',
@@ -177,73 +195,139 @@ class _CountdownScreenState extends ConsumerState<CountdownScreen> {
           maxLines: 1,
         ),
         Text(
-          prompt.text.toUpperCase(),
+          current.currentTurn.prompt.text.toUpperCase(),
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.titleLarge,
-        ),
-        const SizedBox(height: 24),
-        FilledButton(
-          onPressed: () => _finish(true),
-          child: const Text('THEY DID IT!'),
         ),
       ],
     ),
   );
 
-  Widget _result() => ListView(
-    key: ValueKey<String>('result-$level-$playerIndex'),
-    padding: const EdgeInsets.all(18),
-    children: <Widget>[
-      Center(child: StickerBadge(emoji: success ? '⚡' : '⏰', size: 104)),
-      const SizedBox(height: 22),
-      Text(
-        success ? '+$level POINTS' : 'TIME’S UP',
-        textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.displaySmall,
+  Widget _scoreEntry(CountdownMatch current) {
+    final turn = current.currentTurn;
+    final player = _playerFor(turn.playerId);
+    final selectedAnswer = current.answerCount;
+    final total = current.scores[player.id] ?? 0;
+    return SingleChildScrollView(
+      key: ValueKey<String>('score-entry-${current.turnIndex}'),
+      padding: const EdgeInsets.all(18),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          const StickerBadge(emoji: '⏰', size: 104),
+          const SizedBox(height: 22),
+          Text(
+            'TIME’S UP',
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.displaySmall,
+          ),
+          const SizedBox(height: 12),
+          Text(
+            'HOW MANY DID THEY ANSWER?',
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
+          const SizedBox(height: 18),
+          Semantics(
+            label: 'Choose answers from 0 to ${turn.level}',
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 10,
+              runSpacing: 10,
+              children: <Widget>[
+                for (var answer = 0; answer <= turn.level; answer++)
+                  SizedBox.square(
+                    dimension: 56,
+                    child: answer == selectedAnswer
+                        ? FilledButton(
+                            key: ValueKey<String>('answer-$answer'),
+                            onPressed: () => _selectAnswer(answer),
+                            child: Text('$answer'),
+                          )
+                        : OutlinedButton(
+                            key: ValueKey<String>('answer-$answer'),
+                            onPressed: () => _selectAnswer(answer),
+                            child: Text('$answer'),
+                          ),
+                  ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 16),
+          Text(
+            selectedAnswer == null
+                ? '${player.name} has $total points'
+                : '+$selectedAnswer this level · ${total + selectedAnswer} total',
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          const SizedBox(height: 24),
+          SizedBox(
+            width: double.infinity,
+            child: FilledButton(
+              key: const Key('countdown-continue'),
+              onPressed: selectedAnswer == null ? null : _continue,
+              child: const Text('CONTINUE'),
+            ),
+          ),
+        ],
       ),
-      const SizedBox(height: 10),
-      Text(
-        '${selected[playerIndex].name}: ${scores[selected[playerIndex].id] ?? 0} total points',
-        textAlign: TextAlign.center,
-      ),
-      const SizedBox(height: 24),
-      FilledButton(onPressed: _next, child: const Text('CONTINUE')),
-    ],
-  );
+    );
+  }
 
-  Widget _final() {
+  Widget _final(CountdownMatch current) {
     final ranked = List<Player>.from(selected)
       ..sort(
         (Player a, Player b) =>
-            (scores[b.id] ?? 0).compareTo(scores[a.id] ?? 0),
+            (current.scores[b.id] ?? 0).compareTo(current.scores[a.id] ?? 0),
       );
-    final top = scores[ranked.first.id] ?? 0;
-    final tied = ranked
-        .where((Player player) => scores[player.id] == top)
-        .toList();
+    final winnerNames = current.winnerIds
+        .map((String id) => _playerFor(id).name)
+        .join(' & ');
+    final coWinners = current.winnerIds.length > 1;
     return ListView(
       key: const ValueKey<String>('countdown-final'),
       padding: const EdgeInsets.all(16),
       children: <Widget>[
         const Center(child: StickerBadge(emoji: '🏆', size: 104)),
         const SizedBox(height: 22),
-        ScoreBoard(players: selected, scores: scores),
-        if (tied.length > 1)
-          FilledButton.tonalIcon(
-            onPressed: () {
-              setState(() {
-                final winner =
-                    tied[ref.read(randomProvider).nextInt(tied.length)];
-                scores[winner.id] = (scores[winner.id] ?? 0) + 1;
-              });
-            },
-            icon: const Icon(Icons.flash_on),
-            label: const Text('RUN RANDOM TIEBREAKER'),
-          ),
+        Text(
+          coWinners ? 'CO-WINNERS' : 'WINNER',
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.headlineSmall,
+        ),
+        const SizedBox(height: 6),
+        ResponsivePartyText(
+          winnerNames.toUpperCase(),
+          minFontSize: 30,
+          maxFontSize: 54,
+          maxLines: 3,
+        ),
+        const SizedBox(height: 18),
+        ...ranked.indexed.map(((int, Player) entry) {
+          final (index, player) = entry;
+          final isWinner = current.winnerIds.contains(player.id);
+          return PartyCard(
+            child: ListTile(
+              leading: Text(
+                isWinner ? '🏆' : '#${index + 1}',
+                style: const TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+              title: Text(player.name),
+              trailing: Text(
+                '${current.scores[player.id] ?? 0}',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+            ),
+          );
+        }),
         const SizedBox(height: 12),
         FilledButton(onPressed: _start, child: const Text('PLAY AGAIN')),
         OutlinedButton(
-          onPressed: () => setState(() => phase = _Phase.setup),
+          onPressed: _changePlayers,
           child: const Text('CHANGE PLAYERS'),
         ),
         TextButton(
@@ -254,77 +338,76 @@ class _CountdownScreenState extends ConsumerState<CountdownScreen> {
     );
   }
 
-  void _start() => setState(() {
-    level = 5;
-    playerIndex = 0;
-    scores
-      ..clear()
-      ..addEntries(
-        selected.map((Player player) => MapEntry<String, int>(player.id, 0)),
-      );
-    used.clear();
-    phase = _Phase.transition;
-  });
+  Player _playerFor(String id) =>
+      selected.firstWhere((Player player) => player.id == id);
 
-  void _newTurn() {
-    final pool = ref
-        .read(gameDataProvider)
-        .countdown
-        .where((CountdownPrompt item) => item.level == level)
-        .toList();
-    final available = pool
-        .where((CountdownPrompt item) => !used.contains(item.id))
-        .toList();
-    prompt =
-        (available.isEmpty ? pool : available)[ref
-            .read(randomProvider)
-            .nextInt((available.isEmpty ? pool : available).length)];
-    used.add(prompt.id);
-    setState(() => phase = _Phase.prompt);
+  void _start() {
+    timer?.cancel();
+    setState(() {
+      seconds = 0;
+      match = _engine.start(
+        players: selected,
+        prompts: ref.read(gameDataProvider).countdown,
+        random: ref.read(randomProvider),
+      );
+    });
   }
+
+  void _showPrompt() => setState(() {
+    match = _engine.showPrompt(match!);
+  });
 
   void _beginTimer() {
     timer?.cancel();
+    final timingMatch = _engine.startTimer(match!);
     setState(() {
-      seconds = level;
-      phase = _Phase.timing;
+      match = timingMatch;
+      seconds = timingMatch.currentTurn.level;
     });
     timer = Timer.periodic(const Duration(seconds: 1), (Timer value) {
-      if (!mounted) return;
+      if (!mounted || match?.phase != CountdownPhase.timing) {
+        value.cancel();
+        return;
+      }
       if (seconds <= 1) {
         value.cancel();
-        _finish(false);
+        _expireTimer();
       } else {
         setState(() => seconds--);
       }
     });
   }
 
-  void _finish(bool didSucceed) {
-    if (phase != _Phase.timing) return;
+  void _expireTimer() {
+    if (match?.phase != CountdownPhase.timing) return;
     timer?.cancel();
-    success = didSucceed;
-    if (success) {
-      scores[selected[playerIndex].id] =
-          (scores[selected[playerIndex].id] ?? 0) + level;
+    setState(() {
+      seconds = 0;
+      match = _engine.expireTimer(match!);
+    });
+    final settings = ref.read(appControllerProvider).settings;
+    final feedback = ref.read(partyFeedbackProvider);
+    if (settings.soundEnabled) {
+      unawaited(feedback.playAlert());
     }
-    setState(() => phase = _Phase.result);
+    if (settings.hapticsEnabled) {
+      unawaited(feedback.heavyImpact());
+    }
   }
 
-  void _next() {
-    if (playerIndex + 1 < selected.length) {
-      playerIndex++;
-      _newTurn();
-    } else {
-      setState(() {
-        if (level > 1) {
-          level--;
-          playerIndex = 0;
-          phase = _Phase.transition;
-        } else {
-          phase = _Phase.finalResult;
-        }
-      });
-    }
+  void _selectAnswer(int answer) => setState(() {
+    match = _engine.selectAnswer(match!, answer);
+  });
+
+  void _continue() => setState(() {
+    match = _engine.continueAfterScore(match!);
+  });
+
+  void _changePlayers() {
+    timer?.cancel();
+    setState(() {
+      seconds = 0;
+      match = null;
+    });
   }
 }

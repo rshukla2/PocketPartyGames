@@ -58,6 +58,7 @@ class _PictionaryScreenState extends ConsumerState<PictionaryScreen> {
       },
       child: PartyPage(
         title: 'Pictionary',
+        centerTitle: true,
         style: PartyGameStyle.pictionary,
         tone: switch (phase) {
           _DrawPhase.handoff when mode == _DrawMode.imposter =>
@@ -67,7 +68,7 @@ class _PictionaryScreenState extends ConsumerState<PictionaryScreen> {
           _ => PartyScreenTone.standard,
         },
         subtitle: phase == _DrawPhase.setup
-            ? '194 prompts · Canvas included'
+            ? null
             : '${players[turn % players.length].name} draws',
         maxWidth: 760,
         child: PartyPhaseSwitcher(child: _body(app)),

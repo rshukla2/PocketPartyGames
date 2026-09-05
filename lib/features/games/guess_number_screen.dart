@@ -56,6 +56,7 @@ class _GuessNumberScreenState extends ConsumerState<GuessNumberScreen> {
       },
       child: PartyPage(
         title: 'Guess My Number',
+        centerTitle: true,
         style: PartyGameStyle.guessNumber,
         tone: switch (phase) {
           _Phase.pass => PartyScreenTone.secret,
@@ -64,7 +65,7 @@ class _GuessNumberScreenState extends ConsumerState<GuessNumberScreen> {
           _ => PartyScreenTone.standard,
         },
         subtitle: switch (phase) {
-          _Phase.setup => 'Forehead-style number deduction',
+          _Phase.setup => null,
           _Phase.pass => 'Pass the phone privately',
           _Phase.play => 'Ask only yes-or-no questions',
           _Phase.result => 'Turn ${turn + 1} complete',
