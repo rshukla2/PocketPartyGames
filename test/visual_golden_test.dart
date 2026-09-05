@@ -31,6 +31,7 @@ void main() {
         'goldens/phase1_library_390.png': 0.05,
         'goldens/trivia_setup_390.png': 0.05,
         'goldens/timer_imposter_setup_390.png': 0.05,
+        'goldens/imposter_setup_390.png': 0.05,
         'goldens/truth_dare_resources_390.png': 0.05,
       },
     );
