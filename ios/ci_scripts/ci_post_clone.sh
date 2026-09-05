@@ -32,5 +32,9 @@ flutter build ios --config-only --release --no-codesign
 if ! command -v pod >/dev/null 2>&1; then
   HOMEBREW_NO_AUTO_UPDATE=1 brew install cocoapods
 fi
-cd ios
-pod install
+if [ -f ios/Podfile ]; then
+  cd ios
+  pod install
+else
+  echo "No ios/Podfile found; using Flutter Swift Package Manager dependencies."
+fi
