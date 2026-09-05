@@ -45,6 +45,37 @@ void main() {
     expect(room.apply(racer).code, anyOf('stale_revision', 'duplicate'));
   });
 
+  test('invalid game actions do not consume a revision or message ID', () {
+    final room = LanRoomEngine(
+      roomId: 'room',
+      creatorId: 'host',
+      gameId: 'timer-buzzer',
+    );
+    room.requestJoin('host', 'Host');
+    room.approve('host', playerId: 'p1');
+    final revision = room.revision;
+    final envelope = command(revision: revision, type: 'gameCommand');
+
+    final rejected = room.apply(
+      envelope,
+      authenticatedSenderId: 'host',
+      gameCommandHandler: () => throw StateError('wrong_phase'),
+    );
+    expect(rejected.accepted, isFalse);
+    expect(rejected.code, contains('wrong_phase'));
+    expect(room.revision, revision);
+
+    var applied = false;
+    final accepted = room.apply(
+      envelope,
+      authenticatedSenderId: 'host',
+      gameCommandHandler: () => applied = true,
+    );
+    expect(accepted.accepted, isTrue);
+    expect(applied, isTrue);
+    expect(room.revision, revision + 1);
+  });
+
   test('private projections redact every other recipient secret', () {
     final room = LanRoomEngine(
       roomId: 'room',

@@ -225,6 +225,7 @@ class LanRoomEngine {
   LanCommandResult apply(
     LanEnvelope envelope, {
     String? authenticatedSenderId,
+    void Function()? gameCommandHandler,
   }) {
     String? error;
     if (envelope.protocolVersion != lanProtocolVersion) {
@@ -269,8 +270,18 @@ class LanRoomEngine {
         snapshot: projectionFor(envelope.senderId),
       );
     }
-    _messageIds.add(envelope.messageId);
-    _sequences[envelope.senderId] = envelope.clientSequence;
+    if (envelope.type == 'gameCommand' && gameCommandHandler != null) {
+      try {
+        gameCommandHandler();
+      } catch (error) {
+        return LanCommandResult(
+          accepted: false,
+          revision: revision,
+          code: error.toString(),
+          snapshot: projectionFor(envelope.senderId),
+        );
+      }
+    }
     switch (envelope.type) {
       case 'configure':
         if (phase != 'lobby') {
@@ -296,8 +307,9 @@ class LanRoomEngine {
         ready[envelope.senderId] = envelope.payload['ready'] == true;
         shared['ready'] = ready;
       case 'gameCommand':
-      // Game-specific validation and mutation are performed by the host's
-      // authoritative feature session after this envelope is accepted.
+        // Game-specific validation and mutation are performed by the host's
+        // authoritative feature session through [gameCommandHandler].
+        break;
       default:
         return LanCommandResult(
           accepted: false,
@@ -306,6 +318,8 @@ class LanRoomEngine {
           snapshot: projectionFor(envelope.senderId),
         );
     }
+    _messageIds.add(envelope.messageId);
+    _sequences[envelope.senderId] = envelope.clientSequence;
     revision++;
     return LanCommandResult(
       accepted: true,

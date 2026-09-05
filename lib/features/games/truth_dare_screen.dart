@@ -9,6 +9,7 @@ import '../../core/models/app_models.dart';
 import '../../core/models/game_models.dart';
 import '../../core/services/runtime_services.dart';
 import '../../core/widgets/party_widgets.dart';
+import 'truth_dare_engine.dart';
 
 enum _Phase { setup, play, summary }
 
@@ -19,13 +20,14 @@ class TruthDareScreen extends ConsumerStatefulWidget {
 }
 
 class _TruthDareScreenState extends ConsumerState<TruthDareScreen> {
+  static const _engine = TruthDareGameEngine();
   _Phase phase = _Phase.setup;
   List<Player> selected = <Player>[];
   String category = 'Mixed';
   bool randomRotation = false;
   int playerIndex = 0;
   TruthDareCard? card;
-  final history = <({Player player, TruthDareCard card, bool completed})>[];
+  TruthDareSession? session;
   final used = <String>{};
 
   @override
@@ -51,7 +53,7 @@ class _TruthDareScreenState extends ConsumerState<TruthDareScreen> {
         subtitle: switch (phase) {
           _Phase.setup => '200 original in-person cards',
           _Phase.play => '${selected[playerIndex].name}’s turn',
-          _Phase.summary => '${history.length} turns played',
+          _Phase.summary => '${session?.history.length ?? 0} turns played',
         },
         child: PartyPhaseSwitcher(child: _content(app)),
       ),
@@ -72,7 +74,7 @@ class _TruthDareScreenState extends ConsumerState<TruthDareScreen> {
       const SizedBox(height: 8),
       PlayerChips(
         players: app.players,
-        onChanged: (List<Player> value) => selected = value,
+        onChanged: (List<Player> value) => setState(() => selected = value),
       ),
       const SizedBox(height: 18),
       PartyDropdownField<String>(
@@ -105,15 +107,18 @@ class _TruthDareScreenState extends ConsumerState<TruthDareScreen> {
         ),
       const SizedBox(height: 20),
       FilledButton.icon(
-        onPressed: _start,
+        onPressed: selected.length < 2 ? null : _start,
         icon: const Icon(Icons.play_arrow),
         label: const Text('START GAME'),
       ),
+      if (selected.length < 2)
+        const Text('Choose at least two players.', textAlign: TextAlign.center),
     ],
   );
 
   Widget _play() {
     final player = selected[playerIndex];
+    final resources = session!.playerStates[player.id]!;
     return ListView(
       key: ValueKey<String>('truth-play-${card?.id}-$playerIndex'),
       padding: const EdgeInsets.all(18),
@@ -188,25 +193,29 @@ class _TruthDareScreenState extends ConsumerState<TruthDareScreen> {
             children: <Widget>[
               Expanded(
                 child: OutlinedButton(
-                  onPressed: _swap,
-                  child: const Text('SWAP'),
+                  onPressed: resources.swapsRemaining == 0 ? null : _swap,
+                  child: Text('SWAP · ${resources.swapsRemaining} LEFT'),
                 ),
               ),
               const SizedBox(width: 10),
               Expanded(
                 child: FilledButton(
-                  onPressed: () => _complete(true),
+                  onPressed: () => _finishTurn(TruthDareTurnOutcome.completed),
                   child: const Text('DONE'),
                 ),
               ),
             ],
           ),
           TextButton(
-            onPressed: () => _complete(false),
-            child: const Text('Skip without penalty'),
+            onPressed: resources.freeSkipsRemaining > 0
+                ? () => _finishTurn(TruthDareTurnOutcome.skipped)
+                : () => _finishTurn(TruthDareTurnOutcome.quit),
+            child: Text(
+              resources.freeSkipsRemaining > 0 ? 'SKIP FREE · 1 LEFT' : 'QUIT',
+            ),
           ),
         ],
-        if (history.isNotEmpty) ...<Widget>[
+        if (session!.history.isNotEmpty) ...<Widget>[
           const SizedBox(height: 16),
           TextButton.icon(
             onPressed: () => setState(() => phase = _Phase.summary),
@@ -219,7 +228,13 @@ class _TruthDareScreenState extends ConsumerState<TruthDareScreen> {
   }
 
   Widget _summary() {
-    final completed = history.where((item) => item.completed).length;
+    final history = session!.history;
+    final completed = history
+        .where(
+          (TruthDareTurnResult item) =>
+              item.outcome == TruthDareTurnOutcome.completed,
+        )
+        .length;
     return ListView(
       key: const ValueKey<String>('truth-summary'),
       padding: const EdgeInsets.all(16),
@@ -241,19 +256,36 @@ class _TruthDareScreenState extends ConsumerState<TruthDareScreen> {
               ),
               title: Text(item.player.name),
               subtitle: Text(
-                item.card.text,
+                '${switch (item.outcome) {
+                  TruthDareTurnOutcome.completed => 'DONE',
+                  TruthDareTurnOutcome.skipped => 'FREE SKIP',
+                  TruthDareTurnOutcome.quit => 'QUIT',
+                }} · ${item.card.text}',
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
               trailing: Icon(
-                item.completed ? Icons.check_circle : Icons.skip_next,
-                color: item.completed
-                    ? PartyColors.green
-                    : PartyColors.nearBlack,
+                switch (item.outcome) {
+                  TruthDareTurnOutcome.completed => Icons.check_circle,
+                  TruthDareTurnOutcome.skipped => Icons.skip_next,
+                  TruthDareTurnOutcome.quit => Icons.exit_to_app,
+                },
+                color: switch (item.outcome) {
+                  TruthDareTurnOutcome.completed => PartyColors.green,
+                  TruthDareTurnOutcome.skipped => PartyColors.yellow,
+                  TruthDareTurnOutcome.quit => PartyColors.coral,
+                },
               ),
             ),
           ),
         ),
+        if (session!.playerStates.values.any((state) => !state.active)) ...[
+          const SizedBox(height: 12),
+          Text(
+            'LEFT THE GAME: ${selected.where((player) => session!.playerStates[player.id]?.active == false).map((player) => player.name).join(', ')}',
+            textAlign: TextAlign.center,
+          ),
+        ],
         FilledButton(onPressed: _start, child: const Text('PLAY AGAIN')),
         TextButton(
           onPressed: () => context.go('/'),
@@ -264,7 +296,7 @@ class _TruthDareScreenState extends ConsumerState<TruthDareScreen> {
   }
 
   void _start() => setState(() {
-    history.clear();
+    session = _engine.start(selected);
     used.clear();
     playerIndex = 0;
     card = null;
@@ -290,18 +322,33 @@ class _TruthDareScreenState extends ConsumerState<TruthDareScreen> {
     });
   }
 
-  void _swap() => _draw(card!.type);
+  void _swap() {
+    final player = selected[playerIndex];
+    session = _engine.useSwap(session!, player.id);
+    _draw(card!.type);
+  }
 
-  void _complete(bool completed) {
-    history.add((
-      player: selected[playerIndex],
+  void _finishTurn(TruthDareTurnOutcome outcome) {
+    final player = selected[playerIndex];
+    session = _engine.recordTurn(
+      session!,
+      player: player,
       card: card!,
-      completed: completed,
-    ));
+      outcome: outcome,
+    );
+    final nextId = _engine.nextPlayerId(
+      session!,
+      roster: selected,
+      currentPlayerId: player.id,
+      randomRotation: randomRotation,
+      random: ref.read(randomProvider),
+    );
     setState(() {
-      playerIndex = randomRotation
-          ? ref.read(randomProvider).nextInt(selected.length)
-          : (playerIndex + 1) % selected.length;
+      if (nextId == null) {
+        phase = _Phase.summary;
+      } else {
+        playerIndex = selected.indexWhere((player) => player.id == nextId);
+      }
       card = null;
     });
   }

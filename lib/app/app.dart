@@ -10,6 +10,7 @@ import '../features/games/imposter_screen.dart';
 import '../features/games/imposter_engine.dart';
 import '../features/games/pictionary_screen.dart';
 import '../features/games/stop_timer_screen.dart';
+import '../features/games/stop_timer_engine.dart';
 import '../features/games/trivia_screen.dart';
 import '../features/games/truth_dare_screen.dart';
 import '../features/home/home_screens.dart';
@@ -59,6 +60,9 @@ class _PocketPartyAppState extends ConsumerState<PocketPartyApp> {
           gameId: state.uri.queryParameters['game'],
           imposterSetup: state.extra is ImposterSetup
               ? state.extra! as ImposterSetup
+              : null,
+          stopTimerSetup: state.extra is StopTimerSetup
+              ? state.extra! as StopTimerSetup
               : null,
         ),
       ),

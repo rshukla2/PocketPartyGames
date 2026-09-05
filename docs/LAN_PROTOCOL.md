@@ -20,6 +20,16 @@ Imposter uses a host-authoritative `lobby → private reveal/readiness → discu
 
 Each living player has one secret ballot and cannot vote for themselves. The highest total eliminates a player. A first tie creates a runoff limited to the tied candidates; a second tie requires the room creator to choose. Hybrid players vote sequentially on the host phone. Intermediate totals and ballots never appear in snapshots.
 
+## Stop the Timer state machines
+
+Buzzer Battle uses a host-authoritative `target reveal → randomized handoffs → scheduled private attempts → ranked round result → next round/final result` flow. The goal is configurable from 3–15 points. A recipient sees only the currently shared phase and its own active-turn controls until the host releases the round result; intermediate attempts are never broadcast.
+
+Timer Imposter uses `private reveal/readiness → randomized handoffs → scheduled private attempts → voting → optional runoff → result`. In False Target rooms, each recipient receives only its assigned neutral target; the projection does not identify the role. In No Target rooms, only an imposter recipient receives the `IMPOSTER` marker. The full assignment map is disclosed only in the final result.
+
+Before a remote timer attempt, the host takes repeated four-timestamp samples and uses the median of the five lowest-round-trip samples to estimate that device’s clock offset. At least three samples are required. The host supplies a recipient-local scheduled start, accepts a stop only from the authenticated active device, converts the timestamp back to host time, and calculates the authoritative duration. An interrupted attempt returns to that player’s handoff and restarts after reconnection.
+
+Timer Imposter ballots are private, prohibit self-votes and duplicates, and reveal no intermediate totals. A first-place tie creates one runoff; a second tie is resolved by the creator. Hybrid local players cast sequentially on the host.
+
 ## Voting and recovery
 
 The affected answerer/performer is excluded. Each eligible device votes once. More than half of cast eligible votes accepts or rejects; fewer than two voters, a completed tie, or timeout goes to the creator. Hybrid local ballots are submitted by the host.

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -6,8 +8,11 @@ import 'package:pocket_party_games/app/theme.dart';
 import 'package:pocket_party_games/core/data/game_data_repository.dart';
 import 'package:pocket_party_games/core/models/app_models.dart';
 import 'package:pocket_party_games/core/services/app_storage.dart';
+import 'package:pocket_party_games/core/services/runtime_services.dart';
 import 'package:pocket_party_games/core/widgets/party_widgets.dart';
+import 'package:pocket_party_games/features/games/stop_timer_screen.dart';
 import 'package:pocket_party_games/features/games/trivia_screen.dart';
+import 'package:pocket_party_games/features/games/truth_dare_screen.dart';
 import 'package:pocket_party_games/features/home/home_screens.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -23,6 +28,8 @@ void main() {
       precisionOverrides: const <String, double>{
         'goldens/phase1_library_390.png': 0.05,
         'goldens/trivia_setup_390.png': 0.05,
+        'goldens/timer_imposter_setup_390.png': 0.05,
+        'goldens/truth_dare_resources_390.png': 0.05,
       },
     );
     final loader = FontLoader('Fredoka')
@@ -150,7 +157,85 @@ void main() {
         matchesGoldenFile('goldens/trivia_setup_${size.width.toInt()}.png'),
       );
     });
+
+    testWidgets('Timer Imposter setup golden at ${size.width.toInt()}px', (
+      WidgetTester tester,
+    ) async {
+      await _setSize(tester, size);
+      await _pumpPhaseTwoCGolden(tester, timer: true);
+      await expectLater(
+        find.byKey(const Key('phase-two-c-golden-root')),
+        matchesGoldenFile(
+          'goldens/timer_imposter_setup_${size.width.toInt()}.png',
+        ),
+      );
+    });
+
+    testWidgets('Truth or Dare resources golden at ${size.width.toInt()}px', (
+      WidgetTester tester,
+    ) async {
+      await _setSize(tester, size);
+      await _pumpPhaseTwoCGolden(tester, timer: false);
+      await expectLater(
+        find.byKey(const Key('phase-two-c-golden-root')),
+        matchesGoldenFile(
+          'goldens/truth_dare_resources_${size.width.toInt()}.png',
+        ),
+      );
+    });
   }
+}
+
+Future<void> _pumpPhaseTwoCGolden(
+  WidgetTester tester, {
+  required bool timer,
+}) async {
+  SharedPreferences.setMockInitialValues(<String, Object>{});
+  final storage = await AppStorage.create();
+  await storage.save(
+    AppSnapshot(
+      players: List<Player>.generate(
+        5,
+        (int index) => Player(
+          id: 'player-$index',
+          name: 'Player ${index + 1}',
+          colorIndex: index,
+        ),
+      ),
+      settings: const AppSettings(tutorialCompleted: true),
+      soloStats: const SoloStats(),
+    ),
+  );
+  await tester.pumpWidget(
+    ProviderScope(
+      overrides: [
+        appStorageProvider.overrideWithValue(storage),
+        gameDataProvider.overrideWithValue(goldenData),
+        randomProvider.overrideWithValue(Random(27)),
+      ],
+      child: MaterialApp(
+        theme: buildPartyTheme(),
+        home: RepaintBoundary(
+          key: const Key('phase-two-c-golden-root'),
+          child: timer ? const StopTimerScreen() : const TruthDareScreen(),
+        ),
+      ),
+    ),
+  );
+  await tester.pumpAndSettle();
+  if (timer) {
+    await tester.tap(find.text('TIMER IMPOSTER'));
+  } else {
+    await tester.scrollUntilVisible(
+      find.text('START GAME'),
+      250,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await tester.tap(find.text('START GAME'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('TRUTH'));
+  }
+  await tester.pumpAndSettle();
 }
 
 Future<void> _pumpTriviaSetupGolden(WidgetTester tester) async {

@@ -10,8 +10,8 @@ The interface uses a saturated, full-bleed color identity for each game, bundled
 | --- | --- | --- |
 | Trivia | Solo, pass-and-play versus, browser, tiebreaker | Synchronized versus and correctness voting |
 | Imposter | Classic/Odd Word, optional hints, voting, single/multi-round elimination | Private projections, readiness, secret ballots, runoff |
-| Stop the Timer | Solo, Buzzer Battle, Timer Imposter | Calibrated starts and authoritative buzz scoring |
-| Truth or Dare | Categories, rotation, swaps, skips, summary | — |
+| Stop the Timer | Weighted Solo targets, first-to-points Buzzer Battle, two Timer Imposter variants | Private sequential attempts, calibrated starts, secret information and ballots |
+| Truth or Dare | Categories, rotation, two swaps and one free skip per player, quit/summary | — |
 | Pictionary | Quick Draw, Drawing Imposter, canvas/replay | Private words, streamed strokes, proposals/voting |
 | Guess My Number | Ranges, rotation, timer, podium | — |
 | Act It Out | Classic Charades, Acting Imposter | Private prompts, synchronized timer and voting |

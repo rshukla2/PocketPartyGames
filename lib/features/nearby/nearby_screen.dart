@@ -9,6 +9,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:uuid/uuid.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 import '../../app/app_controller.dart';
 import '../../app/theme.dart';
@@ -17,20 +18,29 @@ import '../../core/models/app_models.dart';
 import '../../core/services/runtime_services.dart';
 import '../../core/widgets/party_widgets.dart';
 import '../games/imposter_engine.dart';
+import '../games/stop_timer_engine.dart';
 import 'lan_protocol.dart';
 import 'lan_transport.dart';
 import 'nearby_imposter_session.dart';
+import 'nearby_stop_timer_session.dart';
 
 class NearbyScreen extends ConsumerStatefulWidget {
-  const NearbyScreen({this.gameId, this.imposterSetup, super.key});
+  const NearbyScreen({
+    this.gameId,
+    this.imposterSetup,
+    this.stopTimerSetup,
+    super.key,
+  });
   final String? gameId;
   final ImposterSetup? imposterSetup;
+  final StopTimerSetup? stopTimerSetup;
 
   @override
   ConsumerState<NearbyScreen> createState() => _NearbyScreenState();
 }
 
 class _NearbyScreenState extends ConsumerState<NearbyScreen> {
+  final Stopwatch monotonicClock = Stopwatch()..start();
   late final LanTransport transport = createLanTransport();
   final endpoint = TextEditingController();
   final roomId = TextEditingController();
@@ -54,8 +64,10 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
   Map<String, dynamic>? clientSnapshot;
   LanRoomEngine? roomEngine;
   NearbyImposterSession? imposterSession;
+  NearbyStopTimerSession? stopTimerSession;
   Timer? gameTicker;
   Timer? reconnectTimer;
+  Timer? scheduledStartTimer;
   DateTime? hostLostAt;
   int? alertedDeadline;
   late final String deviceId = const Uuid().v4();
@@ -77,6 +89,7 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
 
   @override
   void dispose() {
+    monotonicClock.stop();
     roomSubscription?.cancel();
     messageSubscription?.cancel();
     endpoint.dispose();
@@ -85,6 +98,8 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
     fingerprint.dispose();
     gameTicker?.cancel();
     reconnectTimer?.cancel();
+    scheduledStartTimer?.cancel();
+    unawaited(WakelockPlus.disable());
     unawaited(transport.dispose());
     super.dispose();
   }
@@ -117,6 +132,12 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
     if (widget.gameId == 'imposter' &&
         (imposterSession != null || clientSnapshot != null)) {
       return _nearbyImposterGame();
+    }
+    if ((widget.gameId == 'timer-buzzer' ||
+            widget.gameId == 'timer-imposter') &&
+        (stopTimerSession != null ||
+            clientSnapshot?['type'] == 'stopTimerSnapshot')) {
+      return _nearbyStopTimerGame();
     }
     if (connected || host != null) return _lobby();
     return ListView(
@@ -267,7 +288,7 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
                       request.value,
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
-                    if (widget.imposterSetup != null) ...<Widget>[
+                    if (_configuredPlayers != null) ...<Widget>[
                       const SizedBox(height: 8),
                       DropdownButtonFormField<String>(
                         initialValue: pendingPlayerAssignments[request.key],
@@ -305,7 +326,7 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
                         const SizedBox(width: 8),
                         FilledButton.icon(
                           onPressed:
-                              widget.imposterSetup != null &&
+                              _configuredPlayers != null &&
                                   pendingPlayerAssignments[request.key] == null
                               ? null
                               : () => _resolveApproval(
@@ -334,7 +355,9 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
           ),
         ),
         const SizedBox(height: 12),
-        if (widget.gameId != 'imposter')
+        if (widget.gameId != 'imposter' &&
+            widget.gameId != 'timer-buzzer' &&
+            widget.gameId != 'timer-imposter')
           SwitchListTile(
             value: ready,
             onChanged: (bool value) async {
@@ -868,6 +891,712 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
     ],
   );
 
+  Widget _nearbyStopTimerGame() {
+    if (hostLostAt != null) return _pausedNearbyGame();
+    final session = stopTimerSession;
+    return session == null
+        ? _clientStopTimerGame(clientSnapshot!)
+        : _hostStopTimerGame(session);
+  }
+
+  Widget _hostStopTimerGame(NearbyStopTimerSession session) {
+    if (session.endedReason != null) {
+      return _waitingCard('ROOM ENDED', session.endedReason!);
+    }
+    final state = session.game;
+    return switch (state.phase) {
+      StopTimerPhase.targetReveal => _timerTargetReveal(
+        state.plan.targetSeconds,
+        state.plan.number,
+        onContinue: _hostBeginTimerTurns,
+      ),
+      StopTimerPhase.privateReveal => _hostTimerPrivateReveal(session),
+      StopTimerPhase.handoff => _hostTimerHandoff(session),
+      StopTimerPhase.running => _hostTimerRunning(session),
+      StopTimerPhase.roundResult => _timerRoundResults(
+        players: state.setup.players,
+        target: state.plan.targetSeconds,
+        attempts: state.attempts.values.toList(),
+        scores: state.scores,
+        pointsAwarded: state.roundResults.last.pointsAwarded,
+        onContinue: _hostContinueTimer,
+        complete: const StopTimerGameEngine().matchComplete(state),
+      ),
+      StopTimerPhase.voting => _hostTimerVoting(session),
+      StopTimerPhase.finalResult => _timerFinalResults(
+        players: state.setup.players,
+        mode: state.setup.mode,
+        target: state.plan.targetSeconds,
+        falseTarget: state.plan.falseTargetSeconds,
+        attempts: state.attempts.values.toList(),
+        scores: state.scores,
+        imposterIds: state.plan.imposterPlayerIds,
+        outcome: state.outcome,
+        pointsGoal: state.setup.pointsGoal,
+      ),
+    };
+  }
+
+  Widget _clientStopTimerGame(Map<String, dynamic> snapshot) {
+    if (snapshot['endedReason'] != null) {
+      return _waitingCard('ROOM ENDED', snapshot['endedReason'] as String);
+    }
+    final phase = StopTimerPhase.values.byName(snapshot['phase'] as String);
+    final mode = StopTimerMode.values.byName(snapshot['mode'] as String);
+    final players = (snapshot['players'] as List<dynamic>)
+        .map(
+          (dynamic value) =>
+              Player.fromJson(Map<String, dynamic>.from(value as Map)),
+        )
+        .toList(growable: false);
+    final private = Map<String, dynamic>.from(snapshot['private'] as Map);
+    final attempts = (snapshot['attempts'] as List<dynamic>? ?? const [])
+        .map(
+          (dynamic value) => TimerAttempt(
+            playerId: (value as Map)['playerId'] as String,
+            durationSeconds: (value['durationSeconds'] as num).toDouble(),
+          ),
+        )
+        .toList(growable: false);
+    return switch (phase) {
+      StopTimerPhase.targetReveal => _timerTargetReveal(
+        (snapshot['targetSeconds'] as num).toDouble(),
+        snapshot['round'] as int,
+      ),
+      StopTimerPhase.privateReveal => _clientTimerPrivateReveal(
+        players,
+        private,
+      ),
+      StopTimerPhase.handoff => _clientTimerHandoff(
+        players,
+        private,
+        snapshot['currentPlayerId'] as String,
+      ),
+      StopTimerPhase.running => _clientTimerRunning(players, private, snapshot),
+      StopTimerPhase.roundResult => _timerRoundResults(
+        players: players,
+        target: (snapshot['targetSeconds'] as num).toDouble(),
+        attempts: attempts,
+        scores: Map<String, dynamic>.from(snapshot['scores'] as Map).map(
+          (String key, dynamic value) => MapEntry(key, (value as num).toInt()),
+        ),
+        pointsAwarded:
+            Map<String, dynamic>.from(snapshot['pointsAwarded'] as Map).map(
+              (String key, dynamic value) =>
+                  MapEntry(key, (value as num).toInt()),
+            ),
+        complete: false,
+      ),
+      StopTimerPhase.voting => _clientTimerVoting(snapshot, players, private),
+      StopTimerPhase.finalResult => _timerFinalResults(
+        players: players,
+        mode: mode,
+        target: (snapshot['targetSeconds'] as num?)?.toDouble(),
+        falseTarget: (snapshot['falseTargetSeconds'] as num?)?.toDouble(),
+        attempts: attempts,
+        scores: Map<String, dynamic>.from(snapshot['scores'] as Map).map(
+          (String key, dynamic value) => MapEntry(key, (value as num).toInt()),
+        ),
+        imposterIds:
+            (snapshot['imposterPlayerIds'] as List<dynamic>? ?? const [])
+                .cast<String>()
+                .toSet(),
+        outcome: snapshot['outcome'] == null
+            ? null
+            : StopTimerOutcome.values.byName(snapshot['outcome'] as String),
+        pointsGoal: snapshot['pointsGoal'] as int,
+      ),
+    };
+  }
+
+  Widget _timerTargetReveal(
+    double target,
+    int round, {
+    VoidCallback? onContinue,
+  }) => Center(
+    child: Padding(
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          const StickerBadge(emoji: '⏱️', size: 104),
+          const SizedBox(height: 18),
+          Text('ROUND $round TARGET'),
+          ResponsivePartyText(
+            '${target.toStringAsFixed(2)}s',
+            minFontSize: 54,
+            maxFontSize: 90,
+            maxLines: 1,
+          ),
+          const SizedBox(height: 12),
+          const Text(
+            'Everyone memorizes this target. Attempts stay hidden until the round ends.',
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 24),
+          if (onContinue != null)
+            FilledButton.icon(
+              onPressed: onContinue,
+              icon: const Icon(Icons.visibility_off),
+              label: const Text('HIDE TARGET & START TURNS'),
+            )
+          else
+            const PartyStatusPill(
+              label: 'WAITING FOR HOST',
+              color: PartyColors.yellow,
+            ),
+        ],
+      ),
+    ),
+  );
+
+  Widget _hostTimerPrivateReveal(NearbyStopTimerSession session) {
+    final localIds = session.localPlayerIds;
+    if (localRevealIndex >= localIds.length) {
+      return _waitingCard(
+        'WAITING FOR SECRET INFO',
+        '${session.readyPlayerIds.length}/${session.game.setup.players.length} players ready',
+      );
+    }
+    final playerId = localIds[localRevealIndex];
+    final player = session.game.setup.players.firstWhere(
+      (Player value) => value.id == playerId,
+    );
+    final target = session.game.plan.targetFor(
+      playerId,
+      session.game.setup.imposterInfoMode,
+    );
+    return _timerPrivateReveal(
+      player: player,
+      showing: privateShowing,
+      target: target,
+      onPressed: () => _advanceHostTimerSecret(session, playerId),
+    );
+  }
+
+  Widget _clientTimerPrivateReveal(
+    List<Player> players,
+    Map<String, dynamic> private,
+  ) {
+    final player = players.firstWhere(
+      (Player value) => value.id == private['playerId'],
+    );
+    if (private['ready'] == true) {
+      return _waitingCard(
+        'SECRET HIDDEN',
+        'Waiting for every player to finish their private reveal.',
+      );
+    }
+    return _timerPrivateReveal(
+      player: player,
+      showing: privateShowing,
+      target: private['targetSeconds'] == null
+          ? null
+          : (private['targetSeconds'] as num).toDouble(),
+      onPressed: () {
+        if (!privateShowing) {
+          setState(() => privateShowing = true);
+        } else {
+          setState(() => privateShowing = false);
+          unawaited(_sendTimerCommand('ready'));
+        }
+      },
+    );
+  }
+
+  Widget _timerPrivateReveal({
+    required Player player,
+    required bool showing,
+    required double? target,
+    required VoidCallback onPressed,
+  }) => Center(
+    child: SingleChildScrollView(
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          PlayerNameBadge(player: player),
+          const SizedBox(height: 18),
+          Text(
+            showing
+                ? 'YOUR SECRET INFO'
+                : 'PRIVATE FOR ${player.name.toUpperCase()}',
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
+          const SizedBox(height: 18),
+          PartyCard(
+            color: PartyColors.nearBlack,
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: showing
+                  ? ResponsivePartyText(
+                      target == null
+                          ? 'IMPOSTER'
+                          : '${target.toStringAsFixed(2)}s',
+                      minFontSize: 42,
+                      maxFontSize: 72,
+                      maxLines: 2,
+                      color: PartyColors.white,
+                    )
+                  : const Icon(Icons.lock, size: 90, color: PartyColors.white),
+            ),
+          ),
+          const SizedBox(height: 20),
+          FilledButton.icon(
+            onPressed: onPressed,
+            icon: Icon(showing ? Icons.check : Icons.visibility),
+            label: Text(showing ? 'READY & HIDE' : 'SHOW SECRET INFO'),
+          ),
+        ],
+      ),
+    ),
+  );
+
+  Widget _hostTimerHandoff(NearbyStopTimerSession session) {
+    final playerId = session.game.currentPlayerId;
+    final player = session.game.setup.players.firstWhere(
+      (Player value) => value.id == playerId,
+    );
+    final remote = session.devicePlayers.containsValue(playerId);
+    return _timerHandoff(
+      player,
+      remote
+          ? null
+          : () {
+              try {
+                session.scheduleAttempt(playerId, _nowMicros);
+                roomEngine?.recordHostMutation();
+                setState(() {});
+                _refreshAtScheduledStart(session.scheduledStartHostMicros);
+                unawaited(_sendAllTimerSnapshots());
+              } catch (error) {
+                setState(() => status = _friendlyTimerError(error));
+              }
+            },
+      remote ? 'Waiting for ${player.name} to start on their phone.' : null,
+    );
+  }
+
+  Widget _clientTimerHandoff(
+    List<Player> players,
+    Map<String, dynamic> private,
+    String activePlayerId,
+  ) {
+    final player = players.firstWhere(
+      (Player value) => value.id == activePlayerId,
+    );
+    final active = private['isActivePlayer'] == true;
+    final calibrated = private['clockCalibrated'] == true;
+    return _timerHandoff(
+      player,
+      active && calibrated
+          ? () => unawaited(_sendTimerCommand('startAttempt'))
+          : null,
+      active
+          ? calibrated
+                ? null
+                : 'Calibrating this phone for a fair scheduled start…'
+          : 'Waiting for ${player.name} to finish their private turn.',
+    );
+  }
+
+  Widget _timerHandoff(Player player, VoidCallback? onStart, String? waiting) =>
+      Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              PlayerNameBadge(player: player),
+              const SizedBox(height: 18),
+              Text(
+                'TURN: ${player.name.toUpperCase()}',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              const SizedBox(height: 12),
+              Text(
+                waiting ??
+                    'Your stopped time will stay secret until everyone plays.',
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 24),
+              if (onStart != null)
+                FilledButton.icon(
+                  onPressed: onStart,
+                  icon: const Icon(Icons.play_arrow),
+                  label: const Text('START TIMER'),
+                )
+              else
+                const CircularProgressIndicator(),
+            ],
+          ),
+        ),
+      );
+
+  Widget _hostTimerRunning(NearbyStopTimerSession session) {
+    final playerId = session.game.currentPlayerId;
+    final remote = session.devicePlayers.containsValue(playerId);
+    if (remote) {
+      return _waitingCard(
+        'ATTEMPT IN PROGRESS',
+        'Waiting for ${_timerPlayer(session.game.setup.players, playerId).name} to stop on their phone.',
+      );
+    }
+    return _scheduledStopButton(
+      player: _timerPlayer(session.game.setup.players, playerId),
+      scheduledStartMicros: session.scheduledStartHostMicros!,
+      onStop: () {
+        try {
+          session.stopHostAttempt(
+            playerId: playerId,
+            attemptId: session.activeAttemptId!,
+            hostStopMicros: _nowMicros,
+          );
+          roomEngine?.recordHostMutation();
+          _refreshAtScheduledStart(null);
+          unawaited(WakelockPlus.disable());
+          setState(() {});
+          unawaited(_sendAllTimerSnapshots());
+        } catch (error) {
+          setState(() => status = _friendlyTimerError(error));
+        }
+      },
+    );
+  }
+
+  Widget _clientTimerRunning(
+    List<Player> players,
+    Map<String, dynamic> private,
+    Map<String, dynamic> snapshot,
+  ) {
+    final activeId = snapshot['currentPlayerId'] as String;
+    final player = _timerPlayer(players, activeId);
+    if (private['isActivePlayer'] != true) {
+      return _waitingCard(
+        'ATTEMPT IN PROGRESS',
+        'Waiting for ${player.name} to stop on their phone.',
+      );
+    }
+    return _scheduledStopButton(
+      player: player,
+      scheduledStartMicros: snapshot['scheduledStartMicros'] as int,
+      onStop: () => unawaited(
+        _sendTimerCommand('stopAttempt', <String, dynamic>{
+          'attemptId': snapshot['activeAttemptId'],
+          'clientStopMicros': _nowMicros,
+        }),
+      ),
+    );
+  }
+
+  Widget _scheduledStopButton({
+    required Player player,
+    required int scheduledStartMicros,
+    required VoidCallback onStop,
+  }) {
+    final started = _nowMicros >= scheduledStartMicros;
+    return Center(
+      child: Semantics(
+        button: started,
+        label: started ? 'Stop timer for ${player.name}' : 'Get ready',
+        child: FilledButton(
+          onPressed: started ? onStop : null,
+          style: FilledButton.styleFrom(
+            fixedSize: const Size(260, 260),
+            shape: const CircleBorder(),
+            backgroundColor: PartyColors.yellow,
+            foregroundColor: PartyColors.nearBlack,
+          ),
+          child: Text(
+            started ? 'STOP!' : 'GET READY',
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 36, fontWeight: FontWeight.w800),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _timerRoundResults({
+    required List<Player> players,
+    required double target,
+    required List<TimerAttempt> attempts,
+    required Map<String, int> scores,
+    required Map<String, int> pointsAwarded,
+    required bool complete,
+    VoidCallback? onContinue,
+  }) {
+    final ranked = List<TimerAttempt>.from(attempts)
+      ..sort(
+        (TimerAttempt a, TimerAttempt b) =>
+            a.absoluteErrorFrom(target).compareTo(b.absoluteErrorFrom(target)),
+      );
+    return ListView(
+      padding: const EdgeInsets.all(16),
+      children: <Widget>[
+        Text(
+          'TARGET ${target.toStringAsFixed(2)}s',
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.headlineMedium,
+        ),
+        const SizedBox(height: 14),
+        ...ranked.indexed.map((entry) {
+          final (index, attempt) = entry;
+          final player = _timerPlayer(players, attempt.playerId);
+          return PartyCard(
+            child: ListTile(
+              leading: Text(index == 0 ? '🏆' : '#${index + 1}'),
+              title: Text(player.name),
+              subtitle: Text('${attempt.durationSeconds.toStringAsFixed(2)}s'),
+              trailing: pointsAwarded[player.id] == null
+                  ? null
+                  : Text('+${pointsAwarded[player.id]}'),
+            ),
+          );
+        }),
+        const SizedBox(height: 12),
+        ScoreBoard(players: players, scores: scores),
+        const SizedBox(height: 16),
+        if (onContinue != null)
+          FilledButton(
+            onPressed: onContinue,
+            child: Text(complete ? 'VIEW FINAL RESULTS' : 'NEXT ROUND'),
+          )
+        else
+          const Center(
+            child: PartyStatusPill(
+              label: 'WAITING FOR HOST',
+              color: PartyColors.yellow,
+            ),
+          ),
+      ],
+    );
+  }
+
+  Widget _hostTimerVoting(NearbyStopTimerSession session) {
+    if (session.creatorDecisionCandidates.isNotEmpty) {
+      return _voteChoices(
+        heading: 'BREAK THE RUNOFF TIE',
+        voter: null,
+        candidateIds: session.creatorDecisionCandidates,
+        players: session.game.setup.players,
+        onSelected: _hostResolveTimerVote,
+      );
+    }
+    final box = session.ballotBox!;
+    final voterId = session.localPlayerIds
+        .where((String id) => !box.votes.containsKey(id))
+        .firstOrNull;
+    if (voterId == null) {
+      return _waitingCard(
+        box.runoff == 0 ? 'VOTES ARE PRIVATE' : 'RUNOFF IN PROGRESS',
+        '${box.votes.length}/${box.voterIds.length} ballots received',
+      );
+    }
+    return _voteChoices(
+      heading: box.runoff == 0 ? 'WHO IS AN IMPOSTER?' : 'RUNOFF VOTE',
+      voter: _timerPlayer(session.game.setup.players, voterId),
+      candidateIds: (box.candidates ?? box.voterIds)
+          .where((String id) => id != voterId)
+          .toList(),
+      players: session.game.setup.players,
+      onSelected: (String target) => _hostCastTimerVote(voterId, target),
+    );
+  }
+
+  Widget _clientTimerVoting(
+    Map<String, dynamic> snapshot,
+    List<Player> players,
+    Map<String, dynamic> private,
+  ) {
+    if (private['hasVoted'] == true) {
+      return _waitingCard(
+        'VOTE LOCKED IN',
+        'Ballot totals stay hidden until everyone votes.',
+      );
+    }
+    final voterId = private['playerId'] as String;
+    final runoff = (snapshot['runoffCandidates'] as List<dynamic>)
+        .cast<String>();
+    return _voteChoices(
+      heading: runoff.isEmpty ? 'WHO IS AN IMPOSTER?' : 'RUNOFF VOTE',
+      voter: _timerPlayer(players, voterId),
+      candidateIds:
+          (runoff.isEmpty ? players.map((Player player) => player.id) : runoff)
+              .where((String id) => id != voterId)
+              .toList(),
+      players: players,
+      onSelected: (String target) => unawaited(
+        _sendTimerCommand('vote', <String, dynamic>{'target': target}),
+      ),
+    );
+  }
+
+  Widget _timerFinalResults({
+    required List<Player> players,
+    required StopTimerMode mode,
+    required double? target,
+    required double? falseTarget,
+    required List<TimerAttempt> attempts,
+    required Map<String, int> scores,
+    required Set<String> imposterIds,
+    required StopTimerOutcome? outcome,
+    required int pointsGoal,
+  }) {
+    if (mode == StopTimerMode.buzzer) {
+      final best = scores.values.isEmpty ? 0 : scores.values.reduce(max);
+      final winners = players.where(
+        (Player player) => scores[player.id] == best,
+      );
+      return ListView(
+        padding: const EdgeInsets.all(20),
+        children: <Widget>[
+          const Center(child: StickerBadge(emoji: '🏆', size: 104)),
+          const SizedBox(height: 18),
+          ResponsivePartyText(
+            winners.length == 1
+                ? '${winners.single.name.toUpperCase()} WINS'
+                : 'CO-WINNERS!',
+            minFontSize: 40,
+            maxFontSize: 68,
+            maxLines: 2,
+          ),
+          Text('FIRST TO $pointsGoal', textAlign: TextAlign.center),
+          const SizedBox(height: 16),
+          ScoreBoard(players: players, scores: scores),
+        ],
+      );
+    }
+    final attemptByPlayer = <String, TimerAttempt>{
+      for (final attempt in attempts) attempt.playerId: attempt,
+    };
+    return ListView(
+      padding: const EdgeInsets.all(20),
+      children: <Widget>[
+        Center(
+          child: StickerBadge(
+            emoji: outcome == StopTimerOutcome.crew ? '🏆' : '🎭',
+            size: 104,
+          ),
+        ),
+        const SizedBox(height: 18),
+        ResponsivePartyText(
+          outcome == StopTimerOutcome.crew
+              ? 'CREW WINS'
+              : imposterIds.length == 1
+              ? 'IMPOSTER WINS'
+              : 'IMPOSTERS WIN',
+          minFontSize: 40,
+          maxFontSize: 68,
+          maxLines: 2,
+        ),
+        Text(
+          'CREW TARGET · ${target!.toStringAsFixed(2)}s',
+          textAlign: TextAlign.center,
+        ),
+        if (falseTarget != null)
+          Text(
+            'IMPOSTER TARGET · ${falseTarget.toStringAsFixed(2)}s',
+            textAlign: TextAlign.center,
+          ),
+        const SizedBox(height: 16),
+        ...players.map((Player player) {
+          final attempt = attemptByPlayer[player.id];
+          return PartyCard(
+            child: ListTile(
+              title: Text(player.name),
+              subtitle: Text(
+                attempt == null
+                    ? 'NO ATTEMPT'
+                    : '${attempt.durationSeconds.toStringAsFixed(2)}s',
+              ),
+              trailing: Text(
+                imposterIds.contains(player.id) ? 'IMPOSTER' : 'CREW',
+              ),
+            ),
+          );
+        }),
+      ],
+    );
+  }
+
+  Player _timerPlayer(List<Player> players, String id) =>
+      players.firstWhere((Player player) => player.id == id);
+
+  void _hostBeginTimerTurns() {
+    stopTimerSession!.beginBuzzerTurns();
+    roomEngine?.recordHostMutation();
+    setState(() {});
+    unawaited(_sendAllTimerSnapshots());
+  }
+
+  void _advanceHostTimerSecret(
+    NearbyStopTimerSession session,
+    String playerId,
+  ) {
+    if (!privateShowing) {
+      setState(() => privateShowing = true);
+      return;
+    }
+    session.markSecretReady(playerId);
+    roomEngine?.recordHostMutation();
+    setState(() {
+      localRevealIndex++;
+      privateShowing = false;
+    });
+    unawaited(_sendAllTimerSnapshots());
+  }
+
+  void _hostContinueTimer() {
+    stopTimerSession!.continueBuzzer();
+    roomEngine?.recordHostMutation();
+    setState(() {});
+    unawaited(_sendAllTimerSnapshots());
+  }
+
+  void _hostCastTimerVote(String voterId, String targetId) {
+    stopTimerSession!.castVote(voterId, targetId);
+    roomEngine?.recordHostMutation();
+    setState(() {});
+    unawaited(_sendAllTimerSnapshots());
+  }
+
+  void _hostResolveTimerVote(String targetId) {
+    stopTimerSession!.resolveCreator(targetId);
+    roomEngine?.recordHostMutation();
+    setState(() {});
+    unawaited(_sendAllTimerSnapshots());
+  }
+
+  void _refreshAtScheduledStart(int? scheduledMicros) {
+    scheduledStartTimer?.cancel();
+    scheduledStartTimer = null;
+    if (scheduledMicros == null) return;
+    final delay = max(0, scheduledMicros - _nowMicros);
+    scheduledStartTimer = Timer(Duration(microseconds: delay), () {
+      final stillRunning =
+          stopTimerSession?.game.phase == StopTimerPhase.running ||
+          clientSnapshot?['phase'] == StopTimerPhase.running.name;
+      if (mounted && stillRunning) {
+        unawaited(WakelockPlus.enable());
+        setState(() {});
+      }
+    });
+  }
+
+  String _friendlyTimerError(Object error) {
+    final value = error.toString();
+    if (value.contains('clock_not_calibrated')) {
+      return 'Still calibrating this phone. Wait a moment and try again.';
+    }
+    if (value.contains('invalid_attempt_time')) {
+      return 'That stop arrived before the scheduled start. Wait for STOP, then try again.';
+    }
+    return 'That timer action is no longer valid. The room was refreshed.';
+  }
+
   Widget _waitingCard(String title, String body) => Center(
     child: Padding(
       padding: const EdgeInsets.all(24),
@@ -990,6 +1719,9 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
             if (imposterSession != null) {
               unawaited(_sendImposterSnapshot(joiningDevice));
             }
+            if (stopTimerSession != null) {
+              unawaited(_resyncTimerDevice(joiningDevice));
+            }
             return;
           }
           roomEngine?.requestJoin(joiningDevice, name);
@@ -1024,9 +1756,13 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
         case 'deviceDisconnected':
           if (host != null) {
             roomEngine?.disconnected(received.senderDeviceId);
+            stopTimerSession?.deviceDisconnected(received.senderDeviceId);
             setState(
               () => status = 'A player disconnected. Their slot is reserved for 60 seconds.',
             );
+            if (stopTimerSession != null) {
+              unawaited(_sendAllTimerSnapshots());
+            }
           }
         case 'started':
           setState(
@@ -1052,6 +1788,49 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
           reconnectTimer?.cancel();
           reconnectTimer = null;
           _startGameTicker();
+        case 'stopTimerSnapshot':
+          if (message['gameStateVersion'] != nearbyTimerGameVersion) {
+            setState(() {
+              status = 'This timer room requires a different app version.';
+            });
+            return;
+          }
+          setState(() {
+            final sameReveal =
+                clientSnapshot?['phase'] == message['phase'] &&
+                message['phase'] == StopTimerPhase.privateReveal.name;
+            clientSnapshot = message;
+            connected = true;
+            hostLostAt = null;
+            final timerPrivate = Map<String, dynamic>.from(
+              message['private'] as Map,
+            );
+            if (!sameReveal || timerPrivate['ready'] == true) {
+              privateShowing = false;
+            }
+          });
+          reconnectTimer?.cancel();
+          reconnectTimer = null;
+          final timerPrivate = Map<String, dynamic>.from(
+            message['private'] as Map,
+          );
+          if (message['phase'] == StopTimerPhase.running.name &&
+              timerPrivate['isActivePlayer'] == true) {
+            _refreshAtScheduledStart(message['scheduledStartMicros'] as int?);
+          } else {
+            _refreshAtScheduledStart(null);
+            unawaited(WakelockPlus.disable());
+          }
+          _startGameTicker();
+        case 'clockPing':
+          final receivedMicros = _nowMicros;
+          unawaited(
+            _sendTimerCommand('clockSample', <String, dynamic>{
+              'hostSentMicros': message['hostSentMicros'],
+              'clientReceivedMicros': receivedMicros,
+              'clientSentMicros': _nowMicros,
+            }),
+          );
         case 'commandRejected':
           setState(
             () => status = 'That action was already handled or is no longer valid. The room has been refreshed.',
@@ -1084,6 +1863,28 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
       _startGameTicker();
       return;
     }
+    if (widget.stopTimerSetup != null) {
+      final session = NearbyStopTimerSession(
+        setup: widget.stopTimerSetup!,
+        random: ref.read(randomProvider),
+      );
+      for (final assignment in approvedPlayerAssignments.entries) {
+        session.assignDevice(assignment.key, assignment.value);
+      }
+      setState(() {
+        stopTimerSession = session;
+        localRevealIndex = 0;
+        privateShowing = false;
+        status = 'Timer match ready.';
+      });
+      roomEngine?.recordHostMutation();
+      await _sendAllTimerSnapshots();
+      for (final device in session.devicePlayers.keys) {
+        await _sendClockPing(device);
+      }
+      _startGameTicker();
+      return;
+    }
     await transport.send(
       jsonEncode(<String, dynamic>{
         'type': 'started',
@@ -1105,10 +1906,10 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
     bool approve,
   ) async {
     final playerId = pendingPlayerAssignments[joiningDevice];
-    final setup = widget.imposterSetup;
-    final player = setup == null || playerId == null
+    final players = _configuredPlayers;
+    final player = players == null || playerId == null
         ? null
-        : setup.players.firstWhere((value) => value.id == playerId);
+        : players.firstWhere((value) => value.id == playerId);
     setState(() {
       pendingApprovals.remove(joiningDevice);
       pendingPlayerAssignments.remove(joiningDevice);
@@ -1138,8 +1939,8 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
   }
 
   List<Player> _availablePlayers(String pendingDeviceId) {
-    final setup = widget.imposterSetup;
-    if (setup == null) return const <Player>[];
+    final players = _configuredPlayers;
+    if (players == null) return const <Player>[];
     final reserved = <String>{
       ...approvedPlayerAssignments.values,
       ...pendingPlayerAssignments.entries
@@ -1147,7 +1948,7 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
           .map((entry) => entry.value),
     };
     final current = pendingPlayerAssignments[pendingDeviceId];
-    return setup.players
+    return players
         .where(
           (player) => player.id == current || !reserved.contains(player.id),
         )
@@ -1156,8 +1957,8 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
 
   Future<void> _sendApproval(String joiningDevice, String name) async {
     final playerId = approvedPlayerAssignments[joiningDevice];
-    final player = widget.imposterSetup?.players
-        .where((value) => value.id == playerId)
+    final player = _configuredPlayers
+        ?.where((value) => value.id == playerId)
         .firstOrNull;
     await transport.sendTo(
       joiningDevice,
@@ -1171,61 +1972,142 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
     );
   }
 
+  List<Player>? get _configuredPlayers =>
+      widget.imposterSetup?.players ?? widget.stopTimerSetup?.players;
+
   void _handleGameCommand(
     LanReceivedMessage received,
     Map<String, dynamic> message,
   ) {
     final room = roomEngine;
-    final session = imposterSession;
-    if (room == null || session == null) return;
+    if (room == null) return;
     try {
       final envelope = LanEnvelope.fromJson(message);
       final result = room.apply(
         envelope,
         authenticatedSenderId: received.senderDeviceId,
+        gameCommandHandler: () {
+          if (stopTimerSession != null) {
+            _applyTimerCommand(received.senderDeviceId, envelope);
+          } else {
+            _applyImposterCommand(received.senderDeviceId, envelope);
+          }
+        },
       );
       if (!result.accepted) {
         unawaited(
-          transport.sendTo(
+          _rejectGameCommand(
             received.senderDeviceId,
-            jsonEncode(<String, dynamic>{
-              'type': 'commandRejected',
-              'code': result.code,
-              'revision': result.revision,
-            }),
+            result.code,
+            result.revision,
           ),
         );
         return;
       }
-      final action = envelope.payload['action'] as String?;
-      final playerId = session.devicePlayers[received.senderDeviceId];
-      if (playerId == null) throw StateError('player_unassigned');
-      switch (action) {
-        case 'ready':
-          session.markReady(playerId);
-          _maybeBeginNearbyDiscussion(session);
-        case 'startVoting':
-          if (session.match.phase == ImposterPhase.discussion) {
-            session.beginVoting();
-          }
-        case 'vote':
-          session.castVote(playerId, envelope.payload['target'] as String);
-        default:
-          throw StateError('unknown_game_action');
+      if (stopTimerSession != null) {
+        setState(() {});
+        unawaited(
+          _finishTimerCommand(
+            received.senderDeviceId,
+            envelope.payload['action'] as String?,
+          ),
+        );
+        return;
       }
       setState(() {});
       unawaited(_sendAllImposterSnapshots());
     } catch (error) {
       unawaited(
-        transport.sendTo(
+        _rejectGameCommand(
           received.senderDeviceId,
-          jsonEncode(<String, dynamic>{
-            'type': 'commandRejected',
-            'code': error.toString(),
-            'revision': room.revision,
-          }),
+          error.toString(),
+          room.revision,
         ),
       );
+    }
+  }
+
+  void _applyImposterCommand(String senderDeviceId, LanEnvelope envelope) {
+    final session = imposterSession;
+    if (session == null) throw StateError('game_not_started');
+    final action = envelope.payload['action'] as String?;
+    final playerId = session.devicePlayers[senderDeviceId];
+    if (playerId == null) throw StateError('player_unassigned');
+    switch (action) {
+      case 'ready':
+        session.markReady(playerId);
+        _maybeBeginNearbyDiscussion(session);
+      case 'startVoting':
+        if (session.match.phase != ImposterPhase.discussion) {
+          throw StateError('wrong_phase');
+        }
+        session.beginVoting();
+      case 'vote':
+        session.castVote(playerId, envelope.payload['target'] as String);
+      default:
+        throw StateError('unknown_game_action');
+    }
+  }
+
+  Future<void> _rejectGameCommand(
+    String senderDeviceId,
+    String code,
+    int revision,
+  ) async {
+    await transport.sendTo(
+      senderDeviceId,
+      jsonEncode(<String, dynamic>{
+        'type': 'commandRejected',
+        'code': code,
+        'revision': revision,
+      }),
+    );
+    if (stopTimerSession != null) {
+      await _sendTimerSnapshot(senderDeviceId);
+    } else if (imposterSession != null) {
+      await _sendImposterSnapshot(senderDeviceId);
+    }
+  }
+
+  void _applyTimerCommand(String senderDeviceId, LanEnvelope envelope) {
+    final session = stopTimerSession!;
+    final action = envelope.payload['action'] as String?;
+    final playerId = session.devicePlayers[senderDeviceId];
+    if (playerId == null) throw StateError('player_unassigned');
+    switch (action) {
+      case 'clockSample':
+        session.recordClockSample(
+          deviceId: senderDeviceId,
+          hostSentMicros: envelope.payload['hostSentMicros'] as int,
+          clientReceivedMicros: envelope.payload['clientReceivedMicros'] as int,
+          clientSentMicros: envelope.payload['clientSentMicros'] as int,
+          hostReceivedMicros: _nowMicros,
+        );
+      case 'ready':
+        session.markSecretReady(playerId);
+      case 'startAttempt':
+        session.scheduleAttempt(playerId, _nowMicros);
+      case 'stopAttempt':
+        session.stopRemoteAttempt(
+          deviceId: senderDeviceId,
+          attemptId: envelope.payload['attemptId'] as String,
+          clientStopMicros: envelope.payload['clientStopMicros'] as int,
+        );
+      case 'vote':
+        session.castVote(playerId, envelope.payload['target'] as String);
+      default:
+        throw StateError('unknown_timer_action');
+    }
+  }
+
+  Future<void> _finishTimerCommand(
+    String senderDeviceId,
+    String? action,
+  ) async {
+    await _sendAllTimerSnapshots();
+    if (action == 'clockSample' &&
+        (stopTimerSession?.clockSampleCount(senderDeviceId) ?? 5) < 5) {
+      await _sendClockPing(senderDeviceId);
     }
   }
 
@@ -1246,6 +2128,66 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
       payload: <String, dynamic>{'action': action, ...payload},
     );
     await transport.send(envelope.encode());
+  }
+
+  Future<void> _sendTimerCommand(
+    String action, [
+    Map<String, dynamic> payload = const <String, dynamic>{},
+  ]) async {
+    final snapshot = clientSnapshot;
+    if (snapshot == null) return;
+    final envelope = LanEnvelope(
+      protocolVersion: lanProtocolVersion,
+      roomId: snapshot['roomId'] as String,
+      messageId: const Uuid().v4(),
+      senderId: deviceId,
+      clientSequence: ++clientSequence,
+      expectedRevision: snapshot['revision'] as int,
+      type: 'gameCommand',
+      payload: <String, dynamic>{'action': action, ...payload},
+    );
+    await transport.send(envelope.encode());
+  }
+
+  Future<void> _sendClockPing(String targetDeviceId) async {
+    await transport.sendTo(
+      targetDeviceId,
+      jsonEncode(<String, dynamic>{
+        'type': 'clockPing',
+        'hostSentMicros': _nowMicros,
+      }),
+    );
+  }
+
+  Future<void> _resyncTimerDevice(String targetDeviceId) async {
+    await _sendTimerSnapshot(targetDeviceId);
+    await _sendClockPing(targetDeviceId);
+  }
+
+  Future<void> _sendTimerSnapshot(String targetDeviceId) async {
+    final session = stopTimerSession;
+    final room = roomEngine;
+    if (session == null || room == null) return;
+    await transport.sendTo(
+      targetDeviceId,
+      jsonEncode(<String, dynamic>{
+        ...session.projectionFor(targetDeviceId),
+        'roomId': room.roomId,
+        'revision': room.revision,
+      }),
+    );
+  }
+
+  Future<void> _sendAllTimerSnapshots() async {
+    final session = stopTimerSession;
+    if (session == null) return;
+    for (final target in session.devicePlayers.keys) {
+      try {
+        await _sendTimerSnapshot(target);
+      } catch (_) {
+        // Reconnecting devices receive an authoritative snapshot on return.
+      }
+    }
   }
 
   Future<void> _sendImposterSnapshot(String targetDeviceId) async {
@@ -1328,26 +2270,33 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
   void _startGameTicker() {
     gameTicker ??= Timer.periodic(const Duration(seconds: 1), (_) {
       final room = roomEngine;
-      final session = imposterSession;
-      if (mounted && room != null && session != null) {
+      final imposter = imposterSession;
+      final timer = stopTimerSession;
+      if (mounted && room != null && (imposter != null || timer != null)) {
         final expired = room.removeExpiredMembers();
         if (expired.isNotEmpty) {
           for (final member in expired) {
-            session.expireDevice(member.deviceId);
+            imposter?.expireDevice(member.deviceId);
+            timer?.expireDevice(member.deviceId);
             final playerId = approvedPlayerAssignments.remove(member.deviceId);
-            final player = widget.imposterSetup?.players
-                .where((value) => value.id == playerId)
+            final player = _configuredPlayers
+                ?.where((value) => value.id == playerId)
                 .firstOrNull;
             if (player != null) participants.remove(player.name);
           }
-          if (session.match.phase == ImposterPhase.privateReveal) {
-            _maybeBeginNearbyDiscussion(session);
+          if (imposter?.match.phase == ImposterPhase.privateReveal) {
+            _maybeBeginNearbyDiscussion(imposter!);
           }
+          localRevealIndex = min(
+            localRevealIndex,
+            max(0, (timer?.localPlayerIds.length ?? 1) - 1),
+          );
           status = expired.length == 1
               ? 'A disconnected player left after the 60-second reconnect window.'
               : '${expired.length} disconnected players left after the reconnect window.';
           setState(() {});
-          unawaited(_sendAllImposterSnapshots());
+          if (imposter != null) unawaited(_sendAllImposterSnapshots());
+          if (timer != null) unawaited(_sendAllTimerSnapshots());
         }
       }
       if (mounted &&
@@ -1430,10 +2379,14 @@ class _NearbyScreenState extends ConsumerState<NearbyScreen> {
     return 'Could not connect. Check that both devices share the same Wi-Fi and use the same app version.';
   }
 
+  int get _nowMicros => monotonicClock.elapsedMicroseconds;
+
   static String _gameName(String id) => switch (id) {
     'trivia' => 'Trivia Versus',
     'imposter' => 'Imposter',
     'stop-timer' => 'Stop the Timer',
+    'timer-buzzer' => 'Buzzer Battle',
+    'timer-imposter' => 'Timer Imposter',
     'pictionary' => 'Pictionary',
     'acting' || 'act-it-out' => 'Act It Out',
     _ => 'Nearby game',
