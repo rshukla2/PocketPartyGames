@@ -22,6 +22,7 @@ export FLUTTER_APPLICATION_PATH="$REPOSITORY_PATH"
 export SOURCE_ROOT="$REPOSITORY_PATH/ios"
 export SRCROOT="$REPOSITORY_PATH/ios"
 export ARCHS=arm64
+export SDKROOT="$(xcrun --sdk iphoneos --show-sdk-path)"
 export BUILT_PRODUCTS_DIR="$REPOSITORY_PATH/build/ios/Release-iphoneos"
 export TARGET_BUILD_DIR="$BUILT_PRODUCTS_DIR"
 export FRAMEWORKS_FOLDER_PATH=Frameworks
