@@ -74,18 +74,18 @@ class GameDataRepository {
       }
     }
 
-    validateIds('trivia', trivia.map((TriviaQuestion item) => item.id), 1300);
+    validateIds('trivia', trivia.map((TriviaQuestion item) => item.id), 2250);
     validateIds(
       'truth/dare',
       truthOrDare.map((TruthDareCard item) => item.id),
-      200,
+      500,
     );
     validateIds(
       'pictionary',
       pictionary.map((PictionaryPrompt item) => item.id),
-      194,
+      500,
     );
-    validateIds('acting', acting.map((ActingPrompt item) => item.id), 420);
+    validateIds('acting', acting.map((ActingPrompt item) => item.id), 600);
     validateIds(
       'countdown',
       countdown.map((CountdownPrompt item) => item.id),
@@ -94,11 +94,17 @@ class GameDataRepository {
     validateIds(
       'imposter words',
       imposterWords.map((ImposterWord item) => item.id),
-      231,
+      727,
     );
     void uniqueText(String name, Iterable<String> values) {
       final normalized = values
-          .map((String value) => value.trim().toLowerCase())
+          .map(
+            (String value) => value
+                .trim()
+                .toLowerCase()
+                .replaceAll(RegExp(r'[^a-z0-9]+'), ' ')
+                .trim(),
+          )
           .toList();
       if (normalized.any((String value) => value.isEmpty)) {
         errors.add('$name contains blank text');

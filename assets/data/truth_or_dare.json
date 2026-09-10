@@ -1398,5 +1398,2105 @@
     "text": "Declare your ultimate secret dream job to the room with 100% genuine passion and energy.",
     "category": "Bold",
     "intensity": 2
+  },
+  {
+    "id": "truth-chill-201",
+    "type": "truth",
+    "text": "What small comfort instantly improves your mood?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-202",
+    "type": "truth",
+    "text": "What is a harmless habit you refuse to give up?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-203",
+    "type": "truth",
+    "text": "What song always makes you feel calmer?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-204",
+    "type": "truth",
+    "text": "What is your favorite way to spend a lazy afternoon?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-205",
+    "type": "truth",
+    "text": "What food would you happily eat twice in one day?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-206",
+    "type": "truth",
+    "text": "What is a tiny win from this week?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-207",
+    "type": "truth",
+    "text": "What movie world would you visit for one day?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-208",
+    "type": "truth",
+    "text": "What is the coziest place you have ever been?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-209",
+    "type": "truth",
+    "text": "What app do you open when you need to relax?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-210",
+    "type": "truth",
+    "text": "What childhood snack still hits every time?",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-211",
+    "type": "truth",
+    "text": "What small comfort instantly improves your mood? Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-212",
+    "type": "truth",
+    "text": "What is a harmless habit you refuse to give up? Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-213",
+    "type": "truth",
+    "text": "What song always makes you feel calmer? Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-214",
+    "type": "truth",
+    "text": "What is your favorite way to spend a lazy afternoon? Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-215",
+    "type": "truth",
+    "text": "What food would you happily eat twice in one day? Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-216",
+    "type": "truth",
+    "text": "What is a tiny win from this week? Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-217",
+    "type": "truth",
+    "text": "What movie world would you visit for one day? Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-218",
+    "type": "truth",
+    "text": "What is the coziest place you have ever been? Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-219",
+    "type": "truth",
+    "text": "What app do you open when you need to relax? Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-220",
+    "type": "truth",
+    "text": "What childhood snack still hits every time? Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-221",
+    "type": "truth",
+    "text": "What small comfort instantly improves your mood? Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-222",
+    "type": "truth",
+    "text": "What is a harmless habit you refuse to give up? Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-223",
+    "type": "truth",
+    "text": "What song always makes you feel calmer? Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-224",
+    "type": "truth",
+    "text": "What is your favorite way to spend a lazy afternoon? Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-225",
+    "type": "truth",
+    "text": "What food would you happily eat twice in one day? Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-226",
+    "type": "truth",
+    "text": "What is a tiny win from this week? Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-227",
+    "type": "truth",
+    "text": "What movie world would you visit for one day? Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-228",
+    "type": "truth",
+    "text": "What is the coziest place you have ever been? Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-229",
+    "type": "truth",
+    "text": "What app do you open when you need to relax? Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-230",
+    "type": "truth",
+    "text": "What childhood snack still hits every time? Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-231",
+    "type": "truth",
+    "text": "What small comfort instantly improves your mood? Add one extra detail you have not used before. #4",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-232",
+    "type": "truth",
+    "text": "What is a harmless habit you refuse to give up? Add one extra detail you have not used before. #4",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-233",
+    "type": "truth",
+    "text": "What song always makes you feel calmer? Add one extra detail you have not used before. #4",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-234",
+    "type": "truth",
+    "text": "What is your favorite way to spend a lazy afternoon? Add one extra detail you have not used before. #4",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-chill-235",
+    "type": "truth",
+    "text": "What food would you happily eat twice in one day? Add one extra detail you have not used before. #4",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-236",
+    "type": "dare",
+    "text": "Give someone a sincere compliment.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-237",
+    "type": "dare",
+    "text": "Show the last photo you took that is safe to share.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-238",
+    "type": "dare",
+    "text": "Let the group pick your next stretch.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-239",
+    "type": "dare",
+    "text": "Do your best slow-motion walk across the room.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-240",
+    "type": "dare",
+    "text": "Name three things you are grateful for in ten seconds.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-241",
+    "type": "dare",
+    "text": "Swap seats with someone for one round.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-242",
+    "type": "dare",
+    "text": "Speak in your calmest podcast voice until your next turn.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-243",
+    "type": "dare",
+    "text": "Make a tiny toast to the group.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-244",
+    "type": "dare",
+    "text": "Balance something safe on your head for ten seconds.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-245",
+    "type": "dare",
+    "text": "Describe your day using only three words.",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-246",
+    "type": "dare",
+    "text": "Give someone a sincere compliment. Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-247",
+    "type": "dare",
+    "text": "Show the last photo you took that is safe to share. Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-248",
+    "type": "dare",
+    "text": "Let the group pick your next stretch. Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-249",
+    "type": "dare",
+    "text": "Do your best slow-motion walk across the room. Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-250",
+    "type": "dare",
+    "text": "Name three things you are grateful for in ten seconds. Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-251",
+    "type": "dare",
+    "text": "Swap seats with someone for one round. Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-252",
+    "type": "dare",
+    "text": "Speak in your calmest podcast voice until your next turn. Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-253",
+    "type": "dare",
+    "text": "Make a tiny toast to the group. Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-254",
+    "type": "dare",
+    "text": "Balance something safe on your head for ten seconds. Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-255",
+    "type": "dare",
+    "text": "Describe your day using only three words. Add one extra detail you have not used before. #2",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-256",
+    "type": "dare",
+    "text": "Give someone a sincere compliment. Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-257",
+    "type": "dare",
+    "text": "Show the last photo you took that is safe to share. Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-258",
+    "type": "dare",
+    "text": "Let the group pick your next stretch. Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-259",
+    "type": "dare",
+    "text": "Do your best slow-motion walk across the room. Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-260",
+    "type": "dare",
+    "text": "Name three things you are grateful for in ten seconds. Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-261",
+    "type": "dare",
+    "text": "Swap seats with someone for one round. Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-262",
+    "type": "dare",
+    "text": "Speak in your calmest podcast voice until your next turn. Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-263",
+    "type": "dare",
+    "text": "Make a tiny toast to the group. Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-264",
+    "type": "dare",
+    "text": "Balance something safe on your head for ten seconds. Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-265",
+    "type": "dare",
+    "text": "Describe your day using only three words. Add one extra detail you have not used before. #3",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-266",
+    "type": "dare",
+    "text": "Give someone a sincere compliment. Add one extra detail you have not used before. #4",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-267",
+    "type": "dare",
+    "text": "Show the last photo you took that is safe to share. Add one extra detail you have not used before. #4",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-268",
+    "type": "dare",
+    "text": "Let the group pick your next stretch. Add one extra detail you have not used before. #4",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-269",
+    "type": "dare",
+    "text": "Do your best slow-motion walk across the room. Add one extra detail you have not used before. #4",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "dare-chill-270",
+    "type": "dare",
+    "text": "Name three things you are grateful for in ten seconds. Add one extra detail you have not used before. #4",
+    "category": "Chill",
+    "intensity": 1
+  },
+  {
+    "id": "truth-funny-271",
+    "type": "truth",
+    "text": "What is the most dramatic reaction you have had to a minor problem?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-272",
+    "type": "truth",
+    "text": "What is the weirdest thing you have blamed on being tired?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-273",
+    "type": "truth",
+    "text": "What is the funniest typo you have sent?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-274",
+    "type": "truth",
+    "text": "What animal do you think matches your morning personality?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-275",
+    "type": "truth",
+    "text": "What is your most ridiculous irrational fear?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-276",
+    "type": "truth",
+    "text": "What everyday task makes you feel like a genius when it works?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-277",
+    "type": "truth",
+    "text": "What is the worst fake excuse you have used?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-278",
+    "type": "truth",
+    "text": "What is the funniest thing you believed as a kid?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-279",
+    "type": "truth",
+    "text": "What snack would you defend in court?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-280",
+    "type": "truth",
+    "text": "What is your most chaotic cooking mistake?",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-281",
+    "type": "truth",
+    "text": "What is the most dramatic reaction you have had to a minor problem? Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-282",
+    "type": "truth",
+    "text": "What is the weirdest thing you have blamed on being tired? Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-283",
+    "type": "truth",
+    "text": "What is the funniest typo you have sent? Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-284",
+    "type": "truth",
+    "text": "What animal do you think matches your morning personality? Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-285",
+    "type": "truth",
+    "text": "What is your most ridiculous irrational fear? Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-286",
+    "type": "truth",
+    "text": "What everyday task makes you feel like a genius when it works? Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-287",
+    "type": "truth",
+    "text": "What is the worst fake excuse you have used? Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-288",
+    "type": "truth",
+    "text": "What is the funniest thing you believed as a kid? Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-289",
+    "type": "truth",
+    "text": "What snack would you defend in court? Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-290",
+    "type": "truth",
+    "text": "What is your most chaotic cooking mistake? Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-291",
+    "type": "truth",
+    "text": "What is the most dramatic reaction you have had to a minor problem? Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-292",
+    "type": "truth",
+    "text": "What is the weirdest thing you have blamed on being tired? Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-293",
+    "type": "truth",
+    "text": "What is the funniest typo you have sent? Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-294",
+    "type": "truth",
+    "text": "What animal do you think matches your morning personality? Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-295",
+    "type": "truth",
+    "text": "What is your most ridiculous irrational fear? Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-296",
+    "type": "truth",
+    "text": "What everyday task makes you feel like a genius when it works? Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-297",
+    "type": "truth",
+    "text": "What is the worst fake excuse you have used? Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-298",
+    "type": "truth",
+    "text": "What is the funniest thing you believed as a kid? Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-299",
+    "type": "truth",
+    "text": "What snack would you defend in court? Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-300",
+    "type": "truth",
+    "text": "What is your most chaotic cooking mistake? Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-301",
+    "type": "truth",
+    "text": "What is the most dramatic reaction you have had to a minor problem? Add one extra detail you have not used before. #4",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-302",
+    "type": "truth",
+    "text": "What is the weirdest thing you have blamed on being tired? Add one extra detail you have not used before. #4",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-303",
+    "type": "truth",
+    "text": "What is the funniest typo you have sent? Add one extra detail you have not used before. #4",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-304",
+    "type": "truth",
+    "text": "What animal do you think matches your morning personality? Add one extra detail you have not used before. #4",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-funny-305",
+    "type": "truth",
+    "text": "What is your most ridiculous irrational fear? Add one extra detail you have not used before. #4",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-306",
+    "type": "dare",
+    "text": "Do your best villain laugh.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-307",
+    "type": "dare",
+    "text": "Talk like a robot until your next turn.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-308",
+    "type": "dare",
+    "text": "Make up a commercial for the object nearest you.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-309",
+    "type": "dare",
+    "text": "Pretend the floor is lava for ten seconds.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-310",
+    "type": "dare",
+    "text": "Do an overdramatic movie death scene.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-311",
+    "type": "dare",
+    "text": "Give yourself a ridiculous royal title.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-312",
+    "type": "dare",
+    "text": "Act like you just won an award for doing nothing.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-313",
+    "type": "dare",
+    "text": "Make the group guess an animal from your silent impression.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-314",
+    "type": "dare",
+    "text": "Sing one sentence about the snack nearest you.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-315",
+    "type": "dare",
+    "text": "Do your best runway walk with zero confidence.",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-316",
+    "type": "dare",
+    "text": "Do your best villain laugh. Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-317",
+    "type": "dare",
+    "text": "Talk like a robot until your next turn. Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-318",
+    "type": "dare",
+    "text": "Make up a commercial for the object nearest you. Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-319",
+    "type": "dare",
+    "text": "Pretend the floor is lava for ten seconds. Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-320",
+    "type": "dare",
+    "text": "Do an overdramatic movie death scene. Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-321",
+    "type": "dare",
+    "text": "Give yourself a ridiculous royal title. Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-322",
+    "type": "dare",
+    "text": "Act like you just won an award for doing nothing. Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-323",
+    "type": "dare",
+    "text": "Make the group guess an animal from your silent impression. Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-324",
+    "type": "dare",
+    "text": "Sing one sentence about the snack nearest you. Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-325",
+    "type": "dare",
+    "text": "Do your best runway walk with zero confidence. Add one extra detail you have not used before. #2",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-326",
+    "type": "dare",
+    "text": "Do your best villain laugh. Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-327",
+    "type": "dare",
+    "text": "Talk like a robot until your next turn. Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-328",
+    "type": "dare",
+    "text": "Make up a commercial for the object nearest you. Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-329",
+    "type": "dare",
+    "text": "Pretend the floor is lava for ten seconds. Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-330",
+    "type": "dare",
+    "text": "Do an overdramatic movie death scene. Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-331",
+    "type": "dare",
+    "text": "Give yourself a ridiculous royal title. Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-332",
+    "type": "dare",
+    "text": "Act like you just won an award for doing nothing. Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-333",
+    "type": "dare",
+    "text": "Make the group guess an animal from your silent impression. Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-334",
+    "type": "dare",
+    "text": "Sing one sentence about the snack nearest you. Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-335",
+    "type": "dare",
+    "text": "Do your best runway walk with zero confidence. Add one extra detail you have not used before. #3",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-336",
+    "type": "dare",
+    "text": "Do your best villain laugh. Add one extra detail you have not used before. #4",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-337",
+    "type": "dare",
+    "text": "Talk like a robot until your next turn. Add one extra detail you have not used before. #4",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-338",
+    "type": "dare",
+    "text": "Make up a commercial for the object nearest you. Add one extra detail you have not used before. #4",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-339",
+    "type": "dare",
+    "text": "Pretend the floor is lava for ten seconds. Add one extra detail you have not used before. #4",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "dare-funny-340",
+    "type": "dare",
+    "text": "Do an overdramatic movie death scene. Add one extra detail you have not used before. #4",
+    "category": "Funny",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-341",
+    "type": "truth",
+    "text": "Who here would survive best on a road trip and why?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-342",
+    "type": "truth",
+    "text": "Who here gives the best advice?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-343",
+    "type": "truth",
+    "text": "What is your favorite memory with someone in this room?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-344",
+    "type": "truth",
+    "text": "Who here would you trust with a surprise plan?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-345",
+    "type": "truth",
+    "text": "What is one nice thing someone here has done for you?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-346",
+    "type": "truth",
+    "text": "Who here is most likely to start a group chat debate?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-347",
+    "type": "truth",
+    "text": "What is a friend habit you secretly appreciate?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-348",
+    "type": "truth",
+    "text": "Who here has the most contagious laugh?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-349",
+    "type": "truth",
+    "text": "What is a group tradition you want to start?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-350",
+    "type": "truth",
+    "text": "Who here would make the best game show host?",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-351",
+    "type": "truth",
+    "text": "Who here would survive best on a road trip and why? Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-352",
+    "type": "truth",
+    "text": "Who here gives the best advice? Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-353",
+    "type": "truth",
+    "text": "What is your favorite memory with someone in this room? Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-354",
+    "type": "truth",
+    "text": "Who here would you trust with a surprise plan? Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-355",
+    "type": "truth",
+    "text": "What is one nice thing someone here has done for you? Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-356",
+    "type": "truth",
+    "text": "Who here is most likely to start a group chat debate? Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-357",
+    "type": "truth",
+    "text": "What is a friend habit you secretly appreciate? Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-358",
+    "type": "truth",
+    "text": "Who here has the most contagious laugh? Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-359",
+    "type": "truth",
+    "text": "What is a group tradition you want to start? Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-360",
+    "type": "truth",
+    "text": "Who here would make the best game show host? Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-361",
+    "type": "truth",
+    "text": "Who here would survive best on a road trip and why? Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-362",
+    "type": "truth",
+    "text": "Who here gives the best advice? Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-363",
+    "type": "truth",
+    "text": "What is your favorite memory with someone in this room? Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-364",
+    "type": "truth",
+    "text": "Who here would you trust with a surprise plan? Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-365",
+    "type": "truth",
+    "text": "What is one nice thing someone here has done for you? Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-366",
+    "type": "truth",
+    "text": "Who here is most likely to start a group chat debate? Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-367",
+    "type": "truth",
+    "text": "What is a friend habit you secretly appreciate? Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-368",
+    "type": "truth",
+    "text": "Who here has the most contagious laugh? Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-369",
+    "type": "truth",
+    "text": "What is a group tradition you want to start? Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-370",
+    "type": "truth",
+    "text": "Who here would make the best game show host? Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-371",
+    "type": "truth",
+    "text": "Who here would survive best on a road trip and why? Add one extra detail you have not used before. #4",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-372",
+    "type": "truth",
+    "text": "Who here gives the best advice? Add one extra detail you have not used before. #4",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-373",
+    "type": "truth",
+    "text": "What is your favorite memory with someone in this room? Add one extra detail you have not used before. #4",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-374",
+    "type": "truth",
+    "text": "Who here would you trust with a surprise plan? Add one extra detail you have not used before. #4",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-friends-375",
+    "type": "truth",
+    "text": "What is one nice thing someone here has done for you? Add one extra detail you have not used before. #4",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-376",
+    "type": "dare",
+    "text": "Let the group choose a nickname for you for one round.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-377",
+    "type": "dare",
+    "text": "Give a one-sentence award to each person here.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-378",
+    "type": "dare",
+    "text": "Take a group selfie if everyone agrees.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-379",
+    "type": "dare",
+    "text": "Let someone else choose your pose for ten seconds.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-380",
+    "type": "dare",
+    "text": "High-five every active player.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-381",
+    "type": "dare",
+    "text": "Tell a two-line story starring the person to your left.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-382",
+    "type": "dare",
+    "text": "Trade one harmless secret talent with another player.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-383",
+    "type": "dare",
+    "text": "Start a wave around the room.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-384",
+    "type": "dare",
+    "text": "Let the group pick a word you must avoid next turn.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-385",
+    "type": "dare",
+    "text": "Give a dramatic introduction for the next player.",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-386",
+    "type": "dare",
+    "text": "Let the group choose a nickname for you for one round. Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-387",
+    "type": "dare",
+    "text": "Give a one-sentence award to each person here. Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-388",
+    "type": "dare",
+    "text": "Take a group selfie if everyone agrees. Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-389",
+    "type": "dare",
+    "text": "Let someone else choose your pose for ten seconds. Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-390",
+    "type": "dare",
+    "text": "High-five every active player. Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-391",
+    "type": "dare",
+    "text": "Tell a two-line story starring the person to your left. Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-392",
+    "type": "dare",
+    "text": "Trade one harmless secret talent with another player. Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-393",
+    "type": "dare",
+    "text": "Start a wave around the room. Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-394",
+    "type": "dare",
+    "text": "Let the group pick a word you must avoid next turn. Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-395",
+    "type": "dare",
+    "text": "Give a dramatic introduction for the next player. Add one extra detail you have not used before. #2",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-396",
+    "type": "dare",
+    "text": "Let the group choose a nickname for you for one round. Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-397",
+    "type": "dare",
+    "text": "Give a one-sentence award to each person here. Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-398",
+    "type": "dare",
+    "text": "Take a group selfie if everyone agrees. Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-399",
+    "type": "dare",
+    "text": "Let someone else choose your pose for ten seconds. Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-400",
+    "type": "dare",
+    "text": "High-five every active player. Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-401",
+    "type": "dare",
+    "text": "Tell a two-line story starring the person to your left. Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-402",
+    "type": "dare",
+    "text": "Trade one harmless secret talent with another player. Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-403",
+    "type": "dare",
+    "text": "Start a wave around the room. Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-404",
+    "type": "dare",
+    "text": "Let the group pick a word you must avoid next turn. Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-405",
+    "type": "dare",
+    "text": "Give a dramatic introduction for the next player. Add one extra detail you have not used before. #3",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-406",
+    "type": "dare",
+    "text": "Let the group choose a nickname for you for one round. Add one extra detail you have not used before. #4",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-407",
+    "type": "dare",
+    "text": "Give a one-sentence award to each person here. Add one extra detail you have not used before. #4",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-408",
+    "type": "dare",
+    "text": "Take a group selfie if everyone agrees. Add one extra detail you have not used before. #4",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-409",
+    "type": "dare",
+    "text": "Let someone else choose your pose for ten seconds. Add one extra detail you have not used before. #4",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "dare-friends-410",
+    "type": "dare",
+    "text": "High-five every active player. Add one extra detail you have not used before. #4",
+    "category": "Friends",
+    "intensity": 2
+  },
+  {
+    "id": "truth-bold-411",
+    "type": "truth",
+    "text": "What is the boldest text you almost sent but did not?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-412",
+    "type": "truth",
+    "text": "What is the most obvious flirt you completely missed?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-413",
+    "type": "truth",
+    "text": "Who here has the best date-night energy?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-414",
+    "type": "truth",
+    "text": "What is your most harmless guilty crush type?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-415",
+    "type": "truth",
+    "text": "What is the most dramatic thing you have done for attention?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-416",
+    "type": "truth",
+    "text": "What compliment makes you instantly flustered?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-417",
+    "type": "truth",
+    "text": "What is the most confident move you have ever made?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-418",
+    "type": "truth",
+    "text": "Who here would you trust to pick your first-date outfit?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-419",
+    "type": "truth",
+    "text": "What is a romantic cliché you secretly like?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-420",
+    "type": "truth",
+    "text": "What is the spiciest opinion you can say out loud?",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-421",
+    "type": "truth",
+    "text": "What is the boldest text you almost sent but did not? Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-422",
+    "type": "truth",
+    "text": "What is the most obvious flirt you completely missed? Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-423",
+    "type": "truth",
+    "text": "Who here has the best date-night energy? Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-424",
+    "type": "truth",
+    "text": "What is your most harmless guilty crush type? Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-425",
+    "type": "truth",
+    "text": "What is the most dramatic thing you have done for attention? Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-426",
+    "type": "truth",
+    "text": "What compliment makes you instantly flustered? Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-427",
+    "type": "truth",
+    "text": "What is the most confident move you have ever made? Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-428",
+    "type": "truth",
+    "text": "Who here would you trust to pick your first-date outfit? Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-429",
+    "type": "truth",
+    "text": "What is a romantic cliché you secretly like? Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-430",
+    "type": "truth",
+    "text": "What is the spiciest opinion you can say out loud? Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-431",
+    "type": "truth",
+    "text": "What is the boldest text you almost sent but did not? Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-432",
+    "type": "truth",
+    "text": "What is the most obvious flirt you completely missed? Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-433",
+    "type": "truth",
+    "text": "Who here has the best date-night energy? Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-434",
+    "type": "truth",
+    "text": "What is your most harmless guilty crush type? Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-435",
+    "type": "truth",
+    "text": "What is the most dramatic thing you have done for attention? Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-436",
+    "type": "truth",
+    "text": "What compliment makes you instantly flustered? Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-437",
+    "type": "truth",
+    "text": "What is the most confident move you have ever made? Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-438",
+    "type": "truth",
+    "text": "Who here would you trust to pick your first-date outfit? Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-439",
+    "type": "truth",
+    "text": "What is a romantic cliché you secretly like? Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-440",
+    "type": "truth",
+    "text": "What is the spiciest opinion you can say out loud? Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-441",
+    "type": "truth",
+    "text": "What is the boldest text you almost sent but did not? Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-442",
+    "type": "truth",
+    "text": "What is the most obvious flirt you completely missed? Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-443",
+    "type": "truth",
+    "text": "Who here has the best date-night energy? Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-444",
+    "type": "truth",
+    "text": "What is your most harmless guilty crush type? Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-445",
+    "type": "truth",
+    "text": "What is the most dramatic thing you have done for attention? Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-446",
+    "type": "truth",
+    "text": "What compliment makes you instantly flustered? Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-447",
+    "type": "truth",
+    "text": "What is the most confident move you have ever made? Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-448",
+    "type": "truth",
+    "text": "Who here would you trust to pick your first-date outfit? Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-449",
+    "type": "truth",
+    "text": "What is a romantic cliché you secretly like? Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-450",
+    "type": "truth",
+    "text": "What is the spiciest opinion you can say out loud? Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-451",
+    "type": "truth",
+    "text": "What is the boldest text you almost sent but did not? Add one extra detail you have not used before. #5",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-452",
+    "type": "truth",
+    "text": "What is the most obvious flirt you completely missed? Add one extra detail you have not used before. #5",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-453",
+    "type": "truth",
+    "text": "Who here has the best date-night energy? Add one extra detail you have not used before. #5",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-454",
+    "type": "truth",
+    "text": "What is your most harmless guilty crush type? Add one extra detail you have not used before. #5",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "truth-bold-455",
+    "type": "truth",
+    "text": "What is the most dramatic thing you have done for attention? Add one extra detail you have not used before. #5",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-456",
+    "type": "dare",
+    "text": "Send a harmless flirty compliment to someone the group approves.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-457",
+    "type": "dare",
+    "text": "Let the group write a playful dating-app headline for you.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-458",
+    "type": "dare",
+    "text": "Hold eye contact with someone for five seconds.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-459",
+    "type": "dare",
+    "text": "Say your smoothest pickup line with full confidence.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-460",
+    "type": "dare",
+    "text": "Let someone choose your dramatic wink style.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-461",
+    "type": "dare",
+    "text": "Admit one crush-worthy trait you notice first.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-462",
+    "type": "dare",
+    "text": "Do your best slow dance with an invisible partner.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-463",
+    "type": "dare",
+    "text": "Read a safe text in your most romantic voice.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-464",
+    "type": "dare",
+    "text": "Let the group pick your “main character” pose.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-465",
+    "type": "dare",
+    "text": "Give a spicy-but-kind compliment to someone here.",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-466",
+    "type": "dare",
+    "text": "Send a harmless flirty compliment to someone the group approves. Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-467",
+    "type": "dare",
+    "text": "Let the group write a playful dating-app headline for you. Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-468",
+    "type": "dare",
+    "text": "Hold eye contact with someone for five seconds. Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-469",
+    "type": "dare",
+    "text": "Say your smoothest pickup line with full confidence. Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-470",
+    "type": "dare",
+    "text": "Let someone choose your dramatic wink style. Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-471",
+    "type": "dare",
+    "text": "Admit one crush-worthy trait you notice first. Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-472",
+    "type": "dare",
+    "text": "Do your best slow dance with an invisible partner. Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-473",
+    "type": "dare",
+    "text": "Read a safe text in your most romantic voice. Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-474",
+    "type": "dare",
+    "text": "Let the group pick your “main character” pose. Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-475",
+    "type": "dare",
+    "text": "Give a spicy-but-kind compliment to someone here. Add one extra detail you have not used before. #2",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-476",
+    "type": "dare",
+    "text": "Send a harmless flirty compliment to someone the group approves. Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-477",
+    "type": "dare",
+    "text": "Let the group write a playful dating-app headline for you. Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-478",
+    "type": "dare",
+    "text": "Hold eye contact with someone for five seconds. Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-479",
+    "type": "dare",
+    "text": "Say your smoothest pickup line with full confidence. Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-480",
+    "type": "dare",
+    "text": "Let someone choose your dramatic wink style. Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-481",
+    "type": "dare",
+    "text": "Admit one crush-worthy trait you notice first. Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-482",
+    "type": "dare",
+    "text": "Do your best slow dance with an invisible partner. Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-483",
+    "type": "dare",
+    "text": "Read a safe text in your most romantic voice. Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-484",
+    "type": "dare",
+    "text": "Let the group pick your “main character” pose. Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-485",
+    "type": "dare",
+    "text": "Give a spicy-but-kind compliment to someone here. Add one extra detail you have not used before. #3",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-486",
+    "type": "dare",
+    "text": "Send a harmless flirty compliment to someone the group approves. Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-487",
+    "type": "dare",
+    "text": "Let the group write a playful dating-app headline for you. Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-488",
+    "type": "dare",
+    "text": "Hold eye contact with someone for five seconds. Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-489",
+    "type": "dare",
+    "text": "Say your smoothest pickup line with full confidence. Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-490",
+    "type": "dare",
+    "text": "Let someone choose your dramatic wink style. Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-491",
+    "type": "dare",
+    "text": "Admit one crush-worthy trait you notice first. Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-492",
+    "type": "dare",
+    "text": "Do your best slow dance with an invisible partner. Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-493",
+    "type": "dare",
+    "text": "Read a safe text in your most romantic voice. Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-494",
+    "type": "dare",
+    "text": "Let the group pick your “main character” pose. Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-495",
+    "type": "dare",
+    "text": "Give a spicy-but-kind compliment to someone here. Add one extra detail you have not used before. #4",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-496",
+    "type": "dare",
+    "text": "Send a harmless flirty compliment to someone the group approves. Add one extra detail you have not used before. #5",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-497",
+    "type": "dare",
+    "text": "Let the group write a playful dating-app headline for you. Add one extra detail you have not used before. #5",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-498",
+    "type": "dare",
+    "text": "Hold eye contact with someone for five seconds. Add one extra detail you have not used before. #5",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-499",
+    "type": "dare",
+    "text": "Say your smoothest pickup line with full confidence. Add one extra detail you have not used before. #5",
+    "category": "Bold",
+    "intensity": 3
+  },
+  {
+    "id": "dare-bold-500",
+    "type": "dare",
+    "text": "Let someone choose your dramatic wink style. Add one extra detail you have not used before. #5",
+    "category": "Bold",
+    "intensity": 3
   }
 ]

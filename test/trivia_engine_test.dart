@@ -15,7 +15,7 @@ void main() {
     planner = TriviaDeckPlanner(questions: data.trivia);
   });
 
-  test('uses the real 35 easy, 35 medium, and 30 hard category split', () {
+  test('uses the expanded 50 easy, 50 medium, and 50 hard category split', () {
     final availability = planner.availability(
       category: 'general',
       difficulty: TriviaDifficultyFilter.mixed,
@@ -23,9 +23,9 @@ void main() {
     );
 
     expect(availability.eligibleByDifficulty, <TriviaDifficultyFilter, int>{
-      TriviaDifficultyFilter.easy: 35,
-      TriviaDifficultyFilter.medium: 35,
-      TriviaDifficultyFilter.hard: 30,
+      TriviaDifficultyFilter.easy: 50,
+      TriviaDifficultyFilter.medium: 50,
+      TriviaDifficultyFilter.hard: 50,
     });
   });
 
@@ -33,11 +33,11 @@ void main() {
     const expected = <int, int>{
       2: 25,
       3: 25,
-      4: 23,
-      5: 20,
-      6: 15,
-      10: 9,
-      20: 3,
+      4: 25,
+      5: 25,
+      6: 24,
+      10: 15,
+      20: 6,
     };
 
     for (final entry in expected.entries) {
@@ -64,7 +64,7 @@ void main() {
             playerCount: 6,
           )
           .maxQuestionsPerPlayer,
-      5,
+      8,
     );
     expect(
       planner
@@ -74,7 +74,7 @@ void main() {
             playerCount: 20,
           )
           .maxQuestionsPerPlayer,
-      1,
+      2,
     );
     expect(
       planner
@@ -120,8 +120,8 @@ void main() {
       );
 
       expect(plan.quotaPerPlayer, <TriviaDifficultyFilter, int>{
-        TriviaDifficultyFilter.easy: 7,
-        TriviaDifficultyFilter.medium: 7,
+        TriviaDifficultyFilter.easy: 8,
+        TriviaDifficultyFilter.medium: 6,
         TriviaDifficultyFilter.hard: 6,
       });
       final ids = plan.turns.map((turn) => turn.question.id).toList();
@@ -133,7 +133,7 @@ void main() {
           )
           .toSet();
       expect(possibleScores, hasLength(1));
-      expect(possibleScores.single, 39);
+      expect(possibleScores.single, 38);
     },
   );
 
@@ -207,7 +207,7 @@ void main() {
         category: 'general',
         difficulty: TriviaDifficultyFilter.mixed,
         playerIds: List<String>.generate(20, (index) => 'p$index'),
-        questionsPerPlayer: 5,
+        questionsPerPlayer: 7,
         turnOrder: TriviaTurnOrder.fullSetEach,
         random: Random(1),
       ),

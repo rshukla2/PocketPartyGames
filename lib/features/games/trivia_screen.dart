@@ -146,6 +146,8 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
       'sports',
       'pop-culture',
       'technology',
+      'gaming-esports',
+      'internet-memes',
       'food-drink',
       'animals',
       'art-literature',
@@ -654,8 +656,12 @@ class _TriviaScreenState extends ConsumerState<TriviaScreen> {
       .map((String word) => '${word[0].toUpperCase()}${word.substring(1)}')
       .join(' ');
 
-  String _categoryTitle(String value) =>
-      value == 'all' ? 'All Categories' : _title(value);
+  String _categoryTitle(String value) => switch (value) {
+    'all' => 'All Categories',
+    'gaming-esports' => 'Gaming & Esports',
+    'internet-memes' => 'Internet & Memes',
+    _ => _title(value),
+  };
 }
 
 class _SegmentLabel extends StatelessWidget {

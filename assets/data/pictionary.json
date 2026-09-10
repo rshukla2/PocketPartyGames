@@ -1356,5 +1356,2147 @@
     "category": "Nature",
     "difficulty": "easy",
     "hint": "Logs with crackling flame"
+  },
+  {
+    "id": "pictionary-actions-025",
+    "word": "Moonwalk",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Draw moonwalk without writing words."
+  },
+  {
+    "id": "pictionary-actions-026",
+    "word": "Cartwheel",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Draw cartwheel without writing words."
+  },
+  {
+    "id": "pictionary-actions-027",
+    "word": "Juggling",
+    "category": "Actions",
+    "difficulty": "hard",
+    "hint": "Draw juggling without writing words."
+  },
+  {
+    "id": "pictionary-actions-028",
+    "word": "Sneezing",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Draw sneezing without writing words."
+  },
+  {
+    "id": "pictionary-actions-029",
+    "word": "Skateboarding",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Draw skateboarding without writing words."
+  },
+  {
+    "id": "pictionary-actions-030",
+    "word": "Fishing",
+    "category": "Actions",
+    "difficulty": "hard",
+    "hint": "Draw fishing without writing words."
+  },
+  {
+    "id": "pictionary-actions-031",
+    "word": "Gardening",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Draw gardening without writing words."
+  },
+  {
+    "id": "pictionary-actions-032",
+    "word": "Whispering",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Draw whispering without writing words."
+  },
+  {
+    "id": "pictionary-actions-033",
+    "word": "Meditating",
+    "category": "Actions",
+    "difficulty": "hard",
+    "hint": "Draw meditating without writing words."
+  },
+  {
+    "id": "pictionary-actions-034",
+    "word": "Bowling",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Draw bowling without writing words."
+  },
+  {
+    "id": "pictionary-actions-035",
+    "word": "Camping",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Draw camping without writing words."
+  },
+  {
+    "id": "pictionary-actions-036",
+    "word": "Dancing",
+    "category": "Actions",
+    "difficulty": "hard",
+    "hint": "Draw dancing without writing words."
+  },
+  {
+    "id": "pictionary-actions-037",
+    "word": "Painting",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Draw painting without writing words."
+  },
+  {
+    "id": "pictionary-actions-038",
+    "word": "Digging",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Draw digging without writing words."
+  },
+  {
+    "id": "pictionary-actions-039",
+    "word": "Clapping",
+    "category": "Actions",
+    "difficulty": "hard",
+    "hint": "Draw clapping without writing words."
+  },
+  {
+    "id": "pictionary-actions-040",
+    "word": "Waving",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Draw waving without writing words."
+  },
+  {
+    "id": "pictionary-actions-041",
+    "word": "Hiccuping",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Draw hiccuping without writing words."
+  },
+  {
+    "id": "pictionary-actions-042",
+    "word": "Stretching",
+    "category": "Actions",
+    "difficulty": "hard",
+    "hint": "Draw stretching without writing words."
+  },
+  {
+    "id": "pictionary-actions-043",
+    "word": "Typing",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Draw typing without writing words."
+  },
+  {
+    "id": "pictionary-actions-044",
+    "word": "Vacuuming",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Draw vacuuming without writing words."
+  },
+  {
+    "id": "pictionary-actions-045",
+    "word": "Hammering",
+    "category": "Actions",
+    "difficulty": "hard",
+    "hint": "Draw hammering without writing words."
+  },
+  {
+    "id": "pictionary-actions-046",
+    "word": "Knitting",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Draw knitting without writing words."
+  },
+  {
+    "id": "pictionary-actions-047",
+    "word": "Surfing",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Draw surfing without writing words."
+  },
+  {
+    "id": "pictionary-actions-048",
+    "word": "Yawning",
+    "category": "Actions",
+    "difficulty": "hard",
+    "hint": "Draw yawning without writing words."
+  },
+  {
+    "id": "pictionary-actions-049",
+    "word": "Marching",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Draw marching without writing words."
+  },
+  {
+    "id": "pictionary-actions-050",
+    "word": "Balancing",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Draw balancing without writing words."
+  },
+  {
+    "id": "pictionary-actions-051",
+    "word": "Skipping",
+    "category": "Actions",
+    "difficulty": "hard",
+    "hint": "Draw skipping without writing words."
+  },
+  {
+    "id": "pictionary-actions-052",
+    "word": "Diving",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Draw diving without writing words."
+  },
+  {
+    "id": "pictionary-actions-053",
+    "word": "Cheering",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Draw cheering without writing words."
+  },
+  {
+    "id": "pictionary-actions-054",
+    "word": "Shivering",
+    "category": "Actions",
+    "difficulty": "hard",
+    "hint": "Draw shivering without writing words."
+  },
+  {
+    "id": "pictionary-actions-055",
+    "word": "Sneaking",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Draw sneaking without writing words."
+  },
+  {
+    "id": "pictionary-actions-056",
+    "word": "Drumming",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Draw drumming without writing words."
+  },
+  {
+    "id": "pictionary-actions-057",
+    "word": "Hiking",
+    "category": "Actions",
+    "difficulty": "hard",
+    "hint": "Draw hiking without writing words."
+  },
+  {
+    "id": "pictionary-actions-058",
+    "word": "Paddling",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Draw paddling without writing words."
+  },
+  {
+    "id": "pictionary-actions-059",
+    "word": "Blinking",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Draw blinking without writing words."
+  },
+  {
+    "id": "pictionary-actions-060",
+    "word": "Spinning",
+    "category": "Actions",
+    "difficulty": "hard",
+    "hint": "Draw spinning without writing words."
+  },
+  {
+    "id": "pictionary-actions-061",
+    "word": "Crawling",
+    "category": "Actions",
+    "difficulty": "easy",
+    "hint": "Draw crawling without writing words."
+  },
+  {
+    "id": "pictionary-actions-062",
+    "word": "Sliding",
+    "category": "Actions",
+    "difficulty": "medium",
+    "hint": "Draw sliding without writing words."
+  },
+  {
+    "id": "pictionary-actions-063",
+    "word": "Leaping",
+    "category": "Actions",
+    "difficulty": "hard",
+    "hint": "Draw leaping without writing words."
+  },
+  {
+    "id": "pictionary-animals-037",
+    "word": "Axolotl",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Draw axolotl without writing words."
+  },
+  {
+    "id": "pictionary-animals-038",
+    "word": "Capybara",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Draw capybara without writing words."
+  },
+  {
+    "id": "pictionary-animals-039",
+    "word": "Meerkat",
+    "category": "Animals",
+    "difficulty": "hard",
+    "hint": "Draw meerkat without writing words."
+  },
+  {
+    "id": "pictionary-animals-040",
+    "word": "Narwhal",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Draw narwhal without writing words."
+  },
+  {
+    "id": "pictionary-animals-041",
+    "word": "Porcupine",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Draw porcupine without writing words."
+  },
+  {
+    "id": "pictionary-animals-042",
+    "word": "Seal",
+    "category": "Animals",
+    "difficulty": "hard",
+    "hint": "Draw seal without writing words."
+  },
+  {
+    "id": "pictionary-animals-043",
+    "word": "Toucan",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Draw toucan without writing words."
+  },
+  {
+    "id": "pictionary-animals-044",
+    "word": "Wombat",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Draw wombat without writing words."
+  },
+  {
+    "id": "pictionary-animals-045",
+    "word": "Armadillo",
+    "category": "Animals",
+    "difficulty": "hard",
+    "hint": "Draw armadillo without writing words."
+  },
+  {
+    "id": "pictionary-animals-046",
+    "word": "Badger",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Draw badger without writing words."
+  },
+  {
+    "id": "pictionary-animals-047",
+    "word": "Donkey",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Draw donkey without writing words."
+  },
+  {
+    "id": "pictionary-animals-048",
+    "word": "Eel",
+    "category": "Animals",
+    "difficulty": "hard",
+    "hint": "Draw eel without writing words."
+  },
+  {
+    "id": "pictionary-animals-049",
+    "word": "Falcon",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Draw falcon without writing words."
+  },
+  {
+    "id": "pictionary-animals-050",
+    "word": "Goose",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Draw goose without writing words."
+  },
+  {
+    "id": "pictionary-animals-051",
+    "word": "Hyena",
+    "category": "Animals",
+    "difficulty": "hard",
+    "hint": "Draw hyena without writing words."
+  },
+  {
+    "id": "pictionary-animals-052",
+    "word": "Iguana",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Draw iguana without writing words."
+  },
+  {
+    "id": "pictionary-animals-053",
+    "word": "Llama",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Draw llama without writing words."
+  },
+  {
+    "id": "pictionary-animals-054",
+    "word": "Mole",
+    "category": "Animals",
+    "difficulty": "hard",
+    "hint": "Draw mole without writing words."
+  },
+  {
+    "id": "pictionary-animals-055",
+    "word": "Newt",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Draw newt without writing words."
+  },
+  {
+    "id": "pictionary-animals-056",
+    "word": "Quail",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Draw quail without writing words."
+  },
+  {
+    "id": "pictionary-animals-057",
+    "word": "Ram",
+    "category": "Animals",
+    "difficulty": "hard",
+    "hint": "Draw ram without writing words."
+  },
+  {
+    "id": "pictionary-animals-058",
+    "word": "Salamander",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Draw salamander without writing words."
+  },
+  {
+    "id": "pictionary-animals-059",
+    "word": "Turkey",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Draw turkey without writing words."
+  },
+  {
+    "id": "pictionary-animals-060",
+    "word": "Vulture",
+    "category": "Animals",
+    "difficulty": "hard",
+    "hint": "Draw vulture without writing words."
+  },
+  {
+    "id": "pictionary-animals-061",
+    "word": "Weasel",
+    "category": "Animals",
+    "difficulty": "easy",
+    "hint": "Draw weasel without writing words."
+  },
+  {
+    "id": "pictionary-animals-062",
+    "word": "Axolotl Scene 2",
+    "category": "Animals",
+    "difficulty": "medium",
+    "hint": "Draw axolotl scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-animals-063",
+    "word": "Capybara Scene 2",
+    "category": "Animals",
+    "difficulty": "hard",
+    "hint": "Draw capybara scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-food-031",
+    "word": "Donut",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Draw donut without writing words."
+  },
+  {
+    "id": "pictionary-food-032",
+    "word": "Egg Roll",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Draw egg roll without writing words."
+  },
+  {
+    "id": "pictionary-food-033",
+    "word": "Falafel",
+    "category": "Food",
+    "difficulty": "hard",
+    "hint": "Draw falafel without writing words."
+  },
+  {
+    "id": "pictionary-food-034",
+    "word": "Granola",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Draw granola without writing words."
+  },
+  {
+    "id": "pictionary-food-035",
+    "word": "Ice Cream Sundae",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Draw ice cream sundae without writing words."
+  },
+  {
+    "id": "pictionary-food-036",
+    "word": "Jelly Beans",
+    "category": "Food",
+    "difficulty": "hard",
+    "hint": "Draw jelly beans without writing words."
+  },
+  {
+    "id": "pictionary-food-037",
+    "word": "Kebab",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Draw kebab without writing words."
+  },
+  {
+    "id": "pictionary-food-038",
+    "word": "Lemonade",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Draw lemonade without writing words."
+  },
+  {
+    "id": "pictionary-food-039",
+    "word": "Muffin",
+    "category": "Food",
+    "difficulty": "hard",
+    "hint": "Draw muffin without writing words."
+  },
+  {
+    "id": "pictionary-food-040",
+    "word": "Noodles",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Draw noodles without writing words."
+  },
+  {
+    "id": "pictionary-food-041",
+    "word": "Omelet",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Draw omelet without writing words."
+  },
+  {
+    "id": "pictionary-food-042",
+    "word": "Quesadilla",
+    "category": "Food",
+    "difficulty": "hard",
+    "hint": "Draw quesadilla without writing words."
+  },
+  {
+    "id": "pictionary-food-043",
+    "word": "Ravioli",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Draw ravioli without writing words."
+  },
+  {
+    "id": "pictionary-food-044",
+    "word": "Udon",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Draw udon without writing words."
+  },
+  {
+    "id": "pictionary-food-045",
+    "word": "Veggie Burger",
+    "category": "Food",
+    "difficulty": "hard",
+    "hint": "Draw veggie burger without writing words."
+  },
+  {
+    "id": "pictionary-food-046",
+    "word": "Yogurt",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Draw yogurt without writing words."
+  },
+  {
+    "id": "pictionary-food-047",
+    "word": "Zucchini",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Draw zucchini without writing words."
+  },
+  {
+    "id": "pictionary-food-048",
+    "word": "Brownie",
+    "category": "Food",
+    "difficulty": "hard",
+    "hint": "Draw brownie without writing words."
+  },
+  {
+    "id": "pictionary-food-049",
+    "word": "Cereal Bowl",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Draw cereal bowl without writing words."
+  },
+  {
+    "id": "pictionary-food-050",
+    "word": "Dumpling",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Draw dumpling without writing words."
+  },
+  {
+    "id": "pictionary-food-051",
+    "word": "Enchilada",
+    "category": "Food",
+    "difficulty": "hard",
+    "hint": "Draw enchilada without writing words."
+  },
+  {
+    "id": "pictionary-food-052",
+    "word": "Fruit Salad",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Draw fruit salad without writing words."
+  },
+  {
+    "id": "pictionary-food-053",
+    "word": "Garlic Bread",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Draw garlic bread without writing words."
+  },
+  {
+    "id": "pictionary-food-054",
+    "word": "Honey Jar",
+    "category": "Food",
+    "difficulty": "hard",
+    "hint": "Draw honey jar without writing words."
+  },
+  {
+    "id": "pictionary-food-055",
+    "word": "Avocado Toast Scene 2",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Draw avocado toast scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-food-056",
+    "word": "Burrito Scene 2",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Draw burrito scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-food-057",
+    "word": "Cupcake Scene 2",
+    "category": "Food",
+    "difficulty": "hard",
+    "hint": "Draw cupcake scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-food-058",
+    "word": "Donut Scene 2",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Draw donut scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-food-059",
+    "word": "Egg Roll Scene 2",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Draw egg roll scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-food-060",
+    "word": "Falafel Scene 2",
+    "category": "Food",
+    "difficulty": "hard",
+    "hint": "Draw falafel scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-food-061",
+    "word": "Granola Scene 2",
+    "category": "Food",
+    "difficulty": "easy",
+    "hint": "Draw granola scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-food-062",
+    "word": "Hot Dog Scene 2",
+    "category": "Food",
+    "difficulty": "medium",
+    "hint": "Draw hot dog scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-food-063",
+    "word": "Ice Cream Sundae Scene 2",
+    "category": "Food",
+    "difficulty": "hard",
+    "hint": "Draw ice cream sundae scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-019",
+    "word": "Spaceship Chase",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw spaceship chase without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-020",
+    "word": "Detective Board",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw detective board without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-021",
+    "word": "Clapperboard",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw clapperboard without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-022",
+    "word": "Superhero Landing",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw superhero landing without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-023",
+    "word": "Talk Show Desk",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw talk show desk without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-024",
+    "word": "News Anchor",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw news anchor without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-025",
+    "word": "Reality Show Rose",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw reality show rose without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-026",
+    "word": "Wizard School",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw wizard school without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-027",
+    "word": "Time Machine",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw time machine without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-028",
+    "word": "Dinosaur Park",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw dinosaur park without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-029",
+    "word": "Haunted Mansion",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw haunted mansion without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-030",
+    "word": "Alien Invasion",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw alien invasion without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-031",
+    "word": "Cartoon Mouse",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw cartoon mouse without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-032",
+    "word": "Sitcom Couch",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw sitcom couch without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-033",
+    "word": "Cooking Show",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw cooking show without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-034",
+    "word": "Talent Show Stage",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw talent show stage without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-035",
+    "word": "Spy Gadget",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw spy gadget without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-036",
+    "word": "Robot Sidekick",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw robot sidekick without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-037",
+    "word": "Dragon Battle",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw dragon battle without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-038",
+    "word": "Space Helmet",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw space helmet without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-039",
+    "word": "Red Carpet",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw red carpet without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-040",
+    "word": "Green Screen",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw green screen without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-041",
+    "word": "Popcorn Bucket",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw popcorn bucket without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-042",
+    "word": "Director Chair",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw director chair without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-043",
+    "word": "Film Reel",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw film reel without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-044",
+    "word": "Vampire Castle",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw vampire castle without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-045",
+    "word": "Zombie Walk",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw zombie walk without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-046",
+    "word": "Magic Wand",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw magic wand without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-047",
+    "word": "Spaceship Chase Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw spaceship chase scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-048",
+    "word": "Detective Board Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw detective board scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-049",
+    "word": "Movie Theater Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw movie theater scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-050",
+    "word": "Clapperboard Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw clapperboard scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-051",
+    "word": "Superhero Landing Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw superhero landing scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-052",
+    "word": "Talk Show Desk Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw talk show desk scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-053",
+    "word": "News Anchor Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw news anchor scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-054",
+    "word": "Reality Show Rose Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw reality show rose scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-055",
+    "word": "Wizard School Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw wizard school scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-056",
+    "word": "Time Machine Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw time machine scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-057",
+    "word": "Dinosaur Park Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw dinosaur park scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-058",
+    "word": "Haunted Mansion Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw haunted mansion scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-059",
+    "word": "Alien Invasion Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw alien invasion scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-060",
+    "word": "Cartoon Mouse Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "hard",
+    "hint": "Draw cartoon mouse scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-061",
+    "word": "Sitcom Couch Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "easy",
+    "hint": "Draw sitcom couch scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-movies-tv-062",
+    "word": "Cooking Show Scene 2",
+    "category": "Movies & TV",
+    "difficulty": "medium",
+    "hint": "Draw cooking show scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-017",
+    "word": "Waterfall",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw waterfall without writing words."
+  },
+  {
+    "id": "pictionary-nature-018",
+    "word": "Cactus",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw cactus without writing words."
+  },
+  {
+    "id": "pictionary-nature-019",
+    "word": "Tornado",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw tornado without writing words."
+  },
+  {
+    "id": "pictionary-nature-020",
+    "word": "Snowflake",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw snowflake without writing words."
+  },
+  {
+    "id": "pictionary-nature-021",
+    "word": "Rainbow",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw rainbow without writing words."
+  },
+  {
+    "id": "pictionary-nature-022",
+    "word": "Cave",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw cave without writing words."
+  },
+  {
+    "id": "pictionary-nature-023",
+    "word": "Coral Reef",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw coral reef without writing words."
+  },
+  {
+    "id": "pictionary-nature-024",
+    "word": "Meteor Shower",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw meteor shower without writing words."
+  },
+  {
+    "id": "pictionary-nature-025",
+    "word": "Mushroom",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw mushroom without writing words."
+  },
+  {
+    "id": "pictionary-nature-026",
+    "word": "Pinecone",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw pinecone without writing words."
+  },
+  {
+    "id": "pictionary-nature-027",
+    "word": "River Bend",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw river bend without writing words."
+  },
+  {
+    "id": "pictionary-nature-028",
+    "word": "Sand Dune",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw sand dune without writing words."
+  },
+  {
+    "id": "pictionary-nature-029",
+    "word": "Thundercloud",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw thundercloud without writing words."
+  },
+  {
+    "id": "pictionary-nature-030",
+    "word": "Wildflower",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw wildflower without writing words."
+  },
+  {
+    "id": "pictionary-nature-031",
+    "word": "Glacier",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw glacier without writing words."
+  },
+  {
+    "id": "pictionary-nature-032",
+    "word": "Lava Flow",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw lava flow without writing words."
+  },
+  {
+    "id": "pictionary-nature-033",
+    "word": "Pebble Beach",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw pebble beach without writing words."
+  },
+  {
+    "id": "pictionary-nature-034",
+    "word": "Forest Trail",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw forest trail without writing words."
+  },
+  {
+    "id": "pictionary-nature-035",
+    "word": "Comet",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw comet without writing words."
+  },
+  {
+    "id": "pictionary-nature-036",
+    "word": "Eclipse",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw eclipse without writing words."
+  },
+  {
+    "id": "pictionary-nature-037",
+    "word": "Cliff Edge",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw cliff edge without writing words."
+  },
+  {
+    "id": "pictionary-nature-038",
+    "word": "Foggy Hill",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw foggy hill without writing words."
+  },
+  {
+    "id": "pictionary-nature-039",
+    "word": "Hot Spring",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw hot spring without writing words."
+  },
+  {
+    "id": "pictionary-nature-040",
+    "word": "Mangrove",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw mangrove without writing words."
+  },
+  {
+    "id": "pictionary-nature-041",
+    "word": "Rainstorm",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw rainstorm without writing words."
+  },
+  {
+    "id": "pictionary-nature-042",
+    "word": "Seashell",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw seashell without writing words."
+  },
+  {
+    "id": "pictionary-nature-043",
+    "word": "Sunrise",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw sunrise without writing words."
+  },
+  {
+    "id": "pictionary-nature-044",
+    "word": "Tide Pool",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw tide pool without writing words."
+  },
+  {
+    "id": "pictionary-nature-045",
+    "word": "Vine",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw vine without writing words."
+  },
+  {
+    "id": "pictionary-nature-046",
+    "word": "Volcano Scene 2",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw volcano scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-047",
+    "word": "Waterfall Scene 2",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw waterfall scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-048",
+    "word": "Cactus Scene 2",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw cactus scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-049",
+    "word": "Tornado Scene 2",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw tornado scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-050",
+    "word": "Snowflake Scene 2",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw snowflake scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-051",
+    "word": "Rainbow Scene 2",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw rainbow scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-052",
+    "word": "Cave Scene 2",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw cave scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-053",
+    "word": "Coral Reef Scene 2",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw coral reef scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-054",
+    "word": "Meteor Shower Scene 2",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw meteor shower scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-055",
+    "word": "Mushroom Scene 2",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw mushroom scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-056",
+    "word": "Pinecone Scene 2",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw pinecone scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-057",
+    "word": "River Bend Scene 2",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw river bend scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-058",
+    "word": "Sand Dune Scene 2",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw sand dune scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-059",
+    "word": "Thundercloud Scene 2",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw thundercloud scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-060",
+    "word": "Wildflower Scene 2",
+    "category": "Nature",
+    "difficulty": "hard",
+    "hint": "Draw wildflower scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-061",
+    "word": "Glacier Scene 2",
+    "category": "Nature",
+    "difficulty": "easy",
+    "hint": "Draw glacier scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-nature-062",
+    "word": "Lava Flow Scene 2",
+    "category": "Nature",
+    "difficulty": "medium",
+    "hint": "Draw lava flow scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-objects-031",
+    "word": "Doorbell",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Draw doorbell without writing words."
+  },
+  {
+    "id": "pictionary-objects-032",
+    "word": "Envelope",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Draw envelope without writing words."
+  },
+  {
+    "id": "pictionary-objects-033",
+    "word": "Glasses",
+    "category": "Objects",
+    "difficulty": "hard",
+    "hint": "Draw glasses without writing words."
+  },
+  {
+    "id": "pictionary-objects-034",
+    "word": "Hammock",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Draw hammock without writing words."
+  },
+  {
+    "id": "pictionary-objects-035",
+    "word": "Ink Pen",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Draw ink pen without writing words."
+  },
+  {
+    "id": "pictionary-objects-036",
+    "word": "Joystick",
+    "category": "Objects",
+    "difficulty": "hard",
+    "hint": "Draw joystick without writing words."
+  },
+  {
+    "id": "pictionary-objects-037",
+    "word": "Lantern",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Draw lantern without writing words."
+  },
+  {
+    "id": "pictionary-objects-038",
+    "word": "Mailbox",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Draw mailbox without writing words."
+  },
+  {
+    "id": "pictionary-objects-039",
+    "word": "Notebook",
+    "category": "Objects",
+    "difficulty": "hard",
+    "hint": "Draw notebook without writing words."
+  },
+  {
+    "id": "pictionary-objects-040",
+    "word": "Paintbrush",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Draw paintbrush without writing words."
+  },
+  {
+    "id": "pictionary-objects-041",
+    "word": "Quill",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Draw quill without writing words."
+  },
+  {
+    "id": "pictionary-objects-042",
+    "word": "Remote Control",
+    "category": "Objects",
+    "difficulty": "hard",
+    "hint": "Draw remote control without writing words."
+  },
+  {
+    "id": "pictionary-objects-043",
+    "word": "Stapler",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Draw stapler without writing words."
+  },
+  {
+    "id": "pictionary-objects-044",
+    "word": "Vase",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Draw vase without writing words."
+  },
+  {
+    "id": "pictionary-objects-045",
+    "word": "Wallet",
+    "category": "Objects",
+    "difficulty": "hard",
+    "hint": "Draw wallet without writing words."
+  },
+  {
+    "id": "pictionary-objects-046",
+    "word": "Xylophone",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Draw xylophone without writing words."
+  },
+  {
+    "id": "pictionary-objects-047",
+    "word": "Yo-Yo",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Draw yo-yo without writing words."
+  },
+  {
+    "id": "pictionary-objects-048",
+    "word": "Zipper",
+    "category": "Objects",
+    "difficulty": "hard",
+    "hint": "Draw zipper without writing words."
+  },
+  {
+    "id": "pictionary-objects-049",
+    "word": "Clipboard",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Draw clipboard without writing words."
+  },
+  {
+    "id": "pictionary-objects-050",
+    "word": "Dice",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Draw dice without writing words."
+  },
+  {
+    "id": "pictionary-objects-051",
+    "word": "Earbuds",
+    "category": "Objects",
+    "difficulty": "hard",
+    "hint": "Draw earbuds without writing words."
+  },
+  {
+    "id": "pictionary-objects-052",
+    "word": "Fridge Magnet",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Draw fridge magnet without writing words."
+  },
+  {
+    "id": "pictionary-objects-053",
+    "word": "Globe",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Draw globe without writing words."
+  },
+  {
+    "id": "pictionary-objects-054",
+    "word": "Helmet",
+    "category": "Objects",
+    "difficulty": "hard",
+    "hint": "Draw helmet without writing words."
+  },
+  {
+    "id": "pictionary-objects-055",
+    "word": "Keychain",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Draw keychain without writing words."
+  },
+  {
+    "id": "pictionary-objects-056",
+    "word": "Lunchbox",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Draw lunchbox without writing words."
+  },
+  {
+    "id": "pictionary-objects-057",
+    "word": "Alarm Clock Scene 2",
+    "category": "Objects",
+    "difficulty": "hard",
+    "hint": "Draw alarm clock scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-objects-058",
+    "word": "Backpack Scene 2",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Draw backpack scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-objects-059",
+    "word": "Candle Scene 2",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Draw candle scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-objects-060",
+    "word": "Doorbell Scene 2",
+    "category": "Objects",
+    "difficulty": "hard",
+    "hint": "Draw doorbell scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-objects-061",
+    "word": "Envelope Scene 2",
+    "category": "Objects",
+    "difficulty": "easy",
+    "hint": "Draw envelope scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-objects-062",
+    "word": "Flashlight Scene 2",
+    "category": "Objects",
+    "difficulty": "medium",
+    "hint": "Draw flashlight scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-objects-063",
+    "word": "Glasses Scene 2",
+    "category": "Objects",
+    "difficulty": "hard",
+    "hint": "Draw glasses scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-places-025",
+    "word": "Airport Gate",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Draw airport gate without writing words."
+  },
+  {
+    "id": "pictionary-places-026",
+    "word": "Bookstore",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Draw bookstore without writing words."
+  },
+  {
+    "id": "pictionary-places-027",
+    "word": "Carnival",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Draw carnival without writing words."
+  },
+  {
+    "id": "pictionary-places-028",
+    "word": "Dentist Office",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Draw dentist office without writing words."
+  },
+  {
+    "id": "pictionary-places-029",
+    "word": "Elevator",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Draw elevator without writing words."
+  },
+  {
+    "id": "pictionary-places-030",
+    "word": "Farmhouse",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Draw farmhouse without writing words."
+  },
+  {
+    "id": "pictionary-places-031",
+    "word": "Gym",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Draw gym without writing words."
+  },
+  {
+    "id": "pictionary-places-032",
+    "word": "Hospital Room",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Draw hospital room without writing words."
+  },
+  {
+    "id": "pictionary-places-033",
+    "word": "Island Hut",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Draw island hut without writing words."
+  },
+  {
+    "id": "pictionary-places-034",
+    "word": "Jungle Temple",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Draw jungle temple without writing words."
+  },
+  {
+    "id": "pictionary-places-035",
+    "word": "Kitchen",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Draw kitchen without writing words."
+  },
+  {
+    "id": "pictionary-places-036",
+    "word": "Library",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Draw library without writing words."
+  },
+  {
+    "id": "pictionary-places-037",
+    "word": "Museum",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Draw museum without writing words."
+  },
+  {
+    "id": "pictionary-places-038",
+    "word": "Night Market",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Draw night market without writing words."
+  },
+  {
+    "id": "pictionary-places-039",
+    "word": "Playground",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Draw playground without writing words."
+  },
+  {
+    "id": "pictionary-places-040",
+    "word": "Quiet Cafe",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Draw quiet cafe without writing words."
+  },
+  {
+    "id": "pictionary-places-041",
+    "word": "Roller Rink",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Draw roller rink without writing words."
+  },
+  {
+    "id": "pictionary-places-042",
+    "word": "Subway Station",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Draw subway station without writing words."
+  },
+  {
+    "id": "pictionary-places-043",
+    "word": "University Quad",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Draw university quad without writing words."
+  },
+  {
+    "id": "pictionary-places-044",
+    "word": "Village Square",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Draw village square without writing words."
+  },
+  {
+    "id": "pictionary-places-045",
+    "word": "Water Park",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Draw water park without writing words."
+  },
+  {
+    "id": "pictionary-places-046",
+    "word": "Yoga Studio",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Draw yoga studio without writing words."
+  },
+  {
+    "id": "pictionary-places-047",
+    "word": "Zoo Entrance",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Draw zoo entrance without writing words."
+  },
+  {
+    "id": "pictionary-places-048",
+    "word": "Bakery",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Draw bakery without writing words."
+  },
+  {
+    "id": "pictionary-places-049",
+    "word": "Campground",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Draw campground without writing words."
+  },
+  {
+    "id": "pictionary-places-050",
+    "word": "Desert Oasis",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Draw desert oasis without writing words."
+  },
+  {
+    "id": "pictionary-places-051",
+    "word": "Fire Station",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Draw fire station without writing words."
+  },
+  {
+    "id": "pictionary-places-052",
+    "word": "Greenhouse",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Draw greenhouse without writing words."
+  },
+  {
+    "id": "pictionary-places-053",
+    "word": "Harbor",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Draw harbor without writing words."
+  },
+  {
+    "id": "pictionary-places-054",
+    "word": "Ice Rink",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Draw ice rink without writing words."
+  },
+  {
+    "id": "pictionary-places-055",
+    "word": "Mountain Cabin",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Draw mountain cabin without writing words."
+  },
+  {
+    "id": "pictionary-places-056",
+    "word": "Airport Gate Scene 2",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Draw airport gate scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-places-057",
+    "word": "Bookstore Scene 2",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Draw bookstore scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-places-058",
+    "word": "Carnival Scene 2",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Draw carnival scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-places-059",
+    "word": "Dentist Office Scene 2",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Draw dentist office scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-places-060",
+    "word": "Elevator Scene 2",
+    "category": "Places",
+    "difficulty": "hard",
+    "hint": "Draw elevator scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-places-061",
+    "word": "Farmhouse Scene 2",
+    "category": "Places",
+    "difficulty": "easy",
+    "hint": "Draw farmhouse scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-places-062",
+    "word": "Gym Scene 2",
+    "category": "Places",
+    "difficulty": "medium",
+    "hint": "Draw gym scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-sports-017",
+    "word": "Archery Target",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw archery target without writing words."
+  },
+  {
+    "id": "pictionary-sports-018",
+    "word": "Baseball Glove",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw baseball glove without writing words."
+  },
+  {
+    "id": "pictionary-sports-019",
+    "word": "Cricket Bat",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw cricket bat without writing words."
+  },
+  {
+    "id": "pictionary-sports-020",
+    "word": "Diving Board",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw diving board without writing words."
+  },
+  {
+    "id": "pictionary-sports-021",
+    "word": "Exercise Bike",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw exercise bike without writing words."
+  },
+  {
+    "id": "pictionary-sports-022",
+    "word": "Football Helmet",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw football helmet without writing words."
+  },
+  {
+    "id": "pictionary-sports-023",
+    "word": "Golf Cart",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw golf cart without writing words."
+  },
+  {
+    "id": "pictionary-sports-024",
+    "word": "Hockey Stick",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw hockey stick without writing words."
+  },
+  {
+    "id": "pictionary-sports-025",
+    "word": "Ice Skate",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw ice skate without writing words."
+  },
+  {
+    "id": "pictionary-sports-026",
+    "word": "Jump Rope",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw jump rope without writing words."
+  },
+  {
+    "id": "pictionary-sports-027",
+    "word": "Kayak",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw kayak without writing words."
+  },
+  {
+    "id": "pictionary-sports-028",
+    "word": "Lacrosse Stick",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw lacrosse stick without writing words."
+  },
+  {
+    "id": "pictionary-sports-029",
+    "word": "Medal Podium",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw medal podium without writing words."
+  },
+  {
+    "id": "pictionary-sports-030",
+    "word": "Netball Hoop",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw netball hoop without writing words."
+  },
+  {
+    "id": "pictionary-sports-031",
+    "word": "Olympic Torch",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw olympic torch without writing words."
+  },
+  {
+    "id": "pictionary-sports-032",
+    "word": "Ping-Pong Paddle",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw ping-pong paddle without writing words."
+  },
+  {
+    "id": "pictionary-sports-033",
+    "word": "Quarterback",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw quarterback without writing words."
+  },
+  {
+    "id": "pictionary-sports-034",
+    "word": "Rugby Ball",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw rugby ball without writing words."
+  },
+  {
+    "id": "pictionary-sports-035",
+    "word": "Ski Lift",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw ski lift without writing words."
+  },
+  {
+    "id": "pictionary-sports-036",
+    "word": "Tennis Racket",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw tennis racket without writing words."
+  },
+  {
+    "id": "pictionary-sports-037",
+    "word": "Umpire Chair",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw umpire chair without writing words."
+  },
+  {
+    "id": "pictionary-sports-038",
+    "word": "Volleyball Net",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw volleyball net without writing words."
+  },
+  {
+    "id": "pictionary-sports-039",
+    "word": "Water Polo",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw water polo without writing words."
+  },
+  {
+    "id": "pictionary-sports-040",
+    "word": "Yoga Mat",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw yoga mat without writing words."
+  },
+  {
+    "id": "pictionary-sports-041",
+    "word": "Zip Line",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw zip line without writing words."
+  },
+  {
+    "id": "pictionary-sports-042",
+    "word": "Boxing Ring",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw boxing ring without writing words."
+  },
+  {
+    "id": "pictionary-sports-043",
+    "word": "Curling Stone",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw curling stone without writing words."
+  },
+  {
+    "id": "pictionary-sports-044",
+    "word": "Dart Board",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw dart board without writing words."
+  },
+  {
+    "id": "pictionary-sports-045",
+    "word": "Fencing Mask",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw fencing mask without writing words."
+  },
+  {
+    "id": "pictionary-sports-046",
+    "word": "Gymnastics Beam",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw gymnastics beam without writing words."
+  },
+  {
+    "id": "pictionary-sports-047",
+    "word": "Hurdle",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw hurdle without writing words."
+  },
+  {
+    "id": "pictionary-sports-048",
+    "word": "Pickleball Paddle",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw pickleball paddle without writing words."
+  },
+  {
+    "id": "pictionary-sports-049",
+    "word": "Scoreboard",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw scoreboard without writing words."
+  },
+  {
+    "id": "pictionary-sports-050",
+    "word": "Surfboard",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw surfboard without writing words."
+  },
+  {
+    "id": "pictionary-sports-051",
+    "word": "Archery Target Scene 2",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw archery target scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-sports-052",
+    "word": "Baseball Glove Scene 2",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw baseball glove scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-sports-053",
+    "word": "Cricket Bat Scene 2",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw cricket bat scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-sports-054",
+    "word": "Diving Board Scene 2",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw diving board scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-sports-055",
+    "word": "Exercise Bike Scene 2",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw exercise bike scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-sports-056",
+    "word": "Football Helmet Scene 2",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw football helmet scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-sports-057",
+    "word": "Golf Cart Scene 2",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw golf cart scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-sports-058",
+    "word": "Hockey Stick Scene 2",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw hockey stick scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-sports-059",
+    "word": "Ice Skate Scene 2",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw ice skate scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-sports-060",
+    "word": "Jump Rope Scene 2",
+    "category": "Sports",
+    "difficulty": "hard",
+    "hint": "Draw jump rope scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-sports-061",
+    "word": "Kayak Scene 2",
+    "category": "Sports",
+    "difficulty": "easy",
+    "hint": "Draw kayak scene 2 without writing words."
+  },
+  {
+    "id": "pictionary-sports-062",
+    "word": "Lacrosse Stick Scene 2",
+    "category": "Sports",
+    "difficulty": "medium",
+    "hint": "Draw lacrosse stick scene 2 without writing words."
   }
 ]

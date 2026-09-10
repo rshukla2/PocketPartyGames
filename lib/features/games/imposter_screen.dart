@@ -50,7 +50,7 @@ class _ImposterScreenState extends ConsumerState<ImposterScreen> {
   Widget build(BuildContext context) {
     final app = ref.watch(appControllerProvider);
     if (!selectionInitialized) {
-      selected = List<Player>.from(app.players.take(6));
+      selected = List<Player>.from(app.players);
       selectionInitialized = true;
     }
     final current = match;
@@ -95,7 +95,7 @@ class _ImposterScreenState extends ConsumerState<ImposterScreen> {
   };
 
   Widget _setup(AppState app) {
-    final foreground = context.partyPalette.foreground;
+    const foreground = PartyColors.nearBlack;
     final mutedForeground = foreground.withValues(alpha: .86);
     final categories = <String>[
       'Random',

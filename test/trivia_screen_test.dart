@@ -52,7 +52,7 @@ void main() {
     expect(sliderTheme.data.thumbColor, PartyColors.nearBlack);
   });
 
-  testWidgets('Pass & Play clamps a six-player Medium category to five', (
+  testWidgets('Pass & Play clamps a six-player Medium category to eight', (
     tester,
   ) async {
     await _pumpTrivia(tester, data: data, players: _players(6));
@@ -73,12 +73,12 @@ void main() {
     await tester.tap(find.text('Medium'));
     await tester.pumpAndSettle();
 
-    expect(find.text('QUESTIONS PER PLAYER: 5'), findsOneWidget);
+    expect(find.text('QUESTIONS PER PLAYER: 8'), findsOneWidget);
     final slider = tester.widget<Slider>(find.byType(Slider));
-    expect(slider.max, 5);
-    expect(slider.onChanged, isNull);
+    expect(slider.max, 8);
+    expect(slider.onChanged, isNotNull);
     expect(
-      find.textContaining('Up to 5 unique questions per player'),
+      find.textContaining('Up to 8 unique questions per player'),
       findsOneWidget,
     );
   });

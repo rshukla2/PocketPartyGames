@@ -103,7 +103,7 @@ abstract final class PartyPalettes {
       ),
       PartyGameStyle.imposter => const PartyPalette(
         background: PartyColors.purple,
-        foreground: PartyColors.white,
+        foreground: PartyColors.nearBlack,
         accent: PartyColors.yellow,
         secondary: PartyColors.violet,
         surface: _whiteSurface,

@@ -2098,5 +2098,905 @@
     "id": "silly-42",
     "category": "Silly",
     "text": "A frog trying to do ballet at the royal opera house"
+  },
+  {
+    "id": "actions-extra-043",
+    "category": "Actions",
+    "text": "trying to quietly open a noisy snack bag"
+  },
+  {
+    "id": "actions-extra-044",
+    "category": "Actions",
+    "text": "chasing a rolling coin under a couch"
+  },
+  {
+    "id": "actions-extra-045",
+    "category": "Actions",
+    "text": "realizing you forgot why you entered a room"
+  },
+  {
+    "id": "actions-extra-046",
+    "category": "Actions",
+    "text": "pretending to understand complicated instructions"
+  },
+  {
+    "id": "actions-extra-047",
+    "category": "Actions",
+    "text": "walking through spiderwebs"
+  },
+  {
+    "id": "actions-extra-048",
+    "category": "Actions",
+    "text": "packing a suitcase five minutes before leaving"
+  },
+  {
+    "id": "actions-extra-049",
+    "category": "Actions",
+    "text": "trying to carry too many grocery bags"
+  },
+  {
+    "id": "actions-extra-050",
+    "category": "Actions",
+    "text": "untangling headphones in a hurry"
+  },
+  {
+    "id": "actions-extra-051",
+    "category": "Actions",
+    "text": "posing for a photo you were not ready for"
+  },
+  {
+    "id": "actions-extra-052",
+    "category": "Actions",
+    "text": "celebrating before realizing you lost"
+  },
+  {
+    "id": "actions-extra-053",
+    "category": "Actions",
+    "text": "trying not to sneeze in a quiet room"
+  },
+  {
+    "id": "actions-extra-054",
+    "category": "Actions",
+    "text": "learning a dance from a video"
+  },
+  {
+    "id": "actions-extra-055",
+    "category": "Actions",
+    "text": "fixing a chair that keeps squeaking"
+  },
+  {
+    "id": "actions-extra-056",
+    "category": "Actions",
+    "text": "opening a jar that refuses to open"
+  },
+  {
+    "id": "actions-extra-057",
+    "category": "Actions",
+    "text": "looking for glasses already on your head"
+  },
+  {
+    "id": "actions-extra-058",
+    "category": "Actions",
+    "text": "trying to whisper across a room"
+  },
+  {
+    "id": "actions-extra-059",
+    "category": "Actions",
+    "text": "balancing soup while walking"
+  },
+  {
+    "id": "actions-extra-060",
+    "category": "Actions",
+    "text": "secretly changing the thermostat"
+  },
+  {
+    "id": "animals-extra-043",
+    "category": "Animals",
+    "text": "a raccoon discovering a treasure chest"
+  },
+  {
+    "id": "animals-extra-044",
+    "category": "Animals",
+    "text": "a penguin giving a business presentation"
+  },
+  {
+    "id": "animals-extra-045",
+    "category": "Animals",
+    "text": "a cat judging everyone at dinner"
+  },
+  {
+    "id": "animals-extra-046",
+    "category": "Animals",
+    "text": "a dog hearing the word walk"
+  },
+  {
+    "id": "animals-extra-047",
+    "category": "Animals",
+    "text": "a squirrel hiding snacks badly"
+  },
+  {
+    "id": "animals-extra-048",
+    "category": "Animals",
+    "text": "a flamingo trying yoga"
+  },
+  {
+    "id": "animals-extra-049",
+    "category": "Animals",
+    "text": "a shark at a dentist appointment"
+  },
+  {
+    "id": "animals-extra-050",
+    "category": "Animals",
+    "text": "a koala waking up from a nap"
+  },
+  {
+    "id": "animals-extra-051",
+    "category": "Animals",
+    "text": "a crab walking into a fancy party"
+  },
+  {
+    "id": "animals-extra-052",
+    "category": "Animals",
+    "text": "a horse pretending to be graceful"
+  },
+  {
+    "id": "animals-extra-053",
+    "category": "Animals",
+    "text": "an owl staying awake in a meeting"
+  },
+  {
+    "id": "animals-extra-054",
+    "category": "Animals",
+    "text": "a turtle entering a race confidently"
+  },
+  {
+    "id": "animals-extra-055",
+    "category": "Animals",
+    "text": "a goat climbing onto furniture"
+  },
+  {
+    "id": "animals-extra-056",
+    "category": "Animals",
+    "text": "a dolphin showing off"
+  },
+  {
+    "id": "animals-extra-057",
+    "category": "Animals",
+    "text": "a llama refusing to cooperate"
+  },
+  {
+    "id": "animals-extra-058",
+    "category": "Animals",
+    "text": "a bear trying ballet"
+  },
+  {
+    "id": "animals-extra-059",
+    "category": "Animals",
+    "text": "a frog waiting for applause"
+  },
+  {
+    "id": "animals-extra-060",
+    "category": "Animals",
+    "text": "a peacock entering a room"
+  },
+  {
+    "id": "characters-extra-043",
+    "category": "Characters",
+    "text": "a superhero stuck in traffic"
+  },
+  {
+    "id": "characters-extra-044",
+    "category": "Characters",
+    "text": "a wizard with a broken wand"
+  },
+  {
+    "id": "characters-extra-045",
+    "category": "Characters",
+    "text": "a pirate afraid of water"
+  },
+  {
+    "id": "characters-extra-046",
+    "category": "Characters",
+    "text": "a detective solving who ate the last cookie"
+  },
+  {
+    "id": "characters-extra-047",
+    "category": "Characters",
+    "text": "a robot learning sarcasm"
+  },
+  {
+    "id": "characters-extra-048",
+    "category": "Characters",
+    "text": "a vampire at a beach day"
+  },
+  {
+    "id": "characters-extra-049",
+    "category": "Characters",
+    "text": "a cowboy ordering coffee"
+  },
+  {
+    "id": "characters-extra-050",
+    "category": "Characters",
+    "text": "a princess escaping a boring ceremony"
+  },
+  {
+    "id": "characters-extra-051",
+    "category": "Characters",
+    "text": "a knight asking for directions"
+  },
+  {
+    "id": "characters-extra-052",
+    "category": "Characters",
+    "text": "a villain practicing an evil laugh"
+  },
+  {
+    "id": "characters-extra-053",
+    "category": "Characters",
+    "text": "an astronaut losing a sandwich in zero gravity"
+  },
+  {
+    "id": "characters-extra-054",
+    "category": "Characters",
+    "text": "a ghost trying to scare a mirror"
+  },
+  {
+    "id": "characters-extra-055",
+    "category": "Characters",
+    "text": "a fairy godparent running late"
+  },
+  {
+    "id": "characters-extra-056",
+    "category": "Characters",
+    "text": "a spy blending in badly"
+  },
+  {
+    "id": "characters-extra-057",
+    "category": "Characters",
+    "text": "a dragon trying to sneeze politely"
+  },
+  {
+    "id": "characters-extra-058",
+    "category": "Characters",
+    "text": "a time traveler pretending nothing is weird"
+  },
+  {
+    "id": "characters-extra-059",
+    "category": "Characters",
+    "text": "a mermaid learning to walk"
+  },
+  {
+    "id": "characters-extra-060",
+    "category": "Characters",
+    "text": "a mad scientist making toast"
+  },
+  {
+    "id": "emotions-extra-043",
+    "category": "Emotions",
+    "text": "being proud of a terrible drawing"
+  },
+  {
+    "id": "emotions-extra-044",
+    "category": "Emotions",
+    "text": "trying to hide jealousy over fries"
+  },
+  {
+    "id": "emotions-extra-045",
+    "category": "Emotions",
+    "text": "instant regret after saying yes"
+  },
+  {
+    "id": "emotions-extra-046",
+    "category": "Emotions",
+    "text": "being suspicious of a compliment"
+  },
+  {
+    "id": "emotions-extra-047",
+    "category": "Emotions",
+    "text": "overconfidence before a simple task"
+  },
+  {
+    "id": "emotions-extra-048",
+    "category": "Emotions",
+    "text": "panic while acting calm"
+  },
+  {
+    "id": "emotions-extra-049",
+    "category": "Emotions",
+    "text": "joy over finding money in a pocket"
+  },
+  {
+    "id": "emotions-extra-050",
+    "category": "Emotions",
+    "text": "confusion during a group photo"
+  },
+  {
+    "id": "emotions-extra-051",
+    "category": "Emotions",
+    "text": "betrayal over an empty snack bag"
+  },
+  {
+    "id": "emotions-extra-052",
+    "category": "Emotions",
+    "text": "relief after a false alarm"
+  },
+  {
+    "id": "emotions-extra-053",
+    "category": "Emotions",
+    "text": "dramatic disappointment at a tiny problem"
+  },
+  {
+    "id": "emotions-extra-054",
+    "category": "Emotions",
+    "text": "trying not to laugh at the wrong time"
+  },
+  {
+    "id": "emotions-extra-055",
+    "category": "Emotions",
+    "text": "being nervous before karaoke"
+  },
+  {
+    "id": "emotions-extra-056",
+    "category": "Emotions",
+    "text": "being offended by a board game loss"
+  },
+  {
+    "id": "emotions-extra-057",
+    "category": "Emotions",
+    "text": "excitement over plans being canceled"
+  },
+  {
+    "id": "emotions-extra-058",
+    "category": "Emotions",
+    "text": "shock after reading a plot twist"
+  },
+  {
+    "id": "emotions-extra-059",
+    "category": "Emotions",
+    "text": "being smug about a lucky guess"
+  },
+  {
+    "id": "emotions-extra-060",
+    "category": "Emotions",
+    "text": "embarrassment after waving back to no one"
+  },
+  {
+    "id": "everyday-life-extra-043",
+    "category": "Everyday Life",
+    "text": "waiting for the microwave at midnight"
+  },
+  {
+    "id": "everyday-life-extra-044",
+    "category": "Everyday Life",
+    "text": "pretending the Wi-Fi is fine"
+  },
+  {
+    "id": "everyday-life-extra-045",
+    "category": "Everyday Life",
+    "text": "trying to look busy at work"
+  },
+  {
+    "id": "everyday-life-extra-046",
+    "category": "Everyday Life",
+    "text": "carrying laundry that keeps falling"
+  },
+  {
+    "id": "everyday-life-extra-047",
+    "category": "Everyday Life",
+    "text": "finding a parking spot against all odds"
+  },
+  {
+    "id": "everyday-life-extra-048",
+    "category": "Everyday Life",
+    "text": "checking the fridge for the third time"
+  },
+  {
+    "id": "everyday-life-extra-049",
+    "category": "Everyday Life",
+    "text": "forgetting someone’s name mid-conversation"
+  },
+  {
+    "id": "everyday-life-extra-050",
+    "category": "Everyday Life",
+    "text": "answering the door in a hurry"
+  },
+  {
+    "id": "everyday-life-extra-051",
+    "category": "Everyday Life",
+    "text": "trying to unlock the wrong car"
+  },
+  {
+    "id": "everyday-life-extra-052",
+    "category": "Everyday Life",
+    "text": "watching your food arrive at a restaurant"
+  },
+  {
+    "id": "everyday-life-extra-053",
+    "category": "Everyday Life",
+    "text": "joining a video call while muted"
+  },
+  {
+    "id": "everyday-life-extra-054",
+    "category": "Everyday Life",
+    "text": "realizing your phone is at one percent"
+  },
+  {
+    "id": "everyday-life-extra-055",
+    "category": "Everyday Life",
+    "text": "making small talk in an elevator"
+  },
+  {
+    "id": "everyday-life-extra-056",
+    "category": "Everyday Life",
+    "text": "trying to remember a password"
+  },
+  {
+    "id": "everyday-life-extra-057",
+    "category": "Everyday Life",
+    "text": "looking for a lost remote"
+  },
+  {
+    "id": "everyday-life-extra-058",
+    "category": "Everyday Life",
+    "text": "walking into a spiderweb outside"
+  },
+  {
+    "id": "everyday-life-extra-059",
+    "category": "Everyday Life",
+    "text": "holding too many tabs open in your brain"
+  },
+  {
+    "id": "everyday-life-extra-060",
+    "category": "Everyday Life",
+    "text": "waiting for a package all day"
+  },
+  {
+    "id": "jobs-extra-043",
+    "category": "Jobs",
+    "text": "a barista during the morning rush"
+  },
+  {
+    "id": "jobs-extra-044",
+    "category": "Jobs",
+    "text": "a teacher hearing a wild excuse"
+  },
+  {
+    "id": "jobs-extra-045",
+    "category": "Jobs",
+    "text": "a chef saving a falling pancake"
+  },
+  {
+    "id": "jobs-extra-046",
+    "category": "Jobs",
+    "text": "a lifeguard spotting a dramatic splash"
+  },
+  {
+    "id": "jobs-extra-047",
+    "category": "Jobs",
+    "text": "a photographer arranging toddlers"
+  },
+  {
+    "id": "jobs-extra-048",
+    "category": "Jobs",
+    "text": "a mechanic listening to a mystery noise"
+  },
+  {
+    "id": "jobs-extra-049",
+    "category": "Jobs",
+    "text": "a dentist asking questions mid-cleaning"
+  },
+  {
+    "id": "jobs-extra-050",
+    "category": "Jobs",
+    "text": "a pilot making a calm announcement"
+  },
+  {
+    "id": "jobs-extra-051",
+    "category": "Jobs",
+    "text": "a delivery driver finding the right door"
+  },
+  {
+    "id": "jobs-extra-052",
+    "category": "Jobs",
+    "text": "a referee making an unpopular call"
+  },
+  {
+    "id": "jobs-extra-053",
+    "category": "Jobs",
+    "text": "a librarian silencing a loud snack"
+  },
+  {
+    "id": "jobs-extra-054",
+    "category": "Jobs",
+    "text": "a weather reporter in strong wind"
+  },
+  {
+    "id": "jobs-extra-055",
+    "category": "Jobs",
+    "text": "a magician whose trick failed"
+  },
+  {
+    "id": "jobs-extra-056",
+    "category": "Jobs",
+    "text": "a tour guide losing the group"
+  },
+  {
+    "id": "jobs-extra-057",
+    "category": "Jobs",
+    "text": "a nurse finding one more form"
+  },
+  {
+    "id": "jobs-extra-058",
+    "category": "Jobs",
+    "text": "a cashier scanning a stubborn barcode"
+  },
+  {
+    "id": "jobs-extra-059",
+    "category": "Jobs",
+    "text": "a dog walker tangled in leashes"
+  },
+  {
+    "id": "jobs-extra-060",
+    "category": "Jobs",
+    "text": "a wedding planner fixing everything"
+  },
+  {
+    "id": "movies-entertainment-extra-043",
+    "category": "Movies & Entertainment",
+    "text": "an actor forgetting their line"
+  },
+  {
+    "id": "movies-entertainment-extra-044",
+    "category": "Movies & Entertainment",
+    "text": "a singer holding a note too long"
+  },
+  {
+    "id": "movies-entertainment-extra-045",
+    "category": "Movies & Entertainment",
+    "text": "a stunt double regretting a jump"
+  },
+  {
+    "id": "movies-entertainment-extra-046",
+    "category": "Movies & Entertainment",
+    "text": "a movie monster trying to be quiet"
+  },
+  {
+    "id": "movies-entertainment-extra-047",
+    "category": "Movies & Entertainment",
+    "text": "a game show contestant guessing wildly"
+  },
+  {
+    "id": "movies-entertainment-extra-048",
+    "category": "Movies & Entertainment",
+    "text": "a director yelling cut at the wrong time"
+  },
+  {
+    "id": "movies-entertainment-extra-049",
+    "category": "Movies & Entertainment",
+    "text": "a red carpet pose gone wrong"
+  },
+  {
+    "id": "movies-entertainment-extra-050",
+    "category": "Movies & Entertainment",
+    "text": "a magician revealing the wrong card"
+  },
+  {
+    "id": "movies-entertainment-extra-051",
+    "category": "Movies & Entertainment",
+    "text": "a news anchor reading breaking snack news"
+  },
+  {
+    "id": "movies-entertainment-extra-052",
+    "category": "Movies & Entertainment",
+    "text": "a drummer losing a drumstick"
+  },
+  {
+    "id": "movies-entertainment-extra-053",
+    "category": "Movies & Entertainment",
+    "text": "a reality show contestant making an alliance"
+  },
+  {
+    "id": "movies-entertainment-extra-054",
+    "category": "Movies & Entertainment",
+    "text": "a superhero landing badly"
+  },
+  {
+    "id": "movies-entertainment-extra-055",
+    "category": "Movies & Entertainment",
+    "text": "a zombie learning choreography"
+  },
+  {
+    "id": "movies-entertainment-extra-056",
+    "category": "Movies & Entertainment",
+    "text": "a comedian waiting for laughs"
+  },
+  {
+    "id": "movies-entertainment-extra-057",
+    "category": "Movies & Entertainment",
+    "text": "a villain monologuing too long"
+  },
+  {
+    "id": "movies-entertainment-extra-058",
+    "category": "Movies & Entertainment",
+    "text": "a pop star dodging confetti"
+  },
+  {
+    "id": "movies-entertainment-extra-059",
+    "category": "Movies & Entertainment",
+    "text": "a camera operator following chaos"
+  },
+  {
+    "id": "movies-entertainment-extra-060",
+    "category": "Movies & Entertainment",
+    "text": "a movie extra stealing the scene"
+  },
+  {
+    "id": "silly-extra-043",
+    "category": "Silly",
+    "text": "a noodle coming to life"
+  },
+  {
+    "id": "silly-extra-044",
+    "category": "Silly",
+    "text": "a sock escaping the dryer"
+  },
+  {
+    "id": "silly-extra-045",
+    "category": "Silly",
+    "text": "a sandwich giving motivational advice"
+  },
+  {
+    "id": "silly-extra-046",
+    "category": "Silly",
+    "text": "a chair pretending to be a throne"
+  },
+  {
+    "id": "silly-extra-047",
+    "category": "Silly",
+    "text": "a balloon with too much confidence"
+  },
+  {
+    "id": "silly-extra-048",
+    "category": "Silly",
+    "text": "a spoon starting a band"
+  },
+  {
+    "id": "silly-extra-049",
+    "category": "Silly",
+    "text": "a potato running for mayor"
+  },
+  {
+    "id": "silly-extra-050",
+    "category": "Silly",
+    "text": "a pillow demanding respect"
+  },
+  {
+    "id": "silly-extra-051",
+    "category": "Silly",
+    "text": "a toaster launching a rocket"
+  },
+  {
+    "id": "silly-extra-052",
+    "category": "Silly",
+    "text": "a mirror complimenting itself"
+  },
+  {
+    "id": "silly-extra-053",
+    "category": "Silly",
+    "text": "a traffic cone directing a wedding"
+  },
+  {
+    "id": "silly-extra-054",
+    "category": "Silly",
+    "text": "a pizza slice solving a mystery"
+  },
+  {
+    "id": "silly-extra-055",
+    "category": "Silly",
+    "text": "a cactus asking for a hug"
+  },
+  {
+    "id": "silly-extra-056",
+    "category": "Silly",
+    "text": "a cereal box telling secrets"
+  },
+  {
+    "id": "silly-extra-057",
+    "category": "Silly",
+    "text": "a rubber duck commanding a ship"
+  },
+  {
+    "id": "silly-extra-058",
+    "category": "Silly",
+    "text": "a banana slipping on a person"
+  },
+  {
+    "id": "silly-extra-059",
+    "category": "Silly",
+    "text": "a backpack going on vacation"
+  },
+  {
+    "id": "silly-extra-060",
+    "category": "Silly",
+    "text": "a cupcake entering a talent show"
+  },
+  {
+    "id": "sports-extra-043",
+    "category": "Sports",
+    "text": "a goalie celebrating too early"
+  },
+  {
+    "id": "sports-extra-044",
+    "category": "Sports",
+    "text": "a golfer whispering at everything"
+  },
+  {
+    "id": "sports-extra-045",
+    "category": "Sports",
+    "text": "a bowler begging the ball to turn"
+  },
+  {
+    "id": "sports-extra-046",
+    "category": "Sports",
+    "text": "a gymnast sticking a weird landing"
+  },
+  {
+    "id": "sports-extra-047",
+    "category": "Sports",
+    "text": "a boxer fighting a fly"
+  },
+  {
+    "id": "sports-extra-048",
+    "category": "Sports",
+    "text": "a swimmer realizing the pool is cold"
+  },
+  {
+    "id": "sports-extra-049",
+    "category": "Sports",
+    "text": "a runner seeing the finish line too soon"
+  },
+  {
+    "id": "sports-extra-050",
+    "category": "Sports",
+    "text": "a tennis player arguing with the racket"
+  },
+  {
+    "id": "sports-extra-051",
+    "category": "Sports",
+    "text": "a skier meeting a tiny hill"
+  },
+  {
+    "id": "sports-extra-052",
+    "category": "Sports",
+    "text": "a basketball player taking a dramatic free throw"
+  },
+  {
+    "id": "sports-extra-053",
+    "category": "Sports",
+    "text": "a cyclist avoiding a puddle"
+  },
+  {
+    "id": "sports-extra-054",
+    "category": "Sports",
+    "text": "a coach giving confusing signals"
+  },
+  {
+    "id": "sports-extra-055",
+    "category": "Sports",
+    "text": "a referee dodging a ball"
+  },
+  {
+    "id": "sports-extra-056",
+    "category": "Sports",
+    "text": "a weightlifter lifting a grocery bag"
+  },
+  {
+    "id": "sports-extra-057",
+    "category": "Sports",
+    "text": "a surfer waiting for the smallest wave"
+  },
+  {
+    "id": "sports-extra-058",
+    "category": "Sports",
+    "text": "a curler sweeping like their life depends on it"
+  },
+  {
+    "id": "sports-extra-059",
+    "category": "Sports",
+    "text": "a baseball player calling a home run"
+  },
+  {
+    "id": "sports-extra-060",
+    "category": "Sports",
+    "text": "a yoga instructor losing balance"
+  },
+  {
+    "id": "things-extra-043",
+    "category": "Things",
+    "text": "a phone with low battery anxiety"
+  },
+  {
+    "id": "things-extra-044",
+    "category": "Things",
+    "text": "an umbrella in a windstorm"
+  },
+  {
+    "id": "things-extra-045",
+    "category": "Things",
+    "text": "a fridge hiding the good snacks"
+  },
+  {
+    "id": "things-extra-046",
+    "category": "Things",
+    "text": "a backpack full of bricks"
+  },
+  {
+    "id": "things-extra-047",
+    "category": "Things",
+    "text": "a candle at a surprise party"
+  },
+  {
+    "id": "things-extra-048",
+    "category": "Things",
+    "text": "a vacuum cleaner with attitude"
+  },
+  {
+    "id": "things-extra-049",
+    "category": "Things",
+    "text": "a traffic light changing its mind"
+  },
+  {
+    "id": "things-extra-050",
+    "category": "Things",
+    "text": "a couch swallowing keys"
+  },
+  {
+    "id": "things-extra-051",
+    "category": "Things",
+    "text": "a printer refusing to work"
+  },
+  {
+    "id": "things-extra-052",
+    "category": "Things",
+    "text": "a suitcase that will not close"
+  },
+  {
+    "id": "things-extra-053",
+    "category": "Things",
+    "text": "a doorbell with stage fright"
+  },
+  {
+    "id": "things-extra-054",
+    "category": "Things",
+    "text": "a camera taking a bad selfie"
+  },
+  {
+    "id": "things-extra-055",
+    "category": "Things",
+    "text": "a clock running late"
+  },
+  {
+    "id": "things-extra-056",
+    "category": "Things",
+    "text": "a lamp trying to be the sun"
+  },
+  {
+    "id": "things-extra-057",
+    "category": "Things",
+    "text": "a shopping cart with a wobbly wheel"
+  },
+  {
+    "id": "things-extra-058",
+    "category": "Things",
+    "text": "a blanket becoming a cape"
+  },
+  {
+    "id": "things-extra-059",
+    "category": "Things",
+    "text": "a mailbox expecting gossip"
+  },
+  {
+    "id": "things-extra-060",
+    "category": "Things",
+    "text": "a blender preparing for battle"
   }
 ]

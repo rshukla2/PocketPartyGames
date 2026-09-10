@@ -25,11 +25,15 @@ void main() {
     await _pumpImposter(tester, data: data, players: _players(4));
     expect(
       tester.widget<Text>(find.text('PLAYERS')).style?.color,
-      PartyColors.white,
+      PartyColors.nearBlack,
     );
     expect(
       tester.widget<Text>(find.text('ROLE MODE')).style?.color,
-      PartyColors.white,
+      PartyColors.nearBlack,
+    );
+    expect(
+      tester.widget<Text>(find.text('IMPOSTER HINT')).style?.color,
+      PartyColors.nearBlack,
     );
     expect(find.text('IMPOSTER HINT'), findsOneWidget);
     expect(find.text('MULTIPLE ROUNDS'), findsOneWidget);
@@ -46,6 +50,64 @@ void main() {
     expect(find.text('IMPOSTER HINT'), findsNothing);
     await _scrollVisible(tester, find.text('DEAL SECRET WORDS'));
     expect(find.text('DEAL SECRET WORDS'), findsOneWidget);
+  });
+
+  testWidgets('local reveal flow is not capped at six selected players', (
+    WidgetTester tester,
+  ) async {
+    final players = _players(7);
+    await _pumpImposter(tester, data: data, players: players);
+    await _tapVisible(tester, find.text('DEAL SECRET ROLES'));
+
+    for (var index = 0; index < players.length; index++) {
+      expect(
+        find.text('Private word ${index + 1}/${players.length}'),
+        findsOneWidget,
+      );
+      expect(find.text(players[index].name), findsWidgets);
+      await tester.tap(find.text('SHOW MY ROLE'));
+      await tester.pumpAndSettle();
+      expect(
+        find.text(
+          index + 1 == players.length ? 'START DISCUSSION' : 'HIDE & PASS',
+        ),
+        findsOneWidget,
+      );
+      await tester.tap(
+        find.text(
+          index + 1 == players.length ? 'START DISCUSSION' : 'HIDE & PASS',
+        ),
+      );
+      await tester.pumpAndSettle();
+    }
+
+    expect(find.text('START VOTING'), findsOneWidget);
+  });
+
+  testWidgets('twenty roster players can all reveal before discussion', (
+    WidgetTester tester,
+  ) async {
+    final players = _players(20);
+    await _pumpImposter(tester, data: data, players: players);
+    await _tapVisible(tester, find.text('DEAL SECRET ROLES'));
+
+    for (var index = 0; index < players.length; index++) {
+      expect(
+        find.text('Private word ${index + 1}/${players.length}'),
+        findsOneWidget,
+      );
+      expect(find.text(players[index].name), findsWidgets);
+      await tester.tap(find.text('SHOW MY ROLE'));
+      await tester.pumpAndSettle();
+      await tester.tap(
+        find.text(
+          index + 1 == players.length ? 'START DISCUSSION' : 'HIDE & PASS',
+        ),
+      );
+      await tester.pumpAndSettle();
+    }
+
+    expect(find.text('START VOTING'), findsOneWidget);
   });
 
   testWidgets(
